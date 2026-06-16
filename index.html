@@ -252,7 +252,7 @@ function handleGoogleToken(response) {
     const payload = JSON.parse(atob(response.credential.split('.')[1]));
     if (!CONFIG.ALLOWED_EMAILS.includes(payload.email)) {
       const err = document.getElementById('login-error');
-      err.textContent = `Access denied for ${payload.email}. Contact your administrator.`;
+      err.textContent = `Access denied. Google returned email: "${payload.email}". Contact your administrator.`;
       err.classList.remove('hidden');
       return;
     }
