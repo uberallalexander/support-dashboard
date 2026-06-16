@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support Dashboard — Uberall</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <script src="https://accounts.google.com/gsi/client" async></script>
+  <style>
+    :root { color-scheme: dark; }
+    body { background: #0f1117; color: #e2e8f0; font-family: 'Inter', system-ui, sans-serif; }
+    .card { background: #1a1f2e; border: 1px solid #2d3748; border-radius: 12px; }
+    .tab-active { border-bottom: 2px solid #6366f1; color: #a5b4fc; }
+    .tab-inactive { color: #64748b; border-bottom: 2px solid transparent; }
+    .tab-inactive:hover { color: #94a3b8; }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 9999px; font-size: 11px; font-weight: 500; }
+    .badge-purple { background: #3b1f62; color: #c084fc; }
+    .badge-blue { background: #1e3a5f; color: #60a5fa; }
+    .badge-green { background: #14532d; color: #4ade80; }
+    .badge-amber { background: #3b2f1f; color: #fb923c; }
+    .badge-red { background: #3b1f1f; color: #f87171; }
+    .spinner { border: 3px solid #2d3748; border-top-color: #6366f1; border-radius: 50%; width: 28px; height: 28px; animation: spin 0.8s linear infinite; display: inline-block; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .kpi-card { transition: transform 0.15s; }
+    .kpi-card:hover { transform: translateY(-2px); }
+    table tbody tr:hover { background: #1e2537; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #1a1f2e; }
+    ::-webkit-scrollbar-thumb { background: #3d4a6b; border-radius: 3px; }
+    .freshness-dot { width: 8px; height: 8px; border-radius: 50%; background: #4ade80; display: inline-block; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+  </style>
+</head>
+<body class="min-h-screen">
+
+<!-- ─── CONFIG ──────────────────────────────────────────────────────────── -->
+<script>
+const CONFIG = {
+  // Your Google OAuth Client ID
+  // Get one at: console.cloud.google.com → APIs & Services → Credentials → Create OAuth 2.0 Client ID
+  // Authorized JavaScript origin to add: https://uberallalexander.github.io
+  GOOGLE_CLIENT_ID: 'YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com',
+
+  // Emails allowed to access the dashboard
+  ALLOWED_EMAILS: ['alexander.haack@uberall.com'],
+
+  // Path to the data file (relative to this page)
+  DATA_URL: './data.json',
+};
+</script>
+<!-- ─────────────────────────────────────────────────────────────────────── -->
+
+<!-- SETUP NOTICE -->
+<div id="setup-screen" class="hidden" style="display:none">
+  <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px">
+    <div class="card p-8 max-w-lg w-full">
+      <h2 class="text-lg font-semibold text-amber-400 mb-3">⚙️ Setup Required</h2>
+      <p class="text-slate-400 text-sm mb-3">Open <code class="bg-slate-800 px-1 rounded">index.html</code> and fill in your <strong>Google Client ID</strong> in the CONFIG block at the top.</p>
+      <p class="text-slate-500 text-xs">See <strong>README.md</strong> for step-by-step instructions.</p>
+    </div>
+  </div>
+</div>
+
+<!-- LOGIN SCREEN -->
+<div id="login-screen" style="display:none;min-height:100vh;flex-direction:column;align-items:center;justify-content:center;gap:32px">
+  <div class="text-center">
+    <div class="text-4xl font-bold text-indigo-400 mb-2">Uberall</div>
+    <div class="text-xl text-slate-400">Support Operations Dashboard</div>
+  </div>
+  <div class="card p-10 flex flex-col items-center gap-6 w-full max-w-sm">
+    <p class="text-slate-400 text-sm text-center">Sign in with your Uberall Google account to access support metrics.</p>
+    <div id="google-btn"></div>
+    <div id="login-error" class="hidden text-red-400 text-xs text-center px-4"></div>
+  </div>
+  <div class="text-slate-600 text-xs">Access restricted to Uberall Operations team</div>
+</div>
+
+<!-- MAIN DASHBOARD -->
+<div id="dashboard" style="display:none;min-height:100vh;flex-direction:column">
+
+  <!-- Top Bar -->
+  <header class="border-b border-slate-800 px-6 py-3 flex items-center justify-between sticky top-0 z-10" style="background:#0f1117">
+    <div class="flex items-center gap-4">
+      <span class="text-indigo-400 font-bold text-lg">Uberall</span>
+      <span class="text-slate-700">|</span>
+      <span class="text-slate-300 font-medium text-sm">Support Dashboard</span>
+    </div>
+    <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2 text-xs text-slate-500">
+        <span class="freshness-dot"></span>
+        <span id="last-updated"></span>
+      </div>
+      <div id="user-avatar" class="w-7 h-7 rounded-full bg-indigo-600 flex items-center justify-center text-xs font-bold text-white"></div>
+      <button onclick="logout()" class="text-slate-500 hover:text-slate-300 text-xs transition-colors">Logout</button>
+    </div>
+  </header>
+
+  <!-- Tabs -->
+  <nav class="border-b border-slate-800 px-6 flex gap-8" style="background:#0f1117">
+    <button class="tab py-3 text-sm font-medium tab-active" data-tab="overview" onclick="switchTab('overview')">Overview</button>
+    <button class="tab py-3 text-sm font-medium tab-inactive" data-tab="agents" onclick="switchTab('agents')">Agents</button>
+    <button class="tab py-3 text-sm font-medium tab-inactive" data-tab="topics" onclick="switchTab('topics')">Topics</button>
+    <button class="tab py-3 text-sm font-medium tab-inactive" data-tab="routing" onclick="switchTab('routing')">Routing</button>
+  </nav>
+
+  <!-- Content -->
+  <main class="flex-1 p-6 overflow-auto">
+
+    <!-- Loading -->
+    <div id="loading" style="display:none;flex-direction:column;align-items:center;justify-content:center;padding:80px 0;gap:16px">
+      <div class="spinner"></div>
+      <div class="text-slate-400 text-sm">Loading support data…</div>
+    </div>
+
+    <!-- ── OVERVIEW ─────────────────────────────────────────────────────── -->
+    <div id="tab-overview" class="space-y-5">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="card kpi-card p-5">
+          <div class="text-slate-500 text-xs uppercase tracking-wide mb-1">Total Cases</div>
+          <div id="kpi-total" class="text-3xl font-bold text-white">—</div>
+          <div id="kpi-period" class="text-slate-500 text-xs mt-1">—</div>
+        </div>
+        <div class="card kpi-card p-5">
+          <div class="text-slate-500 text-xs uppercase tracking-wide mb-1">Open Cases</div>
+          <div id="kpi-open" class="text-3xl font-bold text-blue-400">—</div>
+          <div class="text-slate-500 text-xs mt-1">currently active</div>
+        </div>
+        <div class="card kpi-card p-5">
+          <div class="text-slate-500 text-xs uppercase tracking-wide mb-1">Avg CSAT</div>
+          <div id="kpi-csat" class="text-3xl font-bold text-emerald-400">—</div>
+          <div id="kpi-csat-scale" class="text-slate-500 text-xs mt-1">—</div>
+        </div>
+        <div class="card kpi-card p-5">
+          <div class="text-slate-500 text-xs uppercase tracking-wide mb-1">Queue Backlog</div>
+          <div id="kpi-queue" class="text-3xl font-bold text-amber-400">—</div>
+          <div class="text-slate-500 text-xs mt-1">unassigned cases</div>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="card p-5">
+          <h3 class="text-slate-300 font-medium text-sm mb-4">Case Status Distribution</h3>
+          <div style="height:260px;position:relative"><canvas id="chart-status"></canvas></div>
+        </div>
+        <div class="card p-5">
+          <h3 class="text-slate-300 font-medium text-sm mb-4">Case Types</h3>
+          <div style="height:260px;position:relative"><canvas id="chart-types"></canvas></div>
+        </div>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-slate-300 font-medium text-sm mb-4">Cases by Priority</h3>
+        <div id="priority-table"></div>
+      </div>
+    </div>
+
+    <!-- ── AGENTS ───────────────────────────────────────────────────────── -->
+    <div id="tab-agents" class="hidden space-y-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="card p-5">
+          <h3 class="text-slate-300 font-medium text-sm mb-4">Cases per Agent</h3>
+          <div style="height:320px;position:relative"><canvas id="chart-agents"></canvas></div>
+        </div>
+        <div class="card p-5">
+          <h3 class="text-slate-300 font-medium text-sm mb-4">CSAT per Agent <span class="text-slate-600 text-xs">(out of 10)</span></h3>
+          <div style="height:320px;position:relative"><canvas id="chart-csat-agents"></canvas></div>
+        </div>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-slate-300 font-medium text-sm mb-4">Agent Performance</h3>
+        <div id="agent-table"></div>
+      </div>
+    </div>
+
+    <!-- ── TOPICS ───────────────────────────────────────────────────────── -->
+    <div id="tab-topics" class="hidden space-y-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="card p-5">
+          <h3 class="text-slate-300 font-medium text-sm mb-4">Case Type Distribution</h3>
+          <div style="height:300px;position:relative"><canvas id="chart-topic-types"></canvas></div>
+        </div>
+        <div class="card p-5">
+          <h3 class="text-slate-300 font-medium text-sm mb-4">Issue Types</h3>
+          <div style="height:300px;position:relative"><canvas id="chart-issue-types"></canvas></div>
+        </div>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-slate-300 font-medium text-sm mb-4">Full Topic Breakdown</h3>
+        <div id="topic-table"></div>
+      </div>
+    </div>
+
+    <!-- ── ROUTING ──────────────────────────────────────────────────────── -->
+    <div id="tab-routing" class="hidden space-y-5">
+      <div class="card p-5">
+        <div class="flex items-center justify-between mb-1">
+          <h3 class="text-slate-300 font-medium text-sm">Cases Needing Routing to Other Departments</h3>
+          <span id="routing-count" class="badge badge-purple"></span>
+        </div>
+        <p class="text-slate-500 text-xs mb-4">Risk and Termination cases in Support queue that belong to Account Management, Partner AM, or other departments.</p>
+        <div id="routing-table"></div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+// ── State ─────────────────────────────────────────────────────────────────
+let data = null;
+let charts = {};
+
+// ── Auth ─────────────────────────────────────────────────────────────────
+
+function initAuth() {
+  if (CONFIG.GOOGLE_CLIENT_ID === 'YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com') {
+    show('setup-screen');
+    return;
+  }
+
+  const stored = sessionStorage.getItem('dashboard_user');
+  if (stored) {
+    const user = JSON.parse(stored);
+    showDashboard(user);
+    return;
+  }
+
+  show('login-screen');
+
+  // Wait for Google GSI to load
+  const ready = setInterval(() => {
+    if (typeof google === 'undefined') return;
+    clearInterval(ready);
+    google.accounts.id.initialize({
+      client_id: CONFIG.GOOGLE_CLIENT_ID,
+      callback: handleGoogleToken,
+      auto_select: true,
+      context: 'signin',
+    });
+    google.accounts.id.renderButton(document.getElementById('google-btn'), {
+      theme: 'filled_blue',
+      size: 'large',
+      text: 'signin_with',
+      shape: 'rectangular',
+      width: 280,
+    });
+    google.accounts.id.prompt();
+  }, 100);
+}
+
+function handleGoogleToken(response) {
+  try {
+    const payload = JSON.parse(atob(response.credential.split('.')[1]));
+    if (!CONFIG.ALLOWED_EMAILS.includes(payload.email)) {
+      const err = document.getElementById('login-error');
+      err.textContent = `Access denied for ${payload.email}. Contact your administrator.`;
+      err.classList.remove('hidden');
+      return;
+    }
+    const user = { email: payload.email, name: payload.name, picture: payload.picture };
+    sessionStorage.setItem('dashboard_user', JSON.stringify(user));
+    hide('login-screen');
+    showDashboard(user);
+  } catch (e) {
+    const err = document.getElementById('login-error');
+    err.textContent = 'Sign-in failed. Please try again.';
+    err.classList.remove('hidden');
+  }
+}
+
+function showDashboard(user) {
+  document.getElementById('user-avatar').textContent = (user.name || user.email).charAt(0).toUpperCase();
+  show('dashboard');
+  loadData();
+}
+
+function logout() {
+  sessionStorage.removeItem('dashboard_user');
+  if (typeof google !== 'undefined') google.accounts.id.disableAutoSelect();
+  location.reload();
+}
+
+// ── Data ─────────────────────────────────────────────────────────────────
+
+async function loadData() {
+  show('loading');
+  try {
+    const resp = await fetch(CONFIG.DATA_URL + '?t=' + Date.now());
+    data = await resp.json();
+  } catch (e) {
+    console.error('Failed to load data.json', e);
+    hide('loading');
+    return;
+  }
+  hide('loading');
+  renderAll();
+}
+
+// ── Charts ────────────────────────────────────────────────────────────────
+
+const COLORS = [
+  '#6366f1','#22d3ee','#34d399','#fb923c','#f472b6',
+  '#a78bfa','#38bdf8','#4ade80','#fbbf24','#f87171',
+  '#818cf8','#67e8f9','#86efac','#fcd34d','#f9a8d4',
+];
+
+function makeChart(id, type, labels, values, opts = {}) {
+  const ctx = document.getElementById(id);
+  if (!ctx) return;
+  if (charts[id]) charts[id].destroy();
+  const isBar = type === 'bar';
+  charts[id] = new Chart(ctx, {
+    type,
+    data: {
+      labels,
+      datasets: [{
+        data: values,
+        backgroundColor: opts.colors || COLORS.slice(0, labels.length),
+        borderWidth: isBar ? 0 : 2,
+        borderColor: isBar ? undefined : '#0f1117',
+        borderRadius: isBar ? 4 : undefined,
+        ...opts.ds,
+      }],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          display: type === 'doughnut',
+          position: 'right',
+          labels: { color: '#94a3b8', font: { size: 11 }, boxWidth: 12, padding: 8 },
+        },
+        tooltip: { callbacks: { label: c => `  ${c.label}: ${c.parsed?.toLocaleString?.() ?? c.parsed}` } },
+      },
+      scales: isBar ? {
+        x: { ticks: { color: '#64748b', font: { size: 10 } }, grid: { color: '#1e2537' } },
+        y: { ticks: { color: '#64748b', font: { size: 10 } }, grid: { color: '#1e2537' }, ...(opts.yOpts || {}) },
+      } : undefined,
+      indexAxis: opts.horizontal ? 'y' : 'x',
+      ...opts.chart,
+    },
+  });
+}
+
+function makeTable(id, cols, rows, empty = 'No data available.') {
+  const el = document.getElementById(id);
+  if (!rows.length) {
+    el.innerHTML = `<p class="text-slate-500 text-sm py-6 text-center">${empty}</p>`;
+    return;
+  }
+  el.innerHTML = `
+    <table class="w-full text-sm">
+      <thead>
+        <tr class="border-b border-slate-800">
+          ${cols.map(c => `<th class="text-left py-2 px-3 text-slate-500 font-medium text-xs uppercase tracking-wide">${c.label}</th>`).join('')}
+        </tr>
+      </thead>
+      <tbody>
+        ${rows.map(row => `
+          <tr class="border-b border-slate-800/40 transition-colors">
+            ${cols.map(c => `<td class="py-2 px-3 text-slate-300">${c.render ? c.render(row) : (row[c.key] ?? '—')}</td>`).join('')}
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>`;
+}
+
+// ── Render ────────────────────────────────────────────────────────────────
+
+function renderAll() {
+  const { kpis, periodLabel, lastUpdated } = data;
+
+  // KPIs
+  document.getElementById('kpi-total').textContent = kpis.total.toLocaleString();
+  document.getElementById('kpi-period').textContent = periodLabel;
+  document.getElementById('kpi-open').textContent = kpis.open.toLocaleString();
+  document.getElementById('kpi-csat').textContent = kpis.avgCsat;
+  document.getElementById('kpi-csat-scale').textContent = `out of ${kpis.csatScale}`;
+  document.getElementById('kpi-queue').textContent = kpis.queueBacklog.toLocaleString();
+
+  // Last updated
+  const d = new Date(lastUpdated);
+  document.getElementById('last-updated').textContent =
+    `Synced ${d.toLocaleDateString('en-GB', { day:'numeric', month:'short' })} at ${d.toLocaleTimeString('en-GB', { hour:'2-digit', minute:'2-digit' })}`;
+
+  renderOverview();
+  renderAgents();
+  renderTopics();
+  renderRouting();
+}
+
+function renderOverview() {
+  const { statusData, typeData, priorityData } = data;
+
+  makeChart('chart-status', 'doughnut',
+    statusData.map(r => r.label), statusData.map(r => r.value));
+
+  const top = typeData.slice(0, 8);
+  makeChart('chart-types', 'bar',
+    top.map(r => r.label), top.map(r => r.value), { horizontal: true });
+
+  const total = priorityData.reduce((s, r) => s + r.value, 0);
+  const priColors = { Critical: '#f87171', Urgent: '#fb923c', High: '#fbbf24', Medium: '#6366f1', Low: '#94a3b8' };
+  makeTable('priority-table', [
+    { label: 'Priority', key: '_p', render: r => {
+      const c = priColors[r.label] || '#94a3b8';
+      return `<span style="color:${c};font-weight:600">${r.label}</span>`;
+    }},
+    { label: 'Cases', key: 'value', render: r => r.value.toLocaleString() },
+    { label: 'Share', key: '_s', render: r => {
+      const pct = ((r.value / total) * 100).toFixed(1);
+      const c = priColors[r.label] || '#6366f1';
+      return `<div style="display:flex;align-items:center;gap:8px">
+        <div style="width:120px;height:6px;background:#1e2537;border-radius:3px">
+          <div style="width:${pct}%;height:6px;background:${c};border-radius:3px"></div>
+        </div>
+        <span class="text-slate-400 text-xs">${pct}%</span>
+      </div>`;
+    }},
+  ], priorityData);
+}
+
+function renderAgents() {
+  const agents = data.agentData.filter(a => !a.name.includes('Queue') && !a.name.includes('Legal'));
+
+  const top12 = agents.slice(0, 12);
+  makeChart('chart-agents', 'bar',
+    top12.map(a => a.name.split(' ')[0]),
+    top12.map(a => a.cases),
+    { horizontal: true });
+
+  const withCsat = top12.filter(a => a.csat !== null);
+  makeChart('chart-csat-agents', 'bar',
+    withCsat.map(a => a.name.split(' ')[0]),
+    withCsat.map(a => a.csat),
+    {
+      colors: withCsat.map(a => a.csat >= 9 ? '#34d399' : a.csat >= 7 ? '#fbbf24' : '#f87171'),
+      yOpts: { min: 0, max: 10 },
+    });
+
+  makeTable('agent-table', [
+    { label: 'Agent', key: 'name' },
+    { label: 'Cases', key: 'cases', render: r => r.cases.toLocaleString() },
+    { label: 'CSAT', key: '_csat', render: r => {
+      if (r.csat === null) return '<span class="text-slate-600">—</span>';
+      const c = r.csat >= 9 ? 'text-emerald-400' : r.csat >= 7 ? 'text-amber-400' : 'text-red-400';
+      return `<span class="${c} font-semibold">${r.csat} <span class="text-slate-600 font-normal text-xs">/ 10</span></span>`;
+    }},
+    { label: '', key: '_type', render: r => r.name.includes('Queue')
+      ? '<span class="badge badge-amber">Queue</span>'
+      : '' },
+  ], data.agentData);
+}
+
+function renderTopics() {
+  const { typeData, issueTypeData } = data;
+
+  makeChart('chart-topic-types', 'doughnut',
+    typeData.map(r => r.label), typeData.map(r => r.value));
+
+  makeChart('chart-issue-types', 'bar',
+    issueTypeData.map(r => r.label), issueTypeData.map(r => r.value),
+    { horizontal: true });
+
+  const total = typeData.reduce((s, r) => s + r.value, 0);
+  makeTable('topic-table', [
+    { label: 'Case Type', key: 'label' },
+    { label: 'Cases', key: 'value', render: r => r.value.toLocaleString() },
+    { label: 'Share', key: '_bar', render: r => {
+      const pct = ((r.value / total) * 100).toFixed(1);
+      return `<div style="display:flex;align-items:center;gap:8px">
+        <div style="width:140px;height:5px;background:#1e2537;border-radius:3px">
+          <div style="width:${pct}%;height:5px;background:#6366f1;border-radius:3px"></div>
+        </div>
+        <span class="text-slate-400 text-xs">${pct}%</span>
+      </div>`;
+    }},
+  ], typeData);
+}
+
+function renderRouting() {
+  const rows = data.routingData || [];
+  document.getElementById('routing-count').textContent =
+    rows.length ? `${rows.length} cases` : 'Refreshing daily';
+
+  const statusBadge = s => {
+    const c = (s === 'Closed' || s === 'Completed') ? 'badge-green'
+      : s === 'In Progress' ? 'badge-blue'
+      : s?.startsWith('Waiting') ? 'badge-amber' : 'badge-blue';
+    return `<span class="badge ${c}">${s || '—'}</span>`;
+  };
+  const deptBadge = r => {
+    const v = r.Primary_Risk_Type__c || r.Department__c || r.Type;
+    return v ? `<span class="badge badge-purple">${v}</span>` : '—';
+  };
+
+  makeTable('routing-table', [
+    { label: 'Subject', key: '_s', render: r => `<div style="max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${r.Subject || '—'}</div>` },
+    { label: 'Dept / Risk', key: '_d', render: deptBadge },
+    { label: 'Account', key: 'Account_Name__c' },
+    { label: 'Owner', key: 'Case_Owner_Name__c' },
+    { label: 'Status', key: '_st', render: statusBadge },
+    { label: 'Created', key: '_dt', render: r => new Date(r.CreatedDate).toLocaleDateString('en-GB') },
+  ], rows, 'Routing data will appear after the next daily sync.');
+}
+
+// ── Tab switching ─────────────────────────────────────────────────────────
+
+function switchTab(tab) {
+  ['overview','agents','topics','routing'].forEach(t => {
+    const el = document.getElementById(`tab-${t}`);
+    el.classList.toggle('hidden', t !== tab);
+  });
+  document.querySelectorAll('.tab').forEach(btn => {
+    const active = btn.dataset.tab === tab;
+    btn.classList.toggle('tab-active', active);
+    btn.classList.toggle('tab-inactive', !active);
+  });
+  setTimeout(() => {
+    if (tab === 'overview') renderOverview();
+    if (tab === 'agents') renderAgents();
+    if (tab === 'topics') renderTopics();
+  }, 50);
+}
+
+// ── Helpers ───────────────────────────────────────────────────────────────
+
+function show(id) { document.getElementById(id).style.display = 'flex'; }
+function hide(id) { document.getElementById(id).style.display = 'none'; }
+
+// ── Boot ──────────────────────────────────────────────────────────────────
+
+initAuth();
+</script>
+</body>
+</html>
