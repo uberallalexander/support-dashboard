@@ -4,30 +4,60 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Support Dashboard — Uberall</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;800&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
   <script src="https://accounts.google.com/gsi/client" async></script>
   <style>
-    :root { color-scheme: dark; }
-    body { background: #0f1117; color: #e2e8f0; font-family: 'Inter', system-ui, sans-serif; }
-    .card { background: #1a1f2e; border: 1px solid #2d3748; border-radius: 12px; }
-    .tab-active { border-bottom: 2px solid #6366f1; color: #a5b4fc; }
-    .tab-inactive { color: #64748b; border-bottom: 2px solid transparent; }
-    .tab-inactive:hover { color: #94a3b8; }
-    .badge { display: inline-block; padding: 2px 8px; border-radius: 9999px; font-size: 11px; font-weight: 500; }
-    .badge-purple { background: #3b1f62; color: #c084fc; }
-    .badge-blue { background: #1e3a5f; color: #60a5fa; }
-    .badge-green { background: #14532d; color: #4ade80; }
-    .badge-amber { background: #3b2f1f; color: #fb923c; }
-    .badge-red { background: #3b1f1f; color: #f87171; }
-    .spinner { border: 3px solid #2d3748; border-top-color: #6366f1; border-radius: 50%; width: 28px; height: 28px; animation: spin 0.8s linear infinite; display: inline-block; }
+    :root {
+      --bg-main: #f8f9fc;
+      --bg-card: #ffffff;
+      --bg-header: #ffffff;
+      --border: #e5e7ef;
+      --text-main: #1b0c3b;
+      --text-muted: #5b6882;
+      --accent: #7c3aed;
+      --accent-light: #ede9fe;
+      --font: 'IBM Plex Sans', -apple-system, 'system-ui', 'Segoe UI', Roboto, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { background: var(--bg-main); color: var(--text-main); font-family: var(--font); -webkit-font-smoothing: antialiased; }
+    h1 { font-weight: 800; font-size: 2rem; }
+    a { color: var(--accent); text-decoration: none; }
+
+    .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 1px 4px rgba(27,12,59,0.06); }
+    .tab-active { border-bottom: 2px solid var(--accent); color: var(--accent); font-weight: 600; }
+    .tab-inactive { color: var(--text-muted); border-bottom: 2px solid transparent; }
+    .tab-inactive:hover { color: var(--text-main); }
+
+    .badge { display: inline-block; padding: 2px 9px; border-radius: 9999px; font-size: 11px; font-weight: 600; }
+    .badge-purple { background: #ede9fe; color: #6d28d9; }
+    .badge-blue   { background: #dbeafe; color: #1d4ed8; }
+    .badge-green  { background: #dcfce7; color: #15803d; }
+    .badge-amber  { background: #fef3c7; color: #b45309; }
+    .badge-red    { background: #fee2e2; color: #b91c1c; }
+
+    .kpi-card { transition: transform 0.15s, box-shadow 0.15s; }
+    .kpi-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(124,58,237,0.1); }
+
+    .spinner { border: 3px solid #e5e7ef; border-top-color: var(--accent); border-radius: 50%; width: 28px; height: 28px; animation: spin 0.8s linear infinite; display: inline-block; }
     @keyframes spin { to { transform: rotate(360deg); } }
-    .kpi-card { transition: transform 0.15s; }
-    .kpi-card:hover { transform: translateY(-2px); }
-    table tbody tr:hover { background: #1e2537; }
+
+    .freshness-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; display: inline-block; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+    table { border-collapse: collapse; }
+    table thead th { background: #f8f9fc; }
+    table tbody tr:hover { background: #f5f3ff; }
+    table tbody tr { border-bottom: 1px solid var(--border); }
+
     ::-webkit-scrollbar { width: 6px; height: 6px; }
-    ::-webkit-scrollbar-track { background: #1a1f2e; }
-    ::-webkit-scrollbar-thumb { background: #3d4a6b; border-radius: 3px; }
+    ::-webkit-scrollbar-track { background: var(--bg-main); }
+    ::-webkit-scrollbar-thumb { background: #c4b5fd; border-radius: 3px; }
+
+    /* Login page gradient header */
+    .login-hero { background: linear-gradient(135deg, #1b0c3b 0%, #7c3aed 100%); }
     .freshness-dot { width: 8px; height: 8px; border-radius: 50%; background: #4ade80; display: inline-block; animation: pulse 2s infinite; }
     @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
   </style>
@@ -63,41 +93,45 @@ const CONFIG = {
 </div>
 
 <!-- LOGIN SCREEN -->
-<div id="login-screen" style="display:none;min-height:100vh;flex-direction:column;align-items:center;justify-content:center;gap:32px">
-  <div class="text-center">
-    <div class="text-4xl font-bold text-indigo-400 mb-2">Uberall</div>
-    <div class="text-xl text-slate-400">Support Operations Dashboard</div>
+<div id="login-screen" style="display:none;min-height:100vh;flex-direction:column">
+  <div class="login-hero flex flex-col items-center justify-center gap-3 py-16 px-6 text-center">
+    <div style="font-size:2rem;font-weight:800;color:#fff;letter-spacing:-0.5px">Uberall</div>
+    <div style="font-size:1.1rem;color:rgba(255,255,255,0.75);font-weight:500">Support Operations Dashboard</div>
   </div>
-  <div class="card p-10 flex flex-col items-center gap-6 w-full max-w-sm">
-    <p class="text-slate-400 text-sm text-center">Sign in with your Uberall Google account to access support metrics.</p>
-    <div id="google-btn"></div>
-    <div id="login-error" class="hidden text-red-400 text-xs text-center px-4"></div>
+  <div style="flex:1;background:var(--bg-main);display:flex;align-items:center;justify-content:center;padding:40px 16px">
+    <div class="card p-10 flex flex-col items-center gap-6 w-full max-w-sm">
+      <p style="color:var(--text-muted);font-size:0.875rem;text-align:center">Sign in with your Uberall Google account to access support metrics.</p>
+      <div id="google-btn"></div>
+      <div id="login-error" class="hidden" style="color:#b91c1c;font-size:0.75rem;text-align:center;padding:0 16px"></div>
+    </div>
   </div>
-  <div class="text-slate-600 text-xs">Access restricted to Uberall Operations team</div>
+  <div style="text-align:center;padding:16px;color:var(--text-muted);font-size:0.75rem">Access restricted to Uberall Operations team</div>
 </div>
 
 <!-- MAIN DASHBOARD -->
 <div id="dashboard" style="display:none;min-height:100vh;flex-direction:column">
 
   <!-- Top Bar -->
-  <header class="border-b border-slate-800 px-6 py-3 flex items-center justify-between sticky top-0 z-10" style="background:#0f1117">
-    <div class="flex items-center gap-4">
-      <span class="text-indigo-400 font-bold text-lg">Uberall</span>
-      <span class="text-slate-700">|</span>
-      <span class="text-slate-300 font-medium text-sm">Support Dashboard</span>
+  <header class="border-b px-6 py-3 flex items-center justify-between sticky top-0 z-10"
+    style="background:var(--bg-header);border-color:var(--border)">
+    <div class="flex items-center gap-3">
+      <span style="font-weight:800;font-size:1.1rem;color:var(--accent)">Uberall</span>
+      <span style="color:var(--border)">|</span>
+      <span style="font-weight:600;font-size:0.875rem;color:var(--text-main)">Support Dashboard</span>
     </div>
     <div class="flex items-center gap-4">
-      <div class="flex items-center gap-2 text-xs text-slate-500">
+      <div class="flex items-center gap-2" style="font-size:0.75rem;color:var(--text-muted)">
         <span class="freshness-dot"></span>
         <span id="last-updated"></span>
       </div>
-      <div id="user-avatar" class="w-7 h-7 rounded-full bg-indigo-600 flex items-center justify-center text-xs font-bold text-white"></div>
-      <button onclick="logout()" class="text-slate-500 hover:text-slate-300 text-xs transition-colors">Logout</button>
+      <div id="user-avatar" class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white"
+        style="background:var(--accent)"></div>
+      <button onclick="logout()" style="color:var(--text-muted);font-size:0.75rem" class="hover:opacity-70 transition-opacity">Logout</button>
     </div>
   </header>
 
   <!-- Tabs -->
-  <nav class="border-b border-slate-800 px-6 flex gap-8" style="background:#0f1117">
+  <nav class="px-6 flex gap-6 border-b" style="background:var(--bg-header);border-color:var(--border)">
     <button class="tab py-3 text-sm font-medium tab-active" data-tab="overview" onclick="switchTab('overview')">Overview</button>
     <button class="tab py-3 text-sm font-medium tab-inactive" data-tab="agents" onclick="switchTab('agents')">Agents</button>
     <button class="tab py-3 text-sm font-medium tab-inactive" data-tab="topics" onclick="switchTab('topics')">Topics</button>
@@ -110,45 +144,45 @@ const CONFIG = {
     <!-- Loading -->
     <div id="loading" style="display:none;flex-direction:column;align-items:center;justify-content:center;padding:80px 0;gap:16px">
       <div class="spinner"></div>
-      <div class="text-slate-400 text-sm">Loading support data…</div>
+      <div style="color:var(--text-muted);font-size:0.875rem">Loading support data…</div>
     </div>
 
     <!-- ── OVERVIEW ─────────────────────────────────────────────────────── -->
     <div id="tab-overview" class="space-y-5">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div class="card kpi-card p-5">
-          <div class="text-slate-500 text-xs uppercase tracking-wide mb-1">Total Cases</div>
-          <div id="kpi-total" class="text-3xl font-bold text-white">—</div>
-          <div id="kpi-period" class="text-slate-500 text-xs mt-1">—</div>
+          <div style="color:var(--text-muted);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Total Cases</div>
+          <div id="kpi-total" style="font-size:2rem;font-weight:800;color:var(--text-main)">—</div>
+          <div id="kpi-period" style="color:var(--text-muted);font-size:0.75rem;margin-top:4px">—</div>
         </div>
         <div class="card kpi-card p-5">
-          <div class="text-slate-500 text-xs uppercase tracking-wide mb-1">Open Cases</div>
-          <div id="kpi-open" class="text-3xl font-bold text-blue-400">—</div>
-          <div class="text-slate-500 text-xs mt-1">currently active</div>
+          <div style="color:var(--text-muted);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Open Cases</div>
+          <div id="kpi-open" style="font-size:2rem;font-weight:800;color:#1d4ed8">—</div>
+          <div style="color:var(--text-muted);font-size:0.75rem;margin-top:4px">currently active</div>
         </div>
         <div class="card kpi-card p-5">
-          <div class="text-slate-500 text-xs uppercase tracking-wide mb-1">Avg CSAT</div>
-          <div id="kpi-csat" class="text-3xl font-bold text-emerald-400">—</div>
-          <div id="kpi-csat-scale" class="text-slate-500 text-xs mt-1">—</div>
+          <div style="color:var(--text-muted);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Avg CSAT</div>
+          <div id="kpi-csat" style="font-size:2rem;font-weight:800;color:#15803d">—</div>
+          <div id="kpi-csat-scale" style="color:var(--text-muted);font-size:0.75rem;margin-top:4px">—</div>
         </div>
         <div class="card kpi-card p-5">
-          <div class="text-slate-500 text-xs uppercase tracking-wide mb-1">Queue Backlog</div>
-          <div id="kpi-queue" class="text-3xl font-bold text-amber-400">—</div>
-          <div class="text-slate-500 text-xs mt-1">unassigned cases</div>
+          <div style="color:var(--text-muted);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Queue Backlog</div>
+          <div id="kpi-queue" style="font-size:2rem;font-weight:800;color:#b45309">—</div>
+          <div style="color:var(--text-muted);font-size:0.75rem;margin-top:4px">unassigned cases</div>
         </div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="card p-5">
-          <h3 class="text-slate-300 font-medium text-sm mb-4">Case Status Distribution</h3>
+          <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:16px">Case Status Distribution</h3>
           <div style="height:260px;position:relative"><canvas id="chart-status"></canvas></div>
         </div>
         <div class="card p-5">
-          <h3 class="text-slate-300 font-medium text-sm mb-4">Case Types</h3>
+          <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:16px">Case Types</h3>
           <div style="height:260px;position:relative"><canvas id="chart-types"></canvas></div>
         </div>
       </div>
       <div class="card p-5">
-        <h3 class="text-slate-300 font-medium text-sm mb-4">Cases by Priority</h3>
+        <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:16px">Cases by Priority</h3>
         <div id="priority-table"></div>
       </div>
     </div>
@@ -157,16 +191,16 @@ const CONFIG = {
     <div id="tab-agents" class="hidden space-y-5">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="card p-5">
-          <h3 class="text-slate-300 font-medium text-sm mb-4">Cases per Agent</h3>
+          <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:16px">Cases per Agent</h3>
           <div style="height:320px;position:relative"><canvas id="chart-agents"></canvas></div>
         </div>
         <div class="card p-5">
-          <h3 class="text-slate-300 font-medium text-sm mb-4">CSAT per Agent <span class="text-slate-600 text-xs">(out of 10)</span></h3>
+          <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:16px">CSAT per Agent <span style="color:var(--text-muted);font-size:0.75rem;font-weight:400">(out of 10)</span></h3>
           <div style="height:320px;position:relative"><canvas id="chart-csat-agents"></canvas></div>
         </div>
       </div>
       <div class="card p-5">
-        <h3 class="text-slate-300 font-medium text-sm mb-4">Agent Performance</h3>
+        <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:16px">Agent Performance</h3>
         <div id="agent-table"></div>
       </div>
     </div>
@@ -175,16 +209,16 @@ const CONFIG = {
     <div id="tab-topics" class="hidden space-y-5">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="card p-5">
-          <h3 class="text-slate-300 font-medium text-sm mb-4">Case Type Distribution</h3>
+          <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:16px">Case Type Distribution</h3>
           <div style="height:300px;position:relative"><canvas id="chart-topic-types"></canvas></div>
         </div>
         <div class="card p-5">
-          <h3 class="text-slate-300 font-medium text-sm mb-4">Issue Types</h3>
+          <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:16px">Issue Types</h3>
           <div style="height:300px;position:relative"><canvas id="chart-issue-types"></canvas></div>
         </div>
       </div>
       <div class="card p-5">
-        <h3 class="text-slate-300 font-medium text-sm mb-4">Full Topic Breakdown</h3>
+        <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:16px">Full Topic Breakdown</h3>
         <div id="topic-table"></div>
       </div>
     </div>
@@ -193,10 +227,10 @@ const CONFIG = {
     <div id="tab-routing" class="hidden space-y-5">
       <div class="card p-5">
         <div class="flex items-center justify-between mb-1">
-          <h3 class="text-slate-300 font-medium text-sm">Cases Needing Routing to Other Departments</h3>
+          <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main)">Cases Needing Routing to Other Departments</h3>
           <span id="routing-count" class="badge badge-purple"></span>
         </div>
-        <p class="text-slate-500 text-xs mb-4">Risk and Termination cases in Support queue that belong to Account Management, Partner AM, or other departments.</p>
+        <p style="color:var(--text-muted);font-size:0.75rem;margin-bottom:16px">Risk and Termination cases in Support queue that belong to Account Management, Partner AM, or other departments.</p>
         <div id="routing-table"></div>
       </div>
     </div>
@@ -298,9 +332,9 @@ async function loadData() {
 // ── Charts ────────────────────────────────────────────────────────────────
 
 const COLORS = [
-  '#6366f1','#22d3ee','#34d399','#fb923c','#f472b6',
-  '#a78bfa','#38bdf8','#4ade80','#fbbf24','#f87171',
-  '#818cf8','#67e8f9','#86efac','#fcd34d','#f9a8d4',
+  '#7c3aed','#2563eb','#059669','#d97706','#db2777',
+  '#a78bfa','#60a5fa','#34d399','#fbbf24','#f472b6',
+  '#6d28d9','#1d4ed8','#047857','#b45309','#be185d',
 ];
 
 function makeChart(id, type, labels, values, opts = {}) {
@@ -328,13 +362,13 @@ function makeChart(id, type, labels, values, opts = {}) {
         legend: {
           display: type === 'doughnut',
           position: 'right',
-          labels: { color: '#94a3b8', font: { size: 11 }, boxWidth: 12, padding: 8 },
+          labels: { color: '#5b6882', font: { size: 11 }, boxWidth: 12, padding: 8 },
         },
         tooltip: { callbacks: { label: c => `  ${c.label}: ${c.parsed?.toLocaleString?.() ?? c.parsed}` } },
       },
       scales: isBar ? {
-        x: { ticks: { color: '#64748b', font: { size: 10 } }, grid: { color: '#1e2537' } },
-        y: { ticks: { color: '#64748b', font: { size: 10 } }, grid: { color: '#1e2537' }, ...(opts.yOpts || {}) },
+        x: { ticks: { color: '#5b6882', font: { size: 10 } }, grid: { color: '#e5e7ef' } },
+        y: { ticks: { color: '#5b6882', font: { size: 10 } }, grid: { color: '#e5e7ef' }, ...(opts.yOpts || {}) },
       } : undefined,
       indexAxis: opts.horizontal ? 'y' : 'x',
       ...opts.chart,
@@ -351,14 +385,14 @@ function makeTable(id, cols, rows, empty = 'No data available.') {
   el.innerHTML = `
     <table class="w-full text-sm">
       <thead>
-        <tr class="border-b border-slate-800">
-          ${cols.map(c => `<th class="text-left py-2 px-3 text-slate-500 font-medium text-xs uppercase tracking-wide">${c.label}</th>`).join('')}
+        <tr>
+          ${cols.map(c => `<th class="text-left py-2 px-3 font-600" style="color:var(--text-muted);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.07em;font-weight:600">${c.label}</th>`).join('')}
         </tr>
       </thead>
       <tbody>
         ${rows.map(row => `
-          <tr class="border-b border-slate-800/40 transition-colors">
-            ${cols.map(c => `<td class="py-2 px-3 text-slate-300">${c.render ? c.render(row) : (row[c.key] ?? '—')}</td>`).join('')}
+          <tr class="transition-colors" style="border-top:1px solid var(--border)">
+            ${cols.map(c => `<td class="py-2 px-3" style="color:var(--text-main)">${c.render ? c.render(row) : (row[c.key] ?? '—')}</td>`).join('')}
           </tr>
         `).join('')}
       </tbody>
@@ -434,7 +468,7 @@ function renderAgents() {
     withCsat.map(a => a.name.split(' ')[0]),
     withCsat.map(a => a.csat),
     {
-      colors: withCsat.map(a => a.csat >= 9 ? '#34d399' : a.csat >= 7 ? '#fbbf24' : '#f87171'),
+      colors: withCsat.map(a => a.csat >= 9 ? '#059669' : a.csat >= 7 ? '#d97706' : '#dc2626'),
       yOpts: { min: 0, max: 10 },
     });
 
@@ -443,8 +477,8 @@ function renderAgents() {
     { label: 'Cases', key: 'cases', render: r => r.cases.toLocaleString() },
     { label: 'CSAT', key: '_csat', render: r => {
       if (r.csat === null) return '<span class="text-slate-600">—</span>';
-      const c = r.csat >= 9 ? 'text-emerald-400' : r.csat >= 7 ? 'text-amber-400' : 'text-red-400';
-      return `<span class="${c} font-semibold">${r.csat} <span class="text-slate-600 font-normal text-xs">/ 10</span></span>`;
+      const c = r.csat >= 9 ? '#15803d' : r.csat >= 7 ? '#b45309' : '#b91c1c';
+      return `<span style="color:${c};font-weight:600">${r.csat} <span style="color:var(--text-muted);font-weight:400;font-size:0.75rem">/ 10</span></span>`;
     }},
     { label: '', key: '_type', render: r => r.name.includes('Queue')
       ? '<span class="badge badge-amber">Queue</span>'
