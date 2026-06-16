@@ -189,19 +189,29 @@ const CONFIG = {
 
     <!-- ── AGENTS ───────────────────────────────────────────────────────── -->
     <div id="tab-agents" class="hidden space-y-5">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- Agent KPI strip -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="agent-kpi-strip"></div>
+
+      <!-- Charts row -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div class="card p-5">
-          <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:16px">Cases per Agent</h3>
-          <div style="height:320px;position:relative"><canvas id="chart-agents"></canvas></div>
+          <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:16px">Cases Handled</h3>
+          <div style="height:280px;position:relative"><canvas id="chart-agents"></canvas></div>
         </div>
         <div class="card p-5">
-          <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:16px">CSAT per Agent <span style="color:var(--text-muted);font-size:0.75rem;font-weight:400">(out of 10)</span></h3>
-          <div style="height:320px;position:relative"><canvas id="chart-csat-agents"></canvas></div>
+          <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:16px">First Response Time <span style="color:var(--text-muted);font-size:0.75rem;font-weight:400">(hours)</span></h3>
+          <div style="height:280px;position:relative"><canvas id="chart-first-response"></canvas></div>
+        </div>
+        <div class="card p-5">
+          <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:16px">Resolution Time <span style="color:var(--text-muted);font-size:0.75rem;font-weight:400">(hours)</span></h3>
+          <div style="height:280px;position:relative"><canvas id="chart-resolution"></canvas></div>
         </div>
       </div>
+
+      <!-- Full agent table -->
       <div class="card p-5">
-        <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:16px">Agent Performance</h3>
-        <div id="agent-table"></div>
+        <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:16px">Agent Performance — Full View</h3>
+        <div id="agent-table" style="overflow-x:auto"></div>
       </div>
     </div>
 
@@ -456,34 +466,70 @@ function renderOverview() {
 
 function renderAgents() {
   const agents = data.agentData.filter(a => !a.name.includes('Queue') && !a.name.includes('Legal'));
+  const top = agents.slice(0, 12);
+  const firstName = a => a.name.split(' ')[0];
 
-  const top12 = agents.slice(0, 12);
-  makeChart('chart-agents', 'bar',
-    top12.map(a => a.name.split(' ')[0]),
-    top12.map(a => a.cases),
-    { horizontal: true });
+  // Team-level KPI strip
+  const teamAvg = (key) => {
+    const vals = agents.filter(a => a[key] !== null && a[key] !== undefined);
+    return vals.length ? vals.reduce((s, a) => s + a[key], 0) / vals.length : null;
+  };
+  const kpis = [
+    { label: 'Avg First Response', value: teamAvg('firstResponseHrs'), unit: 'hrs', good: v => v < 24 },
+    { label: 'Avg Resolution Time', value: teamAvg('resolutionHrs'), unit: 'hrs', good: v => v < 72 },
+    { label: 'Avg Touchpoints', value: teamAvg('touchpoints'), unit: '', good: v => v < 3 },
+    { label: 'Avg Complexity', value: teamAvg('complexity'), unit: '/ 6', good: () => true },
+  ];
+  document.getElementById('agent-kpi-strip').innerHTML = kpis.map(k => {
+    const val = k.value !== null ? k.value.toFixed(1) : '—';
+    const color = k.value !== null && k.good(k.value) ? '#15803d' : '#b45309';
+    return `<div class="card p-4">
+      <div style="color:var(--text-muted);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">${k.label}</div>
+      <div style="font-size:1.5rem;font-weight:800;color:${color}">${val}<span style="font-size:0.8rem;font-weight:400;color:var(--text-muted);margin-left:3px">${k.unit}</span></div>
+    </div>`;
+  }).join('');
 
-  const withCsat = top12.filter(a => a.csat !== null);
-  makeChart('chart-csat-agents', 'bar',
-    withCsat.map(a => a.name.split(' ')[0]),
-    withCsat.map(a => a.csat),
-    {
-      colors: withCsat.map(a => a.csat >= 9 ? '#059669' : a.csat >= 7 ? '#d97706' : '#dc2626'),
-      yOpts: { min: 0, max: 10 },
-    });
+  // Cases chart
+  makeChart('chart-agents', 'bar', top.map(firstName), top.map(a => a.cases), { horizontal: true });
+
+  // First response (colour-coded: green ≤24h, amber ≤48h, red >48h)
+  makeChart('chart-first-response', 'bar',
+    top.map(firstName), top.map(a => a.firstResponseHrs),
+    { colors: top.map(a => a.firstResponseHrs <= 24 ? '#059669' : a.firstResponseHrs <= 48 ? '#d97706' : '#dc2626') });
+
+  // Resolution time (green ≤72h, amber ≤120h, red >120h)
+  makeChart('chart-resolution', 'bar',
+    top.map(firstName), top.map(a => a.resolutionHrs),
+    { colors: top.map(a => a.resolutionHrs <= 72 ? '#059669' : a.resolutionHrs <= 120 ? '#d97706' : '#dc2626') });
+
+  // Full agent table
+  const hrs = v => (v !== null && v !== undefined) ? `${v.toFixed(1)}h` : '—';
+  const complexityBar = r => {
+    if (r.complexity === undefined) return '—';
+    const pct = (r.complexity / 6 * 100).toFixed(0);
+    const c = r.complexity >= 4 ? '#dc2626' : r.complexity >= 2.5 ? '#d97706' : '#7c3aed';
+    return `<div style="display:flex;align-items:center;gap:6px">
+      <div style="width:56px;height:5px;background:#e5e7ef;border-radius:3px;flex-shrink:0">
+        <div style="width:${pct}%;height:5px;background:${c};border-radius:3px"></div>
+      </div>
+      <span style="font-size:0.75rem">${r.complexity.toFixed(2)}</span>
+    </div>`;
+  };
 
   makeTable('agent-table', [
     { label: 'Agent', key: 'name' },
     { label: 'Cases', key: 'cases', render: r => r.cases.toLocaleString() },
+    { label: 'First Resp.', key: '_fr', render: r => hrs(r.firstResponseHrs) },
+    { label: 'Avg Resp.', key: '_ar', render: r => hrs(r.ongoingResponseHrs) },
+    { label: 'Resolution', key: '_res', render: r => hrs(r.resolutionHrs) },
+    { label: 'Touchpoints', key: 'touchpoints', render: r => r.touchpoints !== undefined ? r.touchpoints.toFixed(1) : '—' },
     { label: 'CSAT', key: '_csat', render: r => {
-      if (r.csat === null) return '<span class="text-slate-600">—</span>';
+      if (!r.csat) return '<span style="color:var(--text-muted)">—</span>';
       const c = r.csat >= 9 ? '#15803d' : r.csat >= 7 ? '#b45309' : '#b91c1c';
-      return `<span style="color:${c};font-weight:600">${r.csat} <span style="color:var(--text-muted);font-weight:400;font-size:0.75rem">/ 10</span></span>`;
+      return `<span style="color:${c};font-weight:600">${r.csat}<span style="color:var(--text-muted);font-weight:400;font-size:0.7rem">/10</span></span>`;
     }},
-    { label: '', key: '_type', render: r => r.name.includes('Queue')
-      ? '<span class="badge badge-amber">Queue</span>'
-      : '' },
-  ], data.agentData);
+    { label: 'Complexity (0–6)', key: '_cx', render: complexityBar },
+  ], agents);
 }
 
 function renderTopics() {
