@@ -2056,23 +2056,33 @@
   "complexityBuckets": [
     {
       "label": "0–2",
-      "value": 522
+      "value": 520,
+      "avgV1": 3.67,
+      "avgHBR": 11.0
     },
     {
       "label": "2–4",
-      "value": 565
+      "value": 565,
+      "avgV1": 3.64,
+      "avgHBR": 24.9
     },
     {
       "label": "4–6",
-      "value": 217
+      "value": 219,
+      "avgV1": 3.73,
+      "avgHBR": 35.0
     },
     {
       "label": "6–8",
-      "value": 294
+      "value": 294,
+      "avgV1": 3.6,
+      "avgHBR": 49.2
     },
     {
       "label": "8–10",
-      "value": 271
+      "value": 271,
+      "avgV1": 3.7,
+      "avgHBR": 71.0
     }
   ]
 }

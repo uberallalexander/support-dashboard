@@ -218,6 +218,7 @@ const CONFIG = {
         <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:4px">Cases by Conversation Complexity</h3>
         <p style="font-size:0.72rem;color:var(--text-muted);margin-bottom:14px">Distribution of individual case scores (0–10) across all agents</p>
         <div style="height:200px;position:relative"><canvas id="chart-complexity-dist"></canvas></div>
+        <div id="complexity-bucket-table"></div>
       </div>
     </div>
 
@@ -643,6 +644,29 @@ function renderOverview() {
     makeChart('chart-complexity-dist', 'bar',
       buckets.map(b => b.label), buckets.map(b => b.value),
       { colors: bucketColors });
+
+    const thS = `color:var(--text-muted);font-size:0.68rem;text-transform:uppercase;letter-spacing:0.06em;font-weight:600;padding:6px 12px`;
+    const tdS = `padding:6px 12px;font-size:0.8rem;text-align:center;border-top:1px solid var(--border)`;
+    document.getElementById('complexity-bucket-table').innerHTML = `
+      <table style="width:100%;border-collapse:collapse;margin-top:12px">
+        <thead><tr>
+          <th style="${thS};text-align:left">Bucket</th>
+          <th style="${thS};text-align:center">Cases</th>
+          <th style="${thS};text-align:center">Avg V1</th>
+          <th style="${thS};text-align:center">Avg Resolution<br><span style="font-weight:400;text-transform:none;letter-spacing:0">(excl. On Hold)</span></th>
+        </tr></thead>
+        <tbody>${buckets.map((b, i) => {
+          const color = bucketColors[i];
+          const hbr = b.avgHBR != null ? `${b.avgHBR}h` : '—';
+          const v1  = b.avgV1  != null ? b.avgV1.toFixed(2) : '—';
+          return `<tr>
+            <td style="${tdS};text-align:left"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:${color};margin-right:6px"></span><strong>${b.label}</strong></td>
+            <td style="${tdS}">${b.value.toLocaleString()}</td>
+            <td style="${tdS}">${v1} <span style="color:var(--text-muted);font-size:0.7rem">/ 6</span></td>
+            <td style="${tdS};font-weight:600;color:${b.avgHBR > 48 ? '#b91c1c' : b.avgHBR > 24 ? '#b45309' : '#15803d'}">${hbr}</td>
+          </tr>`;
+        }).join('')}</tbody>
+      </table>`;
   }
 }
 
