@@ -120,6 +120,14 @@ const CONFIG = {
       <span style="font-weight:600;font-size:0.875rem;color:var(--text-main)">Support Dashboard</span>
     </div>
     <div class="flex items-center gap-4">
+      <label class="flex items-center gap-2 cursor-pointer select-none" style="font-size:0.75rem;color:var(--text-muted)" title="Spam cases are automated directory-sync noise — excluding them shows true support load">
+        <div style="position:relative;width:32px;height:18px">
+          <input type="checkbox" id="toggle-spam" onchange="onSpamToggle()" style="opacity:0;width:0;height:0;position:absolute">
+          <span id="toggle-spam-track" style="position:absolute;inset:0;background:#e5e7ef;border-radius:9px;transition:background 0.2s"></span>
+          <span id="toggle-spam-thumb" style="position:absolute;top:2px;left:2px;width:14px;height:14px;background:#fff;border-radius:50%;transition:transform 0.2s;box-shadow:0 1px 3px rgba(0,0,0,0.2)"></span>
+        </div>
+        <span>Excl. Spam</span>
+      </label>
       <div class="flex items-center gap-2" style="font-size:0.75rem;color:var(--text-muted)">
         <span class="freshness-dot"></span>
         <span id="last-updated"></span>
@@ -409,14 +417,41 @@ function makeTable(id, cols, rows, empty = 'No data available.') {
     </table>`;
 }
 
+// ── Spam filter ───────────────────────────────────────────────────────────
+
+let excludeSpam = false;
+
+function onSpamToggle() {
+  excludeSpam = document.getElementById('toggle-spam').checked;
+  const track = document.getElementById('toggle-spam-track');
+  const thumb = document.getElementById('toggle-spam-thumb');
+  track.style.background = excludeSpam ? 'var(--accent)' : '#e5e7ef';
+  thumb.style.transform = excludeSpam ? 'translateX(14px)' : 'translateX(0)';
+  renderAll();
+}
+
+function filteredData() {
+  if (!excludeSpam) return data;
+  const spamCount = (data.typeData.find(r => r.label === 'Spam') || {}).value || 0;
+  return {
+    ...data,
+    typeData: data.typeData.filter(r => r.label !== 'Spam'),
+    kpis: {
+      ...data.kpis,
+      total: data.kpis.total - spamCount,
+    },
+  };
+}
+
 // ── Render ────────────────────────────────────────────────────────────────
 
 function renderAll() {
-  const { kpis, periodLabel, lastUpdated } = data;
+  const d = filteredData();
+  const { kpis, periodLabel, lastUpdated } = d;
 
   // KPIs
   document.getElementById('kpi-total').textContent = kpis.total.toLocaleString();
-  document.getElementById('kpi-period').textContent = periodLabel;
+  document.getElementById('kpi-period').textContent = periodLabel + (excludeSpam ? ' · excl. Spam' : '');
   document.getElementById('kpi-open').textContent = kpis.open.toLocaleString();
   document.getElementById('kpi-csat').textContent = kpis.avgCsat;
   document.getElementById('kpi-csat-scale').textContent = `out of ${kpis.csatScale}`;
@@ -434,7 +469,7 @@ function renderAll() {
 }
 
 function renderOverview() {
-  const { statusData, typeData, priorityData } = data;
+  const { statusData, typeData, priorityData } = filteredData();
 
   makeChart('chart-status', 'doughnut',
     statusData.map(r => r.label), statusData.map(r => r.value));
@@ -533,7 +568,7 @@ function renderAgents() {
 }
 
 function renderTopics() {
-  const { typeData, issueTypeData } = data;
+  const { typeData, issueTypeData } = filteredData();
 
   makeChart('chart-topic-types', 'doughnut',
     typeData.map(r => r.label), typeData.map(r => r.value));
