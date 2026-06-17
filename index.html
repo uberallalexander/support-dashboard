@@ -640,30 +640,41 @@ function renderOverview() {
   const buckets = data.complexityBuckets;
   if (buckets && buckets.length) {
     document.getElementById('complexity-dist-card').style.display = '';
-    const bucketColors = ['#059669','#65a30d','#d97706','#ea580c','#dc2626'];
+    // Colour gradient: green (0) → amber (5) → red (10)
+    const scoreColor = i => {
+      const stops = [[5,150,100],[101,163,60],[217,119,6],[234,88,12],[185,28,28]];
+      const t = i / 10;
+      const si = Math.min(Math.floor(t * (stops.length-1)), stops.length-2);
+      const u = t * (stops.length-1) - si;
+      const [r1,g1,b1] = stops[si], [r2,g2,b2] = stops[si+1];
+      return `rgb(${Math.round(r1+(r2-r1)*u)},${Math.round(g1+(g2-g1)*u)},${Math.round(b1+(b2-b1)*u)})`;
+    };
+    const colors = buckets.map((b,i) => scoreColor(parseInt(b.label)));
     makeChart('chart-complexity-dist', 'bar',
       buckets.map(b => b.label), buckets.map(b => b.value),
-      { colors: bucketColors });
+      { colors });
 
-    const thS = `color:var(--text-muted);font-size:0.68rem;text-transform:uppercase;letter-spacing:0.06em;font-weight:600;padding:6px 12px`;
-    const tdS = `padding:6px 12px;font-size:0.8rem;text-align:center;border-top:1px solid var(--border)`;
+    const thS = `color:var(--text-muted);font-size:0.68rem;text-transform:uppercase;letter-spacing:0.06em;font-weight:600;padding:5px 10px`;
+    const tdS = (center) => `padding:5px 10px;font-size:0.8rem;text-align:${center?'center':'left'};border-top:1px solid var(--border)`;
     document.getElementById('complexity-bucket-table').innerHTML = `
-      <table style="width:100%;border-collapse:collapse;margin-top:12px">
+      <table style="width:100%;border-collapse:collapse;margin-top:14px">
         <thead><tr>
-          <th style="${thS};text-align:left">Bucket</th>
+          <th style="${thS}">Score</th>
           <th style="${thS};text-align:center">Cases</th>
-          <th style="${thS};text-align:center">Avg V1</th>
-          <th style="${thS};text-align:center">Avg Resolution<br><span style="font-weight:400;text-transform:none;letter-spacing:0">(excl. On Hold)</span></th>
+          <th style="${thS};text-align:center">Avg V1 <span style="font-weight:400;text-transform:none">/6</span></th>
+          <th style="${thS};text-align:center">Avg Resolution <span style="font-weight:400;text-transform:none">(excl. On Hold)</span></th>
         </tr></thead>
         <tbody>${buckets.map((b, i) => {
-          const color = bucketColors[i];
+          const color = scoreColor(parseInt(b.label));
           const hbr = b.avgHBR != null ? `${b.avgHBR}h` : '—';
-          const v1  = b.avgV1  != null ? b.avgV1.toFixed(2) : '—';
-          return `<tr>
-            <td style="${tdS};text-align:left"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:${color};margin-right:6px"></span><strong>${b.label}</strong></td>
-            <td style="${tdS}">${b.value.toLocaleString()}</td>
-            <td style="${tdS}">${v1} <span style="color:var(--text-muted);font-size:0.7rem">/ 6</span></td>
-            <td style="${tdS};font-weight:600;color:${b.avgHBR > 48 ? '#b91c1c' : b.avgHBR > 24 ? '#b45309' : '#15803d'}">${hbr}</td>
+          const hbrColor = b.avgHBR > 48 ? '#b91c1c' : b.avgHBR > 24 ? '#b45309' : '#15803d';
+          const v1 = b.avgV1 != null ? b.avgV1.toFixed(2) : '—';
+          const dim = b.value === 0 ? 'opacity:0.35' : '';
+          return `<tr style="${dim}">
+            <td style="${tdS(false)}"><span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:${color};color:#fff;font-size:0.7rem;font-weight:700;margin-right:8px">${b.label}</span></td>
+            <td style="${tdS(true)}">${b.value > 0 ? b.value.toLocaleString() : '—'}</td>
+            <td style="${tdS(true)}">${v1}</td>
+            <td style="${tdS(true)};font-weight:${b.value>0?'600':'400'};color:${b.value>0?hbrColor:'var(--text-muted)'}">${hbr}</td>
           </tr>`;
         }).join('')}</tbody>
       </table>`;

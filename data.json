@@ -2055,34 +2055,70 @@
   "routingData": [],
   "complexityBuckets": [
     {
-      "label": "0–2",
-      "value": 520,
-      "avgV1": 3.67,
-      "avgHBR": 11.0
+      "label": "0",
+      "value": 148,
+      "avgV1": 3.7,
+      "avgHBR": 9.7
     },
     {
-      "label": "2–4",
-      "value": 565,
-      "avgV1": 3.64,
-      "avgHBR": 24.9
+      "label": "1",
+      "value": 372,
+      "avgV1": 3.66,
+      "avgHBR": 11.6
     },
     {
-      "label": "4–6",
+      "label": "2",
+      "value": 295,
+      "avgV1": 3.65,
+      "avgHBR": 21.7
+    },
+    {
+      "label": "3",
+      "value": 0,
+      "avgV1": null,
+      "avgHBR": null
+    },
+    {
+      "label": "4",
+      "value": 270,
+      "avgV1": 3.63,
+      "avgHBR": 28.2
+    },
+    {
+      "label": "5",
       "value": 219,
       "avgV1": 3.73,
       "avgHBR": 35.0
     },
     {
-      "label": "6–8",
-      "value": 294,
-      "avgV1": 3.6,
-      "avgHBR": 49.2
+      "label": "6",
+      "value": 165,
+      "avgV1": 3.63,
+      "avgHBR": 54.9
     },
     {
-      "label": "8–10",
-      "value": 271,
-      "avgV1": 3.7,
-      "avgHBR": 71.0
+      "label": "7",
+      "value": 0,
+      "avgV1": null,
+      "avgHBR": null
+    },
+    {
+      "label": "8",
+      "value": 129,
+      "avgV1": 3.57,
+      "avgHBR": 41.4
+    },
+    {
+      "label": "9",
+      "value": 99,
+      "avgV1": 3.74,
+      "avgHBR": 60.9
+    },
+    {
+      "label": "10",
+      "value": 172,
+      "avgV1": 3.67,
+      "avgHBR": 76.7
     }
   ]
 }
