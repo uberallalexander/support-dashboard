@@ -234,6 +234,33 @@ const CONFIG = {
         </div>
       </div>
 
+      <!-- Complexity legend -->
+      <div class="card p-4" id="complexity-legend" style="border-left:3px solid var(--accent)">
+        <div style="font-weight:600;font-size:0.8rem;color:var(--text-main);margin-bottom:8px">How complexity scores are calculated</div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" style="font-size:0.75rem;color:var(--text-muted)">
+          <div>
+            <div style="font-weight:600;color:var(--text-main);margin-bottom:4px">V1 — Product × Issue Type (0–6)</div>
+            <div>Each case scored on two axes at creation time:</div>
+            <div style="margin-top:4px;display:flex;gap:16px">
+              <div><b style="color:var(--text-main)">Product</b><br>Platform → 3<br>Listings / Locator → 2<br>Analytics / Social / Reputation → 1<br>Spam → 0</div>
+              <div><b style="color:var(--text-main)">Issue Type</b><br>UI Defect / Creation → 3<br>Failed Push / Missing Data / Directory → 2<br>Update / Login / How To → 1<br>How To → 0</div>
+            </div>
+            <div style="margin-top:6px;opacity:0.8">Score = product + issue type. Averaged across all agent cases (weighted by count).</div>
+          </div>
+          <div>
+            <div style="font-weight:600;color:var(--text-main);margin-bottom:4px">Conversation Complexity (0–10)</div>
+            <div>Computed from actual email conversations:</div>
+            <div style="margin-top:6px;background:var(--bg-main);border-radius:6px;padding:8px;font-family:monospace;font-size:0.72rem;color:var(--text-main)">
+              raw = (avg agent msgs × 1.5)<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;+ (avg msg length ÷ 150)<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;+ (avg questions asked × 0.8)<br><br>
+              score = normalize(raw, 0–10)
+            </div>
+            <div style="margin-top:6px;opacity:0.8">Quoted reply text stripped before measuring length. Higher score = more messages, longer explanations, more clarifying questions.</div>
+          </div>
+        </div>
+      </div>
+
       <!-- Full agent table -->
       <div class="card p-5">
         <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:16px">Agent Performance — Full View</h3>
@@ -619,13 +646,23 @@ function renderAgents() {
       const c = r.csat >= 9 ? '#15803d' : r.csat >= 7 ? '#b45309' : '#b91c1c';
       return `<span style="color:${c};font-weight:600">${r.csat}<span style="color:var(--text-muted);font-weight:400;font-size:0.7rem">/10</span></span>`;
     }},
-    { label: 'Complexity v1 (product+issue)', key: '_cx', render: r => {
+    { label: 'Complexity V1', key: '_cx', render: r => {
       const c = r.complexity >= 3 ? '#dc2626' : r.complexity >= 2.5 ? '#d97706' : '#7c3aed';
       return mkBar(r.complexity, 4, c);
     }},
-    { label: 'Complexity v2 (+touchpoints)', key: '_cx2', render: r => {
-      const c = r.complexityV2 >= 3.5 ? '#dc2626' : r.complexityV2 >= 2.8 ? '#d97706' : '#059669';
-      return mkBar(r.complexityV2, 4, c);
+    { label: 'Conv. Complexity (0–10)', key: '_conv', render: r => {
+      if (r.conversationComplexity === undefined) return '—';
+      const c = r.conversationComplexity >= 7 ? '#dc2626' : r.conversationComplexity >= 4 ? '#d97706' : '#059669';
+      const tooltip = r.convAvgMsgs !== undefined
+        ? `title="Msgs/case: ${r.convAvgMsgs} · Avg length: ${r.convAvgLength} chars · Questions/case: ${r.convAvgQuestions}"`
+        : '';
+      const pct = (r.conversationComplexity / 10 * 100).toFixed(0);
+      return `<div style="display:flex;align-items:center;gap:6px" ${tooltip}>
+        <div style="width:52px;height:5px;background:#e5e7ef;border-radius:3px;flex-shrink:0">
+          <div style="width:${pct}%;height:5px;background:${c};border-radius:3px"></div>
+        </div>
+        <span style="font-size:0.75rem">${r.conversationComplexity.toFixed(2)}</span>
+      </div>`;
     }},
   ], agents);
 }
