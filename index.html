@@ -193,6 +193,23 @@ const CONFIG = {
         <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:16px">Cases by Priority</h3>
         <div id="priority-table"></div>
       </div>
+      <!-- Language + Region row -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="card p-5">
+          <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:16px">Cases by Language</h3>
+          <div style="height:220px;position:relative"><canvas id="chart-language"></canvas></div>
+        </div>
+        <div class="card p-5">
+          <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:16px">Cases by Support Region</h3>
+          <div style="height:220px;position:relative"><canvas id="chart-region"></canvas></div>
+        </div>
+      </div>
+      <!-- Hourly intake -->
+      <div class="card p-5">
+        <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:4px">Case Intake by Hour of Day</h3>
+        <p style="font-size:0.72rem;color:var(--text-muted);margin-bottom:14px">UTC — add +2h for Berlin, +1h for London</p>
+        <div style="height:200px;position:relative"><canvas id="chart-hourly"></canvas></div>
+      </div>
     </div>
 
     <!-- ── AGENTS ───────────────────────────────────────────────────────── -->
@@ -490,13 +507,37 @@ function renderOverview() {
       const pct = ((r.value / total) * 100).toFixed(1);
       const c = priColors[r.label] || '#6366f1';
       return `<div style="display:flex;align-items:center;gap:8px">
-        <div style="width:120px;height:6px;background:#1e2537;border-radius:3px">
+        <div style="width:120px;height:6px;background:#e5e7ef;border-radius:3px">
           <div style="width:${pct}%;height:6px;background:${c};border-radius:3px"></div>
         </div>
-        <span class="text-slate-400 text-xs">${pct}%</span>
+        <span style="color:var(--text-muted);font-size:0.75rem">${pct}%</span>
       </div>`;
     }},
   ], priorityData);
+
+  // Language chart
+  const langColors = ['#7c3aed','#2563eb','#059669','#d97706','#db2777'];
+  const { languageData, regionData, hourlyData } = data;
+  if (languageData) {
+    makeChart('chart-language', 'doughnut',
+      languageData.map(r => r.label), languageData.map(r => r.value),
+      { colors: langColors });
+  }
+  if (regionData) {
+    makeChart('chart-region', 'bar',
+      regionData.map(r => r.label), regionData.map(r => r.value),
+      { colors: ['#7c3aed','#2563eb','#94a3b8'] });
+  }
+  if (hourlyData) {
+    // Peak hour annotation
+    const peak = hourlyData.reduce((m, r) => r.value > m.value ? r : m, hourlyData[0]);
+    const hourlyColors = hourlyData.map(r =>
+      r.hour === peak.hour ? '#7c3aed' : (r.value >= peak.value * 0.75 ? '#a78bfa' : '#ddd6fe'));
+    makeChart('chart-hourly', 'bar',
+      hourlyData.map(r => `${String(r.hour).padStart(2,'0')}:00`),
+      hourlyData.map(r => r.value),
+      { colors: hourlyColors });
+  }
 }
 
 function renderAgents() {
@@ -539,15 +580,14 @@ function renderAgents() {
 
   // Full agent table
   const hrs = v => (v !== null && v !== undefined) ? `${v.toFixed(1)}h` : '—';
-  const complexityBar = r => {
-    if (r.complexity === undefined) return '—';
-    const pct = (r.complexity / 6 * 100).toFixed(0);
-    const c = r.complexity >= 4 ? '#dc2626' : r.complexity >= 2.5 ? '#d97706' : '#7c3aed';
+  const mkBar = (val, max, color) => {
+    if (val === undefined || val === null) return '—';
+    const pct = Math.min(val / max * 100, 100).toFixed(0);
     return `<div style="display:flex;align-items:center;gap:6px">
-      <div style="width:56px;height:5px;background:#e5e7ef;border-radius:3px;flex-shrink:0">
-        <div style="width:${pct}%;height:5px;background:${c};border-radius:3px"></div>
+      <div style="width:52px;height:5px;background:#e5e7ef;border-radius:3px;flex-shrink:0">
+        <div style="width:${pct}%;height:5px;background:${color};border-radius:3px"></div>
       </div>
-      <span style="font-size:0.75rem">${r.complexity.toFixed(2)}</span>
+      <span style="font-size:0.75rem">${val.toFixed(2)}</span>
     </div>`;
   };
 
@@ -563,7 +603,14 @@ function renderAgents() {
       const c = r.csat >= 9 ? '#15803d' : r.csat >= 7 ? '#b45309' : '#b91c1c';
       return `<span style="color:${c};font-weight:600">${r.csat}<span style="color:var(--text-muted);font-weight:400;font-size:0.7rem">/10</span></span>`;
     }},
-    { label: 'Complexity (0–6)', key: '_cx', render: complexityBar },
+    { label: 'Complexity v1 (0–6)', key: '_cx', render: r => {
+      const c = r.complexity >= 4 ? '#dc2626' : r.complexity >= 2.5 ? '#d97706' : '#7c3aed';
+      return mkBar(r.complexity, 6, c);
+    }},
+    { label: 'Complexity v2 (0–9)', key: '_cx2', render: r => {
+      const c = r.complexityV2 >= 5 ? '#dc2626' : r.complexityV2 >= 3 ? '#d97706' : '#059669';
+      return mkBar(r.complexityV2, 9, c);
+    }},
   ], agents);
 }
 
