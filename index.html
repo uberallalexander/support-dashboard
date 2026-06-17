@@ -611,9 +611,24 @@ function renderOverview() {
   }
 }
 
+let agentSortKey = 'cases';
+let agentSortDir = -1;
+window.sortAgentTable = function(key) {
+  if (agentSortKey === key) agentSortDir *= -1;
+  else { agentSortKey = key; agentSortDir = -1; }
+  renderAgents();
+};
+
 function renderAgents() {
-  const agents = data.agentData.filter(a => !a.name.includes('Queue') && !a.name.includes('Legal'));
-  const top = agents.slice(0, 12);
+  const allAgents = data.agentData.filter(a => !a.name.includes('Queue') && !a.name.includes('Legal'));
+  // Sort by selected column, nulls last
+  const agents = [...allAgents].sort((a, b) => {
+    let av = a[agentSortKey], bv = b[agentSortKey];
+    if (av === null || av === undefined) return 1;
+    if (bv === null || bv === undefined) return -1;
+    return (av < bv ? -1 : av > bv ? 1 : 0) * agentSortDir;
+  });
+  const top = allAgents.slice(0, 12);
   const firstName = a => a.name.split(' ')[0];
 
   // Team-level KPI strip
@@ -662,24 +677,39 @@ function renderAgents() {
     </div>`;
   };
 
+  const convTip = `<span onclick="event.stopPropagation()" style="position:relative;display:inline-block;cursor:help;margin-left:3px" onmouseenter="this.querySelector('.conv-tip').style.display='block'" onmouseleave="this.querySelector('.conv-tip').style.display='none'">&#9432;<span class="conv-tip" style="display:none;position:absolute;left:0;top:1.4em;z-index:99;background:#1b0c3b;color:#fff;font-size:0.68rem;font-weight:400;border-radius:6px;padding:8px 10px;width:240px;white-space:normal;line-height:1.5;box-shadow:0 4px 16px rgba(0,0,0,0.18)">Score = avg of 3 normalised signals (0–10 each):<br>① Agent messages / case<br>② Avg agent message length in chars<br>③ Number of ? per case<br>Each signal is min-max scaled across all agents.</span></span>`;
+  const sortIcon = key => {
+    if (agentSortKey !== key) return `<span style="color:#cbd5e1;margin-left:3px">⇅</span>`;
+    return `<span style="color:var(--accent);margin-left:3px">${agentSortDir === -1 ? '↓' : '↑'}</span>`;
+  };
+  const sth = (label, key) => `<span onclick="event.stopPropagation();sortAgentTable('${key}')" style="cursor:pointer;user-select:none">${label}${sortIcon(key)}</span>`;
+
   makeTable('agent-table', [
     { label: 'Agent', key: 'name' },
-    { label: 'Cases', key: 'cases', render: r => r.cases.toLocaleString() },
-    { label: 'First Resp.', key: '_fr', render: r => hrs(r.firstResponseHrs) },
-    { label: 'Avg Resp.', key: '_ar', render: r => hrs(r.ongoingResponseHrs) },
-    { label: 'Resolution', key: '_res', render: r => hrs(r.resolutionHrs) },
-    { label: 'Touchpoints', key: 'touchpoints', render: r => r.touchpoints !== undefined ? r.touchpoints.toFixed(1) : '—' },
-    { label: 'CSAT', key: '_csat', render: r => {
-      const score = r.csat ? `<span style="font-weight:600;color:${r.csat >= 9 ? '#15803d' : r.csat >= 7 ? '#b45309' : '#b91c1c'}">${r.csat}<span style="color:var(--text-muted);font-weight:400;font-size:0.7rem">/10</span></span>` : '';
-      const pct = r.csatPct !== null && r.csatPct !== undefined ? `<span style="font-size:0.72rem;color:var(--text-muted);margin-left:4px">${r.csatPct}%</span>` : '';
-      const count = r.csatTotal ? `<span style="font-size:0.68rem;color:var(--text-muted);margin-left:3px">(${r.csatTotal})</span>` : '';
-      return score ? `${score}${pct}${count}` : '<span style="color:var(--text-muted)">—</span>';
+    { label: sth('Cases', 'cases'), key: 'cases', render: r => r.cases.toLocaleString() },
+    { label: sth('First Resp.', 'firstResponseHrs'), key: '_fr', render: r => hrs(r.firstResponseHrs) },
+    { label: sth('Avg Resp.', 'ongoingResponseHrs'), key: '_ar', render: r => hrs(r.ongoingResponseHrs) },
+    { label: sth('Resolution', 'resolutionHrs'), key: '_res', render: r => hrs(r.resolutionHrs) },
+    { label: sth('Touchpoints', 'touchpoints'), key: 'touchpoints', render: r => r.touchpoints !== undefined ? r.touchpoints.toFixed(1) : '—' },
+    { label: sth('CSAT Score', 'csat'), key: '_csatScore', render: r => {
+      if (!r.csat) return '<span style="color:var(--text-muted)">—</span>';
+      const c = r.csat >= 9 ? '#15803d' : r.csat >= 7 ? '#b45309' : '#b91c1c';
+      return `<span style="font-weight:600;color:${c}">${r.csat}<span style="color:var(--text-muted);font-weight:400;font-size:0.7rem">/10</span></span>`;
     }},
-    { label: 'Complexity V1', key: '_cx', render: r => {
+    { label: sth('CSAT %', 'csatPct'), key: '_csatPct', render: r => {
+      if (r.csatPct === null || r.csatPct === undefined) return '<span style="color:var(--text-muted)">—</span>';
+      const c = r.csatPct >= 90 ? '#15803d' : r.csatPct >= 70 ? '#b45309' : '#b91c1c';
+      return `<span style="font-weight:600;color:${c}">${r.csatPct}%</span>`;
+    }},
+    { label: sth('CSAT Received', 'csatTotal'), key: '_csatTotal', render: r => {
+      if (!r.csatTotal) return '<span style="color:var(--text-muted)">—</span>';
+      return `<span style="font-weight:600">${r.csatTotal}</span>`;
+    }},
+    { label: sth('Complexity V1', 'complexity'), key: '_cx', render: r => {
       const c = r.complexity >= 3 ? '#dc2626' : r.complexity >= 2.5 ? '#d97706' : '#7c3aed';
       return mkBar(r.complexity, 4, c);
     }},
-    { label: 'Conv. Complexity (0–10) <span onclick="event.stopPropagation()" style="position:relative;display:inline-block;cursor:help" onmouseenter="this.querySelector(\'.conv-tip\').style.display=\'block\'" onmouseleave="this.querySelector(\'.conv-tip\').style.display=\'none\'">&#9432;<span class="conv-tip" style="display:none;position:absolute;left:0;top:1.4em;z-index:99;background:#1b0c3b;color:#fff;font-size:0.68rem;font-weight:400;border-radius:6px;padding:8px 10px;width:240px;white-space:normal;line-height:1.5;box-shadow:0 4px 16px rgba(0,0,0,0.18)">Score = avg of 3 normalised signals (0–10 each):<br>① Agent messages / case (higher = more back-and-forth)<br>② Avg agent message length in chars (longer = more explanation needed)<br>③ Number of ? per case (more questions = more clarification)<br>Each signal is min-max scaled across all agents.</span></span>', key: '_conv', render: r => {
+    { label: `${sth('Conv. Complexity', 'conversationComplexity')}${convTip}`, key: '_conv', render: r => {
       if (r.conversationComplexity === undefined) return '—';
       const c = r.conversationComplexity >= 7 ? '#dc2626' : r.conversationComplexity >= 4 ? '#d97706' : '#059669';
       const tooltip = r.convAvgMsgs !== undefined
@@ -693,7 +723,7 @@ function renderAgents() {
         <span style="font-size:0.75rem">${r.conversationComplexity.toFixed(2)}</span>
       </div>`;
     }},
-  ], agents, true);
+  ], agents, 'No agents found.', true);
 }
 
 function renderTopics() {
