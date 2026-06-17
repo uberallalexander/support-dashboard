@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;800&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2/dist/chartjs-plugin-datalabels.min.js"></script>
   <script src="https://accounts.google.com/gsi/client" async></script>
   <style>
     :root {
@@ -120,14 +121,14 @@ const CONFIG = {
       <span style="font-weight:600;font-size:0.875rem;color:var(--text-main)">Support Dashboard</span>
     </div>
     <div class="flex items-center gap-4">
-      <label class="flex items-center gap-2 cursor-pointer select-none" style="font-size:0.75rem;color:var(--text-muted)" title="Spam cases are automated directory-sync noise — excluding them shows true support load">
-        <div style="position:relative;width:32px;height:18px">
-          <input type="checkbox" id="toggle-spam" onchange="onSpamToggle()" style="opacity:0;width:0;height:0;position:absolute">
-          <span id="toggle-spam-track" style="position:absolute;inset:0;background:#e5e7ef;border-radius:9px;transition:background 0.2s"></span>
-          <span id="toggle-spam-thumb" style="position:absolute;top:2px;left:2px;width:14px;height:14px;background:#fff;border-radius:50%;transition:transform 0.2s;box-shadow:0 1px 3px rgba(0,0,0,0.2)"></span>
+      <button onclick="onSpamToggle()" title="Spam cases are automated directory-sync noise — excluding them shows true support load"
+        class="flex items-center gap-2 cursor-pointer select-none" style="font-size:0.75rem;color:var(--text-muted);background:none;border:none;padding:0">
+        <div style="position:relative;width:32px;height:18px;flex-shrink:0">
+          <span id="toggle-spam-track" style="position:absolute;inset:0;background:#e5e7ef;border-radius:9px;transition:background 0.2s;pointer-events:none"></span>
+          <span id="toggle-spam-thumb" style="position:absolute;top:2px;left:2px;width:14px;height:14px;background:#fff;border-radius:50%;transition:transform 0.2s;box-shadow:0 1px 3px rgba(0,0,0,0.2);pointer-events:none"></span>
         </div>
         <span>Excl. Spam</span>
-      </label>
+      </button>
       <div class="flex items-center gap-2" style="font-size:0.75rem;color:var(--text-muted)">
         <span class="freshness-dot"></span>
         <span id="last-updated"></span>
@@ -377,6 +378,9 @@ function makeChart(id, type, labels, values, opts = {}) {
   if (!ctx) return;
   if (charts[id]) charts[id].destroy();
   const isBar = type === 'bar';
+  const isDoughnut = type === 'doughnut';
+  const isHorizontal = !!opts.horizontal;
+
   charts[id] = new Chart(ctx, {
     type,
     data: {
@@ -384,8 +388,7 @@ function makeChart(id, type, labels, values, opts = {}) {
       datasets: [{
         data: values,
         backgroundColor: opts.colors || COLORS.slice(0, labels.length),
-        borderWidth: isBar ? 0 : 2,
-        borderColor: isBar ? undefined : '#0f1117',
+        borderWidth: 0,
         borderRadius: isBar ? 4 : undefined,
         ...opts.ds,
       }],
@@ -395,19 +398,29 @@ function makeChart(id, type, labels, values, opts = {}) {
       maintainAspectRatio: false,
       plugins: {
         legend: {
-          display: type === 'doughnut',
+          display: isDoughnut,
           position: 'right',
           labels: { color: '#5b6882', font: { size: 11 }, boxWidth: 12, padding: 8 },
         },
         tooltip: { callbacks: { label: c => `  ${c.label}: ${c.parsed?.toLocaleString?.() ?? c.parsed}` } },
+        datalabels: isBar ? {
+          anchor: isHorizontal ? 'end' : 'end',
+          align: isHorizontal ? 'end' : 'top',
+          color: '#5b6882',
+          font: { size: 10, weight: '500' },
+          formatter: v => v >= 1000 ? (v/1000).toFixed(1) + 'k' : v,
+          clamp: true,
+        } : false,
       },
       scales: isBar ? {
         x: { ticks: { color: '#5b6882', font: { size: 10 } }, grid: { color: '#e5e7ef' } },
         y: { ticks: { color: '#5b6882', font: { size: 10 } }, grid: { color: '#e5e7ef' }, ...(opts.yOpts || {}) },
       } : undefined,
-      indexAxis: opts.horizontal ? 'y' : 'x',
+      indexAxis: isHorizontal ? 'y' : 'x',
+      layout: isBar ? { padding: { top: isHorizontal ? 0 : 16, right: isHorizontal ? 40 : 0 } } : undefined,
       ...opts.chart,
     },
+    plugins: isBar ? [ChartDataLabels] : [],
   });
 }
 
@@ -439,11 +452,9 @@ function makeTable(id, cols, rows, empty = 'No data available.') {
 let excludeSpam = false;
 
 function onSpamToggle() {
-  excludeSpam = document.getElementById('toggle-spam').checked;
-  const track = document.getElementById('toggle-spam-track');
-  const thumb = document.getElementById('toggle-spam-thumb');
-  track.style.background = excludeSpam ? 'var(--accent)' : '#e5e7ef';
-  thumb.style.transform = excludeSpam ? 'translateX(14px)' : 'translateX(0)';
+  excludeSpam = !excludeSpam;
+  document.getElementById('toggle-spam-track').style.background = excludeSpam ? 'var(--accent)' : '#e5e7ef';
+  document.getElementById('toggle-spam-thumb').style.transform = excludeSpam ? 'translateX(14px)' : 'translateX(0)';
   renderAll();
 }
 
