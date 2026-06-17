@@ -463,8 +463,8 @@ function filteredData() {
 // ── Render ────────────────────────────────────────────────────────────────
 
 function renderAll() {
-  const d = filteredData();
-  const { kpis, periodLabel, lastUpdated } = d;
+  const fd = filteredData();
+  const { kpis, periodLabel, lastUpdated } = fd;
 
   // KPIs
   document.getElementById('kpi-total').textContent = kpis.total.toLocaleString();
