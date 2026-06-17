@@ -211,6 +211,14 @@ const CONFIG = {
         <p style="font-size:0.72rem;color:var(--text-muted);margin-bottom:14px">UTC — add +2h for Berlin, +1h for London</p>
         <div style="height:200px;position:relative"><canvas id="chart-hourly"></canvas></div>
       </div>
+      <!-- Complexity + Resolution KPI row -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="complexity-kpi-strip"></div>
+      <!-- Conversation complexity distribution -->
+      <div class="card p-5" id="complexity-dist-card" style="display:none">
+        <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:4px">Cases by Conversation Complexity</h3>
+        <p style="font-size:0.72rem;color:var(--text-muted);margin-bottom:14px">Distribution of individual case scores (0–10) across all agents</p>
+        <div style="height:200px;position:relative"><canvas id="chart-complexity-dist"></canvas></div>
+      </div>
     </div>
 
     <!-- ── AGENTS ───────────────────────────────────────────────────────── -->
@@ -490,15 +498,15 @@ function toggleAgentExpand(row, agentName, idx) {
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       <div>
         <div style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:6px">Most Agent Messages</div>
-        ${exampleTable(ex.byMsgCount, 'Msgs')}
+        ${exampleTable(ex.byMsgCount, 'Agent Msgs')}
       </div>
       <div>
-        <div style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:6px">Longest Messages (avg chars)</div>
+        <div style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:6px">Most Client Messages</div>
+        ${exampleTable(ex.byClientMsgs, 'Client Msgs')}
+      </div>
+      <div>
+        <div style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:6px">Longest Agent Messages (avg chars)</div>
         ${exampleTable(ex.byMsgLength, 'Chars')}
-      </div>
-      <div>
-        <div style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:6px">Most Clarifying Questions</div>
-        ${exampleTable(ex.byQuestions, '?')}
       </div>
     </div>`;
 }
@@ -609,6 +617,33 @@ function renderOverview() {
       hourlyData.map(r => r.value),
       { colors: hourlyColors });
   }
+
+  // Complexity + resolution KPI strip
+  const agents = data.agentData || [];
+  const avgConvComp = agents.length
+    ? (agents.reduce((s,a) => s + (a.conversationComplexity || 0) * a.cases, 0) / agents.reduce((s,a) => s + a.cases, 0)).toFixed(2)
+    : '—';
+  const avgV1 = data.kpis.avgV1 ? data.kpis.avgV1.toFixed(2) : '—';
+  const avgHBR = data.kpis.avgHBRexclOnHold ? data.kpis.avgHBRexclOnHold.toFixed(1) : '—';
+  document.getElementById('complexity-kpi-strip').innerHTML = [
+    { label: 'Avg Conv. Complexity', value: avgConvComp, sub: 'out of 10 · across all agents', color: '#7c3aed' },
+    { label: 'Avg Complexity V1', value: avgV1, sub: 'out of 6 · product × issue type', color: '#2563eb' },
+    { label: 'Avg Resolution (excl. On Hold)', value: avgHBR + 'h', sub: 'active working hours only', color: '#059669' },
+  ].map(k => `<div class="card kpi-card p-5">
+    <div style="color:var(--text-muted);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">${k.label}</div>
+    <div style="font-size:2rem;font-weight:800;color:${k.color}">${k.value}</div>
+    <div style="color:var(--text-muted);font-size:0.75rem;margin-top:4px">${k.sub}</div>
+  </div>`).join('');
+
+  // Complexity distribution
+  const buckets = data.complexityBuckets;
+  if (buckets && buckets.length) {
+    document.getElementById('complexity-dist-card').style.display = '';
+    const bucketColors = ['#059669','#65a30d','#d97706','#ea580c','#dc2626'];
+    makeChart('chart-complexity-dist', 'bar',
+      buckets.map(b => b.label), buckets.map(b => b.value),
+      { colors: bucketColors });
+  }
 }
 
 let agentSortKey = 'cases';
@@ -677,7 +712,7 @@ function renderAgents() {
     </div>`;
   };
 
-  const convTip = `<span onclick="event.stopPropagation()" style="position:relative;display:inline-block;cursor:help;margin-left:3px" onmouseenter="this.querySelector('.conv-tip').style.display='block'" onmouseleave="this.querySelector('.conv-tip').style.display='none'">&#9432;<span class="conv-tip" style="display:none;position:absolute;left:0;top:1.4em;z-index:99;background:#1b0c3b;color:#fff;font-size:0.68rem;font-weight:400;border-radius:6px;padding:8px 10px;width:240px;white-space:normal;line-height:1.5;box-shadow:0 4px 16px rgba(0,0,0,0.18)">Score = avg of 3 normalised signals (0–10 each):<br>① Agent messages / case<br>② Avg agent message length in chars<br>③ Number of ? per case<br>Each signal is min-max scaled across all agents.</span></span>`;
+  const convTip = `<span onclick="event.stopPropagation()" style="position:relative;display:inline-block;cursor:help;margin-left:3px" onmouseenter="this.querySelector('.conv-tip').style.display='block'" onmouseleave="this.querySelector('.conv-tip').style.display='none'">&#9432;<span class="conv-tip" style="display:none;position:absolute;left:0;top:1.4em;z-index:99;background:#1b0c3b;color:#fff;font-size:0.68rem;font-weight:400;border-radius:6px;padding:8px 10px;width:240px;white-space:normal;line-height:1.5;box-shadow:0 4px 16px rgba(0,0,0,0.18)">Score = avg of 4 signals (each 0–10, absolute thresholds):<br>① Agent msgs / case · 1 msg=0, ≥5=10<br>② Client msgs / case · same scale<br>③ Avg agent msg length · ≤300 chars=0, ≥2500=10<br>④ Avg client msg length · same scale<br>Signals ③④ use prior-period avg where per-case data unavailable.</span></span>`;
   const sortIcon = key => {
     if (agentSortKey !== key) return `<span style="color:#cbd5e1;margin-left:3px">⇅</span>`;
     return `<span style="color:var(--accent);margin-left:3px">${agentSortDir === -1 ? '↓' : '↑'}</span>`;
@@ -713,7 +748,7 @@ function renderAgents() {
       if (r.conversationComplexity === undefined) return '—';
       const c = r.conversationComplexity >= 7 ? '#dc2626' : r.conversationComplexity >= 4 ? '#d97706' : '#059669';
       const tooltip = r.convAvgMsgs !== undefined
-        ? `title="Msgs/case: ${r.convAvgMsgs} · Avg length: ${r.convAvgLength} chars · Questions/case: ${r.convAvgQuestions}"`
+        ? `title="Agent msgs/case: ${r.convAvgMsgs} · Client msgs/case: ${r.convAvgClientMsgs ?? r.convAvgQuestions ?? '—'} · Avg agent msg: ${r.convAvgLength} chars"`
         : '';
       const pct = (r.conversationComplexity / 10 * 100).toFixed(0);
       return `<div style="display:flex;align-items:center;gap:6px" ${tooltip}>
