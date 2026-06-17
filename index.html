@@ -614,13 +614,13 @@ function renderAgents() {
       const c = r.csat >= 9 ? '#15803d' : r.csat >= 7 ? '#b45309' : '#b91c1c';
       return `<span style="color:${c};font-weight:600">${r.csat}<span style="color:var(--text-muted);font-weight:400;font-size:0.7rem">/10</span></span>`;
     }},
-    { label: 'Complexity v1 (0–6)', key: '_cx', render: r => {
-      const c = r.complexity >= 4 ? '#dc2626' : r.complexity >= 2.5 ? '#d97706' : '#7c3aed';
-      return mkBar(r.complexity, 6, c);
+    { label: 'Complexity v1 (product+issue)', key: '_cx', render: r => {
+      const c = r.complexity >= 3 ? '#dc2626' : r.complexity >= 2.5 ? '#d97706' : '#7c3aed';
+      return mkBar(r.complexity, 4, c);
     }},
-    { label: 'Complexity v2 (0–9)', key: '_cx2', render: r => {
-      const c = r.complexityV2 >= 5 ? '#dc2626' : r.complexityV2 >= 3 ? '#d97706' : '#059669';
-      return mkBar(r.complexityV2, 9, c);
+    { label: 'Complexity v2 (+touchpoints)', key: '_cx2', render: r => {
+      const c = r.complexityV2 >= 3.5 ? '#dc2626' : r.complexityV2 >= 2.8 ? '#d97706' : '#059669';
+      return mkBar(r.complexityV2, 4, c);
     }},
   ], agents);
 }

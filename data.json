@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-17T09:00:00Z",
+  "lastUpdated": "2026-06-17T12:00:00Z",
   "periodLabel": "Last 30 Days",
   "kpis": {
     "total": 2409,
@@ -80,21 +80,21 @@
     { "hour": 23, "value": 16  }
   ],
   "agentData": [
-    { "name": "Anna-Christin Voigt",        "cases": 327, "csat": 10.0, "firstResponseHrs": 21.3,  "ongoingResponseHrs": 0.8,   "touchpoints": 2.2, "resolutionHrs": 26.1,  "complexity": 1.01, "complexityV2": 1.01 },
-    { "name": "Emilie Pownall",             "cases": 284, "csat": 10.0, "firstResponseHrs": 63.2,  "ongoingResponseHrs": 10.5,  "touchpoints": 2.1, "resolutionHrs": 123.1, "complexity": 2.09, "complexityV2": 2.09 },
-    { "name": "Stephan Duerrnagel",         "cases": 249, "csat": 8.9,  "firstResponseHrs": 13.6,  "ongoingResponseHrs": 1.5,   "touchpoints": 2.0, "resolutionHrs": 36.7,  "complexity": 1.34, "complexityV2": 1.34 },
-    { "name": "Jürgen Sömen",               "cases": 225, "csat": 8.9,  "firstResponseHrs": 17.5,  "ongoingResponseHrs": 4.6,   "touchpoints": 2.5, "resolutionHrs": 94.5,  "complexity": 1.78, "complexityV2": 1.78 },
-    { "name": "Rida Malouh",                "cases": 221, "csat": 10.0, "firstResponseHrs": 21.5,  "ongoingResponseHrs": 3.4,   "touchpoints": 2.0, "resolutionHrs": 65.6,  "complexity": 1.77, "complexityV2": 1.77 },
-    { "name": "Vincent Riehl",              "cases": 215, "csat": 7.7,  "firstResponseHrs": 18.5,  "ongoingResponseHrs": 4.5,   "touchpoints": 2.4, "resolutionHrs": 60.0,  "complexity": 1.85, "complexityV2": 1.85 },
-    { "name": "Victoria Sene Ríos",         "cases": 187, "csat": 8.3,  "firstResponseHrs": 23.3,  "ongoingResponseHrs": 7.3,   "touchpoints": 2.1, "resolutionHrs": 125.3, "complexity": 1.76, "complexityV2": 1.76 },
-    { "name": "Maria Fontiveros Villasana", "cases": 133, "csat": 10.0, "firstResponseHrs": 12.0,  "ongoingResponseHrs": 3.8,   "touchpoints": 2.9, "resolutionHrs": 84.9,  "complexity": 1.85, "complexityV2": 1.85 },
-    { "name": "Jhonric Canillo",            "cases": 125, "csat": 10.0, "firstResponseHrs": 28.8,  "ongoingResponseHrs": 7.7,   "touchpoints": 3.5, "resolutionHrs": 155.0, "complexity": 1.90, "complexityV2": 2.90 },
-    { "name": "Patrick Paul Bayor",         "cases": 110, "csat": 10.0, "firstResponseHrs": 53.8,  "ongoingResponseHrs": 12.9,  "touchpoints": 2.7, "resolutionHrs": 155.5, "complexity": 1.92, "complexityV2": 1.92 },
-    { "name": "John Paul Pineda",           "cases": 101, "csat": 10.0, "firstResponseHrs": 64.9,  "ongoingResponseHrs": 13.3,  "touchpoints": 2.5, "resolutionHrs": 120.2, "complexity": 1.82, "complexityV2": 1.82 },
-    { "name": "Fernando Viana",             "cases": 45,  "csat": 10.0, "firstResponseHrs": 2.6,   "ongoingResponseHrs": 4.6,   "touchpoints": 2.9, "resolutionHrs": 87.9,  "complexity": 1.64, "complexityV2": 1.64 },
-    { "name": "Joel Alob",                  "cases": 38,  "csat": 10.0, "firstResponseHrs": 2.1,   "ongoingResponseHrs": 2.5,   "touchpoints": 2.6, "resolutionHrs": 71.9,  "complexity": 1.95, "complexityV2": 1.95 },
-    { "name": "Geneca Rapada",              "cases": 24,  "csat": null, "firstResponseHrs": 46.1,  "ongoingResponseHrs": 12.2,  "touchpoints": 3.2, "resolutionHrs": 186.7, "complexity": 1.77, "complexityV2": 2.77 },
-    { "name": "Ryan Quinn",                 "cases": 18,  "csat": null, "firstResponseHrs": 78.0,  "ongoingResponseHrs": 15.6,  "touchpoints": 2.1, "resolutionHrs": 93.2,  "complexity": 1.54, "complexityV2": 1.54 }
+    { "name": "Emilie Pownall",             "cases": 299, "csat": 10.0, "firstResponseHrs": 61.9,  "ongoingResponseHrs": 10.0,  "touchpoints": 2.10, "resolutionHrs": 121.4, "complexity": 2.48, "complexityV2": 2.74 },
+    { "name": "Jürgen Sömen",               "cases": 213, "csat": 8.9,  "firstResponseHrs": 17.5,  "ongoingResponseHrs": 5.4,   "touchpoints": 2.49, "resolutionHrs": 110.2, "complexity": 2.44, "complexityV2": 2.90 },
+    { "name": "Vincent Riehl",              "cases": 204, "csat": 7.7,  "firstResponseHrs": 18.5,  "ongoingResponseHrs": 4.9,   "touchpoints": 2.49, "resolutionHrs": 74.7,  "complexity": 2.40, "complexityV2": 2.84 },
+    { "name": "Rida Malouh",                "cases": 194, "csat": 10.0, "firstResponseHrs": 21.9,  "ongoingResponseHrs": 4.1,   "touchpoints": 1.97, "resolutionHrs": 69.1,  "complexity": 2.35, "complexityV2": 2.59 },
+    { "name": "Victoria Sene Ríos",         "cases": 184, "csat": 8.3,  "firstResponseHrs": 23.2,  "ongoingResponseHrs": 7.7,   "touchpoints": 2.19, "resolutionHrs": 134.1, "complexity": 2.35, "complexityV2": 2.70 },
+    { "name": "Stephan Duerrnagel",         "cases": 168, "csat": 9.1,  "firstResponseHrs": 13.9,  "ongoingResponseHrs": 2.4,   "touchpoints": 1.99, "resolutionHrs": 51.5,  "complexity": 2.42, "complexityV2": 2.75 },
+    { "name": "Maria Fontiveros Villasana", "cases": 133, "csat": 10.0, "firstResponseHrs": 12.1,  "ongoingResponseHrs": 3.9,   "touchpoints": 2.96, "resolutionHrs": 93.0,  "complexity": 2.40, "complexityV2": 3.02 },
+    { "name": "Jhonric Canillo",            "cases": 129, "csat": 10.0, "firstResponseHrs": 30.4,  "ongoingResponseHrs": 8.6,   "touchpoints": 3.30, "resolutionHrs": 154.7, "complexity": 2.50, "complexityV2": 3.17 },
+    { "name": "Anna-Christin Voigt",        "cases": 121, "csat": 10.0, "firstResponseHrs": 25.6,  "ongoingResponseHrs": 2.9,   "touchpoints": 2.25, "resolutionHrs": 40.9,  "complexity": 2.32, "complexityV2": 2.54 },
+    { "name": "Patrick Paul Bayor",         "cases": 112, "csat": 10.0, "firstResponseHrs": 54.2,  "ongoingResponseHrs": 12.5,  "touchpoints": 2.84, "resolutionHrs": 167.6, "complexity": 2.60, "complexityV2": 3.13 },
+    { "name": "John Paul Pineda",           "cases": 97,  "csat": 10.0, "firstResponseHrs": 65.1,  "ongoingResponseHrs": 13.4,  "touchpoints": 2.51, "resolutionHrs": 119.7, "complexity": 2.51, "complexityV2": 2.95 },
+    { "name": "Fernando Viana",             "cases": 45,  "csat": 10.0, "firstResponseHrs": 2.6,   "ongoingResponseHrs": 4.6,   "touchpoints": 2.86, "resolutionHrs": 83.7,  "complexity": 2.33, "complexityV2": 2.95 },
+    { "name": "Joel Alob",                  "cases": 36,  "csat": 10.0, "firstResponseHrs": 2.0,   "ongoingResponseHrs": 2.6,   "touchpoints": 2.55, "resolutionHrs": 67.3,  "complexity": 2.33, "complexityV2": 2.72 },
+    { "name": "Ryan Quinn",                 "cases": 28,  "csat": null, "firstResponseHrs": 56.9,  "ongoingResponseHrs": 12.2,  "touchpoints": 2.18, "resolutionHrs": 93.6,  "complexity": 2.36, "complexityV2": 2.68 },
+    { "name": "Geneca Rapada",              "cases": 24,  "csat": null, "firstResponseHrs": 46.1,  "ongoingResponseHrs": 12.0,  "touchpoints": 3.43, "resolutionHrs": 173.7, "complexity": 2.29, "complexityV2": 3.21 }
   ],
   "issueTypeData": [
     { "label": "Listing Update", "value": 441 },
