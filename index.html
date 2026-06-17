@@ -235,32 +235,6 @@ const CONFIG = {
       </div>
 
       <!-- Complexity legend -->
-      <div class="card p-4" id="complexity-legend" style="border-left:3px solid var(--accent)">
-        <div style="font-weight:600;font-size:0.8rem;color:var(--text-main);margin-bottom:8px">How complexity scores are calculated</div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" style="font-size:0.75rem;color:var(--text-muted)">
-          <div>
-            <div style="font-weight:600;color:var(--text-main);margin-bottom:4px">V1 — Product × Issue Type (0–6)</div>
-            <div>Each case scored on two axes at creation time:</div>
-            <div style="margin-top:4px;display:flex;gap:16px">
-              <div><b style="color:var(--text-main)">Product</b><br>Platform → 3<br>Listings / Locator → 2<br>Analytics / Social / Reputation → 1<br>Spam → 0</div>
-              <div><b style="color:var(--text-main)">Issue Type</b><br>UI Defect / Creation → 3<br>Failed Push / Missing Data / Directory → 2<br>Update / Login / How To → 1<br>How To → 0</div>
-            </div>
-            <div style="margin-top:6px;opacity:0.8">Score = product + issue type. Averaged across all agent cases (weighted by count).</div>
-          </div>
-          <div>
-            <div style="font-weight:600;color:var(--text-main);margin-bottom:4px">Conversation Complexity (0–10)</div>
-            <div>Computed from actual email conversations:</div>
-            <div style="margin-top:6px;background:var(--bg-main);border-radius:6px;padding:8px;font-family:monospace;font-size:0.72rem;color:var(--text-main)">
-              raw = (avg agent msgs × 1.5)<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;+ (avg msg length ÷ 150)<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;+ (avg questions asked × 0.8)<br><br>
-              score = normalize(raw, 0–10)
-            </div>
-            <div style="margin-top:6px;opacity:0.8">Quoted reply text stripped before measuring length. Higher score = more messages, longer explanations, more clarifying questions.</div>
-          </div>
-        </div>
-      </div>
-
       <!-- Full agent table -->
       <div class="card p-5">
         <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:16px">Agent Performance — Full View</h3>
@@ -452,27 +426,81 @@ function makeChart(id, type, labels, values, opts = {}) {
   });
 }
 
-function makeTable(id, cols, rows, empty = 'No data available.') {
+function makeTable(id, cols, rows, empty = 'No data available.', expandFn = null) {
   const el = document.getElementById(id);
   if (!rows.length) {
     el.innerHTML = `<p class="text-slate-500 text-sm py-6 text-center">${empty}</p>`;
     return;
   }
+  const thStyle = `color:var(--text-muted);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.07em;font-weight:600`;
+  const rowsHtml = rows.map((row, i) => {
+    const dataRow = `
+      <tr class="transition-colors${expandFn ? ' agent-row' : ''}" style="border-top:1px solid var(--border);cursor:${expandFn ? 'pointer' : 'default'}"
+        ${expandFn ? `onclick="toggleAgentExpand(this, '${(row.name||'').replace(/'/g,"\\'")}', ${i})"` : ''}>
+        ${cols.map(c => `<td class="py-2 px-3" style="color:var(--text-main)">${c.render ? c.render(row) : (row[c.key] ?? '—')}</td>`).join('')}
+      </tr>`;
+    const expandRow = expandFn ? `<tr class="agent-expand-row" id="expand-row-${i}" style="display:none;background:var(--bg-main)">
+      <td colspan="${cols.length}" style="padding:0">
+        <div id="expand-content-${i}" class="p-4"></div>
+      </td>
+    </tr>` : '';
+    return dataRow + expandRow;
+  }).join('');
   el.innerHTML = `
     <table class="w-full text-sm">
-      <thead>
-        <tr>
-          ${cols.map(c => `<th class="text-left py-2 px-3 font-600" style="color:var(--text-muted);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.07em;font-weight:600">${c.label}</th>`).join('')}
-        </tr>
-      </thead>
-      <tbody>
-        ${rows.map(row => `
-          <tr class="transition-colors" style="border-top:1px solid var(--border)">
-            ${cols.map(c => `<td class="py-2 px-3" style="color:var(--text-main)">${c.render ? c.render(row) : (row[c.key] ?? '—')}</td>`).join('')}
-          </tr>
-        `).join('')}
-      </tbody>
+      <thead><tr>${cols.map(c => `<th class="text-left py-2 px-3" style="${thStyle}">${c.label}</th>`).join('')}</tr></thead>
+      <tbody>${rowsHtml}</tbody>
     </table>`;
+}
+
+function toggleAgentExpand(row, agentName, idx) {
+  const expandRow = document.getElementById(`expand-row-${idx}`);
+  const content = document.getElementById(`expand-content-${idx}`);
+  const isOpen = expandRow.style.display !== 'none';
+  // Close all other expanded rows first
+  document.querySelectorAll('.agent-expand-row').forEach(r => r.style.display = 'none');
+  document.querySelectorAll('.agent-row').forEach(r => r.style.background = '');
+  if (isOpen) return;
+  expandRow.style.display = '';
+  row.style.background = 'var(--accent-light)';
+  const agent = (data.agentData || []).find(a => a.name === agentName);
+  if (!agent || !agent.caseExamples) {
+    content.innerHTML = `<p style="color:var(--text-muted);font-size:0.8rem">No case examples available — will populate on next daily sync.</p>`;
+    return;
+  }
+  const ex = agent.caseExamples;
+  const sfBase = 'https://uberall.my.salesforce.com/';
+  const exampleTable = (cases, valueLabel) => {
+    if (!cases || !cases.length) return '<em style="color:var(--text-muted);font-size:0.75rem">No data</em>';
+    return `<table style="width:100%;font-size:0.75rem;border-collapse:collapse">
+      <thead><tr>
+        <th style="text-align:left;color:var(--text-muted);font-size:0.68rem;padding:2px 6px">Case</th>
+        <th style="text-align:left;color:var(--text-muted);font-size:0.68rem;padding:2px 6px">Subject</th>
+        <th style="text-align:right;color:var(--text-muted);font-size:0.68rem;padding:2px 6px">${valueLabel}</th>
+      </tr></thead>
+      <tbody>${cases.map(c => `<tr style="border-top:1px solid var(--border)">
+        <td style="padding:4px 6px;white-space:nowrap"><a href="${sfBase}${c.caseId}" target="_blank" style="color:var(--accent);font-weight:600">#${c.caseNumber}</a></td>
+        <td style="padding:4px 6px;color:var(--text-main)">${c.subject}</td>
+        <td style="padding:4px 6px;text-align:right;color:var(--text-main);font-weight:600">${c.value}</td>
+      </tr>`).join('')}</tbody>
+    </table>`;
+  };
+  content.innerHTML = `
+    <div style="font-weight:600;font-size:0.8rem;color:var(--text-main);margin-bottom:12px">${agentName} — Case Examples</div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div>
+        <div style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:6px">Most Agent Messages</div>
+        ${exampleTable(ex.byMsgCount, 'Msgs')}
+      </div>
+      <div>
+        <div style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:6px">Longest Messages (avg chars)</div>
+        ${exampleTable(ex.byMsgLength, 'Chars')}
+      </div>
+      <div>
+        <div style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:6px">Most Clarifying Questions</div>
+        ${exampleTable(ex.byQuestions, '?')}
+      </div>
+    </div>`;
 }
 
 // ── Spam filter ───────────────────────────────────────────────────────────
@@ -642,15 +670,16 @@ function renderAgents() {
     { label: 'Resolution', key: '_res', render: r => hrs(r.resolutionHrs) },
     { label: 'Touchpoints', key: 'touchpoints', render: r => r.touchpoints !== undefined ? r.touchpoints.toFixed(1) : '—' },
     { label: 'CSAT', key: '_csat', render: r => {
-      if (!r.csat) return '<span style="color:var(--text-muted)">—</span>';
-      const c = r.csat >= 9 ? '#15803d' : r.csat >= 7 ? '#b45309' : '#b91c1c';
-      return `<span style="color:${c};font-weight:600">${r.csat}<span style="color:var(--text-muted);font-weight:400;font-size:0.7rem">/10</span></span>`;
+      const score = r.csat ? `<span style="font-weight:600;color:${r.csat >= 9 ? '#15803d' : r.csat >= 7 ? '#b45309' : '#b91c1c'}">${r.csat}<span style="color:var(--text-muted);font-weight:400;font-size:0.7rem">/10</span></span>` : '';
+      const pct = r.csatPct !== null && r.csatPct !== undefined ? `<span style="font-size:0.72rem;color:var(--text-muted);margin-left:4px">${r.csatPct}%</span>` : '';
+      const count = r.csatTotal ? `<span style="font-size:0.68rem;color:var(--text-muted);margin-left:3px">(${r.csatTotal})</span>` : '';
+      return score ? `${score}${pct}${count}` : '<span style="color:var(--text-muted)">—</span>';
     }},
     { label: 'Complexity V1', key: '_cx', render: r => {
       const c = r.complexity >= 3 ? '#dc2626' : r.complexity >= 2.5 ? '#d97706' : '#7c3aed';
       return mkBar(r.complexity, 4, c);
     }},
-    { label: 'Conv. Complexity (0–10)', key: '_conv', render: r => {
+    { label: 'Conv. Complexity (0–10) <span onclick="event.stopPropagation()" style="position:relative;display:inline-block;cursor:help" onmouseenter="this.querySelector(\'.conv-tip\').style.display=\'block\'" onmouseleave="this.querySelector(\'.conv-tip\').style.display=\'none\'">&#9432;<span class="conv-tip" style="display:none;position:absolute;left:0;top:1.4em;z-index:99;background:#1b0c3b;color:#fff;font-size:0.68rem;font-weight:400;border-radius:6px;padding:8px 10px;width:240px;white-space:normal;line-height:1.5;box-shadow:0 4px 16px rgba(0,0,0,0.18)">Score = avg of 3 normalised signals (0–10 each):<br>① Agent messages / case (higher = more back-and-forth)<br>② Avg agent message length in chars (longer = more explanation needed)<br>③ Number of ? per case (more questions = more clarification)<br>Each signal is min-max scaled across all agents.</span></span>', key: '_conv', render: r => {
       if (r.conversationComplexity === undefined) return '—';
       const c = r.conversationComplexity >= 7 ? '#dc2626' : r.conversationComplexity >= 4 ? '#d97706' : '#059669';
       const tooltip = r.convAvgMsgs !== undefined
@@ -664,7 +693,7 @@ function renderAgents() {
         <span style="font-size:0.75rem">${r.conversationComplexity.toFixed(2)}</span>
       </div>`;
     }},
-  ], agents);
+  ], agents, true);
 }
 
 function renderTopics() {

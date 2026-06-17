@@ -10,110 +10,2030 @@
     "spamCount": 302
   },
   "statusData": [
-    { "label": "Closed", "value": 926 },
-    { "label": "Completed", "value": 427 },
-    { "label": "In Progress", "value": 189 },
-    { "label": "Waiting on Client", "value": 188 },
-    { "label": "Waiting on Directory", "value": 132 },
-    { "label": "Waiting On Product", "value": 102 },
-    { "label": "Waiting On CS", "value": 52 },
-    { "label": "On-hold", "value": 51 },
-    { "label": "Open", "value": 32 },
-    { "label": "Resolved", "value": 2 },
-    { "label": "New", "value": 2 },
-    { "label": "Churned", "value": 1 },
-    { "label": "Cancellation Notice", "value": 1 }
+    {
+      "label": "Closed",
+      "value": 926
+    },
+    {
+      "label": "Completed",
+      "value": 427
+    },
+    {
+      "label": "In Progress",
+      "value": 189
+    },
+    {
+      "label": "Waiting on Client",
+      "value": 188
+    },
+    {
+      "label": "Waiting on Directory",
+      "value": 132
+    },
+    {
+      "label": "Waiting On Product",
+      "value": 102
+    },
+    {
+      "label": "Waiting On CS",
+      "value": 52
+    },
+    {
+      "label": "On-hold",
+      "value": 51
+    },
+    {
+      "label": "Open",
+      "value": 32
+    },
+    {
+      "label": "Resolved",
+      "value": 2
+    },
+    {
+      "label": "New",
+      "value": 2
+    },
+    {
+      "label": "Churned",
+      "value": 1
+    },
+    {
+      "label": "Cancellation Notice",
+      "value": 1
+    }
   ],
   "typeData": [
-    { "label": "Location Data Support", "value": 1244 },
-    { "label": "Platform Support", "value": 612 },
-    { "label": "Locator & Local Pages Support", "value": 63 },
-    { "label": "Risk", "value": 27 },
-    { "label": "Other", "value": 26 },
-    { "label": "Termination", "value": 16 },
-    { "label": "CSAT Follow-up", "value": 9 },
-    { "label": "Unknown", "value": 4 },
-    { "label": "Inquiry", "value": 2 },
-    { "label": "Spam", "value": 302 }
+    {
+      "label": "Location Data Support",
+      "value": 1244
+    },
+    {
+      "label": "Platform Support",
+      "value": 612
+    },
+    {
+      "label": "Locator & Local Pages Support",
+      "value": 63
+    },
+    {
+      "label": "Risk",
+      "value": 27
+    },
+    {
+      "label": "Other",
+      "value": 26
+    },
+    {
+      "label": "Termination",
+      "value": 16
+    },
+    {
+      "label": "CSAT Follow-up",
+      "value": 9
+    },
+    {
+      "label": "Unknown",
+      "value": 4
+    },
+    {
+      "label": "Inquiry",
+      "value": 2
+    },
+    {
+      "label": "Spam",
+      "value": 302
+    }
   ],
   "priorityData": [
-    { "label": "Medium", "value": 1580 },
-    { "label": "High", "value": 373 },
-    { "label": "Urgent", "value": 126 },
-    { "label": "Critical", "value": 19 },
-    { "label": "Low", "value": 7 }
+    {
+      "label": "Medium",
+      "value": 1580
+    },
+    {
+      "label": "High",
+      "value": 373
+    },
+    {
+      "label": "Urgent",
+      "value": 126
+    },
+    {
+      "label": "Critical",
+      "value": 19
+    },
+    {
+      "label": "Low",
+      "value": 7
+    }
   ],
   "languageData": [
-    { "label": "English", "value": 1425 },
-    { "label": "German", "value": 423 },
-    { "label": "French", "value": 153 },
-    { "label": "Spanish", "value": 69 },
-    { "label": "Italian", "value": 20 }
+    {
+      "label": "English",
+      "value": 1425
+    },
+    {
+      "label": "German",
+      "value": 423
+    },
+    {
+      "label": "French",
+      "value": 153
+    },
+    {
+      "label": "Spanish",
+      "value": 69
+    },
+    {
+      "label": "Italian",
+      "value": 20
+    }
   ],
   "regionData": [
-    { "label": "EMEA", "value": 1084 },
-    { "label": "US-CAN", "value": 767 },
-    { "label": "Unassigned", "value": 112 }
+    {
+      "label": "EMEA",
+      "value": 1084
+    },
+    {
+      "label": "US-CAN",
+      "value": 767
+    },
+    {
+      "label": "Unassigned",
+      "value": 112
+    }
   ],
   "hourlyData": [
-    { "hour": 0,  "value": 17  },
-    { "hour": 1,  "value": 13  },
-    { "hour": 2,  "value": 7   },
-    { "hour": 3,  "value": 6   },
-    { "hour": 4,  "value": 21  },
-    { "hour": 5,  "value": 40  },
-    { "hour": 6,  "value": 79  },
-    { "hour": 7,  "value": 133 },
-    { "hour": 8,  "value": 157 },
-    { "hour": 9,  "value": 164 },
-    { "hour": 10, "value": 127 },
-    { "hour": 11, "value": 112 },
-    { "hour": 12, "value": 137 },
-    { "hour": 13, "value": 180 },
-    { "hour": 14, "value": 164 },
-    { "hour": 15, "value": 186 },
-    { "hour": 16, "value": 111 },
-    { "hour": 17, "value": 99  },
-    { "hour": 18, "value": 78  },
-    { "hour": 19, "value": 91  },
-    { "hour": 20, "value": 81  },
-    { "hour": 21, "value": 50  },
-    { "hour": 22, "value": 36  },
-    { "hour": 23, "value": 16  }
+    {
+      "hour": 0,
+      "value": 17
+    },
+    {
+      "hour": 1,
+      "value": 13
+    },
+    {
+      "hour": 2,
+      "value": 7
+    },
+    {
+      "hour": 3,
+      "value": 6
+    },
+    {
+      "hour": 4,
+      "value": 21
+    },
+    {
+      "hour": 5,
+      "value": 40
+    },
+    {
+      "hour": 6,
+      "value": 79
+    },
+    {
+      "hour": 7,
+      "value": 133
+    },
+    {
+      "hour": 8,
+      "value": 157
+    },
+    {
+      "hour": 9,
+      "value": 164
+    },
+    {
+      "hour": 10,
+      "value": 127
+    },
+    {
+      "hour": 11,
+      "value": 112
+    },
+    {
+      "hour": 12,
+      "value": 137
+    },
+    {
+      "hour": 13,
+      "value": 180
+    },
+    {
+      "hour": 14,
+      "value": 164
+    },
+    {
+      "hour": 15,
+      "value": 186
+    },
+    {
+      "hour": 16,
+      "value": 111
+    },
+    {
+      "hour": 17,
+      "value": 99
+    },
+    {
+      "hour": 18,
+      "value": 78
+    },
+    {
+      "hour": 19,
+      "value": 91
+    },
+    {
+      "hour": 20,
+      "value": 81
+    },
+    {
+      "hour": 21,
+      "value": 50
+    },
+    {
+      "hour": 22,
+      "value": 36
+    },
+    {
+      "hour": 23,
+      "value": 16
+    }
   ],
   "agentData": [
-    { "name": "Emilie Pownall",             "cases": 299, "csat": 10.0, "firstResponseHrs": 61.9,  "ongoingResponseHrs": 10.0,  "touchpoints": 2.10, "resolutionHrs": 121.4, "complexity": 2.48, "conversationComplexity": 0.00,  "convAvgMsgs": 2.84, "convAvgLength": 1580, "convAvgQuestions": 3.46 },
-    { "name": "Jürgen Sömen",               "cases": 213, "csat": 8.9,  "firstResponseHrs": 17.5,  "ongoingResponseHrs": 5.4,   "touchpoints": 2.49, "resolutionHrs": 110.2, "complexity": 2.44, "conversationComplexity": 8.95,  "convAvgMsgs": 3.27, "convAvgLength": 2797, "convAvgQuestions": 7.61 },
-    { "name": "Vincent Riehl",              "cases": 204, "csat": 7.7,  "firstResponseHrs": 18.5,  "ongoingResponseHrs": 4.9,   "touchpoints": 2.49, "resolutionHrs": 74.7,  "complexity": 2.40, "conversationComplexity": 5.05,  "convAvgMsgs": 3.18, "convAvgLength": 2293, "convAvgQuestions": 5.39 },
-    { "name": "Rida Malouh",                "cases": 194, "csat": 10.0, "firstResponseHrs": 21.9,  "ongoingResponseHrs": 4.1,   "touchpoints": 1.97, "resolutionHrs": 69.1,  "complexity": 2.35, "conversationComplexity": 1.91,  "convAvgMsgs": 2.72, "convAvgLength": 1920, "convAvgQuestions": 4.07 },
-    { "name": "Victoria Sene Ríos",         "cases": 184, "csat": 8.3,  "firstResponseHrs": 23.2,  "ongoingResponseHrs": 7.7,   "touchpoints": 2.19, "resolutionHrs": 134.1, "complexity": 2.35, "conversationComplexity": 5.82,  "convAvgMsgs": 2.98, "convAvgLength": 2668, "convAvgQuestions": 3.96 },
-    { "name": "Stephan Duerrnagel",         "cases": 168, "csat": 9.1,  "firstResponseHrs": 13.9,  "ongoingResponseHrs": 2.4,   "touchpoints": 1.99, "resolutionHrs": 51.5,  "complexity": 2.42, "conversationComplexity": 5.52,  "convAvgMsgs": 2.78, "convAvgLength": 2657, "convAvgQuestions": 3.91 },
-    { "name": "Maria Fontiveros Villasana", "cases": 133, "csat": 10.0, "firstResponseHrs": 12.1,  "ongoingResponseHrs": 3.9,   "touchpoints": 2.96, "resolutionHrs": 93.0,  "complexity": 2.40, "conversationComplexity": 10.00, "convAvgMsgs": 3.73, "convAvgLength": 3107, "convAvgQuestions": 5.93 },
-    { "name": "Jhonric Canillo",            "cases": 129, "csat": 10.0, "firstResponseHrs": 30.4,  "ongoingResponseHrs": 8.6,   "touchpoints": 3.30, "resolutionHrs": 154.7, "complexity": 2.50, "conversationComplexity": 2.07,  "convAvgMsgs": 3.81, "convAvgLength": 1591, "convAvgQuestions": 5.06 },
-    { "name": "Anna-Christin Voigt",        "cases": 121, "csat": 10.0, "firstResponseHrs": 25.6,  "ongoingResponseHrs": 2.9,   "touchpoints": 2.25, "resolutionHrs": 40.9,  "complexity": 2.32, "conversationComplexity": 4.43,  "convAvgMsgs": 2.60, "convAvgLength": 2313, "convAvgQuestions": 5.29 },
-    { "name": "Patrick Paul Bayor",         "cases": 112, "csat": 10.0, "firstResponseHrs": 54.2,  "ongoingResponseHrs": 12.5,  "touchpoints": 2.84, "resolutionHrs": 167.6, "complexity": 2.60, "conversationComplexity": 2.49,  "convAvgMsgs": 3.29, "convAvgLength": 1666, "convAvgQuestions": 6.11 },
-    { "name": "John Paul Pineda",           "cases": 97,  "csat": 10.0, "firstResponseHrs": 65.1,  "ongoingResponseHrs": 13.4,  "touchpoints": 2.51, "resolutionHrs": 119.7, "complexity": 2.51, "conversationComplexity": 2.10,  "convAvgMsgs": 3.21, "convAvgLength": 1819, "convAvgQuestions": 4.33 },
-    { "name": "Fernando Viana",             "cases": 45,  "csat": 10.0, "firstResponseHrs": 2.6,   "ongoingResponseHrs": 4.6,   "touchpoints": 2.86, "resolutionHrs": 83.7,  "complexity": 2.33, "conversationComplexity": 4.95,  "convAvgMsgs": 3.65, "convAvgLength": 2287, "convAvgQuestions": 4.41 },
-    { "name": "Joel Alob",                  "cases": 36,  "csat": 10.0, "firstResponseHrs": 2.0,   "ongoingResponseHrs": 2.6,   "touchpoints": 2.55, "resolutionHrs": 67.3,  "complexity": 2.33, "conversationComplexity": 4.03,  "convAvgMsgs": 3.14, "convAvgLength": 2230, "convAvgQuestions": 4.29 },
-    { "name": "Ryan Quinn",                 "cases": 28,  "csat": null, "firstResponseHrs": 56.9,  "ongoingResponseHrs": 12.2,  "touchpoints": 2.18, "resolutionHrs": 93.6,  "complexity": 2.36, "conversationComplexity": 4.11,  "convAvgMsgs": 3.19, "convAvgLength": 1919, "convAvgQuestions": 6.93 },
-    { "name": "Geneca Rapada",              "cases": 24,  "csat": null, "firstResponseHrs": 46.1,  "ongoingResponseHrs": 12.0,  "touchpoints": 3.43, "resolutionHrs": 173.7, "complexity": 2.29, "conversationComplexity": 2.70,  "convAvgMsgs": 3.95, "convAvgLength": 1768, "convAvgQuestions": 4.36 }
+    {
+      "name": "Emilie Pownall",
+      "cases": 299,
+      "csat": 10.0,
+      "firstResponseHrs": 61.9,
+      "ongoingResponseHrs": 10.0,
+      "touchpoints": 2.1,
+      "resolutionHrs": 121.4,
+      "complexity": 2.48,
+      "conversationComplexity": 0.0,
+      "convAvgMsgs": 2.84,
+      "convAvgLength": 1580,
+      "convAvgQuestions": 3.46,
+      "csatTotal": 3,
+      "csatPct": 100,
+      "caseExamples": {
+        "byMsgCount": [
+          {
+            "caseId": "500W600000wlJKLIA2",
+            "caseNumber": "00457723",
+            "subject": "Same issue unresolved",
+            "value": 10
+          },
+          {
+            "caseId": "500W600000wYFHnIAO",
+            "caseNumber": "00457512",
+            "subject": "Google Verification + Duplicate",
+            "value": 10
+          },
+          {
+            "caseId": "500W600000w3gitIAA",
+            "caseNumber": "00457120",
+            "subject": "Facebook connection issue",
+            "value": 9
+          },
+          {
+            "caseId": "500W600000vyyYVIAY",
+            "caseNumber": "00457030",
+            "subject": "The Salvation Army | Cannot respond to specific Google locat",
+            "value": 8
+          },
+          {
+            "caseId": "500W600000wAXRAIA4",
+            "caseNumber": "00457249",
+            "subject": "Failed FB Post",
+            "value": 8
+          }
+        ],
+        "byMsgLength": [
+          {
+            "caseId": "500W600000wlJKLIA2",
+            "caseNumber": "00457723",
+            "subject": "Same issue unresolved",
+            "value": 8019.3
+          },
+          {
+            "caseId": "500W600000wAXRAIA4",
+            "caseNumber": "00457249",
+            "subject": "Failed FB Post",
+            "value": 5800.8
+          },
+          {
+            "caseId": "500W600000xLNXVIA4",
+            "caseNumber": "00458208",
+            "subject": "FW: 3684-0002 Incorrect Hours in Google",
+            "value": 5750.0
+          },
+          {
+            "caseId": "500W600000wYFHnIAO",
+            "caseNumber": "00457512",
+            "subject": "Google Verification + Duplicate",
+            "value": 5346.5
+          },
+          {
+            "caseId": "500W600000xLMZpIAO",
+            "caseNumber": "00458207",
+            "subject": "ABC Multiple Pins Continued",
+            "value": 5150.4
+          }
+        ],
+        "byQuestions": [
+          {
+            "caseId": "500W600000wlJKLIA2",
+            "caseNumber": "00457723",
+            "subject": "Same issue unresolved",
+            "value": 79
+          },
+          {
+            "caseId": "500W600000xLMZpIAO",
+            "caseNumber": "00458207",
+            "subject": "ABC Multiple Pins Continued",
+            "value": 75
+          },
+          {
+            "caseId": "500W600000wAXRAIA4",
+            "caseNumber": "00457249",
+            "subject": "Failed FB Post",
+            "value": 45
+          },
+          {
+            "caseId": "500W600000wdn7XIAQ",
+            "caseNumber": "00457628",
+            "subject": "Timing for new store listings - Google & FB",
+            "value": 40
+          },
+          {
+            "caseId": "500W600000vvFuLIAU",
+            "caseNumber": "00456911",
+            "subject": "Kalahari Resorts | URGENT - Duplicate Kalahari Resorts Wisco",
+            "value": 38
+          }
+        ]
+      }
+    },
+    {
+      "name": "Jürgen Sömen",
+      "cases": 213,
+      "csat": 8.9,
+      "firstResponseHrs": 17.5,
+      "ongoingResponseHrs": 5.4,
+      "touchpoints": 2.49,
+      "resolutionHrs": 110.2,
+      "complexity": 2.44,
+      "conversationComplexity": 8.95,
+      "convAvgMsgs": 3.27,
+      "convAvgLength": 2797,
+      "convAvgQuestions": 7.61,
+      "csatTotal": 13,
+      "csatPct": 85,
+      "caseExamples": {
+        "byMsgCount": [
+          {
+            "caseId": "500W600000wiPJ3IAM",
+            "caseNumber": "00457681",
+            "subject": "Office Relocation – Support needed for Location Updates acro",
+            "value": 12
+          },
+          {
+            "caseId": "500W600000vo0fEIAQ",
+            "caseNumber": "00456800",
+            "subject": "WG: FITINN Italien -Google Maps",
+            "value": 10
+          },
+          {
+            "caseId": "500W600000wCMORIA4",
+            "caseNumber": "00457274",
+            "subject": "Logo wird nicht im GMB übertragen: HG Reinigung Hakif Grajqe",
+            "value": 10
+          },
+          {
+            "caseId": "500W600000wgvBnIAI",
+            "caseNumber": "00457673",
+            "subject": "Import file",
+            "value": 10
+          },
+          {
+            "caseId": "500W600000vvNAPIA2",
+            "caseNumber": "00456914",
+            "subject": "Messages - keine Bearbeitung durch Admin möglich",
+            "value": 8
+          }
+        ],
+        "byMsgLength": [
+          {
+            "caseId": "500W600000wl6ofIAA",
+            "caseNumber": "00457742",
+            "subject": "WG: Ihre E-Mail vom 30.04.2026 | %42982303- #1007335805- | D",
+            "value": 19280.0
+          },
+          {
+            "caseId": "500W600000wVpzJIAS",
+            "caseNumber": "00457444",
+            "subject": "AW: AW: AW: WG: AW: AW: AW: Alte Uberall Bewertungen [ threa",
+            "value": 16283.7
+          },
+          {
+            "caseId": "500W600000vo0fEIAQ",
+            "caseNumber": "00456800",
+            "subject": "WG: FITINN Italien -Google Maps",
+            "value": 15498.9
+          },
+          {
+            "caseId": "500W600000xuwp0IAA",
+            "caseNumber": "00458722",
+            "subject": "AW: WG: Google Suche GSB-Standort [ thread::jOiqRb-Se-6eJXuV",
+            "value": 12484.0
+          },
+          {
+            "caseId": "500W600000w3sTtIAI",
+            "caseNumber": "00457124",
+            "subject": "INC6635961: Missing entity in uberall",
+            "value": 10284.6
+          }
+        ],
+        "byQuestions": [
+          {
+            "caseId": "500W600000vo0fEIAQ",
+            "caseNumber": "00456800",
+            "subject": "WG: FITINN Italien -Google Maps",
+            "value": 235
+          },
+          {
+            "caseId": "500W600000wgvBnIAI",
+            "caseNumber": "00457673",
+            "subject": "Import file",
+            "value": 65
+          },
+          {
+            "caseId": "500W600000wl6ofIAA",
+            "caseNumber": "00457742",
+            "subject": "WG: Ihre E-Mail vom 30.04.2026 | %42982303- #1007335805- | D",
+            "value": 57
+          },
+          {
+            "caseId": "500W600000xO60sIAC",
+            "caseNumber": "00458266",
+            "subject": "Film als Beitrag",
+            "value": 55
+          },
+          {
+            "caseId": "500W600000vwM5zIAE",
+            "caseNumber": "00456958",
+            "subject": "RE: OMR Jet - 4screen",
+            "value": 48
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vincent Riehl",
+      "cases": 204,
+      "csat": 7.7,
+      "firstResponseHrs": 18.5,
+      "ongoingResponseHrs": 4.9,
+      "touchpoints": 2.49,
+      "resolutionHrs": 74.7,
+      "complexity": 2.4,
+      "conversationComplexity": 5.05,
+      "convAvgMsgs": 3.18,
+      "convAvgLength": 2293,
+      "convAvgQuestions": 5.39,
+      "csatTotal": 6,
+      "csatPct": 67,
+      "caseExamples": {
+        "byMsgCount": [
+          {
+            "caseId": "500W600000vxEJIIA2",
+            "caseNumber": "00456970",
+            "subject": "LAFORET | Export Place IDs Google pour nos fiches GMB",
+            "value": 9
+          },
+          {
+            "caseId": "500W600000wiEnVIAU",
+            "caseNumber": "00457688",
+            "subject": "Anomalie NF040548",
+            "value": 9
+          },
+          {
+            "caseId": "500W600000weYeSIAU",
+            "caseNumber": "00457663",
+            "subject": "Support Apple Business - MANN+HUMMEL",
+            "value": 8
+          },
+          {
+            "caseId": "500W600000w7f1tIAA",
+            "caseNumber": "00457189",
+            "subject": "Google (re)connection issue",
+            "value": 8
+          },
+          {
+            "caseId": "500W600000wmlw5IAA",
+            "caseNumber": "00457740",
+            "subject": "Fiche Google Mont-Saint-Michel",
+            "value": 8
+          }
+        ],
+        "byMsgLength": [
+          {
+            "caseId": "500W600000w8HdNIAU",
+            "caseNumber": "00457199",
+            "subject": "RE: [EXTERNAL] Uberall Case 00452533: Google display Issue –",
+            "value": 12203.6
+          },
+          {
+            "caseId": "500W600000vunICIAY",
+            "caseNumber": "00456912",
+            "subject": "RE: Uberall Case 00454400: RE: Uberall Case 00446151: IKEA A",
+            "value": 9406.0
+          },
+          {
+            "caseId": "500W600000w1I4mIAE",
+            "caseNumber": "00457069",
+            "subject": "Re: Uberall Case 00452033: Reviews Section Bug - ERM RO [ th",
+            "value": 7867.6
+          },
+          {
+            "caseId": "500W600000wae2NIAQ",
+            "caseNumber": "00457538",
+            "subject": "RE: Uberall Case 00455818: LittleBill - Import fiche Google ",
+            "value": 7410.5
+          },
+          {
+            "caseId": "500W600000xaVctIAE",
+            "caseNumber": "00458400",
+            "subject": "RE: Uberall Case 00457563: Missing Google Reviews [ thread::",
+            "value": 7086.0
+          }
+        ],
+        "byQuestions": [
+          {
+            "caseId": "500W600000w8HdNIAU",
+            "caseNumber": "00457199",
+            "subject": "RE: [EXTERNAL] Uberall Case 00452533: Google display Issue –",
+            "value": 61
+          },
+          {
+            "caseId": "500W600000wiEnVIAU",
+            "caseNumber": "00457688",
+            "subject": "Anomalie NF040548",
+            "value": 53
+          },
+          {
+            "caseId": "500W600000wVSTNIA4",
+            "caseNumber": "00457451",
+            "subject": "IDsmart ne fonctionne pas UBERALL",
+            "value": 30
+          },
+          {
+            "caseId": "500W600000wuiY7IAI",
+            "caseNumber": "00457814",
+            "subject": "Re: Taux de réponse sur Uberall",
+            "value": 29
+          },
+          {
+            "caseId": "500W600000wVwERIA0",
+            "caseNumber": "00457450",
+            "subject": "Connecting one Facebook account to different branches or bus",
+            "value": 28
+          }
+        ]
+      }
+    },
+    {
+      "name": "Rida Malouh",
+      "cases": 194,
+      "csat": 10.0,
+      "firstResponseHrs": 21.9,
+      "ongoingResponseHrs": 4.1,
+      "touchpoints": 1.97,
+      "resolutionHrs": 69.1,
+      "complexity": 2.35,
+      "conversationComplexity": 1.91,
+      "convAvgMsgs": 2.72,
+      "convAvgLength": 1920,
+      "convAvgQuestions": 4.07,
+      "csatTotal": 4,
+      "csatPct": 100,
+      "caseExamples": {
+        "byMsgCount": [
+          {
+            "caseId": "500W600000x4J71IAE",
+            "caseNumber": "00457939",
+            "subject": "Re: Facebook Connection Links",
+            "value": 12
+          },
+          {
+            "caseId": "500W600000x0qHeIAI",
+            "caseNumber": "00457894",
+            "subject": "Dysfonctionnements chatbot Le Diamant Bleu — preuves de bugs",
+            "value": 9
+          },
+          {
+            "caseId": "500W600000w1LAnIAM",
+            "caseNumber": "00457064",
+            "subject": "Facebook Listing Connection",
+            "value": 9
+          },
+          {
+            "caseId": "500W600000vo3A4IAI",
+            "caseNumber": "00456817",
+            "subject": "TR: Facebook cover",
+            "value": 8
+          },
+          {
+            "caseId": "500W600000w1axnIAA",
+            "caseNumber": "00457079",
+            "subject": "[Connection UBERALL] Morgan GL AGEN - Problème de connexion ",
+            "value": 8
+          }
+        ],
+        "byMsgLength": [
+          {
+            "caseId": "500W600000x0qHeIAI",
+            "caseNumber": "00457894",
+            "subject": "Dysfonctionnements chatbot Le Diamant Bleu — preuves de bugs",
+            "value": 11913.4
+          },
+          {
+            "caseId": "500W600000x4J71IAE",
+            "caseNumber": "00457939",
+            "subject": "Re: Facebook Connection Links",
+            "value": 11459.0
+          },
+          {
+            "caseId": "500W600000w6YLuIAM",
+            "caseNumber": "00457204",
+            "subject": "Re: Uberall Case 00446192: Customer Request - Data not avail",
+            "value": 6466.0
+          },
+          {
+            "caseId": "500W600000xvjOFIAY",
+            "caseNumber": "00458748",
+            "subject": "Re: Question Regarding Bulk Updates",
+            "value": 6389.0
+          },
+          {
+            "caseId": "500W600000x0rVPIAY",
+            "caseNumber": "00457891",
+            "subject": "Noms de stations incorrects sur Google",
+            "value": 5816.4
+          }
+        ],
+        "byQuestions": [
+          {
+            "caseId": "500W600000x4J71IAE",
+            "caseNumber": "00457939",
+            "subject": "Re: Facebook Connection Links",
+            "value": 113
+          },
+          {
+            "caseId": "500W600000x0qHeIAI",
+            "caseNumber": "00457894",
+            "subject": "Dysfonctionnements chatbot Le Diamant Bleu — preuves de bugs",
+            "value": 79
+          },
+          {
+            "caseId": "500W600000w1LAnIAM",
+            "caseNumber": "00457064",
+            "subject": "Facebook Listing Connection",
+            "value": 51
+          },
+          {
+            "caseId": "500W600000xKP0LIAW",
+            "caseNumber": "00458176",
+            "subject": "Client Escalation | FirstService Residential | Review Concer",
+            "value": 44
+          },
+          {
+            "caseId": "500W600000x9qFCIAY",
+            "caseNumber": "00458030",
+            "subject": "Re. uberall access",
+            "value": 38
+          }
+        ]
+      }
+    },
+    {
+      "name": "Victoria Sene Ríos",
+      "cases": 184,
+      "csat": 8.3,
+      "firstResponseHrs": 23.2,
+      "ongoingResponseHrs": 7.7,
+      "touchpoints": 2.19,
+      "resolutionHrs": 134.1,
+      "complexity": 2.35,
+      "conversationComplexity": 5.82,
+      "convAvgMsgs": 2.98,
+      "convAvgLength": 2668,
+      "convAvgQuestions": 3.96,
+      "csatTotal": 3,
+      "csatPct": 67,
+      "caseExamples": {
+        "byMsgCount": [
+          {
+            "caseId": "500W600000vqAAgIAM",
+            "caseNumber": "00456833",
+            "subject": "Issue with verification status – Oliver Green (Utrecht) N: 6",
+            "value": 11
+          },
+          {
+            "caseId": "500W600000w3PtNIAU",
+            "caseNumber": "00457130",
+            "subject": "Bulk upload",
+            "value": 9
+          },
+          {
+            "caseId": "500W600000wUm96IAC",
+            "caseNumber": "00457420",
+            "subject": "FW: Request to Update Google Business Profile Information fo",
+            "value": 8
+          },
+          {
+            "caseId": "500W600000vrNdZIAU",
+            "caseNumber": "00456844",
+            "subject": "Eurobaustoff: Whitelist Problem",
+            "value": 8
+          },
+          {
+            "caseId": "500W600000vxmj2IAA",
+            "caseNumber": "00457004",
+            "subject": "No cargan datos Analíticas",
+            "value": 7
+          }
+        ],
+        "byMsgLength": [
+          {
+            "caseId": "500W600000wUm96IAC",
+            "caseNumber": "00457420",
+            "subject": "FW: Request to Update Google Business Profile Information fo",
+            "value": 15230.6
+          },
+          {
+            "caseId": "500W600000vvasMIAQ",
+            "caseNumber": "00456916",
+            "subject": "Clarification request: Google Description sync logic and pre",
+            "value": 11725.7
+          },
+          {
+            "caseId": "500W600000yJsyEIAS",
+            "caseNumber": "00461883",
+            "subject": "FW: [External] Re: Introduction",
+            "value": 10436.0
+          },
+          {
+            "caseId": "500W600000wTNBKIA4",
+            "caseNumber": "00457398",
+            "subject": "RE: Urgent -  Tripadvisor connection [ thread::QguglhhDe6OqW",
+            "value": 9997.7
+          },
+          {
+            "caseId": "500W600000w9lr7IAA",
+            "caseNumber": "00457229",
+            "subject": "Re: Uberall Anfrage 00454049: Bing Öffnungszeiten [ thread::",
+            "value": 9639.7
+          }
+        ],
+        "byQuestions": [
+          {
+            "caseId": "500W600000vqAAgIAM",
+            "caseNumber": "00456833",
+            "subject": "Issue with verification status – Oliver Green (Utrecht) N: 6",
+            "value": 93
+          },
+          {
+            "caseId": "500W600000wUm96IAC",
+            "caseNumber": "00457420",
+            "subject": "FW: Request to Update Google Business Profile Information fo",
+            "value": 91
+          },
+          {
+            "caseId": "500W600000vvasMIAQ",
+            "caseNumber": "00456916",
+            "subject": "Clarification request: Google Description sync logic and pre",
+            "value": 39
+          },
+          {
+            "caseId": "500W600000yJsyEIAS",
+            "caseNumber": "00461883",
+            "subject": "FW: [External] Re: Introduction",
+            "value": 27
+          },
+          {
+            "caseId": "500W600000xNYs1IAG",
+            "caseNumber": "00458285",
+            "subject": "Reihenfolge und Ausspielung Fotos Google Unternehmensprofil",
+            "value": 21
+          }
+        ]
+      }
+    },
+    {
+      "name": "Stephan Duerrnagel",
+      "cases": 168,
+      "csat": 9.1,
+      "firstResponseHrs": 13.9,
+      "ongoingResponseHrs": 2.4,
+      "touchpoints": 1.99,
+      "resolutionHrs": 51.5,
+      "complexity": 2.42,
+      "conversationComplexity": 5.52,
+      "convAvgMsgs": 2.78,
+      "convAvgLength": 2657,
+      "convAvgQuestions": 3.91,
+      "csatTotal": 16,
+      "csatPct": 88,
+      "caseExamples": {
+        "byMsgCount": [
+          {
+            "caseId": "500W600000wa0D8IAI",
+            "caseNumber": "00457565",
+            "subject": "Raynes Park Headmasters Apple Maps issue",
+            "value": 9
+          },
+          {
+            "caseId": "500W600000wgqKLIAY",
+            "caseNumber": "00457679",
+            "subject": "Paris Flagship Store - Temp Closed",
+            "value": 9
+          },
+          {
+            "caseId": "500W600000vrgGaIAI",
+            "caseNumber": "00456870",
+            "subject": "Support with correcting Apple maps data",
+            "value": 8
+          },
+          {
+            "caseId": "500W600000wERGhIAO",
+            "caseNumber": "00457289",
+            "subject": "Frage zur Vertragslaufzeit und Kündigung von Endkunden",
+            "value": 7
+          },
+          {
+            "caseId": "500W600000wPU9ZIAW",
+            "caseNumber": "00457357",
+            "subject": "Bug Report: User Invitation Error for Super Admin under URL ",
+            "value": 7
+          }
+        ],
+        "byMsgLength": [
+          {
+            "caseId": "500W600000vvM1VIAU",
+            "caseNumber": "00456926",
+            "subject": "Re: Uberall Anfrage 00455732: Support Burgerheart Standort u",
+            "value": 18215.0
+          },
+          {
+            "caseId": "500W600000wwyQdIAI",
+            "caseNumber": "00457824",
+            "subject": "IKEA Australia: WA Apple Maps dont show correct store hours",
+            "value": 13965.3
+          },
+          {
+            "caseId": "500W600000w6bDIIAY",
+            "caseNumber": "00457177",
+            "subject": "AW: Uberall Anfrage 00440945: Google Duplikate [ thread::K4S",
+            "value": 13731.0
+          },
+          {
+            "caseId": "500W600000wlSfRIAU",
+            "caseNumber": "00457726",
+            "subject": "Re: Inquiry regarding address normalization logic and dataso",
+            "value": 11666.0
+          },
+          {
+            "caseId": "500W600000wWQcNIAW",
+            "caseNumber": "00457483",
+            "subject": "Verzeichnisse",
+            "value": 9678.9
+          }
+        ],
+        "byQuestions": [
+          {
+            "caseId": "500W600000wGkNKIA0",
+            "caseNumber": "00457328",
+            "subject": "Uberall",
+            "value": 56
+          },
+          {
+            "caseId": "500W600000wwyQdIAI",
+            "caseNumber": "00457824",
+            "subject": "IKEA Australia: WA Apple Maps dont show correct store hours",
+            "value": 54
+          },
+          {
+            "caseId": "500W600000wPU9ZIAW",
+            "caseNumber": "00457357",
+            "subject": "Bug Report: User Invitation Error for Super Admin under URL ",
+            "value": 37
+          },
+          {
+            "caseId": "500W600000wWQcNIAW",
+            "caseNumber": "00457483",
+            "subject": "Verzeichnisse",
+            "value": 37
+          },
+          {
+            "caseId": "500W600000wFGZSIA4",
+            "caseNumber": "00457317",
+            "subject": "Yext sync time a lot shorter than Uberall one",
+            "value": 34
+          }
+        ]
+      }
+    },
+    {
+      "name": "Maria Fontiveros Villasana",
+      "cases": 133,
+      "csat": 10.0,
+      "firstResponseHrs": 12.1,
+      "ongoingResponseHrs": 3.9,
+      "touchpoints": 2.96,
+      "resolutionHrs": 93.0,
+      "complexity": 2.4,
+      "conversationComplexity": 10.0,
+      "convAvgMsgs": 3.73,
+      "convAvgLength": 3107,
+      "convAvgQuestions": 5.93,
+      "csatTotal": 8,
+      "csatPct": 100,
+      "caseExamples": {
+        "byMsgCount": [
+          {
+            "caseId": "500W600000wj3WcIAI",
+            "caseNumber": "00457696",
+            "subject": "Ayuda conectar ubicación",
+            "value": 13
+          },
+          {
+            "caseId": "500W600000wTzd3IAC",
+            "caseNumber": "00457400",
+            "subject": "Request for User Access",
+            "value": 10
+          },
+          {
+            "caseId": "500W600000xe8zNIAQ",
+            "caseNumber": "00458465",
+            "subject": "una de las ubicaciones no conecta con google",
+            "value": 9
+          },
+          {
+            "caseId": "500W600000w5wtHIAQ",
+            "caseNumber": "00457186",
+            "subject": "BRU Airport",
+            "value": 8
+          },
+          {
+            "caseId": "500W600000wTqWTIA0",
+            "caseNumber": "00457394",
+            "subject": "Nuevas ubicaciones - verificación Google",
+            "value": 8
+          }
+        ],
+        "byMsgLength": [
+          {
+            "caseId": "500W600000wUj3BIAS",
+            "caseNumber": "00457409",
+            "subject": "RE: Uberall Case 00417774: Sincronización Uberall con Bing [",
+            "value": 25881.7
+          },
+          {
+            "caseId": "500W600000wysHDIAY",
+            "caseNumber": "00457852",
+            "subject": "FW: Request for Additional Google Reviews Analytics Features",
+            "value": 13190.9
+          },
+          {
+            "caseId": "500W600000x0IRDIA2",
+            "caseNumber": "00457873",
+            "subject": "RE: Uberall Case 00456658: Tienda 22 Calp [ thread::NERib70l",
+            "value": 11162.3
+          },
+          {
+            "caseId": "500W600000wz4LdIAI",
+            "caseNumber": "00457859",
+            "subject": "Re: Uberall Case 00454816: User Report [ thread::ScPKdg2reBu",
+            "value": 10766.0
+          },
+          {
+            "caseId": "500W600000wybBdIAI",
+            "caseNumber": "00457846",
+            "subject": "RE: Uberall Case 00453431: RE: Uberall Case 00450515: Expira",
+            "value": 9696.0
+          }
+        ],
+        "byQuestions": [
+          {
+            "caseId": "500W600000wj3WcIAI",
+            "caseNumber": "00457696",
+            "subject": "Ayuda conectar ubicación",
+            "value": 121
+          },
+          {
+            "caseId": "500W600000wgTsDIAU",
+            "caseNumber": "00457647",
+            "subject": "Urgent Investigation Request: Google Connection Disconnected",
+            "value": 63
+          },
+          {
+            "caseId": "500W600000wud3pIAA",
+            "caseNumber": "00457815",
+            "subject": "F45 Hamilton Downtown - Canada - account profile",
+            "value": 46
+          },
+          {
+            "caseId": "500W600000wTzd3IAC",
+            "caseNumber": "00457400",
+            "subject": "Request for User Access",
+            "value": 39
+          },
+          {
+            "caseId": "500W600000wi82AIAQ",
+            "caseNumber": "00457691",
+            "subject": "Re: Attribution for Google Maps",
+            "value": 39
+          }
+        ]
+      }
+    },
+    {
+      "name": "Jhonric Canillo",
+      "cases": 129,
+      "csat": 10.0,
+      "firstResponseHrs": 30.4,
+      "ongoingResponseHrs": 8.6,
+      "touchpoints": 3.3,
+      "resolutionHrs": 154.7,
+      "complexity": 2.5,
+      "conversationComplexity": 2.07,
+      "convAvgMsgs": 3.81,
+      "convAvgLength": 1591,
+      "convAvgQuestions": 5.06,
+      "csatTotal": 4,
+      "csatPct": 100,
+      "caseExamples": {
+        "byMsgCount": [
+          {
+            "caseId": "500W600000vttcYIAQ",
+            "caseNumber": "00456906",
+            "subject": "Re: Viera Google Listing",
+            "value": 16
+          },
+          {
+            "caseId": "500W600000vrVw7IAE",
+            "caseNumber": "00456857",
+            "subject": "Re: Franchise 1730 Facebook/Uber all charges",
+            "value": 11
+          },
+          {
+            "caseId": "500W600000wdQXYIA2",
+            "caseNumber": "00457618",
+            "subject": "DPF Alternatives Albertville, AL - Website update",
+            "value": 11
+          },
+          {
+            "caseId": "500W600000vs2P8IAI",
+            "caseNumber": "00456885",
+            "subject": "Apple Maps #204: Fairfield/North Texas",
+            "value": 10
+          },
+          {
+            "caseId": "500W600000w0eaQIAQ",
+            "caseNumber": "00457050",
+            "subject": "Activity Panel",
+            "value": 10
+          }
+        ],
+        "byMsgLength": [
+          {
+            "caseId": "500W600000wWOiaIAG",
+            "caseNumber": "00457478",
+            "subject": "RE: Uberall Case 00448226: FW: Uberall/ Google Business Page",
+            "value": 13981.0
+          },
+          {
+            "caseId": "500W600000vttcYIAQ",
+            "caseNumber": "00456906",
+            "subject": "Re: Viera Google Listing",
+            "value": 13838.4
+          },
+          {
+            "caseId": "500W600000wdcGyIAI",
+            "caseNumber": "00457620",
+            "subject": "URGENT ERROR Assistance on Relocation of store #473 -Google ",
+            "value": 11673.8
+          },
+          {
+            "caseId": "500W600000wiGatIAE",
+            "caseNumber": "00457694",
+            "subject": "Re: AZ Store Shift",
+            "value": 8093.7
+          },
+          {
+            "caseId": "500W600000wX8wgIAC",
+            "caseNumber": "00457495",
+            "subject": "MMP NRO #496: Cedar Park/E. Whitestone Blvd.",
+            "value": 5642.2
+          }
+        ],
+        "byQuestions": [
+          {
+            "caseId": "500W600000vttcYIAQ",
+            "caseNumber": "00456906",
+            "subject": "Re: Viera Google Listing",
+            "value": 150
+          },
+          {
+            "caseId": "500W600000wdcGyIAI",
+            "caseNumber": "00457620",
+            "subject": "URGENT ERROR Assistance on Relocation of store #473 -Google ",
+            "value": 89
+          },
+          {
+            "caseId": "500W600000wiGatIAE",
+            "caseNumber": "00457694",
+            "subject": "Re: AZ Store Shift",
+            "value": 85
+          },
+          {
+            "caseId": "500W600000wdQXYIA2",
+            "caseNumber": "00457618",
+            "subject": "DPF Alternatives Albertville, AL - Website update",
+            "value": 68
+          },
+          {
+            "caseId": "500W600000vs2P8IAI",
+            "caseNumber": "00456885",
+            "subject": "Apple Maps #204: Fairfield/North Texas",
+            "value": 49
+          }
+        ]
+      }
+    },
+    {
+      "name": "Anna-Christin Voigt",
+      "cases": 121,
+      "csat": 10.0,
+      "firstResponseHrs": 25.6,
+      "ongoingResponseHrs": 2.9,
+      "touchpoints": 2.25,
+      "resolutionHrs": 40.9,
+      "complexity": 2.32,
+      "conversationComplexity": 4.43,
+      "convAvgMsgs": 2.6,
+      "convAvgLength": 2313,
+      "convAvgQuestions": 5.29,
+      "csatTotal": 4,
+      "csatPct": 100,
+      "caseExamples": {
+        "byMsgCount": [
+          {
+            "caseId": "500W600000xwQkvIAE",
+            "caseNumber": "00458763",
+            "subject": "Autohaus Larl GmbH / Längen- und Breitengrad wird nicht über",
+            "value": 6
+          },
+          {
+            "caseId": "500W600000xC2k7IAC",
+            "caseNumber": "00458063",
+            "subject": "Customer feedback follow-up",
+            "value": 5
+          },
+          {
+            "caseId": "500W600000wdXdyIAE",
+            "caseNumber": "",
+            "subject": "",
+            "value": 5
+          },
+          {
+            "caseId": "500W600000w5O3aIAE",
+            "caseNumber": "00457175",
+            "subject": "New York - adidas Brand Hub",
+            "value": 4
+          },
+          {
+            "caseId": "500W600000wp4GNIAY",
+            "caseNumber": "00457800",
+            "subject": "New Location - Manteca 1283 FBExHDOS",
+            "value": 4
+          }
+        ],
+        "byMsgLength": [
+          {
+            "caseId": "500W600000wdXdyIAE",
+            "caseNumber": "",
+            "subject": "",
+            "value": 13130.6
+          },
+          {
+            "caseId": "500W600000xvuRlIAI",
+            "caseNumber": "00458761",
+            "subject": "WG: Uberall Anfrage 00451956: Bing [ thread::X0ZqFEn5d1Kj87y",
+            "value": 7747.5
+          },
+          {
+            "caseId": "500W600000xC2k7IAC",
+            "caseNumber": "00458063",
+            "subject": "Customer feedback follow-up",
+            "value": 6791.4
+          },
+          {
+            "caseId": "500W600000xwfDnIAI",
+            "caseNumber": "00458780",
+            "subject": "AW: Uberall Anfrage 00448498: Google Unternehmensprofile SSH",
+            "value": 6775.0
+          },
+          {
+            "caseId": "500W600000xqaf0IAA",
+            "caseNumber": "00458667",
+            "subject": "WG: TÜV Bad Friedrichshall - Google falsche Angaben",
+            "value": 5156.8
+          }
+        ],
+        "byQuestions": [
+          {
+            "caseId": "500W600000wdXdyIAE",
+            "caseNumber": "",
+            "subject": "",
+            "value": 30
+          },
+          {
+            "caseId": "500W600000xvuRlIAI",
+            "caseNumber": "00458761",
+            "subject": "WG: Uberall Anfrage 00451956: Bing [ thread::X0ZqFEn5d1Kj87y",
+            "value": 29
+          },
+          {
+            "caseId": "500W600000xqaf0IAA",
+            "caseNumber": "00458667",
+            "subject": "WG: TÜV Bad Friedrichshall - Google falsche Angaben",
+            "value": 21
+          },
+          {
+            "caseId": "500W600000xC2k7IAC",
+            "caseNumber": "00458063",
+            "subject": "Customer feedback follow-up",
+            "value": 19
+          },
+          {
+            "caseId": "500W600000xgCZ8IAM",
+            "caseNumber": "00458490",
+            "subject": "Chera 2654317",
+            "value": 18
+          }
+        ]
+      }
+    },
+    {
+      "name": "Patrick Paul Bayor",
+      "cases": 112,
+      "csat": 10.0,
+      "firstResponseHrs": 54.2,
+      "ongoingResponseHrs": 12.5,
+      "touchpoints": 2.84,
+      "resolutionHrs": 167.6,
+      "complexity": 2.6,
+      "conversationComplexity": 2.49,
+      "convAvgMsgs": 3.29,
+      "convAvgLength": 1666,
+      "convAvgQuestions": 6.11,
+      "csatTotal": 1,
+      "csatPct": 100,
+      "caseExamples": {
+        "byMsgCount": [
+          {
+            "caseId": "500W600000w4jOZIAY",
+            "caseNumber": "00457156",
+            "subject": "New import from Google | Metaire Bank | 8 locations",
+            "value": 14
+          },
+          {
+            "caseId": "500W600000wpVWkIAM",
+            "caseNumber": "00457801",
+            "subject": "FW: Uberall | Hat Creek Burgers Account Manager Intro",
+            "value": 14
+          },
+          {
+            "caseId": "500W600000wFWEOIA4",
+            "caseNumber": "00457319",
+            "subject": "New EA Locations",
+            "value": 10
+          },
+          {
+            "caseId": "500W600000wY1I2IAK",
+            "caseNumber": "00457509",
+            "subject": "House of Dank Google connections",
+            "value": 9
+          },
+          {
+            "caseId": "500W600000wj4xLIAQ",
+            "caseNumber": "00457699",
+            "subject": "[RES] re-Verification escalation request",
+            "value": 9
+          }
+        ],
+        "byMsgLength": [
+          {
+            "caseId": "500W600000w4jOZIAY",
+            "caseNumber": "00457156",
+            "subject": "New import from Google | Metaire Bank | 8 locations",
+            "value": 6010.1
+          },
+          {
+            "caseId": "500W600000wpVWkIAM",
+            "caseNumber": "00457801",
+            "subject": "FW: Uberall | Hat Creek Burgers Account Manager Intro",
+            "value": 5746.1
+          },
+          {
+            "caseId": "500W600000w9uo4IAA",
+            "caseNumber": "00457239",
+            "subject": "Request: Package Renaming & Country Removal in Product Plan ",
+            "value": 4706.2
+          },
+          {
+            "caseId": "500W600000xkZ8tIAE",
+            "caseNumber": "00458560",
+            "subject": "FW: Houston Media Presentation",
+            "value": 4439.8
+          },
+          {
+            "caseId": "500W600000wFWEOIA4",
+            "caseNumber": "00457319",
+            "subject": "New EA Locations",
+            "value": 4436.2
+          }
+        ],
+        "byQuestions": [
+          {
+            "caseId": "500W600000wpVWkIAM",
+            "caseNumber": "00457801",
+            "subject": "FW: Uberall | Hat Creek Burgers Account Manager Intro",
+            "value": 227
+          },
+          {
+            "caseId": "500W600000w4jOZIAY",
+            "caseNumber": "00457156",
+            "subject": "New import from Google | Metaire Bank | 8 locations",
+            "value": 174
+          },
+          {
+            "caseId": "500W600000wY1I2IAK",
+            "caseNumber": "00457509",
+            "subject": "House of Dank Google connections",
+            "value": 66
+          },
+          {
+            "caseId": "500W600000wj4xLIAQ",
+            "caseNumber": "00457699",
+            "subject": "[RES] re-Verification escalation request",
+            "value": 50
+          },
+          {
+            "caseId": "500W600000wFWEOIA4",
+            "caseNumber": "00457319",
+            "subject": "New EA Locations",
+            "value": 29
+          }
+        ]
+      }
+    },
+    {
+      "name": "John Paul Pineda",
+      "cases": 97,
+      "csat": 10.0,
+      "firstResponseHrs": 65.1,
+      "ongoingResponseHrs": 13.4,
+      "touchpoints": 2.51,
+      "resolutionHrs": 119.7,
+      "complexity": 2.51,
+      "conversationComplexity": 2.1,
+      "convAvgMsgs": 3.21,
+      "convAvgLength": 1819,
+      "convAvgQuestions": 4.33,
+      "csatTotal": 1,
+      "csatPct": 100,
+      "caseExamples": {
+        "byMsgCount": [
+          {
+            "caseId": "500W600000vpkHiIAI",
+            "caseNumber": "00456816",
+            "subject": "Facebook connection issue",
+            "value": 9
+          },
+          {
+            "caseId": "500W600000wVon9IAC",
+            "caseNumber": "00457472",
+            "subject": "FW: Social Media Publisher - Addition of Tampa Market",
+            "value": 9
+          },
+          {
+            "caseId": "500W600000x8n9dIAA",
+            "caseNumber": "00458025",
+            "subject": "Re: MaidPro Westerville",
+            "value": 8
+          },
+          {
+            "caseId": "500W600000vsIs0IAE",
+            "caseNumber": "00456880",
+            "subject": "Uberall Login/Help",
+            "value": 7
+          },
+          {
+            "caseId": "500W600000wVguRIAS",
+            "caseNumber": "00457439",
+            "subject": "Apple Maps Posting Error",
+            "value": 7
+          }
+        ],
+        "byMsgLength": [
+          {
+            "caseId": "500W600000xNRFJIA4",
+            "caseNumber": "00458295",
+            "subject": "Apple Maps",
+            "value": 7350.0
+          },
+          {
+            "caseId": "500W600000x1C3fIAE",
+            "caseNumber": "00457911",
+            "subject": "Re: Fake GBP listing @ our address! Help plz!",
+            "value": 6699.7
+          },
+          {
+            "caseId": "500W600000woXsDIAU",
+            "caseNumber": "00457778",
+            "subject": "Nob Hill #634 Is Not Showing Closed Today",
+            "value": 5342.7
+          },
+          {
+            "caseId": "500W600000whi2tIAA",
+            "caseNumber": "00457680",
+            "subject": "Locations Marked Permanently Closed",
+            "value": 5242.4
+          },
+          {
+            "caseId": "500W600000x7RmNIAU",
+            "caseNumber": "00458014",
+            "subject": "Jonathan Schultz - Uberall Seat",
+            "value": 4856.9
+          }
+        ],
+        "byQuestions": [
+          {
+            "caseId": "500W600000xFuzCIAS",
+            "caseNumber": "00458120",
+            "subject": "Fw: [EXTERNAL]Fwd: Request for Listings Release | Wellby Fin",
+            "value": 69
+          },
+          {
+            "caseId": "500W600000vpkHiIAI",
+            "caseNumber": "00456816",
+            "subject": "Facebook connection issue",
+            "value": 42
+          },
+          {
+            "caseId": "500W600000vsIs0IAE",
+            "caseNumber": "00456880",
+            "subject": "Uberall Login/Help",
+            "value": 41
+          },
+          {
+            "caseId": "500W600000x8n9dIAA",
+            "caseNumber": "00458025",
+            "subject": "Re: MaidPro Westerville",
+            "value": 37
+          },
+          {
+            "caseId": "500W600000x1C3fIAE",
+            "caseNumber": "00457911",
+            "subject": "Re: Fake GBP listing @ our address! Help plz!",
+            "value": 32
+          }
+        ]
+      }
+    },
+    {
+      "name": "Fernando Viana",
+      "cases": 45,
+      "csat": 10.0,
+      "firstResponseHrs": 2.6,
+      "ongoingResponseHrs": 4.6,
+      "touchpoints": 2.86,
+      "resolutionHrs": 83.7,
+      "complexity": 2.33,
+      "conversationComplexity": 4.95,
+      "convAvgMsgs": 3.65,
+      "convAvgLength": 2287,
+      "convAvgQuestions": 4.41,
+      "csatTotal": 1,
+      "csatPct": 100,
+      "caseExamples": {
+        "byMsgCount": [
+          {
+            "caseId": "500W600000vrGFZIA2",
+            "caseNumber": "00456856",
+            "subject": "Listings stuck on Updating state",
+            "value": 10
+          },
+          {
+            "caseId": "500W600000wWDdaIAG",
+            "caseNumber": "00457492",
+            "subject": "Assistance with the Map pin placement for loc#1488",
+            "value": 7
+          },
+          {
+            "caseId": "500W600000vyTXlIAM",
+            "caseNumber": "00457015",
+            "subject": "Location Sync",
+            "value": 6
+          },
+          {
+            "caseId": "500W600000w5ujKIAQ",
+            "caseNumber": "00457170",
+            "subject": "URGENT Request: Regarding listings - Vitals",
+            "value": 6
+          },
+          {
+            "caseId": "500W600000wG0sIIAS",
+            "caseNumber": "00457324",
+            "subject": "Issue with Listings on Multiple Locations - High number of s",
+            "value": 6
+          }
+        ],
+        "byMsgLength": [
+          {
+            "caseId": "500W600000wdXdyIAE",
+            "caseNumber": "00457624",
+            "subject": "Re: Uberall Case 00454386: RWHG | MDR Listings [ thread::b5d",
+            "value": 13130.6
+          },
+          {
+            "caseId": "500W600000wjPtkIAE",
+            "caseNumber": "00457703",
+            "subject": "RE: SMP disconnected [ thread::xCBYfVpJeYuptZ5VyUfc9DU:: ]",
+            "value": 7934.3
+          },
+          {
+            "caseId": "500W600000vrGFZIA2",
+            "caseNumber": "00456856",
+            "subject": "Listings stuck on Updating state",
+            "value": 4894.7
+          },
+          {
+            "caseId": "500W600000wG0sIIAS",
+            "caseNumber": "00457324",
+            "subject": "Issue with Listings on Multiple Locations - High number of s",
+            "value": 4661.5
+          },
+          {
+            "caseId": "500W600000wcTEBIA2",
+            "caseNumber": "00457602",
+            "subject": "FW: Uberall - Facebook Admin Control",
+            "value": 4419.0
+          }
+        ],
+        "byQuestions": [
+          {
+            "caseId": "500W600000vrGFZIA2",
+            "caseNumber": "00456856",
+            "subject": "Listings stuck on Updating state",
+            "value": 35
+          },
+          {
+            "caseId": "500W600000wdXdyIAE",
+            "caseNumber": "00457624",
+            "subject": "Re: Uberall Case 00454386: RWHG | MDR Listings [ thread::b5d",
+            "value": 30
+          },
+          {
+            "caseId": "500W600000wjPtkIAE",
+            "caseNumber": "00457703",
+            "subject": "RE: SMP disconnected [ thread::xCBYfVpJeYuptZ5VyUfc9DU:: ]",
+            "value": 29
+          },
+          {
+            "caseId": "500W600000vyTXlIAM",
+            "caseNumber": "00457015",
+            "subject": "Location Sync",
+            "value": 16
+          },
+          {
+            "caseId": "500W600000wjqlwIAA",
+            "caseNumber": "00457712",
+            "subject": "Michael Whitting Updates",
+            "value": 15
+          }
+        ]
+      }
+    },
+    {
+      "name": "Joel Alob",
+      "cases": 36,
+      "csat": 10.0,
+      "firstResponseHrs": 2.0,
+      "ongoingResponseHrs": 2.6,
+      "touchpoints": 2.55,
+      "resolutionHrs": 67.3,
+      "complexity": 2.33,
+      "conversationComplexity": 4.03,
+      "convAvgMsgs": 3.14,
+      "convAvgLength": 2230,
+      "convAvgQuestions": 4.29,
+      "csatTotal": 1,
+      "csatPct": 100,
+      "caseExamples": {
+        "byMsgCount": [
+          {
+            "caseId": "500W600000wAjvKIAS",
+            "caseNumber": "00457256",
+            "subject": "#40186 - Angier google business profile verification",
+            "value": 8
+          },
+          {
+            "caseId": "500W600000vyvsNIAQ",
+            "caseNumber": "00457034",
+            "subject": "#665 Lecanto",
+            "value": 6
+          },
+          {
+            "caseId": "500W600000vrJwYIAU",
+            "caseNumber": "00456848",
+            "subject": "Listing Connection",
+            "value": 5
+          },
+          {
+            "caseId": "500W600000vtay5IAA",
+            "caseNumber": "00456903",
+            "subject": "Apple Maps issue / RUNWAY The Boutique",
+            "value": 5
+          },
+          {
+            "caseId": "500W600000vyebJIAQ",
+            "caseNumber": "00457019",
+            "subject": "Reviews Connection",
+            "value": 5
+          }
+        ],
+        "byMsgLength": [
+          {
+            "caseId": "500W600000vxfslIAA",
+            "caseNumber": "00457008",
+            "subject": "Re: Uberall Case 00453117: Re: Uberall Case 00452117: Requir",
+            "value": 8403.0
+          },
+          {
+            "caseId": "500W600000wAjvKIAS",
+            "caseNumber": "00457256",
+            "subject": "#40186 - Angier google business profile verification",
+            "value": 6791.2
+          },
+          {
+            "caseId": "500W600000w9vgtIAA",
+            "caseNumber": "00457237",
+            "subject": "Re: [EXTERNAL] Re: App - Barcode size and Google Pay Wallet",
+            "value": 4209.2
+          },
+          {
+            "caseId": "500W600000vqtdtIAA",
+            "caseNumber": "00456836",
+            "subject": "Re: Uberall Case 00453936: Listings stuck on updating status",
+            "value": 3262.0
+          },
+          {
+            "caseId": "500W600000vsFVvIAM",
+            "caseNumber": "00456875",
+            "subject": "Re: Uberall Case 00452117: Require list of all directories t",
+            "value": 2682.0
+          }
+        ],
+        "byQuestions": [
+          {
+            "caseId": "500W600000w9vgtIAA",
+            "caseNumber": "00457237",
+            "subject": "Re: [EXTERNAL] Re: App - Barcode size and Google Pay Wallet",
+            "value": 41
+          },
+          {
+            "caseId": "500W600000wAjvKIAS",
+            "caseNumber": "00457256",
+            "subject": "#40186 - Angier google business profile verification",
+            "value": 24
+          },
+          {
+            "caseId": "500W600000vzeKhIAI",
+            "caseNumber": "00457039",
+            "subject": "New User Access",
+            "value": 21
+          },
+          {
+            "caseId": "500W600000vtay5IAA",
+            "caseNumber": "00456903",
+            "subject": "Apple Maps issue / RUNWAY The Boutique",
+            "value": 12
+          },
+          {
+            "caseId": "500W600000vyvsNIAQ",
+            "caseNumber": "00457034",
+            "subject": "#665 Lecanto",
+            "value": 11
+          }
+        ]
+      }
+    },
+    {
+      "name": "Ryan Quinn",
+      "cases": 28,
+      "csat": null,
+      "firstResponseHrs": 56.9,
+      "ongoingResponseHrs": 12.2,
+      "touchpoints": 2.18,
+      "resolutionHrs": 93.6,
+      "complexity": 2.36,
+      "conversationComplexity": 4.11,
+      "convAvgMsgs": 3.19,
+      "convAvgLength": 1919,
+      "convAvgQuestions": 6.93,
+      "csatTotal": 0,
+      "csatPct": null,
+      "caseExamples": {
+        "byMsgCount": [
+          {
+            "caseId": "500W600000xyJieIAE",
+            "caseNumber": "00458827",
+            "subject": "Adding New Restaurant to the Austin Market SMP Account",
+            "value": 9
+          },
+          {
+            "caseId": "500W600000vzDxDIAU",
+            "caseNumber": "00457035",
+            "subject": "Google Review Count Drop",
+            "value": 8
+          },
+          {
+            "caseId": "500W600000xyiSUIAY",
+            "caseNumber": "00458830",
+            "subject": "user not having access to all locations",
+            "value": 6
+          },
+          {
+            "caseId": "500W600000xF4SsIAK",
+            "caseNumber": "00458121",
+            "subject": "Uberall API setup questions",
+            "value": 4
+          },
+          {
+            "caseId": "500W600000xyc6tIAA",
+            "caseNumber": "00458826",
+            "subject": "API information",
+            "value": 4
+          }
+        ],
+        "byMsgLength": [
+          {
+            "caseId": "500W600000vzDxDIAU",
+            "caseNumber": "00457035",
+            "subject": "Google Review Count Drop",
+            "value": 10123.6
+          },
+          {
+            "caseId": "500W600000xF4SsIAK",
+            "caseNumber": "00458121",
+            "subject": "Uberall API setup questions",
+            "value": 5076.8
+          },
+          {
+            "caseId": "500W600000xyJieIAE",
+            "caseNumber": "00458827",
+            "subject": "Adding New Restaurant to the Austin Market SMP Account",
+            "value": 5007.0
+          },
+          {
+            "caseId": "500W600000xycV6IAI",
+            "caseNumber": "00458831",
+            "subject": "Case 03972041 || Multiple listing information is not syncing",
+            "value": 2386.7
+          },
+          {
+            "caseId": "500W600000y3Xo7IAE",
+            "caseNumber": "00458953",
+            "subject": "Ungrouped Locations",
+            "value": 2131.2
+          }
+        ],
+        "byQuestions": [
+          {
+            "caseId": "500W600000xyJieIAE",
+            "caseNumber": "00458827",
+            "subject": "Adding New Restaurant to the Austin Market SMP Account",
+            "value": 112
+          },
+          {
+            "caseId": "500W600000xF4SsIAK",
+            "caseNumber": "00458121",
+            "subject": "Uberall API setup questions",
+            "value": 35
+          },
+          {
+            "caseId": "500W600000vzDxDIAU",
+            "caseNumber": "00457035",
+            "subject": "Google Review Count Drop",
+            "value": 22
+          },
+          {
+            "caseId": "500W600000xyc6tIAA",
+            "caseNumber": "00458826",
+            "subject": "API information",
+            "value": 14
+          },
+          {
+            "caseId": "500W600000xycV6IAI",
+            "caseNumber": "00458831",
+            "subject": "Case 03972041 || Multiple listing information is not syncing",
+            "value": 13
+          }
+        ]
+      }
+    },
+    {
+      "name": "Geneca Rapada",
+      "cases": 24,
+      "csat": null,
+      "firstResponseHrs": 46.1,
+      "ongoingResponseHrs": 12.0,
+      "touchpoints": 3.43,
+      "resolutionHrs": 173.7,
+      "complexity": 2.29,
+      "conversationComplexity": 2.7,
+      "convAvgMsgs": 3.95,
+      "convAvgLength": 1768,
+      "convAvgQuestions": 4.36,
+      "csatTotal": 0,
+      "csatPct": null,
+      "caseExamples": {
+        "byMsgCount": [
+          {
+            "caseId": "500W600000wjJujIAE",
+            "caseNumber": "00457697",
+            "subject": "Krebs Kubota- Franklin",
+            "value": 9
+          },
+          {
+            "caseId": "500W600000wVH4vIAG",
+            "caseNumber": "00457465",
+            "subject": "Please add user",
+            "value": 8
+          },
+          {
+            "caseId": "500W600000w3ov8IAA",
+            "caseNumber": "00457153",
+            "subject": "Incorrect Info Published - Apple Maps - (Location ID: 026) A",
+            "value": 6
+          },
+          {
+            "caseId": "500W600000wWKC2IAO",
+            "caseNumber": "00457493",
+            "subject": "Apple & Yelp incorrect address display / Home Grown Farm and",
+            "value": 6
+          },
+          {
+            "caseId": "500W600000x23BEIAY",
+            "caseNumber": "00457918",
+            "subject": "Updated Facebook Cover Page",
+            "value": 6
+          }
+        ],
+        "byMsgLength": [
+          {
+            "caseId": "500W600000x23BEIAY",
+            "caseNumber": "00457918",
+            "subject": "Updated Facebook Cover Page",
+            "value": 4195.5
+          },
+          {
+            "caseId": "500W600000wc9AaIAI",
+            "caseNumber": "00457589",
+            "subject": "Location ID 30b2f24cef6b4240a1a2f1297ca8df16",
+            "value": 3665.0
+          },
+          {
+            "caseId": "500W600000wjJujIAE",
+            "caseNumber": "00457697",
+            "subject": "Krebs Kubota- Franklin",
+            "value": 3661.7
+          },
+          {
+            "caseId": "500W600000w4I22IAE",
+            "caseNumber": "00457158",
+            "subject": "Yelp Listings - Incorrect Data",
+            "value": 2600.8
+          },
+          {
+            "caseId": "500W600000wiKMiIAM",
+            "caseNumber": "00457690",
+            "subject": "Google",
+            "value": 2486.0
+          }
+        ],
+        "byQuestions": [
+          {
+            "caseId": "500W600000wjJujIAE",
+            "caseNumber": "00457697",
+            "subject": "Krebs Kubota- Franklin",
+            "value": 36
+          },
+          {
+            "caseId": "500W600000wc9AaIAI",
+            "caseNumber": "00457589",
+            "subject": "Location ID 30b2f24cef6b4240a1a2f1297ca8df16",
+            "value": 34
+          },
+          {
+            "caseId": "500W600000w4I22IAE",
+            "caseNumber": "00457158",
+            "subject": "Yelp Listings - Incorrect Data",
+            "value": 12
+          },
+          {
+            "caseId": "500W600000wiKMiIAM",
+            "caseNumber": "00457690",
+            "subject": "Google",
+            "value": 12
+          },
+          {
+            "caseId": "500W600000x23BEIAY",
+            "caseNumber": "00457918",
+            "subject": "Updated Facebook Cover Page",
+            "value": 11
+          }
+        ]
+      }
+    }
   ],
   "issueTypeData": [
-    { "label": "Listing Update", "value": 441 },
-    { "label": "Location Update", "value": 241 },
-    { "label": "Directory Connection", "value": 237 },
-    { "label": "How To", "value": 177 },
-    { "label": "Verification or Claim Issue", "value": 173 },
-    { "label": "Failed Data Push", "value": 138 },
-    { "label": "Missing Data", "value": 137 },
-    { "label": "User Updates", "value": 103 },
-    { "label": "Creation Issue", "value": 90 },
-    { "label": "Login Issue", "value": 60 },
-    { "label": "Group Update", "value": 37 },
-    { "label": "Update Existing Page", "value": 18 },
-    { "label": "Location Removal", "value": 16 },
-    { "label": "UI Defect", "value": 12 },
-    { "label": "New Page Creation", "value": 9 }
+    {
+      "label": "Listing Update",
+      "value": 441
+    },
+    {
+      "label": "Location Update",
+      "value": 241
+    },
+    {
+      "label": "Directory Connection",
+      "value": 237
+    },
+    {
+      "label": "How To",
+      "value": 177
+    },
+    {
+      "label": "Verification or Claim Issue",
+      "value": 173
+    },
+    {
+      "label": "Failed Data Push",
+      "value": 138
+    },
+    {
+      "label": "Missing Data",
+      "value": 137
+    },
+    {
+      "label": "User Updates",
+      "value": 103
+    },
+    {
+      "label": "Creation Issue",
+      "value": 90
+    },
+    {
+      "label": "Login Issue",
+      "value": 60
+    },
+    {
+      "label": "Group Update",
+      "value": 37
+    },
+    {
+      "label": "Update Existing Page",
+      "value": 18
+    },
+    {
+      "label": "Location Removal",
+      "value": 16
+    },
+    {
+      "label": "UI Defect",
+      "value": 12
+    },
+    {
+      "label": "New Page Creation",
+      "value": 9
+    }
   ],
   "routingData": []
 }
