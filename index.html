@@ -362,6 +362,7 @@ async function loadData() {
     return;
   }
   hide('loading');
+  initSpamToggleVisual();
   renderAll();
 }
 
@@ -449,7 +450,7 @@ function makeTable(id, cols, rows, empty = 'No data available.') {
 
 // ── Spam filter ───────────────────────────────────────────────────────────
 
-let excludeSpam = false;
+let excludeSpam = true;
 
 function onSpamToggle() {
   excludeSpam = !excludeSpam;
@@ -458,16 +459,20 @@ function onSpamToggle() {
   renderAll();
 }
 
+function initSpamToggleVisual() {
+  document.getElementById('toggle-spam-track').style.background = 'var(--accent)';
+  document.getElementById('toggle-spam-thumb').style.transform = 'translateX(14px)';
+}
+
 function filteredData() {
-  if (!excludeSpam) return data;
-  const spamCount = (data.typeData.find(r => r.label === 'Spam') || {}).value || 0;
+  // data.json already contains spam-excluded data as the default.
+  // When excludeSpam is OFF, add spam back to totals and type list.
+  if (excludeSpam) return data;
+  const spamCount = data.kpis.spamCount || 0;
   return {
     ...data,
-    typeData: data.typeData.filter(r => r.label !== 'Spam'),
-    kpis: {
-      ...data.kpis,
-      total: data.kpis.total - spamCount,
-    },
+    typeData: [...data.typeData.filter(r => r.label !== 'Spam'), { label: 'Spam', value: spamCount }],
+    kpis: { ...data.kpis, total: data.kpis.total + spamCount },
   };
 }
 
