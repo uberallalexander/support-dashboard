@@ -10,7 +10,7 @@
     "spamCount": 302,
     "avgHBRexclOnHold": 30.5,
     "avgV1": 3.0,
-    "avgComplexity": 2.94
+    "avgComplexity": 2.48
   },
   "statusData": [
     {
@@ -274,22 +274,22 @@
       "touchpoints": 2.1,
       "resolutionHrs": 121.4,
       "complexity": 2.48,
-      "conversationComplexity": 2.43,
+      "conversationComplexity": 2.06,
       "convAvgMsgs": 2.48,
-      "convAvgLength": 1243.5,
+      "convAvgLength": 632.4,
       "convAvgQuestions": 3.46,
       "csatTotal": 3,
       "csatPct": 100,
       "caseExamples": {
         "byMsgCount": [
           {
-            "number": "00457512",
-            "subject": "Google Verification + Duplicate",
+            "number": "00457723",
+            "subject": "Same issue unresolved",
             "value": 10
           },
           {
-            "number": "00457723",
-            "subject": "Same issue unresolved",
+            "number": "00457512",
+            "subject": "Google Verification + Duplicate",
             "value": 10
           },
           {
@@ -310,31 +310,31 @@
             "value": 15
           },
           {
-            "number": "00457721",
-            "subject": "Google Profile Link Help",
+            "number": "00458304",
+            "subject": "New store 2094",
             "value": 10
           }
         ],
         "byMsgLength": [
           {
-            "number": "00457512",
-            "subject": "Google Verification + Duplicate",
-            "value": 6855.4
+            "number": "00457249",
+            "subject": "Failed FB Post",
+            "value": 1063.9
           },
           {
             "number": "00457432",
             "subject": "FW: Changing Our Name on Fantastic Sams on Facebook",
-            "value": 5099.3
+            "value": 940.7
           },
           {
-            "number": "00457548",
-            "subject": "TOOTING BROADWAY Store Not Listed in Google Business – Verif",
-            "value": 4394.6
+            "number": "00457902",
+            "subject": "GBP Image Sync",
+            "value": 903.0
           }
         ]
       },
       "convAvgClientMsgs": 2.6,
-      "convAvgClientLength": 1491.2
+      "convAvgClientLength": 668.4
     },
     {
       "name": "Jürgen Sömen",
@@ -345,9 +345,9 @@
       "touchpoints": 2.49,
       "resolutionHrs": 110.2,
       "complexity": 2.44,
-      "conversationComplexity": 3.18,
+      "conversationComplexity": 2.58,
       "convAvgMsgs": 3.14,
-      "convAvgLength": 2456.1,
+      "convAvgLength": 754.8,
       "convAvgQuestions": 7.61,
       "csatTotal": 13,
       "csatPct": 85,
@@ -388,24 +388,24 @@
         ],
         "byMsgLength": [
           {
-            "number": "00457444",
-            "subject": "AW: AW: AW: WG: AW: AW: AW: Alte Uberall Bewertungen [ threa",
-            "value": 21479.0
+            "number": "00457446",
+            "subject": "[DK] 10131003 incorrect address",
+            "value": 1428.3
           },
           {
-            "number": "00457742",
-            "subject": "WG: Ihre E-Mail vom 30.04.2026 | %42982303- #1007335805- | D",
-            "value": 18481.4
+            "number": "00457751",
+            "subject": "RE: Uberall Case 00447728: 10095934 - create pin [ thread::8",
+            "value": 1374.0
           },
           {
-            "number": "00457820",
-            "subject": "RE: Uberall Case 00453431: RE: Uberall Case 00450515: Expira",
-            "value": 10702.5
+            "number": "00457445",
+            "subject": "Wrong Powerdot location",
+            "value": 1194.0
           }
         ]
       },
       "convAvgClientMsgs": 2.76,
-      "convAvgClientLength": 2230.5
+      "convAvgClientLength": 857.1
     },
     {
       "name": "Vincent Riehl",
@@ -416,9 +416,9 @@
       "touchpoints": 2.49,
       "resolutionHrs": 74.7,
       "complexity": 2.4,
-      "conversationComplexity": 3.09,
+      "conversationComplexity": 2.5,
       "convAvgMsgs": 3.09,
-      "convAvgLength": 1580.7,
+      "convAvgLength": 647.7,
       "convAvgQuestions": 5.39,
       "csatTotal": 6,
       "csatPct": 67,
@@ -435,8 +435,8 @@
             "value": 9
           },
           {
-            "number": "00457663",
-            "subject": "Support Apple Business - MANN+HUMMEL",
+            "number": "00457740",
+            "subject": "Fiche Google Mont-Saint-Michel",
             "value": 8
           }
         ],
@@ -459,24 +459,24 @@
         ],
         "byMsgLength": [
           {
-            "number": "00457538",
-            "subject": "RE: Uberall Case 00455818: LittleBill - Import fiche Google ",
-            "value": 8208.8
+            "number": "00457871",
+            "subject": "Discrepancy between Uberall sync status and live directory d",
+            "value": 1554.0
           },
           {
-            "number": "00457688",
-            "subject": "Anomalie NF040548",
-            "value": 7686.9
+            "number": "00458135",
+            "subject": "incident-uberall-is-not-updating-for-switzerland-stores",
+            "value": 1239.0
           },
           {
             "number": "00457663",
             "subject": "Support Apple Business - MANN+HUMMEL",
-            "value": 5240.1
+            "value": 934.6
           }
         ]
       },
       "convAvgClientMsgs": 2.56,
-      "convAvgClientLength": 1607.3
+      "convAvgClientLength": 751.8
     },
     {
       "name": "Rida Malouh",
@@ -487,9 +487,9 @@
       "touchpoints": 1.97,
       "resolutionHrs": 69.1,
       "complexity": 2.35,
-      "conversationComplexity": 2.9,
+      "conversationComplexity": 2.33,
       "convAvgMsgs": 2.58,
-      "convAvgLength": 1518.4,
+      "convAvgLength": 688.2,
       "convAvgQuestions": 4.07,
       "csatTotal": 4,
       "csatPct": 100,
@@ -532,22 +532,22 @@
           {
             "number": "00457894",
             "subject": "Dysfonctionnements chatbot Le Diamant Bleu — preuves de bugs",
-            "value": 12084.2
+            "value": 1264.7
           },
           {
-            "number": "00457939",
-            "subject": "Re: Facebook Connection Links",
-            "value": 8705.2
+            "number": "00457787",
+            "subject": "Urgent - Location pin in wrong position!",
+            "value": 1185.3
           },
           {
-            "number": "00457891",
-            "subject": "Noms de stations incorrects sur Google",
-            "value": 6359.0
+            "number": "00457195",
+            "subject": "Change the button on the GBP listing - Carew Inn",
+            "value": 1155.0
           }
         ]
       },
       "convAvgClientMsgs": 2.41,
-      "convAvgClientLength": 2321.9
+      "convAvgClientLength": 817.6
     },
     {
       "name": "Victoria Sene Ríos",
@@ -558,9 +558,9 @@
       "touchpoints": 2.19,
       "resolutionHrs": 134.1,
       "complexity": 2.35,
-      "conversationComplexity": 3.53,
+      "conversationComplexity": 2.79,
       "convAvgMsgs": 2.89,
-      "convAvgLength": 2006.3,
+      "convAvgLength": 941.6,
       "convAvgQuestions": 3.96,
       "csatTotal": 3,
       "csatPct": 67,
@@ -601,24 +601,24 @@
         ],
         "byMsgLength": [
           {
-            "number": "00458034",
-            "subject": "WG: Synchronisation Probleme mit Uberall",
-            "value": 7772.8
+            "number": "00457448",
+            "subject": "Re: Uberall Case 00456865: Google Connection Issue Notificat",
+            "value": 1974.0
+          },
+          {
+            "number": "00456916",
+            "subject": "Clarification request: Google Description sync logic and pre",
+            "value": 1905.8
           },
           {
             "number": "00458220",
             "subject": "API-Zugriff für Uberall Partner-Account / Nutzung von Locati",
-            "value": 7019.8
-          },
-          {
-            "number": "00457850",
-            "subject": "STERNAUTO: Duplikat BYD - STERNAUTO Budapester Straße 35, 10",
-            "value": 6085.8
+            "value": 1481.2
           }
         ]
       },
       "convAvgClientMsgs": 2.42,
-      "convAvgClientLength": 1679.1
+      "convAvgClientLength": 979.5
     },
     {
       "name": "Stephan Duerrnagel",
@@ -629,22 +629,22 @@
       "touchpoints": 1.99,
       "resolutionHrs": 51.5,
       "complexity": 2.42,
-      "conversationComplexity": 2.69,
+      "conversationComplexity": 2.3,
       "convAvgMsgs": 2.71,
-      "convAvgLength": 1640.1,
+      "convAvgLength": 1041.0,
       "convAvgQuestions": 3.91,
       "csatTotal": 16,
       "csatPct": 88,
       "caseExamples": {
         "byMsgCount": [
           {
-            "number": "00457565",
-            "subject": "Raynes Park Headmasters Apple Maps issue",
+            "number": "00457679",
+            "subject": "Paris Flagship Store - Temp Closed",
             "value": 9
           },
           {
-            "number": "00457679",
-            "subject": "Paris Flagship Store - Temp Closed",
+            "number": "00457565",
+            "subject": "Raynes Park Headmasters Apple Maps issue",
             "value": 9
           },
           {
@@ -672,24 +672,24 @@
         ],
         "byMsgLength": [
           {
-            "number": "00457483",
-            "subject": "Verzeichnisse",
-            "value": 9826.1
+            "number": "00457119",
+            "subject": "Inquiry regarding address normalization logic and datasource",
+            "value": 4333.5
           },
           {
-            "number": "00457565",
-            "subject": "Raynes Park Headmasters Apple Maps issue",
-            "value": 6043.8
+            "number": "00456976",
+            "subject": "Duplikat Erstellung GMB| Auftrag #1007265508- %42873828-",
+            "value": 2398.0
           },
           {
-            "number": "00457328",
-            "subject": "Uberall",
-            "value": 4961.3
+            "number": "00457225",
+            "subject": "Markt-ID 8002803 EDEKA Express Würzburg",
+            "value": 2305.5
           }
         ]
       },
       "convAvgClientMsgs": 2.03,
-      "convAvgClientLength": 1178.6
+      "convAvgClientLength": 776.6
     },
     {
       "name": "Maria Fontiveros Villasana",
@@ -700,9 +700,9 @@
       "touchpoints": 2.96,
       "resolutionHrs": 93.0,
       "complexity": 2.4,
-      "conversationComplexity": 3.3,
+      "conversationComplexity": 2.93,
       "convAvgMsgs": 3.69,
-      "convAvgLength": 1691.6,
+      "convAvgLength": 657.4,
       "convAvgQuestions": 5.93,
       "csatTotal": 8,
       "csatPct": 100,
@@ -743,24 +743,24 @@
         ],
         "byMsgLength": [
           {
-            "number": "00457852",
-            "subject": "FW: Request for Additional Google Reviews Analytics Features",
-            "value": 13896.1
+            "number": "00457577",
+            "subject": "Ownership transfer from Powerdot to LePlein",
+            "value": 1319.0
           },
           {
-            "number": "00457846",
-            "subject": "RE: Uberall Case 00453431: RE: Uberall Case 00450515: Expira",
-            "value": 11180.0
+            "number": "00457731",
+            "subject": "Profile Completeness",
+            "value": 1250.0
           },
           {
-            "number": "00457859",
-            "subject": "Re: Uberall Case 00454816: User Report [ thread::ScPKdg2reBu",
-            "value": 7344.5
+            "number": "00457647",
+            "subject": "Urgent Investigation Request: Google Connection Disconnected",
+            "value": 987.6
           }
         ]
       },
       "convAvgClientMsgs": 3.2,
-      "convAvgClientLength": 1489.1
+      "convAvgClientLength": 781.2
     },
     {
       "name": "Jhonric Canillo",
@@ -771,9 +771,9 @@
       "touchpoints": 3.3,
       "resolutionHrs": 154.7,
       "complexity": 2.5,
-      "conversationComplexity": 3.5,
+      "conversationComplexity": 2.82,
       "convAvgMsgs": 3.85,
-      "convAvgLength": 1591.2,
+      "convAvgLength": 465.7,
       "convAvgQuestions": 5.06,
       "csatTotal": 4,
       "csatPct": 100,
@@ -785,13 +785,13 @@
             "value": 16
           },
           {
-            "number": "00456857",
-            "subject": "Re: Franchise 1730 Facebook/Uber all charges",
+            "number": "00457618",
+            "subject": "DPF Alternatives Albertville, AL - Website update",
             "value": 11
           },
           {
-            "number": "00457618",
-            "subject": "DPF Alternatives Albertville, AL - Website update",
+            "number": "00456857",
+            "subject": "Re: Franchise 1730 Facebook/Uber all charges",
             "value": 11
           }
         ],
@@ -814,24 +814,24 @@
         ],
         "byMsgLength": [
           {
-            "number": "00457620",
-            "subject": "URGENT ERROR Assistance on Relocation of store #473 -Google ",
-            "value": 16453.0
-          },
-          {
-            "number": "00457478",
-            "subject": "RE: Uberall Case 00448226: FW: Uberall/ Google Business Page",
-            "value": 11026.0
-          },
-          {
             "number": "00458322",
             "subject": "Profile picture blank on OXXO reviews",
-            "value": 4611.0
+            "value": 1095.8
+          },
+          {
+            "number": "00458626",
+            "subject": "Question About Billing for Inactive Locations",
+            "value": 835.3
+          },
+          {
+            "number": "00458552",
+            "subject": "Action required mute",
+            "value": 798.3
           }
         ]
       },
       "convAvgClientMsgs": 3.28,
-      "convAvgClientLength": 1485.1
+      "convAvgClientLength": 658.7
     },
     {
       "name": "Anna-Christin Voigt",
@@ -851,8 +851,8 @@
       "caseExamples": {
         "byMsgCount": [
           {
-            "number": "00458426",
-            "subject": "Temporärer Adresswechsel wegen Umbaus – beste Vorgehensweise",
+            "number": "00457722",
+            "subject": "Localsearch | Large syncing issue identified",
             "value": 6
           },
           {
@@ -861,8 +861,8 @@
             "value": 6
           },
           {
-            "number": "00457722",
-            "subject": "Localsearch | Large syncing issue identified",
+            "number": "00458413",
+            "subject": "Duplicate - Listings",
             "value": 6
           }
         ],
@@ -878,8 +878,8 @@
             "value": 6
           },
           {
-            "number": "00458761",
-            "subject": "WG: Uberall Anfrage 00451956: Bing [ thread::X0ZqFEn5d1Kj87y",
+            "number": "00457928",
+            "subject": "Kündigung Dienstleistungsvertrag – VRN: LOQU-UB-INITIAL-89",
             "value": 5
           }
         ],
@@ -913,9 +913,9 @@
       "touchpoints": 2.84,
       "resolutionHrs": 167.6,
       "complexity": 2.6,
-      "conversationComplexity": 2.95,
+      "conversationComplexity": 2.49,
       "convAvgMsgs": 3.37,
-      "convAvgLength": 1102.2,
+      "convAvgLength": 578.0,
       "convAvgQuestions": 6.11,
       "csatTotal": 1,
       "csatPct": 100,
@@ -956,24 +956,24 @@
         ],
         "byMsgLength": [
           {
-            "number": "00457772",
-            "subject": "Social Posts not being uploaded to Facebook",
-            "value": 4094.9
+            "number": "00457367",
+            "subject": "Facebook Pages Issues",
+            "value": 1270.7
           },
           {
-            "number": "00457801",
-            "subject": "FW: Uberall | Hat Creek Burgers Account Manager Intro",
-            "value": 3297.9
+            "number": "00457916",
+            "subject": "urgent: Google Disconnect / Pita Pit Canada",
+            "value": 910.5
           },
           {
-            "number": "00457632",
-            "subject": "Little Caesars MomentFeed Social Amplifier Sign Up - New Fra",
-            "value": 3291.0
+            "number": "00457705",
+            "subject": "Help with Mirabito keeping Uberall via their own account",
+            "value": 860.3
           }
         ]
       },
       "convAvgClientMsgs": 2.75,
-      "convAvgClientLength": 1084.6
+      "convAvgClientLength": 637.1
     },
     {
       "name": "John Paul Pineda",
@@ -984,9 +984,9 @@
       "touchpoints": 2.51,
       "resolutionHrs": 119.7,
       "complexity": 2.51,
-      "conversationComplexity": 3.17,
+      "conversationComplexity": 2.64,
       "convAvgMsgs": 3.07,
-      "convAvgLength": 1187.0,
+      "convAvgLength": 620.3,
       "convAvgQuestions": 4.33,
       "csatTotal": 1,
       "csatPct": 100,
@@ -1010,13 +1010,13 @@
         ],
         "byClientMsgs": [
           {
-            "number": "00458025",
-            "subject": "Re: MaidPro Westerville",
+            "number": "00457802",
+            "subject": "Regarding Little Caesars 3684-0002 Closure Status",
             "value": 15
           },
           {
-            "number": "00457802",
-            "subject": "Regarding Little Caesars 3684-0002 Closure Status",
+            "number": "00458025",
+            "subject": "Re: MaidPro Westerville",
             "value": 15
           },
           {
@@ -1029,22 +1029,22 @@
           {
             "number": "00458295",
             "subject": "Apple Maps",
-            "value": 8308.8
+            "value": 884.4
           },
           {
-            "number": "00458014",
-            "subject": "Jonathan Schultz - Uberall Seat",
-            "value": 5497.3
+            "number": "00457794",
+            "subject": "Listing Issues Southland Smiles",
+            "value": 798.0
           },
           {
-            "number": "00458112",
-            "subject": "Fw: Name Change Assistance - Scaddabush Scarborough",
-            "value": 3338.8
+            "number": "00458224",
+            "subject": "RE: INC12471503: Store #80664 - DM is asking about incorrect",
+            "value": 791.0
           }
         ]
       },
       "convAvgClientMsgs": 2.81,
-      "convAvgClientLength": 1233.1
+      "convAvgClientLength": 723.9
     },
     {
       "name": "Fernando Viana",
@@ -1169,13 +1169,13 @@
         ],
         "byMsgLength": [
           {
-            "number": "00457504",
-            "subject": "Re:[## 5839 ##] Ad Account Alignment: 3393 (ID 6151290519429",
+            "number": "00457480",
+            "subject": "Uberall Yelp Connections",
             "value": 791.0
           },
           {
-            "number": "00457480",
-            "subject": "Uberall Yelp Connections",
+            "number": "00457504",
+            "subject": "Re:[## 5839 ##] Ad Account Alignment: 3393 (ID 6151290519429",
             "value": 791.0
           },
           {
@@ -1397,69 +1397,69 @@
   "complexityBuckets": [
     {
       "label": "0",
-      "value": 183,
+      "value": 201,
       "avgV1": 3.0,
-      "avgHBR": 10.5
+      "avgHBR": 9.7
     },
     {
       "label": "1",
-      "value": 474,
+      "value": 508,
       "avgV1": 3.0,
-      "avgHBR": 15.3
+      "avgHBR": 16.3
     },
     {
       "label": "2",
-      "value": 414,
+      "value": 440,
       "avgV1": 3.0,
-      "avgHBR": 22.4
+      "avgHBR": 22.8
     },
     {
       "label": "3",
-      "value": 235,
+      "value": 281,
       "avgV1": 3.0,
-      "avgHBR": 32.2
+      "avgHBR": 35.2
     },
     {
       "label": "4",
-      "value": 244,
+      "value": 260,
       "avgV1": 3.0,
-      "avgHBR": 41.0
+      "avgHBR": 41.9
     },
     {
       "label": "5",
-      "value": 186,
+      "value": 197,
       "avgV1": 3.0,
-      "avgHBR": 56.7
+      "avgHBR": 63.9
     },
     {
       "label": "6",
-      "value": 96,
+      "value": 87,
       "avgV1": 3.0,
-      "avgHBR": 57.3
+      "avgHBR": 69.8
     },
     {
       "label": "7",
-      "value": 55,
+      "value": 21,
       "avgV1": 3.0,
-      "avgHBR": 46.8
+      "avgHBR": 47.8
     },
     {
       "label": "8",
-      "value": 46,
+      "value": 5,
       "avgV1": 3.0,
-      "avgHBR": 46.2
+      "avgHBR": 41.3
     },
     {
       "label": "9",
-      "value": 28,
-      "avgV1": 3.0,
-      "avgHBR": 52.2
+      "value": 0,
+      "avgV1": null,
+      "avgHBR": null
     },
     {
       "label": "10",
-      "value": 39,
-      "avgV1": 3.0,
-      "avgHBR": 66.1
+      "value": 0,
+      "avgV1": null,
+      "avgHBR": null
     }
   ]
 }
