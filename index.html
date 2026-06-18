@@ -496,6 +496,60 @@ function toggleAgentExpand(row, agentName, idx) {
   const hbrData = Array.from({length:11}, (_,i) => hbrRaw[i] ?? null);
   const scoreColor = i => i <= 3 ? '#22c55e' : i <= 6 ? '#f59e0b' : '#ef4444';
 
+  // Jira recent tickets section
+  const jiraHtml = (() => {
+    const j = agent.jira;
+    if (!j || !j.recent || j.recent.length === 0) return '';
+    const statusColor = s => {
+      if (['Done','Closed','Dev Close','Resolved'].includes(s)) return '#15803d';
+      if (['Blocked','Blocked By'].includes(s)) return '#dc2626';
+      if (s === 'In Progress') return '#2563eb';
+      return '#b45309';
+    };
+    const projectColors = {'TC':'#7c3aed','DO':'#0891b2','REP':'#d97706','LIS':'#059669','SOC':'#db2777','LH':'#4f46e5','AR':'#0d9488','IN':'#7c3aed'};
+    const rows = j.recent.map(t => `
+      <tr style="border-top:1px solid var(--border)">
+        <td style="padding:5px 8px">
+          <a href="${t.url}" target="_blank" style="font-weight:600;font-size:0.75rem;color:var(--accent);text-decoration:none">${t.key}</a>
+        </td>
+        <td style="padding:5px 8px">
+          <span style="font-size:0.72rem;background:${projectColors[t.project]||'#64748b'}22;color:${projectColors[t.project]||'#64748b'};padding:1px 6px;border-radius:4px;font-weight:600">${t.project}</span>
+        </td>
+        <td style="padding:5px 8px;font-size:0.75rem;max-width:320px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${t.summary}</td>
+        <td style="padding:5px 8px">
+          <span style="font-size:0.7rem;font-weight:600;color:${statusColor(t.status)}">${t.status}</span>
+        </td>
+        <td style="padding:5px 8px;font-size:0.7rem;color:var(--text-muted)">${t.created}</td>
+      </tr>`).join('');
+    const topProjects = Object.entries(j.byProject).slice(0,5).map(([k,v]) =>
+      `<span style="font-size:0.7rem;background:${projectColors[k]||'#64748b'}22;color:${projectColors[k]||'#64748b'};padding:2px 7px;border-radius:4px;font-weight:600">${k} ${v}</span>`).join(' ');
+    return `
+    <div style="margin-top:20px">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+        <div style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em">Jira Tickets (last 30d)</div>
+        <div style="display:flex;gap:10px;align-items:center">
+          <span style="font-weight:700;font-size:0.85rem">${j.total}</span>
+          <span style="font-size:0.72rem;color:#dc2626">${j.open} open</span>
+          <span style="font-size:0.72rem;color:#15803d">${j.done} done</span>
+          <span style="font-size:0.7rem;color:var(--text-muted)">·</span>
+          ${topProjects}
+        </div>
+      </div>
+      <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px">
+        <table style="width:100%;border-collapse:collapse;font-size:0.75rem">
+          <thead><tr style="background:var(--bg-card)">
+            <th style="padding:6px 8px;text-align:left;font-size:0.68rem;color:var(--text-muted);font-weight:600;text-transform:uppercase">Key</th>
+            <th style="padding:6px 8px;text-align:left;font-size:0.68rem;color:var(--text-muted);font-weight:600;text-transform:uppercase">Project</th>
+            <th style="padding:6px 8px;text-align:left;font-size:0.68rem;color:var(--text-muted);font-weight:600;text-transform:uppercase">Summary</th>
+            <th style="padding:6px 8px;text-align:left;font-size:0.68rem;color:var(--text-muted);font-weight:600;text-transform:uppercase">Status</th>
+            <th style="padding:6px 8px;text-align:left;font-size:0.68rem;color:var(--text-muted);font-weight:600;text-transform:uppercase">Created</th>
+          </tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    </div>`;
+  })();
+
   content.innerHTML = `
     <div style="font-weight:600;font-size:0.8rem;color:var(--text-main);margin-bottom:14px">${agentName}</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
@@ -507,7 +561,8 @@ function toggleAgentExpand(row, agentName, idx) {
         <div style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:8px">Avg Resolution Time by Complexity (hrs excl. on hold)</div>
         <div style="position:relative;height:150px"><canvas id="${chartHbrId}"></canvas></div>
       </div>
-    </div>`;
+    </div>
+    ${jiraHtml}`;
 
   const sharedScaleOpts = {
     x: {
@@ -913,6 +968,18 @@ function renderAgents() {
           <div style="width:${pct}%;height:5px;background:${c};border-radius:3px"></div>
         </div>
         <span style="font-size:0.75rem">${r.conversationComplexity.toFixed(2)}</span>
+      </div>`;
+    }},
+    { label: sth('Jira Tickets', 'jira.total'), key: '_jira', render: r => {
+      if (!r.jira) return '<span style="color:var(--text-muted)">—</span>';
+      const openPct = r.jira.total > 0 ? (r.jira.open / r.jira.total * 100).toFixed(0) : 0;
+      return `<div style="display:flex;align-items:center;gap:6px">
+        <span style="font-weight:700">${r.jira.total}</span>
+        <div style="display:flex;align-items:center;gap:3px;font-size:0.7rem;color:var(--text-muted)">
+          <span style="color:#dc2626">${r.jira.open} open</span>
+          <span>·</span>
+          <span style="color:#15803d">${r.jira.done} done</span>
+        </div>
       </div>`;
     }},
   ], agents, 'No agents found.', true);
