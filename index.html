@@ -736,75 +736,103 @@ window.sortAgentTable = function(key) {
 
 // ── Agent filters ─────────────────────────────────────────────────────────
 const REGION_OPTIONS = ['EMEA', 'US-CAN'];
-const COMPLEXITY_OPTIONS = [
-  { label: 'Low (0–3)', min: 0, max: 3.999 },
-  { label: 'Medium (4–6)', min: 4, max: 6.999 },
-  { label: 'High (7–10)', min: 7, max: 10 },
-];
+const ALL_SCORES = [0,1,2,3,4,5,6,7,8,9,10];
 let activeRegions = new Set(REGION_OPTIONS);
-let activeComplexity = new Set(COMPLEXITY_OPTIONS.map(o => o.label));
+let activeComplexityScores = new Set(ALL_SCORES);
 
 function renderFilterChips() {
   const chipStyle = (active) =>
-    `cursor:pointer;padding:4px 12px;border-radius:20px;font-size:0.72rem;font-weight:600;border:1.5px solid;transition:all 0.15s;` +
+    `cursor:pointer;padding:4px 10px;border-radius:20px;font-size:0.72rem;font-weight:600;border:1.5px solid;transition:all 0.15s;` +
     (active ? `background:var(--accent);color:#fff;border-color:var(--accent);` : `background:transparent;color:var(--text-muted);border-color:var(--border);`);
 
   document.getElementById('filter-region').innerHTML = REGION_OPTIONS.map(r =>
     `<button onclick="toggleRegion('${r}')" id="chip-region-${r}" style="${chipStyle(activeRegions.has(r))}">${r}</button>`
   ).join('');
 
-  document.getElementById('filter-complexity').innerHTML = COMPLEXITY_OPTIONS.map(o =>
-    `<button onclick="toggleComplexity('${o.label}')" id="chip-comp-${o.label.split(' ')[0]}" style="${chipStyle(activeComplexity.has(o.label))}">${o.label}</button>`
+  document.getElementById('filter-complexity').innerHTML = ALL_SCORES.map(s =>
+    `<button onclick="toggleComplexityScore(${s})" id="chip-comp-${s}" style="${chipStyle(activeComplexityScores.has(s))}">${s}</button>`
   ).join('');
 }
 
 window.toggleRegion = function(r) {
-  if (activeRegions.has(r) && activeRegions.size === 1) return; // keep at least one
+  if (activeRegions.has(r) && activeRegions.size === 1) return;
   activeRegions.has(r) ? activeRegions.delete(r) : activeRegions.add(r);
   renderFilterChips(); renderAgents();
 };
-window.toggleComplexity = function(label) {
-  if (activeComplexity.has(label) && activeComplexity.size === 1) return;
-  activeComplexity.has(label) ? activeComplexity.delete(label) : activeComplexity.add(label);
+window.toggleComplexityScore = function(s) {
+  if (activeComplexityScores.has(s) && activeComplexityScores.size === 1) return;
+  activeComplexityScores.has(s) ? activeComplexityScores.delete(s) : activeComplexityScores.add(s);
   renderFilterChips(); renderAgents();
 };
 window.resetAgentFilters = function() {
   activeRegions = new Set(REGION_OPTIONS);
-  activeComplexity = new Set(COMPLEXITY_OPTIONS.map(o => o.label));
+  activeComplexityScores = new Set(ALL_SCORES);
   renderFilterChips(); renderAgents();
 };
 
+function filteredCasesForAgent(a) {
+  const dist = a.complexityDist || Array(11).fill(0);
+  return Array.from(activeComplexityScores).reduce((sum, s) => sum + (dist[s] || 0), 0);
+}
+
+function filteredHBRForAgent(a) {
+  const hbr = a.hbrByComplexity || {};
+  const dist = a.complexityDist || Array(11).fill(0);
+  let totalCases = 0, weightedSum = 0;
+  Array.from(activeComplexityScores).forEach(s => {
+    const cnt = dist[s] || 0;
+    const h = hbr[String(s)];
+    if (cnt > 0 && h != null) { totalCases += cnt; weightedSum += h * cnt; }
+  });
+  return totalCases > 0 ? weightedSum / totalCases : null;
+}
+
 function agentPassesFilter(a) {
-  // Agents with no region assigned pass the region filter only when all regions are active
   const regionOk = a.region ? activeRegions.has(a.region) : activeRegions.size === REGION_OPTIONS.length;
   if (!regionOk) return false;
-  const sc = a.conversationComplexity ?? 0;
-  return COMPLEXITY_OPTIONS.some(o => activeComplexity.has(o.label) && sc >= o.min && sc <= o.max);
+  if (activeComplexityScores.size === 11) return true;
+  return filteredCasesForAgent(a) > 0;
 }
 
 function renderAgents() {
   renderFilterChips();
-  const allAgents = data.agentData.filter(a => !a.name.includes('Queue') && !a.name.includes('Legal') && agentPassesFilter(a));
+  const isFilteredComplexity = activeComplexityScores.size < 11;
+  const rawAgents = data.agentData.filter(a => !a.name.includes('Queue') && !a.name.includes('Legal') && agentPassesFilter(a));
+
+  // Attach filtered metrics to each agent row
+  const allAgents = rawAgents.map(a => {
+    const fc = isFilteredComplexity ? filteredCasesForAgent(a) : a.cases;
+    const fHBR = isFilteredComplexity ? filteredHBRForAgent(a) : a.resolutionHrs;
+    return { ...a, _cases: fc, _resolutionHrs: fHBR };
+  });
+
   // Sort by selected column, nulls last
+  const sortVal = a => agentSortKey === 'cases' ? a._cases
+    : agentSortKey === 'resolutionHrs' ? a._resolutionHrs
+    : a[agentSortKey];
   const agents = [...allAgents].sort((a, b) => {
-    let av = a[agentSortKey], bv = b[agentSortKey];
+    let av = sortVal(a), bv = sortVal(b);
     if (av === null || av === undefined) return 1;
     if (bv === null || bv === undefined) return -1;
     return (av < bv ? -1 : av > bv ? 1 : 0) * agentSortDir;
   });
-  const top = allAgents.slice(0, 12);
+  const top = agents.slice(0, 12);
   const firstName = a => a.name.split(' ')[0];
 
-  // Team-level KPI strip
-  const teamAvg = (key) => {
+  // Team-level KPI strip (uses filtered resolution when active)
+  const teamAvgField = (key) => {
     const vals = agents.filter(a => a[key] !== null && a[key] !== undefined);
     return vals.length ? vals.reduce((s, a) => s + a[key], 0) / vals.length : null;
   };
+  const teamAvgFiltered = (fn) => {
+    const vals = agents.map(fn).filter(v => v !== null && v !== undefined);
+    return vals.length ? vals.reduce((s, v) => s + v, 0) / vals.length : null;
+  };
   const kpis = [
-    { label: 'Avg First Response', value: teamAvg('firstResponseHrs'), unit: 'hrs', good: v => v < 24 },
-    { label: 'Avg Resolution Time', value: teamAvg('resolutionHrs'), unit: 'hrs', good: v => v < 72 },
-    { label: 'Avg Touchpoints', value: teamAvg('touchpoints'), unit: '', good: v => v < 3 },
-    { label: 'Avg Complexity', value: teamAvg('complexity'), unit: '/ 6', good: () => true },
+    { label: 'Avg First Response', value: teamAvgField('firstResponseHrs'), unit: 'hrs', good: v => v < 24 },
+    { label: `Avg Resolution Time${isFilteredComplexity ? ' *' : ''}`, value: teamAvgFiltered(a => a._resolutionHrs), unit: 'hrs', good: v => v < 72 },
+    { label: 'Avg Touchpoints', value: teamAvgField('touchpoints'), unit: '', good: v => v < 3 },
+    { label: 'Avg Complexity', value: teamAvgField('complexity'), unit: '/ 6', good: () => true },
   ];
   document.getElementById('agent-kpi-strip').innerHTML = kpis.map(k => {
     const val = k.value !== null ? k.value.toFixed(1) : '—';
@@ -815,18 +843,18 @@ function renderAgents() {
     </div>`;
   }).join('');
 
-  // Cases chart
-  makeChart('chart-agents', 'bar', top.map(firstName), top.map(a => a.cases), { horizontal: true });
+  // Cases chart (filtered)
+  makeChart('chart-agents', 'bar', top.map(firstName), top.map(a => a._cases), { horizontal: true });
 
-  // First response (colour-coded: green ≤24h, amber ≤48h, red >48h)
+  // First response (full-period, not filtered by complexity score)
   makeChart('chart-first-response', 'bar',
     top.map(firstName), top.map(a => a.firstResponseHrs),
     { colors: top.map(a => a.firstResponseHrs <= 24 ? '#059669' : a.firstResponseHrs <= 48 ? '#d97706' : '#dc2626') });
 
-  // Resolution time (green ≤72h, amber ≤120h, red >120h)
+  // Resolution time (filtered when complexity filter active)
   makeChart('chart-resolution', 'bar',
-    top.map(firstName), top.map(a => a.resolutionHrs),
-    { colors: top.map(a => a.resolutionHrs <= 72 ? '#059669' : a.resolutionHrs <= 120 ? '#d97706' : '#dc2626') });
+    top.map(firstName), top.map(a => a._resolutionHrs),
+    { colors: top.map(a => (a._resolutionHrs||0) <= 72 ? '#059669' : (a._resolutionHrs||0) <= 120 ? '#d97706' : '#dc2626') });
 
   // Full agent table
   const hrs = v => (v !== null && v !== undefined) ? `${v.toFixed(1)}h` : '—';
@@ -850,10 +878,10 @@ function renderAgents() {
 
   makeTable('agent-table', [
     { label: 'Agent', key: 'name' },
-    { label: sth('Cases', 'cases'), key: 'cases', render: r => r.cases.toLocaleString() },
+    { label: sth('Cases', 'cases'), key: 'cases', render: r => r._cases.toLocaleString() },
     { label: sth('First Resp.', 'firstResponseHrs'), key: '_fr', render: r => hrs(r.firstResponseHrs) },
     { label: sth('Avg Resp.', 'ongoingResponseHrs'), key: '_ar', render: r => hrs(r.ongoingResponseHrs) },
-    { label: sth('Resolution', 'resolutionHrs'), key: '_res', render: r => hrs(r.resolutionHrs) },
+    { label: sth('Resolution', 'resolutionHrs'), key: '_res', render: r => hrs(r._resolutionHrs) },
     { label: sth('Touchpoints', 'touchpoints'), key: 'touchpoints', render: r => r.touchpoints !== undefined ? r.touchpoints.toFixed(1) : '—' },
     { label: sth('CSAT Score', 'csat'), key: '_csatScore', render: r => {
       if (!r.csat) return '<span style="color:var(--text-muted)">—</span>';
