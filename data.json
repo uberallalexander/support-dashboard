@@ -518,7 +518,7 @@
       }
     },
     {
-      "name": "Jürgen Sömen",
+      "name": "J\u00fcrgen S\u00f6men",
       "cases": 213,
       "csat": 8.9,
       "firstResponseHrs": 17.5,
@@ -536,7 +536,7 @@
         "byMsgCount": [
           {
             "number": "00457681",
-            "subject": "Office Relocation – Support needed for Location Updates acro",
+            "subject": "Office Relocation \u2013 Support needed for Location Updates acro",
             "value": 12
           },
           {
@@ -827,7 +827,7 @@
         "byClientMsgs": [
           {
             "number": "00457814",
-            "subject": "Re: Taux de réponse sur Uberall",
+            "subject": "Re: Taux de r\u00e9ponse sur Uberall",
             "value": 18
           },
           {
@@ -837,7 +837,7 @@
           },
           {
             "number": "00457199",
-            "subject": "RE: [EXTERNAL] Uberall Case 00452533: Google display Issue –",
+            "subject": "RE: [EXTERNAL] Uberall Case 00452533: Google display Issue \u2013",
             "value": 10
           }
         ],
@@ -1081,7 +1081,7 @@
           },
           {
             "number": "00457894",
-            "subject": "Dysfonctionnements chatbot Le Diamant Bleu — preuves de bugs",
+            "subject": "Dysfonctionnements chatbot Le Diamant Bleu \u2014 preuves de bugs",
             "value": 9
           }
         ],
@@ -1098,14 +1098,14 @@
           },
           {
             "number": "00457894",
-            "subject": "Dysfonctionnements chatbot Le Diamant Bleu — preuves de bugs",
+            "subject": "Dysfonctionnements chatbot Le Diamant Bleu \u2014 preuves de bugs",
             "value": 11
           }
         ],
         "byMsgLength": [
           {
             "number": "00457894",
-            "subject": "Dysfonctionnements chatbot Le Diamant Bleu — preuves de bugs",
+            "subject": "Dysfonctionnements chatbot Le Diamant Bleu \u2014 preuves de bugs",
             "value": 1264.7
           },
           {
@@ -1179,7 +1179,7 @@
           },
           {
             "key": "DO-44374",
-            "summary": "TASK - Métropolis Charging - Ghost listings audit",
+            "summary": "TASK - M\u00e9tropolis Charging - Ghost listings audit",
             "status": "In Progress",
             "project": "DO",
             "created": "2026-06-16",
@@ -1219,7 +1219,7 @@
           },
           {
             "key": "SOC-4836",
-            "summary": "Social - FE - Remove automatic “copy” text when duplicating posts",
+            "summary": "Social - FE - Remove automatic \u201ccopy\u201d text when duplicating posts",
             "status": "OPEN",
             "project": "SOC",
             "created": "2026-06-11",
@@ -1315,7 +1315,7 @@
       }
     },
     {
-      "name": "Victoria Sene Ríos",
+      "name": "Victoria Sene R\u00edos",
       "cases": 184,
       "csat": 8.3,
       "firstResponseHrs": 23.2,
@@ -1333,7 +1333,7 @@
         "byMsgCount": [
           {
             "number": "00456833",
-            "subject": "Issue with verification status – Oliver Green (Utrecht) N: 6",
+            "subject": "Issue with verification status \u2013 Oliver Green (Utrecht) N: 6",
             "value": 11
           },
           {
@@ -1355,12 +1355,12 @@
           },
           {
             "number": "00456833",
-            "subject": "Issue with verification status – Oliver Green (Utrecht) N: 6",
+            "subject": "Issue with verification status \u2013 Oliver Green (Utrecht) N: 6",
             "value": 11
           },
           {
             "number": "00456828",
-            "subject": "FW: Bitte um Löschung bzw. Sperrung meiner personenbezogenen",
+            "subject": "FW: Bitte um L\u00f6schung bzw. Sperrung meiner personenbezogenen",
             "value": 10
           }
         ],
@@ -1377,7 +1377,7 @@
           },
           {
             "number": "00458220",
-            "subject": "API-Zugriff für Uberall Partner-Account / Nutzung von Locati",
+            "subject": "API-Zugriff f\u00fcr Uberall Partner-Account / Nutzung von Locati",
             "value": 1481.2
           }
         ]
@@ -1645,7 +1645,7 @@
           },
           {
             "number": "00457225",
-            "subject": "Markt-ID 8002803 EDEKA Express Würzburg",
+            "subject": "Markt-ID 8002803 EDEKA Express W\u00fcrzburg",
             "value": 2305.5
           }
         ]
@@ -1868,7 +1868,7 @@
         "byMsgCount": [
           {
             "number": "00457696",
-            "subject": "Ayuda conectar ubicación",
+            "subject": "Ayuda conectar ubicaci\u00f3n",
             "value": 13
           },
           {
@@ -1885,7 +1885,7 @@
         "byClientMsgs": [
           {
             "number": "00457696",
-            "subject": "Ayuda conectar ubicación",
+            "subject": "Ayuda conectar ubicaci\u00f3n",
             "value": 15
           },
           {
@@ -1987,7 +1987,7 @@
           },
           {
             "key": "IN-1812",
-            "summary": "Tyredating - Home Page – \"Visibility Boosters\" Recommendations Do Not Reflect Ac",
+            "summary": "Tyredating - Home Page \u2013 \"Visibility Boosters\" Recommendations Do Not Reflect Ac",
             "status": "Dev Close",
             "project": "IN",
             "created": "2026-06-17",
@@ -2003,7 +2003,7 @@
           },
           {
             "key": "DO-44380",
-            "summary": "Listings - SP 3279 Barceló - Google: listing stuck in processing for too long",
+            "summary": "Listings - SP 3279 Barcel\u00f3 - Google: listing stuck in processing for too long",
             "status": "Waiting",
             "project": "DO",
             "created": "2026-06-16",
@@ -2389,12 +2389,12 @@
           },
           {
             "number": "00458763",
-            "subject": "Autohaus Larl GmbH / Längen- und Breitengrad wird nicht über",
+            "subject": "Autohaus Larl GmbH / L\u00e4ngen- und Breitengrad wird nicht \u00fcber",
             "value": 6
           },
           {
             "number": "00458426",
-            "subject": "Temporärer Adresswechsel wegen Umbaus – beste Vorgehensweise",
+            "subject": "Tempor\u00e4rer Adresswechsel wegen Umbaus \u2013 beste Vorgehensweise",
             "value": 6
           }
         ],
@@ -2406,7 +2406,7 @@
           },
           {
             "number": "00458426",
-            "subject": "Temporärer Adresswechsel wegen Umbaus – beste Vorgehensweise",
+            "subject": "Tempor\u00e4rer Adresswechsel wegen Umbaus \u2013 beste Vorgehensweise",
             "value": 6
           },
           {
@@ -2428,7 +2428,7 @@
           },
           {
             "number": "00458501",
-            "subject": "Reseñas",
+            "subject": "Rese\u00f1as",
             "value": 1141.3
           }
         ]
@@ -3149,7 +3149,7 @@
         "byMsgLength": [
           {
             "number": "00457168",
-            "subject": "Bulk Update of Incorrect Social Media Links – Angry Crab Sha",
+            "subject": "Bulk Update of Incorrect Social Media Links \u2013 Angry Crab Sha",
             "value": 1311.7
           },
           {
@@ -3907,7 +3907,7 @@
           },
           {
             "key": "AR-5404",
-            "summary": "BE - Whitelist Domain for Advanced Analytics – SP ID 3539",
+            "summary": "BE - Whitelist Domain for Advanced Analytics \u2013 SP ID 3539",
             "status": "OPEN",
             "project": "AR",
             "created": "2026-06-10",
@@ -4128,5 +4128,2162 @@
       "avgV1": 3.0,
       "avgHBR": null
     }
-  ]
+  ],
+  "periods": {
+    "2026-04": {
+      "meta": {
+        "label": "April 2026",
+        "start": "2026-04-01",
+        "end": "2026-04-30",
+        "partial": false
+      },
+      "kpis": {
+        "total": 2538,
+        "avgFirstResp": 18.15,
+        "avgResolution": 52.47,
+        "avgCsat": 9.86,
+        "csatTotalReceived": 99
+      },
+      "agentData": [
+        {
+          "name": "Emilie Pownall",
+          "cases": 203,
+          "firstResponseHrs": 7.31,
+          "ongoingResponseHrs": 2.58,
+          "resolutionHrs": 60.14,
+          "touchpoints": 3.48,
+          "csat": 10.0,
+          "csatTotal": 5,
+          "region": "US-CAN",
+          "jiraAccountId": "60c3766ea01e11006a1d4d51",
+          "tcStats": {
+            "total": 3,
+            "tc": 1,
+            "tcOpen": 0,
+            "tcDone": 1,
+            "tcNotAnIssue": 0,
+            "tcNotAnIssueByResolution": {},
+            "do": 1,
+            "engineering": 1,
+            "open": 0,
+            "byProject": {
+              "LIS": 1,
+              "DO": 1,
+              "TC": 1
+            }
+          }
+        },
+        {
+          "name": "J\u00fcrgen S\u00f6men",
+          "cases": 230,
+          "firstResponseHrs": 23.3,
+          "ongoingResponseHrs": 6.25,
+          "resolutionHrs": 47.28,
+          "touchpoints": 2.71,
+          "csat": 9.5,
+          "csatTotal": 18,
+          "region": "EMEA",
+          "jiraAccountId": "712020:10fe39d9-7de2-4495-9805-02e3bfa06d9b",
+          "tcStats": {
+            "total": 15,
+            "tc": 1,
+            "tcOpen": 0,
+            "tcDone": 1,
+            "tcNotAnIssue": 0,
+            "tcNotAnIssueByResolution": {},
+            "do": 8,
+            "engineering": 6,
+            "open": 6,
+            "byProject": {
+              "DO": 8,
+              "AR": 2,
+              "LIS": 1,
+              "TC": 1,
+              "MOB": 1,
+              "LH": 1,
+              "REP": 1
+            }
+          }
+        },
+        {
+          "name": "Vincent Riehl",
+          "cases": 176,
+          "firstResponseHrs": 29.24,
+          "ongoingResponseHrs": 5.1,
+          "resolutionHrs": 34.89,
+          "touchpoints": 3.74,
+          "csat": 10.0,
+          "csatTotal": 12,
+          "region": "EMEA",
+          "jiraAccountId": "60c3765220d2dd00705f25f7",
+          "tcStats": {
+            "total": 4,
+            "tc": 1,
+            "tcOpen": 0,
+            "tcDone": 1,
+            "tcNotAnIssue": 0,
+            "tcNotAnIssueByResolution": {},
+            "do": 1,
+            "engineering": 2,
+            "open": 1,
+            "byProject": {
+              "IN": 1,
+              "LH": 1,
+              "DO": 1,
+              "TC": 1
+            }
+          }
+        },
+        {
+          "name": "Rida Malouh",
+          "cases": 145,
+          "firstResponseHrs": 32.64,
+          "ongoingResponseHrs": 6.39,
+          "resolutionHrs": 53.2,
+          "touchpoints": 3.16,
+          "csat": 10.0,
+          "csatTotal": 8,
+          "region": "EMEA",
+          "jiraAccountId": "712020:57b83b0a-e0ad-4e27-a12a-b0d4f7d7d94e",
+          "tcStats": {
+            "total": 4,
+            "tc": 0,
+            "tcOpen": 0,
+            "tcDone": 0,
+            "tcNotAnIssue": 0,
+            "tcNotAnIssueByResolution": {},
+            "do": 4,
+            "engineering": 0,
+            "open": 0,
+            "byProject": {
+              "DO": 4
+            }
+          }
+        },
+        {
+          "name": "Victoria Sene R\u00edos",
+          "cases": 156,
+          "firstResponseHrs": 28.59,
+          "ongoingResponseHrs": 8.57,
+          "resolutionHrs": 45.01,
+          "touchpoints": 2.91,
+          "csat": 10.0,
+          "csatTotal": 5,
+          "region": "EMEA",
+          "jiraAccountId": "712020:1e890bc6-894c-462b-9434-517f44b64e87",
+          "tcStats": {
+            "total": 2,
+            "tc": 1,
+            "tcOpen": 0,
+            "tcDone": 0,
+            "tcNotAnIssue": 1,
+            "tcNotAnIssueByResolution": {
+              "Product Review - Working as Intended": 1
+            },
+            "do": 1,
+            "engineering": 0,
+            "open": 0,
+            "byProject": {
+              "DO": 1,
+              "TC": 1
+            }
+          }
+        },
+        {
+          "name": "Stephan Duerrnagel",
+          "cases": 292,
+          "firstResponseHrs": 26.57,
+          "ongoingResponseHrs": 4.3,
+          "resolutionHrs": 24.47,
+          "touchpoints": 2.84,
+          "csat": 10.0,
+          "csatTotal": 15,
+          "region": "EMEA",
+          "jiraAccountId": "712020:b8d0da18-7ff1-485d-b0e3-80f46622e803",
+          "tcStats": {
+            "total": 17,
+            "tc": 3,
+            "tcOpen": 1,
+            "tcDone": 2,
+            "tcNotAnIssue": 0,
+            "tcNotAnIssueByResolution": {},
+            "do": 10,
+            "engineering": 4,
+            "open": 4,
+            "byProject": {
+              "TC": 3,
+              "DO": 10,
+              "CLN": 1,
+              "REP": 1,
+              "LH": 1,
+              "SOC": 1
+            }
+          }
+        },
+        {
+          "name": "Maria Fontiveros Villasana",
+          "cases": 141,
+          "firstResponseHrs": 17.87,
+          "ongoingResponseHrs": 5.6,
+          "resolutionHrs": 48.31,
+          "touchpoints": 3.83,
+          "csat": 10.0,
+          "csatTotal": 6,
+          "region": "EMEA",
+          "jiraAccountId": "712020:07fe05e4-71c7-4a76-924d-5c5a4aa7e834",
+          "tcStats": {
+            "total": 13,
+            "tc": 2,
+            "tcOpen": 0,
+            "tcDone": 1,
+            "tcNotAnIssue": 1,
+            "tcNotAnIssueByResolution": {
+              "Product Review - Working as Intended": 1
+            },
+            "do": 8,
+            "engineering": 3,
+            "open": 1,
+            "byProject": {
+              "DO": 8,
+              "ACMO": 1,
+              "TC": 2,
+              "LH": 1,
+              "AR": 1
+            }
+          }
+        },
+        {
+          "name": "Jhonric Canillo",
+          "cases": 135,
+          "firstResponseHrs": 12.54,
+          "ongoingResponseHrs": 3.84,
+          "resolutionHrs": 74.38,
+          "touchpoints": 5.47,
+          "csat": 8.75,
+          "csatTotal": 4,
+          "region": "US-CAN",
+          "jiraAccountId": "61d450f39ee70a00685fe638",
+          "tcStats": {
+            "total": 6,
+            "tc": 0,
+            "tcOpen": 0,
+            "tcDone": 0,
+            "tcNotAnIssue": 0,
+            "tcNotAnIssueByResolution": {},
+            "do": 5,
+            "engineering": 1,
+            "open": 0,
+            "byProject": {
+              "IN": 1,
+              "DO": 5
+            }
+          }
+        },
+        {
+          "name": "Anna-Christin Voigt",
+          "cases": 376,
+          "firstResponseHrs": 26.71,
+          "ongoingResponseHrs": 1.02,
+          "resolutionHrs": 10.54,
+          "touchpoints": 3.4,
+          "csat": 10.0,
+          "csatTotal": 8,
+          "region": "EMEA",
+          "jiraAccountId": "60c377df2bd21400699a55c8",
+          "tcStats": {
+            "total": 3,
+            "tc": 1,
+            "tcOpen": 0,
+            "tcDone": 1,
+            "tcNotAnIssue": 0,
+            "tcNotAnIssueByResolution": {},
+            "do": 2,
+            "engineering": 0,
+            "open": 0,
+            "byProject": {
+              "DO": 2,
+              "TC": 1
+            }
+          }
+        },
+        {
+          "name": "Patrick Paul Bayor",
+          "cases": 119,
+          "firstResponseHrs": 9.16,
+          "ongoingResponseHrs": 9.07,
+          "resolutionHrs": 110.45,
+          "touchpoints": 4.24,
+          "csat": 10.0,
+          "csatTotal": 2,
+          "region": "US-CAN",
+          "jiraAccountId": "712020:bef43ad9-4b43-4884-8d40-925a0ac69d93",
+          "tcStats": {
+            "total": 5,
+            "tc": 1,
+            "tcOpen": 0,
+            "tcDone": 1,
+            "tcNotAnIssue": 0,
+            "tcNotAnIssueByResolution": {},
+            "do": 3,
+            "engineering": 1,
+            "open": 0,
+            "byProject": {
+              "DO": 3,
+              "CLN": 1,
+              "TC": 1
+            }
+          }
+        },
+        {
+          "name": "John Paul Pineda",
+          "cases": 138,
+          "firstResponseHrs": 12.98,
+          "ongoingResponseHrs": 6.19,
+          "resolutionHrs": 113.55,
+          "touchpoints": 5.62,
+          "csat": 10.0,
+          "csatTotal": 7,
+          "region": "US-CAN",
+          "jiraAccountId": "712020:f5acaba4-f9c7-48e4-9c91-0523ef40df7b",
+          "tcStats": {
+            "total": 9,
+            "tc": 2,
+            "tcOpen": 0,
+            "tcDone": 2,
+            "tcNotAnIssue": 0,
+            "tcNotAnIssueByResolution": {},
+            "do": 6,
+            "engineering": 1,
+            "open": 0,
+            "byProject": {
+              "DO": 6,
+              "LIS": 1,
+              "TC": 2
+            }
+          }
+        },
+        {
+          "name": "Fernando Viana",
+          "cases": 119,
+          "firstResponseHrs": 6.06,
+          "ongoingResponseHrs": 5.15,
+          "resolutionHrs": 60.43,
+          "touchpoints": 4.04,
+          "csat": 10.0,
+          "csatTotal": 3,
+          "region": "US-CAN",
+          "jiraAccountId": "712020:4d9a9233-9ff8-4563-a1c0-3799fc530f3d",
+          "tcStats": {
+            "total": 6,
+            "tc": 2,
+            "tcOpen": 0,
+            "tcDone": 2,
+            "tcNotAnIssue": 0,
+            "tcNotAnIssueByResolution": {},
+            "do": 3,
+            "engineering": 1,
+            "open": 0,
+            "byProject": {
+              "TC": 2,
+              "CS": 1,
+              "DO": 3
+            }
+          }
+        },
+        {
+          "name": "Joel Alob",
+          "cases": 118,
+          "firstResponseHrs": 1.85,
+          "ongoingResponseHrs": 5.56,
+          "resolutionHrs": 94.03,
+          "touchpoints": 4.34,
+          "csat": 10.0,
+          "csatTotal": 2,
+          "region": "US-CAN",
+          "jiraAccountId": "617a6b77b9c549006ffe4337",
+          "tcStats": {
+            "total": 7,
+            "tc": 2,
+            "tcOpen": 0,
+            "tcDone": 2,
+            "tcNotAnIssue": 0,
+            "tcNotAnIssueByResolution": {},
+            "do": 3,
+            "engineering": 2,
+            "open": 1,
+            "byProject": {
+              "TC": 2,
+              "LIS": 1,
+              "DO": 3,
+              "REP": 1
+            }
+          }
+        },
+        {
+          "name": "Ryan Quinn",
+          "cases": 141,
+          "firstResponseHrs": 6.37,
+          "ongoingResponseHrs": 4.46,
+          "resolutionHrs": 83.64,
+          "touchpoints": 5.64,
+          "csat": 10.0,
+          "csatTotal": 4,
+          "region": "US-CAN",
+          "jiraAccountId": "712020:16c67fc4-a8a6-4f7d-83ea-0aac74448201",
+          "tcStats": {
+            "total": 6,
+            "tc": 0,
+            "tcOpen": 0,
+            "tcDone": 0,
+            "tcNotAnIssue": 0,
+            "tcNotAnIssueByResolution": {},
+            "do": 6,
+            "engineering": 0,
+            "open": 1,
+            "byProject": {
+              "DO": 6
+            }
+          }
+        },
+        {
+          "name": "Geneca Rapada",
+          "cases": 2,
+          "firstResponseHrs": 1.16,
+          "ongoingResponseHrs": 15.45,
+          "resolutionHrs": 347.59,
+          "touchpoints": 7.0,
+          "csat": null,
+          "csatTotal": 0,
+          "region": "US-CAN",
+          "jiraAccountId": "712020:ab64ada0-b268-46d2-ba28-41e33a31603f",
+          "tcStats": {
+            "total": 0,
+            "tc": 0,
+            "tcOpen": 0,
+            "tcDone": 0,
+            "tcNotAnIssue": 0,
+            "tcNotAnIssueByResolution": {},
+            "do": 0,
+            "engineering": 0,
+            "open": 0,
+            "byProject": {}
+          }
+        }
+      ]
+    },
+    "2026-05": {
+      "meta": {
+        "label": "May 2026",
+        "start": "2026-05-01",
+        "end": "2026-05-31",
+        "partial": false
+      },
+      "kpis": {
+        "total": 2166,
+        "avgFirstResp": 10.99,
+        "avgResolution": 38.17,
+        "avgCsat": 9.42,
+        "csatTotalReceived": 81
+      },
+      "agentData": [
+        {
+          "name": "Emilie Pownall",
+          "cases": 220,
+          "firstResponseHrs": 6.46,
+          "ongoingResponseHrs": 3.31,
+          "resolutionHrs": 48.58,
+          "touchpoints": 3.25,
+          "csat": 10.0,
+          "csatTotal": 4,
+          "region": "US-CAN",
+          "jiraAccountId": "60c3766ea01e11006a1d4d51",
+          "tcStats": {
+            "total": 11,
+            "tc": 2,
+            "tcOpen": 0,
+            "tcDone": 1,
+            "tcNotAnIssue": 1,
+            "tcNotAnIssueByResolution": {
+              "Working As Intended": 1
+            },
+            "do": 8,
+            "engineering": 1,
+            "open": 3,
+            "byProject": {
+              "DO": 8,
+              "TC": 2,
+              "WEB": 1
+            }
+          }
+        },
+        {
+          "name": "J\u00fcrgen S\u00f6men",
+          "cases": 194,
+          "firstResponseHrs": 18.27,
+          "ongoingResponseHrs": 6.96,
+          "resolutionHrs": 49.43,
+          "touchpoints": 3.14,
+          "csat": 9.1,
+          "csatTotal": 10,
+          "region": "EMEA",
+          "jiraAccountId": "712020:10fe39d9-7de2-4495-9805-02e3bfa06d9b",
+          "tcStats": {
+            "total": 11,
+            "tc": 6,
+            "tcOpen": 0,
+            "tcDone": 2,
+            "tcNotAnIssue": 4,
+            "tcNotAnIssueByResolution": {
+              "Working As Intended": 1,
+              "Product Review - Working as Intended": 1,
+              "Cannot Reproduce": 1,
+              "Won't Do": 1
+            },
+            "do": 2,
+            "engineering": 3,
+            "open": 4,
+            "byProject": {
+              "TC": 6,
+              "DO": 2,
+              "REP": 3
+            }
+          }
+        },
+        {
+          "name": "Vincent Riehl",
+          "cases": 149,
+          "firstResponseHrs": 17.12,
+          "ongoingResponseHrs": 5.35,
+          "resolutionHrs": 33.36,
+          "touchpoints": 3.02,
+          "csat": 9.29,
+          "csatTotal": 7,
+          "region": "EMEA",
+          "jiraAccountId": "60c3765220d2dd00705f25f7",
+          "tcStats": {
+            "total": 3,
+            "tc": 1,
+            "tcOpen": 0,
+            "tcDone": 0,
+            "tcNotAnIssue": 1,
+            "tcNotAnIssueByResolution": {
+              "Won't Do": 1
+            },
+            "do": 0,
+            "engineering": 2,
+            "open": 1,
+            "byProject": {
+              "REP": 1,
+              "TC": 1,
+              "LIS": 1
+            }
+          }
+        },
+        {
+          "name": "Rida Malouh",
+          "cases": 155,
+          "firstResponseHrs": 16.45,
+          "ongoingResponseHrs": 5.32,
+          "resolutionHrs": 36.34,
+          "touchpoints": 2.54,
+          "csat": 10.0,
+          "csatTotal": 5,
+          "region": "EMEA",
+          "jiraAccountId": "712020:57b83b0a-e0ad-4e27-a12a-b0d4f7d7d94e",
+          "tcStats": {
+            "total": 6,
+            "tc": 0,
+            "tcOpen": 0,
+            "tcDone": 0,
+            "tcNotAnIssue": 0,
+            "tcNotAnIssueByResolution": {},
+            "do": 5,
+            "engineering": 1,
+            "open": 2,
+            "byProject": {
+              "DO": 5,
+              "LIS": 1
+            }
+          }
+        },
+        {
+          "name": "Victoria Sene R\u00edos",
+          "cases": 150,
+          "firstResponseHrs": 16.93,
+          "ongoingResponseHrs": 8.22,
+          "resolutionHrs": 35.24,
+          "touchpoints": 2.85,
+          "csat": 10.0,
+          "csatTotal": 7,
+          "region": "EMEA",
+          "jiraAccountId": "712020:1e890bc6-894c-462b-9434-517f44b64e87",
+          "tcStats": {
+            "total": 4,
+            "tc": 1,
+            "tcOpen": 0,
+            "tcDone": 1,
+            "tcNotAnIssue": 0,
+            "tcNotAnIssueByResolution": {},
+            "do": 3,
+            "engineering": 0,
+            "open": 3,
+            "byProject": {
+              "DO": 3,
+              "TC": 1
+            }
+          }
+        },
+        {
+          "name": "Stephan Duerrnagel",
+          "cases": 326,
+          "firstResponseHrs": 12.58,
+          "ongoingResponseHrs": 2.33,
+          "resolutionHrs": 10.56,
+          "touchpoints": 2.22,
+          "csat": 9.18,
+          "csatTotal": 22,
+          "region": "EMEA",
+          "jiraAccountId": "712020:b8d0da18-7ff1-485d-b0e3-80f46622e803",
+          "tcStats": {
+            "total": 14,
+            "tc": 3,
+            "tcOpen": 0,
+            "tcDone": 2,
+            "tcNotAnIssue": 1,
+            "tcNotAnIssueByResolution": {
+              "Cannot Reproduce": 1
+            },
+            "do": 9,
+            "engineering": 2,
+            "open": 6,
+            "byProject": {
+              "MOB": 1,
+              "DO": 9,
+              "REP": 1,
+              "TC": 3
+            }
+          }
+        },
+        {
+          "name": "Maria Fontiveros Villasana",
+          "cases": 125,
+          "firstResponseHrs": 12.9,
+          "ongoingResponseHrs": 4.67,
+          "resolutionHrs": 33.5,
+          "touchpoints": 3.63,
+          "csat": 9.17,
+          "csatTotal": 12,
+          "region": "EMEA",
+          "jiraAccountId": "712020:07fe05e4-71c7-4a76-924d-5c5a4aa7e834",
+          "tcStats": {
+            "total": 9,
+            "tc": 3,
+            "tcOpen": 0,
+            "tcDone": 2,
+            "tcNotAnIssue": 1,
+            "tcNotAnIssueByResolution": {
+              "Working As Intended": 1
+            },
+            "do": 5,
+            "engineering": 1,
+            "open": 3,
+            "byProject": {
+              "TC": 3,
+              "DO": 5,
+              "WEB": 1
+            }
+          }
+        },
+        {
+          "name": "Jhonric Canillo",
+          "cases": 174,
+          "firstResponseHrs": 4.28,
+          "ongoingResponseHrs": 3.89,
+          "resolutionHrs": 62.86,
+          "touchpoints": 4.71,
+          "csat": 10.0,
+          "csatTotal": 6,
+          "region": "US-CAN",
+          "jiraAccountId": "61d450f39ee70a00685fe638",
+          "tcStats": {
+            "total": 6,
+            "tc": 1,
+            "tcOpen": 0,
+            "tcDone": 1,
+            "tcNotAnIssue": 0,
+            "tcNotAnIssueByResolution": {},
+            "do": 2,
+            "engineering": 3,
+            "open": 2,
+            "byProject": {
+              "DO": 2,
+              "TC": 1,
+              "WEB": 1,
+              "LIS": 1,
+              "PP": 1
+            }
+          }
+        },
+        {
+          "name": "Anna-Christin Voigt",
+          "cases": 187,
+          "firstResponseHrs": 28.6,
+          "ongoingResponseHrs": 0.18,
+          "resolutionHrs": 2.1,
+          "touchpoints": 2.56,
+          "csat": null,
+          "csatTotal": 0,
+          "region": "EMEA",
+          "jiraAccountId": "60c377df2bd21400699a55c8",
+          "tcStats": {
+            "total": 1,
+            "tc": 1,
+            "tcOpen": 0,
+            "tcDone": 1,
+            "tcNotAnIssue": 0,
+            "tcNotAnIssueByResolution": {},
+            "do": 0,
+            "engineering": 0,
+            "open": 0,
+            "byProject": {
+              "TC": 1
+            }
+          }
+        },
+        {
+          "name": "Patrick Paul Bayor",
+          "cases": 144,
+          "firstResponseHrs": 5.25,
+          "ongoingResponseHrs": 6.78,
+          "resolutionHrs": 71.22,
+          "touchpoints": 3.78,
+          "csat": 10.0,
+          "csatTotal": 3,
+          "region": "US-CAN",
+          "jiraAccountId": "712020:bef43ad9-4b43-4884-8d40-925a0ac69d93",
+          "tcStats": {
+            "total": 7,
+            "tc": 1,
+            "tcOpen": 0,
+            "tcDone": 0,
+            "tcNotAnIssue": 1,
+            "tcNotAnIssueByResolution": {
+              "Working As Intended": 1
+            },
+            "do": 3,
+            "engineering": 3,
+            "open": 2,
+            "byProject": {
+              "DO": 3,
+              "LIS": 1,
+              "WEB": 1,
+              "REP": 1,
+              "TC": 1
+            }
+          }
+        },
+        {
+          "name": "John Paul Pineda",
+          "cases": 119,
+          "firstResponseHrs": 5.84,
+          "ongoingResponseHrs": 3.73,
+          "resolutionHrs": 52.64,
+          "touchpoints": 4.02,
+          "csat": 10.0,
+          "csatTotal": 2,
+          "region": "US-CAN",
+          "jiraAccountId": "712020:f5acaba4-f9c7-48e4-9c91-0523ef40df7b",
+          "tcStats": {
+            "total": 6,
+            "tc": 1,
+            "tcOpen": 0,
+            "tcDone": 1,
+            "tcNotAnIssue": 0,
+            "tcNotAnIssueByResolution": {},
+            "do": 4,
+            "engineering": 1,
+            "open": 3,
+            "byProject": {
+              "LIS": 1,
+              "DO": 4,
+              "TC": 1
+            }
+          }
+        },
+        {
+          "name": "Fernando Viana",
+          "cases": 65,
+          "firstResponseHrs": 1.51,
+          "ongoingResponseHrs": 3.06,
+          "resolutionHrs": 42.51,
+          "touchpoints": 3.35,
+          "csat": 10.0,
+          "csatTotal": 1,
+          "region": "US-CAN",
+          "jiraAccountId": "712020:4d9a9233-9ff8-4563-a1c0-3799fc530f3d",
+          "tcStats": {
+            "total": 12,
+            "tc": 5,
+            "tcOpen": 0,
+            "tcDone": 2,
+            "tcNotAnIssue": 3,
+            "tcNotAnIssueByResolution": {
+              "Product Review - Working as Intended": 1,
+              "Cannot Reproduce": 2
+            },
+            "do": 5,
+            "engineering": 2,
+            "open": 5,
+            "byProject": {
+              "DO": 5,
+              "WEB": 1,
+              "TC": 5,
+              "CS": 1
+            }
+          }
+        },
+        {
+          "name": "Joel Alob",
+          "cases": 93,
+          "firstResponseHrs": 1.76,
+          "ongoingResponseHrs": 4.11,
+          "resolutionHrs": 57.24,
+          "touchpoints": 3.09,
+          "csat": 10.0,
+          "csatTotal": 1,
+          "region": "US-CAN",
+          "jiraAccountId": "617a6b77b9c549006ffe4337",
+          "tcStats": {
+            "total": 4,
+            "tc": 2,
+            "tcOpen": 1,
+            "tcDone": 0,
+            "tcNotAnIssue": 1,
+            "tcNotAnIssueByResolution": {
+              "Working As Intended": 1
+            },
+            "do": 2,
+            "engineering": 0,
+            "open": 1,
+            "byProject": {
+              "DO": 2,
+              "TC": 2
+            }
+          }
+        },
+        {
+          "name": "Ryan Quinn",
+          "cases": 15,
+          "firstResponseHrs": 0.3,
+          "ongoingResponseHrs": 7.36,
+          "resolutionHrs": 68.75,
+          "touchpoints": 4.8,
+          "csat": 5.0,
+          "csatTotal": 1,
+          "region": "US-CAN",
+          "jiraAccountId": "712020:16c67fc4-a8a6-4f7d-83ea-0aac74448201",
+          "tcStats": {
+            "total": 1,
+            "tc": 0,
+            "tcOpen": 0,
+            "tcDone": 0,
+            "tcNotAnIssue": 0,
+            "tcNotAnIssueByResolution": {},
+            "do": 0,
+            "engineering": 1,
+            "open": 1,
+            "byProject": {
+              "SOC": 1
+            }
+          }
+        },
+        {
+          "name": "Geneca Rapada",
+          "cases": 19,
+          "firstResponseHrs": 2.54,
+          "ongoingResponseHrs": 9.37,
+          "resolutionHrs": 119.06,
+          "touchpoints": 5.05,
+          "csat": null,
+          "csatTotal": 0,
+          "region": "US-CAN",
+          "jiraAccountId": "712020:ab64ada0-b268-46d2-ba28-41e33a31603f",
+          "tcStats": {
+            "total": 5,
+            "tc": 1,
+            "tcOpen": 0,
+            "tcDone": 0,
+            "tcNotAnIssue": 1,
+            "tcNotAnIssueByResolution": {
+              "Duplicate": 1
+            },
+            "do": 4,
+            "engineering": 0,
+            "open": 2,
+            "byProject": {
+              "DO": 4,
+              "TC": 1
+            }
+          }
+        }
+      ]
+    },
+    "2026-06": {
+      "meta": {
+        "label": "June 2026",
+        "start": "2026-06-01",
+        "end": "2026-06-18",
+        "partial": true
+      },
+      "kpis": {
+        "total": 2107,
+        "avgFirstResp": 3.0,
+        "avgResolution": 30.5,
+        "avgCsat": 9.4,
+        "csatTotalReceived": 65
+      },
+      "agentData": [
+        {
+          "name": "Emilie Pownall",
+          "cases": 299,
+          "firstResponseHrs": 61.9,
+          "ongoingResponseHrs": 10.0,
+          "resolutionHrs": 121.4,
+          "touchpoints": 2.1,
+          "csat": 10.0,
+          "csatTotal": 3,
+          "region": "US-CAN",
+          "jiraAccountId": "60c3766ea01e11006a1d4d51",
+          "tcStats": {
+            "total": 10,
+            "tc": 4,
+            "tcOpen": 3,
+            "tcDone": 0,
+            "tcNotAnIssue": 1,
+            "tcNotAnIssueByResolution": {
+              "Won't Do": 1
+            },
+            "do": 5,
+            "engineering": 1,
+            "open": 6,
+            "byProject": {
+              "TC": 4,
+              "DO": 5,
+              "WEB": 1
+            }
+          },
+          "complexityDist": [
+            53,
+            66,
+            58,
+            32,
+            43,
+            27,
+            17,
+            4,
+            2,
+            0,
+            0
+          ],
+          "hbrByComplexity": {
+            "2": 48.0,
+            "1": 39.2,
+            "5": 62.3,
+            "4": 52.5,
+            "0": 16.2,
+            "3": 45.5,
+            "6": 70.2,
+            "7": 94.0
+          },
+          "firstRespByComplexity": {
+            "2": 116.0,
+            "1": 124.7,
+            "5": 36.7,
+            "4": 22.1,
+            "3": 62.1,
+            "6": 5.0,
+            "8": 6.4,
+            "7": 23.8
+          },
+          "ongoingRespByComplexity": {
+            "2": 14.5,
+            "1": 22.6,
+            "5": 7.7,
+            "4": 8.9,
+            "3": 10.5,
+            "6": 8.3,
+            "8": 10.1,
+            "0": 0.0,
+            "7": 2.4
+          },
+          "csatByComplexity": {
+            "5": 10.0,
+            "1": 10.0,
+            "4": 10.0
+          }
+        },
+        {
+          "name": "J\u00fcrgen S\u00f6men",
+          "cases": 213,
+          "firstResponseHrs": 17.5,
+          "ongoingResponseHrs": 5.4,
+          "resolutionHrs": 110.2,
+          "touchpoints": 2.49,
+          "csat": 8.9,
+          "csatTotal": 13,
+          "region": "EMEA",
+          "jiraAccountId": "712020:10fe39d9-7de2-4495-9805-02e3bfa06d9b",
+          "tcStats": {
+            "total": 16,
+            "tc": 6,
+            "tcOpen": 3,
+            "tcDone": 1,
+            "tcNotAnIssue": 2,
+            "tcNotAnIssueByResolution": {
+              "Won't Do": 1,
+              "Working As Intended": 1
+            },
+            "do": 6,
+            "engineering": 4,
+            "open": 11,
+            "byProject": {
+              "TC": 6,
+              "DO": 6,
+              "LIS": 1,
+              "AR": 1,
+              "LH": 1,
+              "ACMO": 1
+            }
+          },
+          "complexityDist": [
+            11,
+            58,
+            29,
+            20,
+            40,
+            18,
+            27,
+            7,
+            3,
+            3,
+            0
+          ],
+          "hbrByComplexity": {
+            "4": 27.0,
+            "2": 28.7,
+            "0": 5.1,
+            "6": 54.3,
+            "1": 9.5,
+            "3": 26.7,
+            "8": 68.5,
+            "7": 109.4,
+            "5": 48.5,
+            "9": 20.8
+          },
+          "firstRespByComplexity": {
+            "2": 14.2,
+            "0": 12.0,
+            "4": 17.5,
+            "6": 17.9,
+            "8": 4.1,
+            "1": 15.2,
+            "3": 9.4,
+            "7": 10.7,
+            "5": 13.2,
+            "9": 8.5
+          },
+          "ongoingRespByComplexity": {
+            "2": 6.8,
+            "0": 0.0,
+            "4": 4.6,
+            "6": 4.9,
+            "8": 9.8,
+            "1": 2.6,
+            "3": 2.8,
+            "7": 15.1,
+            "5": 6.4,
+            "9": 6.1
+          },
+          "csatByComplexity": {
+            "4": 7.75,
+            "8": 10.0,
+            "5": 10.0,
+            "3": 10.0,
+            "0": 10.0
+          }
+        },
+        {
+          "name": "Vincent Riehl",
+          "cases": 204,
+          "firstResponseHrs": 18.5,
+          "ongoingResponseHrs": 4.9,
+          "resolutionHrs": 74.7,
+          "touchpoints": 2.49,
+          "csat": 7.7,
+          "csatTotal": 6,
+          "region": "EMEA",
+          "jiraAccountId": "60c3765220d2dd00705f25f7",
+          "tcStats": {
+            "total": 7,
+            "tc": 3,
+            "tcOpen": 3,
+            "tcDone": 0,
+            "tcNotAnIssue": 0,
+            "tcNotAnIssueByResolution": {},
+            "do": 4,
+            "engineering": 0,
+            "open": 7,
+            "byProject": {
+              "TC": 3,
+              "DO": 4
+            }
+          },
+          "complexityDist": [
+            12,
+            47,
+            34,
+            39,
+            28,
+            10,
+            15,
+            5,
+            5,
+            4,
+            0
+          ],
+          "hbrByComplexity": {
+            "6": 36.2,
+            "1": 12.4,
+            "4": 25.0,
+            "5": 6.7,
+            "3": 13.6,
+            "8": 77.4,
+            "7": 68.5,
+            "2": 11.1,
+            "0": 4.2,
+            "9": 9.0
+          },
+          "firstRespByComplexity": {
+            "6": 17.9,
+            "3": 11.1,
+            "1": 30.6,
+            "4": 17.3,
+            "5": 10.0,
+            "8": 15.7,
+            "7": 7.2,
+            "2": 21.0,
+            "9": 6.8
+          },
+          "ongoingRespByComplexity": {
+            "6": 6.6,
+            "3": 3.9,
+            "1": 2.0,
+            "4": 6.6,
+            "5": 3.1,
+            "8": 7.8,
+            "7": 11.2,
+            "2": 3.8,
+            "0": 0.0,
+            "9": 9.9
+          },
+          "csatByComplexity": {
+            "3": 10.0,
+            "9": 5.0,
+            "4": 1.0,
+            "6": 10.0
+          }
+        },
+        {
+          "name": "Rida Malouh",
+          "cases": 194,
+          "firstResponseHrs": 21.9,
+          "ongoingResponseHrs": 4.1,
+          "resolutionHrs": 69.1,
+          "touchpoints": 1.97,
+          "csat": 10.0,
+          "csatTotal": 4,
+          "region": "EMEA",
+          "jiraAccountId": "712020:57b83b0a-e0ad-4e27-a12a-b0d4f7d7d94e",
+          "tcStats": {
+            "total": 6,
+            "tc": 2,
+            "tcOpen": 2,
+            "tcDone": 0,
+            "tcNotAnIssue": 0,
+            "tcNotAnIssueByResolution": {},
+            "do": 4,
+            "engineering": 0,
+            "open": 5,
+            "byProject": {
+              "TC": 2,
+              "DO": 4
+            }
+          },
+          "complexityDist": [
+            14,
+            43,
+            32,
+            28,
+            25,
+            27,
+            11,
+            6,
+            5,
+            2,
+            1
+          ],
+          "hbrByComplexity": {
+            "4": 15.7,
+            "6": 33.8,
+            "1": 8.3,
+            "5": 52.3,
+            "0": 9.3,
+            "3": 11.6,
+            "8": 49.1,
+            "7": 31.1,
+            "2": 8.4,
+            "9": 35.4
+          },
+          "firstRespByComplexity": {
+            "4": 18.2,
+            "6": 27.0,
+            "5": 11.4,
+            "1": 17.2,
+            "8": 40.9,
+            "3": 18.1,
+            "2": 21.8,
+            "7": 8.1,
+            "0": 30.8,
+            "9": 15.0,
+            "10": 2.1
+          },
+          "ongoingRespByComplexity": {
+            "4": 5.1,
+            "6": 5.2,
+            "5": 3.9,
+            "1": 0.0,
+            "8": 5.9,
+            "3": 3.2,
+            "2": 3.8,
+            "7": 4.2,
+            "0": 6.4,
+            "9": 7.3,
+            "10": 4.8
+          },
+          "csatByComplexity": {
+            "7": 10.0,
+            "8": 10.0,
+            "5": 10.0
+          }
+        },
+        {
+          "name": "Victoria Sene R\u00edos",
+          "cases": 184,
+          "firstResponseHrs": 23.2,
+          "ongoingResponseHrs": 7.7,
+          "resolutionHrs": 134.1,
+          "touchpoints": 2.19,
+          "csat": 8.3,
+          "csatTotal": 3,
+          "region": "EMEA",
+          "jiraAccountId": "712020:1e890bc6-894c-462b-9434-517f44b64e87",
+          "tcStats": {
+            "total": 8,
+            "tc": 5,
+            "tcOpen": 2,
+            "tcDone": 0,
+            "tcNotAnIssue": 3,
+            "tcNotAnIssueByResolution": {
+              "Working As Intended": 1,
+              "Product Review - Working as Intended": 1,
+              "Cannot Reproduce": 1
+            },
+            "do": 2,
+            "engineering": 1,
+            "open": 5,
+            "byProject": {
+              "DO": 2,
+              "TC": 5,
+              "MOB": 1
+            }
+          },
+          "complexityDist": [
+            7,
+            43,
+            19,
+            13,
+            26,
+            33,
+            21,
+            14,
+            6,
+            3,
+            2
+          ],
+          "hbrByComplexity": {
+            "7": 38.4,
+            "5": 33.6,
+            "1": 6.2,
+            "4": 18.6,
+            "2": 22.4,
+            "8": 31.4,
+            "0": 3.8,
+            "3": 11.8,
+            "6": 31.6
+          },
+          "firstRespByComplexity": {
+            "7": 28.8,
+            "4": 22.1,
+            "5": 19.7,
+            "6": 15.2,
+            "2": 10.5,
+            "8": 41.4,
+            "0": 5.0,
+            "3": 14.0,
+            "9": 32.2,
+            "1": 14.4,
+            "10": 8.4
+          },
+          "ongoingRespByComplexity": {
+            "7": 7.1,
+            "4": 7.1,
+            "5": 6.9,
+            "6": 9.4,
+            "2": 1.5,
+            "8": 12.2,
+            "0": 0.5,
+            "3": 8.2,
+            "9": 11.0,
+            "1": 1.6,
+            "10": 14.8
+          },
+          "csatByComplexity": {
+            "8": 5.0,
+            "3": 10.0,
+            "6": 10.0
+          }
+        },
+        {
+          "name": "Stephan Duerrnagel",
+          "cases": 168,
+          "firstResponseHrs": 13.9,
+          "ongoingResponseHrs": 2.4,
+          "resolutionHrs": 51.5,
+          "touchpoints": 1.99,
+          "csat": 9.1,
+          "csatTotal": 16,
+          "region": "EMEA",
+          "jiraAccountId": "712020:b8d0da18-7ff1-485d-b0e3-80f46622e803",
+          "tcStats": {
+            "total": 14,
+            "tc": 10,
+            "tcOpen": 7,
+            "tcDone": 2,
+            "tcNotAnIssue": 1,
+            "tcNotAnIssueByResolution": {
+              "Working As Intended": 1
+            },
+            "do": 2,
+            "engineering": 2,
+            "open": 9,
+            "byProject": {
+              "TC": 10,
+              "LIS": 1,
+              "DO": 2,
+              "AC": 1
+            }
+          },
+          "complexityDist": [
+            13,
+            39,
+            28,
+            21,
+            21,
+            24,
+            12,
+            7,
+            5,
+            0,
+            0
+          ],
+          "hbrByComplexity": {
+            "3": 3.1,
+            "6": 6.2,
+            "4": 21.7,
+            "0": 3.7,
+            "1": 5.9,
+            "5": 15.9,
+            "2": 8.0,
+            "8": 46.3,
+            "7": 43.0
+          },
+          "firstRespByComplexity": {
+            "3": 9.4,
+            "6": 9.2,
+            "4": 9.8,
+            "0": 12.8,
+            "5": 8.9,
+            "1": 13.8,
+            "2": 18.8,
+            "8": 16.2,
+            "7": 14.0
+          },
+          "ongoingRespByComplexity": {
+            "3": 2.2,
+            "6": 1.5,
+            "4": 2.4,
+            "0": 0.0,
+            "5": 2.1,
+            "1": 2.1,
+            "2": 1.5,
+            "8": 6.5,
+            "7": 4.5
+          },
+          "csatByComplexity": {
+            "1": 5.33,
+            "0": 10.0,
+            "5": 10.0,
+            "2": 10.0,
+            "3": 10.0,
+            "7": 10.0,
+            "4": 10.0
+          }
+        },
+        {
+          "name": "Maria Fontiveros Villasana",
+          "cases": 133,
+          "firstResponseHrs": 12.1,
+          "ongoingResponseHrs": 3.9,
+          "resolutionHrs": 93.0,
+          "touchpoints": 2.96,
+          "csat": 10.0,
+          "csatTotal": 8,
+          "region": "EMEA",
+          "jiraAccountId": "712020:07fe05e4-71c7-4a76-924d-5c5a4aa7e834",
+          "tcStats": {
+            "total": 8,
+            "tc": 2,
+            "tcOpen": 2,
+            "tcDone": 0,
+            "tcNotAnIssue": 0,
+            "tcNotAnIssueByResolution": {},
+            "do": 4,
+            "engineering": 2,
+            "open": 7,
+            "byProject": {
+              "TC": 2,
+              "DO": 4,
+              "IN": 1,
+              "LH": 1
+            }
+          },
+          "complexityDist": [
+            5,
+            26,
+            31,
+            15,
+            14,
+            19,
+            11,
+            7,
+            6,
+            0,
+            0
+          ],
+          "hbrByComplexity": {
+            "3": 18.4,
+            "4": 25.7,
+            "6": 32.3,
+            "2": 16.0,
+            "5": 44.8,
+            "1": 6.9,
+            "7": 42.0,
+            "8": 47.3,
+            "0": 2.6
+          },
+          "firstRespByComplexity": {
+            "3": 13.8,
+            "1": 12.6,
+            "4": 6.5,
+            "6": 17.4,
+            "2": 7.9,
+            "5": 6.3,
+            "8": 6.6,
+            "7": 9.6
+          },
+          "ongoingRespByComplexity": {
+            "3": 3.1,
+            "1": 1.3,
+            "4": 5.1,
+            "6": 6.8,
+            "2": 3.1,
+            "5": 4.0,
+            "8": 4.2,
+            "7": 5.0,
+            "0": 0.0
+          },
+          "csatByComplexity": {
+            "6": 10.0,
+            "4": 10.0,
+            "2": 10.0,
+            "1": 10.0,
+            "8": 10.0
+          }
+        },
+        {
+          "name": "Jhonric Canillo",
+          "cases": 129,
+          "firstResponseHrs": 30.4,
+          "ongoingResponseHrs": 8.6,
+          "resolutionHrs": 154.7,
+          "touchpoints": 3.3,
+          "csat": 10.0,
+          "csatTotal": 4,
+          "region": "US-CAN",
+          "jiraAccountId": "61d450f39ee70a00685fe638",
+          "tcStats": {
+            "total": 9,
+            "tc": 1,
+            "tcOpen": 0,
+            "tcDone": 1,
+            "tcNotAnIssue": 0,
+            "tcNotAnIssueByResolution": {},
+            "do": 6,
+            "engineering": 2,
+            "open": 8,
+            "byProject": {
+              "DO": 6,
+              "SOC": 1,
+              "TC": 1,
+              "LH": 1
+            }
+          },
+          "complexityDist": [
+            5,
+            34,
+            19,
+            15,
+            13,
+            19,
+            20,
+            5,
+            4,
+            0,
+            0
+          ],
+          "hbrByComplexity": {
+            "3": 41.1,
+            "6": 103.9,
+            "1": 14.4,
+            "4": 58.0,
+            "2": 30.0,
+            "5": 70.2,
+            "8": 136.6,
+            "0": 0.2,
+            "7": 98.5
+          },
+          "firstRespByComplexity": {
+            "6": 3.3,
+            "2": 1.3,
+            "3": 0.6,
+            "8": 14.9,
+            "5": 21.7,
+            "4": 43.2,
+            "7": 1.3,
+            "1": 0.1
+          },
+          "ongoingRespByComplexity": {
+            "6": 4.6,
+            "2": 1.0,
+            "3": 1.5,
+            "1": 0.0,
+            "8": 9.9,
+            "5": 6.7,
+            "4": 12.2,
+            "7": 3.1,
+            "0": 0.0
+          },
+          "csatByComplexity": {
+            "6": 10.0,
+            "2": 10.0,
+            "4": 10.0
+          }
+        },
+        {
+          "name": "Anna-Christin Voigt",
+          "cases": 121,
+          "firstResponseHrs": 25.6,
+          "ongoingResponseHrs": 2.9,
+          "resolutionHrs": 40.9,
+          "touchpoints": 2.25,
+          "csat": 10.0,
+          "csatTotal": 4,
+          "region": "EMEA",
+          "jiraAccountId": "60c377df2bd21400699a55c8",
+          "tcStats": {
+            "total": 1,
+            "tc": 0,
+            "tcOpen": 0,
+            "tcDone": 0,
+            "tcNotAnIssue": 0,
+            "tcNotAnIssueByResolution": {},
+            "do": 1,
+            "engineering": 0,
+            "open": 1,
+            "byProject": {
+              "DO": 1
+            }
+          },
+          "complexityDist": [
+            31,
+            19,
+            21,
+            11,
+            18,
+            6,
+            8,
+            3,
+            0,
+            1,
+            1
+          ],
+          "hbrByComplexity": {
+            "4": 23.7,
+            "0": 3.4,
+            "3": 23.9,
+            "2": 13.0,
+            "1": 9.0,
+            "7": 50.7,
+            "5": 19.9,
+            "6": 35.2
+          },
+          "firstRespByComplexity": {
+            "3": 185.3,
+            "9": 150.4,
+            "4": 16.3,
+            "1": 13.0,
+            "6": 8.9,
+            "2": 4.6,
+            "5": 0.5,
+            "10": 14.6
+          },
+          "ongoingRespByComplexity": {
+            "4": 3.5,
+            "3": 13.8,
+            "9": 4.4,
+            "2": 0.0,
+            "1": 0.0,
+            "5": 0.3,
+            "6": 1.7,
+            "0": 0.0,
+            "10": 9.8
+          },
+          "csatByComplexity": {}
+        },
+        {
+          "name": "Patrick Paul Bayor",
+          "cases": 112,
+          "firstResponseHrs": 54.2,
+          "ongoingResponseHrs": 12.5,
+          "resolutionHrs": 167.6,
+          "touchpoints": 2.84,
+          "csat": 10.0,
+          "csatTotal": 1,
+          "region": "US-CAN",
+          "jiraAccountId": "712020:bef43ad9-4b43-4884-8d40-925a0ac69d93",
+          "tcStats": {
+            "total": 9,
+            "tc": 1,
+            "tcOpen": 1,
+            "tcDone": 0,
+            "tcNotAnIssue": 0,
+            "tcNotAnIssueByResolution": {},
+            "do": 6,
+            "engineering": 2,
+            "open": 7,
+            "byProject": {
+              "DO": 6,
+              "TC": 1,
+              "WEB": 2
+            }
+          },
+          "complexityDist": [
+            14,
+            22,
+            16,
+            12,
+            17,
+            12,
+            16,
+            4,
+            0,
+            0,
+            0
+          ],
+          "hbrByComplexity": {
+            "4": 53.3,
+            "5": 69.4,
+            "2": 62.5,
+            "0": 11.1,
+            "1": 61.8,
+            "3": 51.6,
+            "6": 89.7,
+            "7": 74.5
+          },
+          "firstRespByComplexity": {
+            "5": 21.9,
+            "6": 14.7,
+            "4": 60.2,
+            "2": 106.9,
+            "1": 106.8,
+            "3": 5.0,
+            "7": 54.2,
+            "0": 139.8
+          },
+          "ongoingRespByComplexity": {
+            "5": 6.3,
+            "6": 5.2,
+            "4": 18.6,
+            "2": 23.2,
+            "0": 0.0,
+            "1": 18.3,
+            "3": 19.5,
+            "7": 14.5
+          },
+          "csatByComplexity": {
+            "6": 10.0
+          }
+        },
+        {
+          "name": "John Paul Pineda",
+          "cases": 97,
+          "firstResponseHrs": 65.1,
+          "ongoingResponseHrs": 13.4,
+          "resolutionHrs": 119.7,
+          "touchpoints": 2.51,
+          "csat": 10.0,
+          "csatTotal": 1,
+          "region": "US-CAN",
+          "jiraAccountId": "712020:f5acaba4-f9c7-48e4-9c91-0523ef40df7b",
+          "tcStats": {
+            "total": 4,
+            "tc": 0,
+            "tcOpen": 0,
+            "tcDone": 0,
+            "tcNotAnIssue": 0,
+            "tcNotAnIssueByResolution": {},
+            "do": 4,
+            "engineering": 0,
+            "open": 2,
+            "byProject": {
+              "DO": 4
+            }
+          },
+          "complexityDist": [
+            9,
+            18,
+            8,
+            16,
+            19,
+            15,
+            4,
+            7,
+            4,
+            0,
+            0
+          ],
+          "hbrByComplexity": {
+            "1": 38.9,
+            "3": 23.8,
+            "4": 53.6,
+            "5": 37.4,
+            "0": 17.0,
+            "7": 86.0,
+            "6": 41.2,
+            "2": 52.2,
+            "8": 39.5
+          },
+          "firstRespByComplexity": {
+            "1": 105.8,
+            "3": 54.1,
+            "4": 71.6,
+            "5": 66.8,
+            "7": 31.2,
+            "8": 38.5,
+            "6": 76.8,
+            "2": 76.2
+          },
+          "ongoingRespByComplexity": {
+            "1": 4.5,
+            "3": 17.7,
+            "4": 10.5,
+            "5": 14.0,
+            "0": 0.0,
+            "7": 2.2,
+            "8": 5.3,
+            "6": 21.2,
+            "2": 28.3
+          },
+          "csatByComplexity": {
+            "4": 10.0
+          }
+        },
+        {
+          "name": "Fernando Viana",
+          "cases": 45,
+          "firstResponseHrs": 2.6,
+          "ongoingResponseHrs": 4.6,
+          "resolutionHrs": 83.7,
+          "touchpoints": 2.86,
+          "csat": 10.0,
+          "csatTotal": 1,
+          "region": "US-CAN",
+          "jiraAccountId": "712020:4d9a9233-9ff8-4563-a1c0-3799fc530f3d",
+          "tcStats": {
+            "total": 27,
+            "tc": 9,
+            "tcOpen": 0,
+            "tcDone": 3,
+            "tcNotAnIssue": 6,
+            "tcNotAnIssueByResolution": {
+              "Product Review - Working as Intended": 1,
+              "Cannot Reproduce": 4,
+              "Declined": 1
+            },
+            "do": 13,
+            "engineering": 5,
+            "open": 6,
+            "byProject": {
+              "DO": 13,
+              "TC": 9,
+              "WEB": 1,
+              "CS": 1,
+              "SOC": 1,
+              "LIS": 1,
+              "LH": 1
+            }
+          },
+          "complexityDist": [
+            1,
+            4,
+            2,
+            6,
+            8,
+            6,
+            12,
+            2,
+            2,
+            1,
+            0
+          ],
+          "hbrByComplexity": {
+            "1": 14.6,
+            "5": 29.2,
+            "0": 0.3,
+            "4": 35.2,
+            "6": 56.8,
+            "8": 43.3,
+            "3": 19.1,
+            "2": 2.7,
+            "7": 25.3
+          },
+          "firstRespByComplexity": {
+            "1": 12.9,
+            "4": 1.6,
+            "5": 0.6,
+            "7": 0.8,
+            "6": 1.6,
+            "8": 1.0,
+            "3": 2.2,
+            "2": 0.3,
+            "9": 2.3
+          },
+          "ongoingRespByComplexity": {
+            "1": 16.4,
+            "4": 5.6,
+            "6": 2.7,
+            "5": 2.3,
+            "7": 16.9,
+            "0": 0.0,
+            "8": 9.1,
+            "3": 1.3,
+            "2": 0.2,
+            "9": 0.0
+          },
+          "csatByComplexity": {
+            "2": 10.0
+          }
+        },
+        {
+          "name": "Joel Alob",
+          "cases": 36,
+          "firstResponseHrs": 2.0,
+          "ongoingResponseHrs": 2.6,
+          "resolutionHrs": 67.3,
+          "touchpoints": 2.55,
+          "csat": 10.0,
+          "csatTotal": 1,
+          "region": "US-CAN",
+          "jiraAccountId": "617a6b77b9c549006ffe4337",
+          "tcStats": {
+            "total": 20,
+            "tc": 6,
+            "tcOpen": 1,
+            "tcDone": 2,
+            "tcNotAnIssue": 3,
+            "tcNotAnIssueByResolution": {
+              "Working As Intended": 2,
+              "Cannot Reproduce": 1
+            },
+            "do": 13,
+            "engineering": 1,
+            "open": 4,
+            "byProject": {
+              "DO": 13,
+              "TC": 6,
+              "WEB": 1
+            }
+          },
+          "complexityDist": [
+            4,
+            7,
+            4,
+            4,
+            10,
+            2,
+            5,
+            0,
+            0,
+            0,
+            0
+          ],
+          "hbrByComplexity": {
+            "0": 0.4,
+            "4": 29.1,
+            "6": 49.4,
+            "5": 85.1,
+            "3": 63.9,
+            "2": 16.0,
+            "1": 12.8
+          },
+          "firstRespByComplexity": {
+            "6": 1.1,
+            "4": 1.3,
+            "3": 1.6,
+            "2": 1.0,
+            "5": 1.8,
+            "1": 3.2
+          },
+          "ongoingRespByComplexity": {
+            "0": 0.0,
+            "6": 4.3,
+            "4": 3.6,
+            "3": 1.0,
+            "2": 1.0,
+            "1": 0.6,
+            "5": 0.1
+          },
+          "csatByComplexity": {}
+        },
+        {
+          "name": "Ryan Quinn",
+          "cases": 28,
+          "firstResponseHrs": 56.9,
+          "ongoingResponseHrs": 12.2,
+          "resolutionHrs": 93.6,
+          "touchpoints": 2.18,
+          "csat": null,
+          "csatTotal": 0,
+          "region": "US-CAN",
+          "jiraAccountId": "712020:16c67fc4-a8a6-4f7d-83ea-0aac74448201",
+          "tcStats": {
+            "total": 4,
+            "tc": 1,
+            "tcOpen": 0,
+            "tcDone": 0,
+            "tcNotAnIssue": 1,
+            "tcNotAnIssueByResolution": {
+              "Won't Do": 1
+            },
+            "do": 3,
+            "engineering": 0,
+            "open": 3,
+            "byProject": {
+              "TC": 1,
+              "DO": 3
+            }
+          },
+          "complexityDist": [
+            0,
+            0,
+            6,
+            9,
+            4,
+            3,
+            3,
+            1,
+            1,
+            1,
+            0
+          ],
+          "hbrByComplexity": {
+            "7": 3.5,
+            "5": 22.0,
+            "8": 34.3,
+            "9": 83.1,
+            "3": 14.8
+          },
+          "firstRespByComplexity": {
+            "7": 15.5,
+            "9": 1.9
+          },
+          "ongoingRespByComplexity": {
+            "7": 31.2,
+            "9": 0.0
+          },
+          "csatByComplexity": {}
+        },
+        {
+          "name": "Geneca Rapada",
+          "cases": 24,
+          "firstResponseHrs": 46.1,
+          "ongoingResponseHrs": 12.0,
+          "resolutionHrs": 173.7,
+          "touchpoints": 3.43,
+          "csat": null,
+          "csatTotal": 0,
+          "region": "US-CAN",
+          "jiraAccountId": "712020:ab64ada0-b268-46d2-ba28-41e33a31603f",
+          "tcStats": {
+            "total": 4,
+            "tc": 2,
+            "tcOpen": 0,
+            "tcDone": 1,
+            "tcNotAnIssue": 1,
+            "tcNotAnIssueByResolution": {
+              "Working As Intended": 1
+            },
+            "do": 2,
+            "engineering": 0,
+            "open": 2,
+            "byProject": {
+              "DO": 2,
+              "TC": 2
+            }
+          },
+          "complexityDist": [
+            0,
+            1,
+            5,
+            4,
+            3,
+            4,
+            3,
+            2,
+            2,
+            0,
+            0
+          ],
+          "hbrByComplexity": {
+            "6": 130.5,
+            "5": 52.8,
+            "3": 70.0,
+            "7": 115.8,
+            "2": 37.2,
+            "8": 97.9,
+            "4": 27.5,
+            "1": 37.1
+          },
+          "firstRespByComplexity": {
+            "6": 0.5,
+            "4": 78.0,
+            "5": 61.7,
+            "7": 3.7,
+            "8": 29.0,
+            "2": 4.9,
+            "3": 4.2
+          },
+          "ongoingRespByComplexity": {
+            "6": 9.7,
+            "4": 5.5,
+            "5": 28.6,
+            "7": 1.0,
+            "8": 5.8,
+            "2": 2.4,
+            "3": 3.3
+          },
+          "csatByComplexity": {}
+        }
+      ],
+      "complexityBuckets": [
+        {
+          "label": "0",
+          "value": 179,
+          "avgV1": 3.0,
+          "avgHBR": 9.6
+        },
+        {
+          "label": "1",
+          "value": 427,
+          "avgV1": 3.0,
+          "avgHBR": 16.8
+        },
+        {
+          "label": "2",
+          "value": 312,
+          "avgV1": 3.0,
+          "avgHBR": 24.3
+        },
+        {
+          "label": "3",
+          "value": 245,
+          "avgV1": 3.0,
+          "avgHBR": 24.7
+        },
+        {
+          "label": "4",
+          "value": 289,
+          "avgV1": 3.0,
+          "avgHBR": 32.8
+        },
+        {
+          "label": "5",
+          "value": 225,
+          "avgV1": 3.0,
+          "avgHBR": 44.7
+        },
+        {
+          "label": "6",
+          "value": 185,
+          "avgV1": 3.0,
+          "avgHBR": 55.4
+        },
+        {
+          "label": "7",
+          "value": 74,
+          "avgV1": 3.0,
+          "avgHBR": 61.1
+        },
+        {
+          "label": "8",
+          "value": 45,
+          "avgV1": 3.0,
+          "avgHBR": 59.7
+        },
+        {
+          "label": "9",
+          "value": 15,
+          "avgV1": 3.0,
+          "avgHBR": 32.1
+        },
+        {
+          "label": "10",
+          "value": 4,
+          "avgV1": 3.0,
+          "avgHBR": null
+        }
+      ]
+    }
+  },
+  "activePeriod": "2026-06"
 }

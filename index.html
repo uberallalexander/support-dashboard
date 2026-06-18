@@ -147,6 +147,12 @@ const CONFIG = {
     <button class="tab py-3 text-sm font-medium tab-inactive" data-tab="routing" onclick="switchTab('routing')">Routing</button>
   </nav>
 
+  <!-- Period Picker -->
+  <div id="period-picker-bar" style="background:var(--bg-header);border-bottom:1px solid var(--border);padding:6px 24px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+    <span style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-right:4px">Period:</span>
+    <div id="period-picker-pills" style="display:flex;gap:6px;flex-wrap:wrap"></div>
+  </div>
+
   <!-- Content -->
   <main class="flex-1 p-6 overflow-auto">
 
@@ -307,6 +313,35 @@ const CONFIG = {
 // ── State ─────────────────────────────────────────────────────────────────
 let data = null;
 let charts = {};
+let activePeriod = '2026-06';
+
+function getPeriodData() {
+  return (data && data.periods && data.periods[activePeriod]) ? data.periods[activePeriod] : data;
+}
+
+function renderPeriodPicker() {
+  if (!data || !data.periods) return;
+  const container = document.getElementById('period-picker-pills');
+  if (!container) return;
+  container.innerHTML = Object.entries(data.periods).map(([key, period]) => {
+    const isActive = key === activePeriod;
+    const label = period.meta ? period.meta.label : key;
+    const partial = period.meta && period.meta.partial ? ' <span style="font-size:0.65rem;opacity:0.7">(partial)</span>' : '';
+    return `<button onclick="window.switchPeriod('${key}')" style="
+      padding:4px 12px;border-radius:9999px;font-size:0.75rem;font-weight:600;border:none;cursor:pointer;
+      background:${isActive ? 'var(--accent)' : 'var(--bg-card)'};
+      color:${isActive ? '#fff' : 'var(--text-muted)'};
+      border:1px solid ${isActive ? 'var(--accent)' : 'var(--border)'};
+      transition:all 0.15s">${label}${partial}</button>`;
+  }).join('');
+}
+
+window.switchPeriod = function(key) {
+  activePeriod = key;
+  renderPeriodPicker();
+  renderOverview();
+  renderAgents();
+};
 
 // ── Auth ─────────────────────────────────────────────────────────────────
 
@@ -392,6 +427,8 @@ async function loadData() {
   }
   hide('loading');
   initSpamToggleVisual();
+  activePeriod = data.activePeriod || '2026-06';
+  renderPeriodPicker();
   renderAll();
 }
 
@@ -491,7 +528,7 @@ function toggleAgentExpand(row, agentName, idx) {
   if (isOpen) return;
   expandRow.style.display = '';
   row.style.background = 'var(--accent-light)';
-  const agent = (data.agentData || []).find(a => a.name === agentName);
+  const agent = (getPeriodData().agentData || data.agentData || []).find(a => a.name === agentName);
   if (!agent || !agent.caseExamples) {
     content.innerHTML = `<p style="color:var(--text-muted);font-size:0.8rem">No case examples available — will populate on next daily sync.</p>`;
     return;
@@ -778,12 +815,14 @@ function renderOverview() {
   }
 
   // Complexity + resolution KPI strip
-  const agents = data.agentData || [];
-  const avgConvComp = agents.length
+  const pd = getPeriodData();
+  const agents = pd.agentData || [];
+  const avgConvComp = agents.length && agents.some(a => a.conversationComplexity)
     ? (agents.reduce((s,a) => s + (a.conversationComplexity || 0) * a.cases, 0) / agents.reduce((s,a) => s + a.cases, 0)).toFixed(2)
     : '—';
-  const avgV1 = data.kpis.avgV1 ? data.kpis.avgV1.toFixed(2) : '—';
-  const avgHBR = data.kpis.avgHBRexclOnHold ? data.kpis.avgHBRexclOnHold.toFixed(1) : '—';
+  const pdKpis = pd.kpis || {};
+  const avgV1 = pdKpis.avgV1 ? pdKpis.avgV1.toFixed(2) : (pdKpis.avgFirstResp ? pdKpis.avgFirstResp.toFixed(1) + 'h' : '—');
+  const avgHBR = pdKpis.avgHBRexclOnHold ? pdKpis.avgHBRexclOnHold.toFixed(1) : (pdKpis.avgResolution ? pdKpis.avgResolution.toFixed(1) : '—');
   document.getElementById('complexity-kpi-strip').innerHTML = [
     { label: 'Avg Conv. Complexity', value: avgConvComp, sub: 'out of 10 · across all agents', color: '#7c3aed' },
     { label: 'Avg Complexity V1', value: avgV1, sub: 'out of 6 · product × issue type', color: '#2563eb' },
@@ -795,7 +834,11 @@ function renderOverview() {
   </div>`).join('');
 
   // Complexity distribution
-  const buckets = data.complexityBuckets;
+  const buckets = pd.complexityBuckets;
+  if (!buckets || !buckets.length) {
+    document.getElementById('complexity-dist-card').style.display = 'none';
+    document.getElementById('csat-per-ccs-card').style.display = 'none';
+  }
   if (buckets && buckets.length) {
     document.getElementById('complexity-dist-card').style.display = '';
     // Colour gradient: green (0) → amber (5) → red (10)
@@ -816,7 +859,7 @@ function renderOverview() {
     document.getElementById('csat-per-ccs-card').style.display = '';
     const csatCountByCcs = Array(11).fill(0);
     const csatSumByCcs   = Array(11).fill(0);
-    for (const a of data.agentData) {
+    for (const a of pd.agentData || []) {
       const cnt = a.csatCountByComplexity || {};
       const avg = a.csatByComplexity     || {};
       for (let s = 0; s <= 10; s++) {
@@ -981,7 +1024,7 @@ function agentPassesFilter(a) {
 function renderAgents() {
   renderFilterChips();
   const isFilteredComplexity = complexityFilterActive();
-  const rawAgents = data.agentData.filter(a => !a.name.includes('Queue') && !a.name.includes('Legal') && agentPassesFilter(a));
+  const rawAgents = (getPeriodData().agentData || data.agentData || []).filter(a => !a.name.includes('Queue') && !a.name.includes('Legal') && agentPassesFilter(a));
 
   // Attach filtered metrics to each agent row
   const allAgents = rawAgents.map(a => {
