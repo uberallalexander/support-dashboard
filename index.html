@@ -339,6 +339,7 @@ function renderPeriodPicker() {
 window.switchPeriod = function(key) {
   activePeriod = key;
   renderPeriodPicker();
+  renderTopKpis();
   renderOverview();
   renderAgents();
 };
@@ -735,25 +736,37 @@ function filteredData() {
 
 // ── Render ────────────────────────────────────────────────────────────────
 
-function renderAll() {
-  const fd = filteredData();
-  const { kpis, periodLabel, lastUpdated } = fd;
+function renderTopKpis() {
+  const pd = getPeriodData();
+  const pk = pd.kpis || {};
+  // Use period-level kpis when available, fall back to top-level for fields only present there
+  const baseKpis = filteredData().kpis;
+  const periodLabel = pd.meta ? pd.meta.label : (data.periodLabel || '');
 
-  // KPIs
-  document.getElementById('kpi-total').textContent = kpis.total.toLocaleString();
+  document.getElementById('kpi-total').textContent = (pk.total ?? baseKpis.total ?? 0).toLocaleString();
   document.getElementById('kpi-period').textContent = periodLabel + (excludeSpam ? ' · excl. Spam' : '');
-  document.getElementById('kpi-open').textContent = kpis.open.toLocaleString();
-  const csatPct = kpis.avgCsatPct != null ? kpis.avgCsatPct.toFixed(2) + '%' : (kpis.avgCsat ? (kpis.avgCsat / kpis.csatScale * 100).toFixed(2) + '%' : '—');
-  document.getElementById('kpi-csat').textContent = csatPct;
-  const csatReceived = kpis.csatTotalReceived || 0;
-  document.getElementById('kpi-csat-sub').textContent = `${csatReceived} received`;
-  document.getElementById('kpi-queue').textContent = kpis.queueBacklog.toLocaleString();
 
-  // Last updated
-  const d = new Date(lastUpdated);
+  // open / queue only available in current-period (June) snapshot
+  const openVal = pk.open ?? baseKpis.open;
+  document.getElementById('kpi-open').textContent = openVal != null ? openVal.toLocaleString() : '—';
+  const queueVal = pk.queueBacklog ?? baseKpis.queueBacklog;
+  document.getElementById('kpi-queue').textContent = queueVal != null ? queueVal.toLocaleString() : '—';
+
+  const avgCsat = pk.avgCsat ?? baseKpis.avgCsat;
+  const csatScale = baseKpis.csatScale || 10;
+  const csatPct = pk.avgCsatPct != null ? pk.avgCsatPct.toFixed(1) + '%'
+    : (avgCsat ? (avgCsat / csatScale * 100).toFixed(1) + '%' : '—');
+  document.getElementById('kpi-csat').textContent = csatPct;
+  document.getElementById('kpi-csat-sub').textContent = `${pk.csatTotalReceived ?? baseKpis.csatTotalReceived ?? 0} received`;
+}
+
+function renderAll() {
+  // Last updated always from top-level data
+  const d = new Date(data.lastUpdated);
   document.getElementById('last-updated').textContent =
     `Synced ${d.toLocaleDateString('en-GB', { day:'numeric', month:'short' })} at ${d.toLocaleTimeString('en-GB', { hour:'2-digit', minute:'2-digit' })}`;
 
+  renderTopKpis();
   renderOverview();
   renderAgents();
   renderTopics();
