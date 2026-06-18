@@ -920,9 +920,20 @@ function renderAgents() {
       _convComplexity: a.conversationComplexity,
       _csatTotal: a.csatTotal, _csatPct: a.csatPct,
     };
-    // Filtered CSAT received count: sum csatCountByComplexity for active scores
+    // Filtered CSAT: use csatCountByComplexity as weight (correct); fall back to null if unavailable
     const csatCountDist = a.csatCountByComplexity || {};
-    const _csatTotal = Array.from(activeComplexityScores).reduce((sum, s) => sum + (csatCountDist[String(s)] || 0), 0) || null;
+    const hasCsatCounts = Object.keys(csatCountDist).length > 0;
+    let _csatTotal = null, _csat = null;
+    if (hasCsatCounts) {
+      let totalResponses = 0, weightedCsat = 0;
+      Array.from(activeComplexityScores).forEach(s => {
+        const cnt = csatCountDist[String(s)] || 0;
+        const v = (a.csatByComplexity || {})[String(s)];
+        if (cnt > 0 && v != null) { totalResponses += cnt; weightedCsat += v * cnt; }
+      });
+      _csatTotal = totalResponses || null;
+      _csat = totalResponses > 0 ? weightedCsat / totalResponses : null;
+    }
     return {
       ...a,
       _cases:       filteredCasesForAgent(a),
@@ -930,10 +941,10 @@ function renderAgents() {
       _firstResp:   filteredMetricForAgent(a, 'firstRespByComplexity'),
       _ongoingResp: filteredMetricForAgent(a, 'ongoingRespByComplexity'),
       _touchpoints: filteredMetricForAgent(a, 'touchpointsByComplexity'),
-      _csat:        filteredMetricForAgent(a, 'csatByComplexity'),
+      _csat,
       _convComplexity: filteredMetricForAgent(a, 'avgScoreByComplexity'),
-      _csatTotal:   _csatTotal,
-      _csatPct:     null,  // can't derive filtered % without per-case scores
+      _csatTotal,
+      _csatPct:     null,  // can't derive filtered % without per-case good/bad counts
     };
   });
 
