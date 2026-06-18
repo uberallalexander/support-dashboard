@@ -494,11 +494,16 @@
         "8": 7.62
       },
       "tcStats": {
-        "total": 7,
-        "knowledgeGap": 3,
-        "doIntent": 0,
-        "open": 3,
-        "done": 1
+        "total": 10,
+        "tc": 4,
+        "do": 5,
+        "engineering": 1,
+        "open": 6,
+        "byProject": {
+          "TC": 4,
+          "DO": 5,
+          "WEB": 1
+        }
       }
     },
     {
@@ -746,11 +751,19 @@
         "9": 8.59
       },
       "tcStats": {
-        "total": 21,
-        "knowledgeGap": 10,
-        "doIntent": 0,
-        "open": 2,
-        "done": 9
+        "total": 16,
+        "tc": 6,
+        "do": 6,
+        "engineering": 4,
+        "open": 11,
+        "byProject": {
+          "TC": 6,
+          "DO": 6,
+          "LIS": 1,
+          "AR": 1,
+          "LH": 1,
+          "ACMO": 1
+        }
       }
     },
     {
@@ -993,11 +1006,15 @@
         "5": 4.96
       },
       "tcStats": {
-        "total": 11,
-        "knowledgeGap": 2,
-        "doIntent": 4,
-        "open": 5,
-        "done": 4
+        "total": 7,
+        "tc": 3,
+        "do": 4,
+        "engineering": 0,
+        "open": 7,
+        "byProject": {
+          "TC": 3,
+          "DO": 4
+        }
       }
     },
     {
@@ -1242,11 +1259,15 @@
         "10": 9.54
       },
       "tcStats": {
-        "total": 9,
-        "knowledgeGap": 2,
-        "doIntent": 0,
-        "open": 2,
-        "done": 5
+        "total": 6,
+        "tc": 2,
+        "do": 4,
+        "engineering": 0,
+        "open": 5,
+        "byProject": {
+          "TC": 2,
+          "DO": 4
+        }
       }
     },
     {
@@ -1492,11 +1513,16 @@
         "0": 0.0
       },
       "tcStats": {
-        "total": 16,
-        "knowledgeGap": 8,
-        "doIntent": 0,
+        "total": 8,
+        "tc": 5,
+        "do": 2,
+        "engineering": 1,
         "open": 5,
-        "done": 3
+        "byProject": {
+          "DO": 2,
+          "TC": 5,
+          "MOB": 1
+        }
       }
     },
     {
@@ -1738,11 +1764,17 @@
         "8": 7.97
       },
       "tcStats": {
-        "total": 11,
-        "knowledgeGap": 1,
-        "doIntent": 0,
-        "open": 7,
-        "done": 3
+        "total": 14,
+        "tc": 10,
+        "do": 2,
+        "engineering": 2,
+        "open": 9,
+        "byProject": {
+          "TC": 10,
+          "LIS": 1,
+          "DO": 2,
+          "AC": 1
+        }
       }
     },
     {
@@ -1982,11 +2014,17 @@
         "0": 0.09
       },
       "tcStats": {
-        "total": 6,
-        "knowledgeGap": 2,
-        "doIntent": 0,
-        "open": 3,
-        "done": 1
+        "total": 8,
+        "tc": 2,
+        "do": 4,
+        "engineering": 2,
+        "open": 7,
+        "byProject": {
+          "TC": 2,
+          "DO": 4,
+          "IN": 1,
+          "LH": 1
+        }
       }
     },
     {
@@ -2222,11 +2260,17 @@
         "2": 2.06
       },
       "tcStats": {
-        "total": 3,
-        "knowledgeGap": 0,
-        "doIntent": 0,
-        "open": 1,
-        "done": 2
+        "total": 9,
+        "tc": 1,
+        "do": 6,
+        "engineering": 2,
+        "open": 8,
+        "byProject": {
+          "DO": 6,
+          "SOC": 1,
+          "TC": 1,
+          "LH": 1
+        }
       }
     },
     {
@@ -2452,10 +2496,13 @@
       },
       "tcStats": {
         "total": 1,
-        "knowledgeGap": 0,
-        "doIntent": 0,
-        "open": 0,
-        "done": 1
+        "tc": 0,
+        "do": 1,
+        "engineering": 0,
+        "open": 1,
+        "byProject": {
+          "DO": 1
+        }
       }
     },
     {
@@ -2688,11 +2735,16 @@
         "7": 7.14
       },
       "tcStats": {
-        "total": 3,
-        "knowledgeGap": 0,
-        "doIntent": 0,
-        "open": 2,
-        "done": 1
+        "total": 9,
+        "tc": 1,
+        "do": 6,
+        "engineering": 2,
+        "open": 7,
+        "byProject": {
+          "DO": 6,
+          "TC": 1,
+          "WEB": 2
+        }
       }
     },
     {
@@ -2923,11 +2975,14 @@
         "8": 8.18
       },
       "tcStats": {
-        "total": 2,
-        "knowledgeGap": 0,
-        "doIntent": 0,
-        "open": 0,
-        "done": 2
+        "total": 4,
+        "tc": 0,
+        "do": 4,
+        "engineering": 0,
+        "open": 2,
+        "byProject": {
+          "DO": 4
+        }
       }
     },
     {
@@ -3163,11 +3218,20 @@
         "2": 2.19
       },
       "tcStats": {
-        "total": 5,
-        "knowledgeGap": 3,
-        "doIntent": 0,
-        "open": 0,
-        "done": 2
+        "total": 27,
+        "tc": 9,
+        "do": 13,
+        "engineering": 5,
+        "open": 6,
+        "byProject": {
+          "DO": 13,
+          "TC": 9,
+          "WEB": 1,
+          "CS": 1,
+          "SOC": 1,
+          "LIS": 1,
+          "LH": 1
+        }
       }
     },
     {
@@ -3364,11 +3428,16 @@
         "5": 5.06
       },
       "tcStats": {
-        "total": 0,
-        "knowledgeGap": 0,
-        "doIntent": 0,
-        "open": 0,
-        "done": 0
+        "total": 20,
+        "tc": 6,
+        "do": 13,
+        "engineering": 1,
+        "open": 4,
+        "byProject": {
+          "DO": 13,
+          "TC": 6,
+          "WEB": 1
+        }
       }
     },
     {
@@ -3544,11 +3613,15 @@
         "8": 7.86
       },
       "tcStats": {
-        "total": 1,
-        "knowledgeGap": 1,
-        "doIntent": 0,
-        "open": 0,
-        "done": 0
+        "total": 4,
+        "tc": 1,
+        "do": 3,
+        "engineering": 0,
+        "open": 3,
+        "byProject": {
+          "TC": 1,
+          "DO": 3
+        }
       }
     },
     {
@@ -3770,10 +3843,14 @@
       },
       "tcStats": {
         "total": 4,
-        "knowledgeGap": 3,
-        "doIntent": 0,
-        "open": 0,
-        "done": 1
+        "tc": 2,
+        "do": 2,
+        "engineering": 0,
+        "open": 2,
+        "byProject": {
+          "DO": 2,
+          "TC": 2
+        }
       }
     }
   ],

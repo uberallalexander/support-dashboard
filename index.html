@@ -501,23 +501,32 @@ function toggleAgentExpand(row, agentName, idx) {
   const tcInsightsHtml = (() => {
     const tc = agent.tcStats;
     if (!tc || tc.total === 0) return '';
-    const knowledgeGapPct = tc.total > 0 ? Math.round(tc.knowledgeGap / tc.total * 100) : 0;
-    const doIntentPct = tc.total > 0 ? Math.round(tc.doIntent / tc.total * 100) : 0;
-    const openPct = tc.total > 0 ? Math.round(tc.open / tc.total * 100) : 0;
+    const pct = (n) => tc.total > 0 ? Math.round(n / tc.total * 100) : 0;
     const statBox = (label, value, sub, color) => `
-      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:10px 14px;min-width:100px">
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:10px 14px;min-width:110px">
         <div style="font-size:1.1rem;font-weight:700;color:${color}">${value}</div>
         <div style="font-size:0.68rem;font-weight:600;color:var(--text-main);margin-top:1px">${label}</div>
         ${sub ? `<div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">${sub}</div>` : ''}
       </div>`;
+    const projectBadges = Object.entries(tc.byProject || {})
+      .sort((a,b) => b[1]-a[1])
+      .map(([k,v]) => {
+        const colors = {'TC':'#7c3aed','DO':'#0891b2','LIS':'#059669','REP':'#d97706','SOC':'#db2777','LH':'#4f46e5','WEB':'#0d9488'};
+        const c = colors[k] || '#64748b';
+        return `<span style="font-size:0.68rem;background:${c}22;color:${c};padding:2px 7px;border-radius:4px;font-weight:600">${k} ${v}</span>`;
+      }).join(' ');
     return `
     <div style="margin-top:20px">
-      <div style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:10px">TC / DO Process (last 30d)</div>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+        <div style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em">TC / DO Process (last 30d)</div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">${projectBadges}</div>
+      </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
-        ${statBox('TC Tickets Created', tc.total, 'via Ticket Collector', 'var(--text-main)')}
-        ${statBox('Closed as Not an Issue', tc.knowledgeGap, `${knowledgeGapPct}% of TC tickets · knowledge gap indicator`, '#dc2626')}
-        ${statBox('DO Escalations Flagged', tc.doIntent, `${doIntentPct}% of TC tickets · manual task`, '#0891b2')}
-        ${statBox('Still Open in TC', tc.open, `${openPct}% pending OS triage`, '#b45309')}
+        ${statBox('Validated Tickets', tc.total, 'tc-ok or SF Ticket ID', 'var(--text-main)')}
+        ${statBox('Still in TC', tc.tc, `${pct(tc.tc)}% · pending or closed by OS`, '#7c3aed')}
+        ${statBox('Escalated to DO', tc.do, `${pct(tc.do)}% · manual operations task`, '#0891b2')}
+        ${statBox('Escalated to Engineering', tc.engineering, `${pct(tc.engineering)}% · product / tech teams`, '#059669')}
+        ${statBox('Still Open', tc.open, `${pct(tc.open)}% across all projects`, '#b45309')}
       </div>
     </div>`;
   })();
