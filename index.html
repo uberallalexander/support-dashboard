@@ -523,9 +523,25 @@ function toggleAgentExpand(row, agentName, idx) {
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
         ${statBox('Validated Tickets', tc.total, 'tc-ok or SF Ticket ID', 'var(--text-main)')}
-        ${statBox('Still in TC', tc.tc, `${pct(tc.tc)}% · pending or closed by OS`, '#7c3aed')}
         ${statBox('Escalated to DO', tc.do, `${pct(tc.do)}% · manual operations task`, '#0891b2')}
         ${statBox('Escalated to Engineering', tc.engineering, `${pct(tc.engineering)}% · product / tech teams`, '#059669')}
+        ${(() => {
+          if (!tc.tc) return '';
+          const notAnIssueDetail = tc.tcNotAnIssue > 0
+            ? Object.entries(tc.tcNotAnIssueByResolution || {}).map(([r,n]) => `${n}× ${r}`).join(', ')
+            : null;
+          const lines = [
+            tc.tcOpen > 0 ? `${tc.tcOpen} open · pending OS triage` : null,
+            tc.tcDone > 0 ? `${tc.tcDone} resolved by OS` : null,
+            tc.tcNotAnIssue > 0 ? `<span style="color:#dc2626;font-weight:600">${tc.tcNotAnIssue} not an issue${notAnIssueDetail ? ` — ${notAnIssueDetail}` : ''}</span>` : null,
+          ].filter(Boolean).join('<br>');
+          return `
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:10px 14px;min-width:110px">
+            <div style="font-size:1.1rem;font-weight:700;color:#7c3aed">${tc.tc}</div>
+            <div style="font-size:0.68rem;font-weight:600;color:var(--text-main);margin-top:1px">In TC</div>
+            <div style="font-size:0.65rem;color:var(--text-muted);margin-top:4px;line-height:1.6">${lines}</div>
+          </div>`;
+        })()}
         ${statBox('Still Open', tc.open, `${pct(tc.open)}% across all projects`, '#b45309')}
       </div>
     </div>`;

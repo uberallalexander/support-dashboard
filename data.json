@@ -496,6 +496,12 @@
       "tcStats": {
         "total": 10,
         "tc": 4,
+        "tcOpen": 3,
+        "tcDone": 0,
+        "tcNotAnIssue": 1,
+        "tcNotAnIssueByResolution": {
+          "Won't Do": 1
+        },
         "do": 5,
         "engineering": 1,
         "open": 6,
@@ -753,6 +759,13 @@
       "tcStats": {
         "total": 16,
         "tc": 6,
+        "tcOpen": 3,
+        "tcDone": 1,
+        "tcNotAnIssue": 2,
+        "tcNotAnIssueByResolution": {
+          "Won't Do": 1,
+          "Working As Intended": 1
+        },
         "do": 6,
         "engineering": 4,
         "open": 11,
@@ -1008,6 +1021,10 @@
       "tcStats": {
         "total": 7,
         "tc": 3,
+        "tcOpen": 3,
+        "tcDone": 0,
+        "tcNotAnIssue": 0,
+        "tcNotAnIssueByResolution": {},
         "do": 4,
         "engineering": 0,
         "open": 7,
@@ -1261,6 +1278,10 @@
       "tcStats": {
         "total": 6,
         "tc": 2,
+        "tcOpen": 2,
+        "tcDone": 0,
+        "tcNotAnIssue": 0,
+        "tcNotAnIssueByResolution": {},
         "do": 4,
         "engineering": 0,
         "open": 5,
@@ -1515,6 +1536,14 @@
       "tcStats": {
         "total": 8,
         "tc": 5,
+        "tcOpen": 2,
+        "tcDone": 0,
+        "tcNotAnIssue": 3,
+        "tcNotAnIssueByResolution": {
+          "Working As Intended": 1,
+          "Product Review - Working as Intended": 1,
+          "Cannot Reproduce": 1
+        },
         "do": 2,
         "engineering": 1,
         "open": 5,
@@ -1766,6 +1795,12 @@
       "tcStats": {
         "total": 14,
         "tc": 10,
+        "tcOpen": 7,
+        "tcDone": 2,
+        "tcNotAnIssue": 1,
+        "tcNotAnIssueByResolution": {
+          "Working As Intended": 1
+        },
         "do": 2,
         "engineering": 2,
         "open": 9,
@@ -2016,6 +2051,10 @@
       "tcStats": {
         "total": 8,
         "tc": 2,
+        "tcOpen": 2,
+        "tcDone": 0,
+        "tcNotAnIssue": 0,
+        "tcNotAnIssueByResolution": {},
         "do": 4,
         "engineering": 2,
         "open": 7,
@@ -2262,6 +2301,10 @@
       "tcStats": {
         "total": 9,
         "tc": 1,
+        "tcOpen": 0,
+        "tcDone": 1,
+        "tcNotAnIssue": 0,
+        "tcNotAnIssueByResolution": {},
         "do": 6,
         "engineering": 2,
         "open": 8,
@@ -2497,6 +2540,10 @@
       "tcStats": {
         "total": 1,
         "tc": 0,
+        "tcOpen": 0,
+        "tcDone": 0,
+        "tcNotAnIssue": 0,
+        "tcNotAnIssueByResolution": {},
         "do": 1,
         "engineering": 0,
         "open": 1,
@@ -2737,6 +2784,10 @@
       "tcStats": {
         "total": 9,
         "tc": 1,
+        "tcOpen": 1,
+        "tcDone": 0,
+        "tcNotAnIssue": 0,
+        "tcNotAnIssueByResolution": {},
         "do": 6,
         "engineering": 2,
         "open": 7,
@@ -2977,6 +3028,10 @@
       "tcStats": {
         "total": 4,
         "tc": 0,
+        "tcOpen": 0,
+        "tcDone": 0,
+        "tcNotAnIssue": 0,
+        "tcNotAnIssueByResolution": {},
         "do": 4,
         "engineering": 0,
         "open": 2,
@@ -3220,6 +3275,14 @@
       "tcStats": {
         "total": 27,
         "tc": 9,
+        "tcOpen": 0,
+        "tcDone": 3,
+        "tcNotAnIssue": 6,
+        "tcNotAnIssueByResolution": {
+          "Product Review - Working as Intended": 1,
+          "Cannot Reproduce": 4,
+          "Declined": 1
+        },
         "do": 13,
         "engineering": 5,
         "open": 6,
@@ -3430,6 +3493,13 @@
       "tcStats": {
         "total": 20,
         "tc": 6,
+        "tcOpen": 1,
+        "tcDone": 2,
+        "tcNotAnIssue": 3,
+        "tcNotAnIssueByResolution": {
+          "Working As Intended": 2,
+          "Cannot Reproduce": 1
+        },
         "do": 13,
         "engineering": 1,
         "open": 4,
@@ -3615,6 +3685,12 @@
       "tcStats": {
         "total": 4,
         "tc": 1,
+        "tcOpen": 0,
+        "tcDone": 0,
+        "tcNotAnIssue": 1,
+        "tcNotAnIssueByResolution": {
+          "Won't Do": 1
+        },
         "do": 3,
         "engineering": 0,
         "open": 3,
@@ -3844,6 +3920,12 @@
       "tcStats": {
         "total": 4,
         "tc": 2,
+        "tcOpen": 0,
+        "tcDone": 1,
+        "tcNotAnIssue": 1,
+        "tcNotAnIssueByResolution": {
+          "Working As Intended": 1
+        },
         "do": 2,
         "engineering": 0,
         "open": 2,
