@@ -918,7 +918,11 @@ function renderAgents() {
       _firstResp: a.firstResponseHrs, _ongoingResp: a.ongoingResponseHrs,
       _touchpoints: a.touchpoints, _csat: a.csat,
       _convComplexity: a.conversationComplexity,
+      _csatTotal: a.csatTotal, _csatPct: a.csatPct,
     };
+    // Filtered CSAT received count: sum csatCountByComplexity for active scores
+    const csatCountDist = a.csatCountByComplexity || {};
+    const _csatTotal = Array.from(activeComplexityScores).reduce((sum, s) => sum + (csatCountDist[String(s)] || 0), 0) || null;
     return {
       ...a,
       _cases:       filteredCasesForAgent(a),
@@ -928,6 +932,8 @@ function renderAgents() {
       _touchpoints: filteredMetricForAgent(a, 'touchpointsByComplexity'),
       _csat:        filteredMetricForAgent(a, 'csatByComplexity'),
       _convComplexity: filteredMetricForAgent(a, 'avgScoreByComplexity'),
+      _csatTotal:   _csatTotal,
+      _csatPct:     null,  // can't derive filtered % without per-case scores
     };
   });
 
@@ -1014,13 +1020,15 @@ function renderAgents() {
       return `<span style="font-weight:600;color:${c}">${v.toFixed(1)}<span style="color:var(--text-muted);font-weight:400;font-size:0.7rem">/10</span></span>`;
     }},
     { label: sth('CSAT %', 'csatPct'), key: '_csatPct', render: r => {
-      if (r.csatPct === null || r.csatPct === undefined) return '<span style="color:var(--text-muted)">—</span>';
-      const c = r.csatPct >= 90 ? '#15803d' : r.csatPct >= 70 ? '#b45309' : '#b91c1c';
-      return `<span style="font-weight:600;color:${c}">${r.csatPct}%</span>`;
+      const v = r._csatPct;
+      if (v === null || v === undefined) return '<span style="color:var(--text-muted)">—</span>';
+      const c = v >= 90 ? '#15803d' : v >= 70 ? '#b45309' : '#b91c1c';
+      return `<span style="font-weight:600;color:${c}">${v}%</span>`;
     }},
     { label: sth('CSAT Received', 'csatTotal'), key: '_csatTotal', render: r => {
-      if (!r.csatTotal) return '<span style="color:var(--text-muted)">—</span>';
-      return `<span style="font-weight:600">${r.csatTotal}</span>`;
+      const v = r._csatTotal;
+      if (!v) return '<span style="color:var(--text-muted)">—</span>';
+      return `<span style="font-weight:600">${v}</span>`;
     }},
     { label: sth('Complexity V1', 'complexity'), key: '_cx', render: r => {
       const c = r.complexity >= 3 ? '#dc2626' : r.complexity >= 2.5 ? '#d97706' : '#7c3aed';
