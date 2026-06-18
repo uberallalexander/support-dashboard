@@ -860,6 +860,7 @@ function renderAgents() {
       ...a, _cases: a.cases, _resolutionHrs: a.resolutionHrs,
       _firstResp: a.firstResponseHrs, _ongoingResp: a.ongoingResponseHrs,
       _touchpoints: a.touchpoints, _csat: a.csat,
+      _convComplexity: a.conversationComplexity,
     };
     return {
       ...a,
@@ -869,6 +870,7 @@ function renderAgents() {
       _ongoingResp: filteredMetricForAgent(a, 'ongoingRespByComplexity'),
       _touchpoints: filteredMetricForAgent(a, 'touchpointsByComplexity'),
       _csat:        filteredMetricForAgent(a, 'csatByComplexity'),
+      _convComplexity: filteredMetricForAgent(a, 'avgScoreByComplexity'),
     };
   });
 
@@ -968,17 +970,18 @@ function renderAgents() {
       return mkBar(r.complexity, 4, c);
     }},
     { label: `${sth('Conv. Complexity', 'conversationComplexity')}${convTip}`, key: '_conv', render: r => {
-      if (r.conversationComplexity === undefined) return '—';
-      const c = r.conversationComplexity >= 7 ? '#dc2626' : r.conversationComplexity >= 4 ? '#d97706' : '#059669';
+      const val = r._convComplexity ?? r.conversationComplexity;
+      if (val === undefined || val === null) return '—';
+      const c = val >= 7 ? '#dc2626' : val >= 4 ? '#d97706' : '#059669';
       const tooltip = r.convAvgMsgs !== undefined
         ? `title="Agent msgs/case: ${r.convAvgMsgs} · Client msgs/case: ${r.convAvgClientMsgs ?? r.convAvgQuestions ?? '—'} · Avg agent msg: ${r.convAvgLength} chars"`
         : '';
-      const pct = (r.conversationComplexity / 10 * 100).toFixed(0);
+      const pct = (val / 10 * 100).toFixed(0);
       return `<div style="display:flex;align-items:center;gap:6px" ${tooltip}>
         <div style="width:52px;height:5px;background:#e5e7ef;border-radius:3px;flex-shrink:0">
           <div style="width:${pct}%;height:5px;background:${c};border-radius:3px"></div>
         </div>
-        <span style="font-size:0.75rem">${r.conversationComplexity.toFixed(2)}</span>
+        <span style="font-size:0.75rem">${val.toFixed(2)}</span>
       </div>`;
     }},
     { label: sth('Jira Tickets', 'jira.total'), key: '_jira', render: r => {
