@@ -494,27 +494,23 @@ function toggleAgentExpand(row, agentName, idx) {
       </tr>`).join('')}</tbody>
     </table>`;
   };
-  const chartId = `chart-dist-${idx}`;
+  const chartDistId = `chart-dist-${idx}`;
+  const chartHbrId  = `chart-hbr-${idx}`;
+  const dist    = agent.complexityDist  || Array(11).fill(0);
+  const hbrRaw  = agent.hbrByComplexity || {};
+  const hbrData = Array.from({length:11}, (_,i) => hbrRaw[i] ?? null);
+  const scoreColor = i => i <= 3 ? '#22c55e' : i <= 6 ? '#f59e0b' : '#ef4444';
+
   content.innerHTML = `
     <div style="font-weight:600;font-size:0.8rem;color:var(--text-main);margin-bottom:14px">${agentName}</div>
-    <div style="display:grid;grid-template-columns:280px 1fr;gap:20px;align-items:start;margin-bottom:18px">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:18px">
       <div>
-        <div style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:8px">Complexity Distribution</div>
-        <div style="position:relative;height:140px"><canvas id="${chartId}"></canvas></div>
+        <div style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:8px">Complexity Distribution (# cases)</div>
+        <div style="position:relative;height:150px"><canvas id="${chartDistId}"></canvas></div>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:10px 12px">
-          <div style="font-size:0.68rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em">Avg Complexity</div>
-          <div style="font-size:1.3rem;font-weight:700;color:var(--accent);margin-top:2px">${(agent.conversationComplexity||0).toFixed(1)}</div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:10px 12px">
-          <div style="font-size:0.68rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em">Avg Agent Msgs</div>
-          <div style="font-size:1.3rem;font-weight:700;color:var(--text-main);margin-top:2px">${(agent.convAvgMsgs||0).toFixed(1)}</div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:10px 12px">
-          <div style="font-size:0.68rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em">Avg Client Msgs</div>
-          <div style="font-size:1.3rem;font-weight:700;color:var(--text-main);margin-top:2px">${(agent.convAvgClientMsgs||0).toFixed(1)}</div>
-        </div>
+      <div>
+        <div style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:8px">Avg Resolution Time by Complexity (hrs excl. on hold)</div>
+        <div style="position:relative;height:150px"><canvas id="${chartHbrId}"></canvas></div>
       </div>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -531,48 +527,58 @@ function toggleAgentExpand(row, agentName, idx) {
         ${exampleTable(ex.byMsgLength, 'Chars')}
       </div>
     </div>`;
-  // Render distribution chart
-  const dist = agent.complexityDist || Array(11).fill(0);
-  const scoreColor = i => {
-    if (i <= 3) return '#22c55e';
-    if (i <= 6) return '#f59e0b';
-    return '#ef4444';
+
+  const sharedScaleOpts = {
+    x: {
+      grid: { display: false },
+      ticks: { color: 'var(--text-muted)', font: { size: 10 } },
+      title: { display: true, text: 'Complexity Score', color: 'var(--text-muted)', font: { size: 10 } }
+    }
   };
-  new Chart(document.getElementById(chartId), {
+
+  new Chart(document.getElementById(chartDistId), {
     type: 'bar',
     data: {
-      labels: dist.map((_, i) => i),
-      datasets: [{
-        data: dist,
-        backgroundColor: dist.map((_, i) => scoreColor(i)),
-        borderRadius: 3,
-        borderSkipped: false,
-      }]
+      labels: Array.from({length:11}, (_,i) => i),
+      datasets: [{ data: dist, backgroundColor: dist.map((_,i) => scoreColor(i)), borderRadius: 3, borderSkipped: false }]
     },
     options: {
-      responsive: true,
-      maintainAspectRatio: false,
+      responsive: true, maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
         datalabels: {
           display: ctx => ctx.dataset.data[ctx.dataIndex] > 0,
-          anchor: 'end', align: 'end',
-          color: 'var(--text-muted)',
-          font: { size: 9 },
+          anchor: 'end', align: 'end', color: 'var(--text-muted)', font: { size: 9 },
           formatter: v => v,
         }
       },
       scales: {
-        x: {
-          grid: { display: false },
-          ticks: { color: 'var(--text-muted)', font: { size: 10 } },
-          title: { display: true, text: 'Score', color: 'var(--text-muted)', font: { size: 10 } }
-        },
-        y: {
-          grid: { color: 'var(--border)' },
-          ticks: { color: 'var(--text-muted)', font: { size: 10 }, stepSize: 1 },
-          title: { display: true, text: 'Cases', color: 'var(--text-muted)', font: { size: 10 } }
+        ...sharedScaleOpts,
+        y: { grid: { color: 'var(--border)' }, ticks: { color: 'var(--text-muted)', font: { size: 10 } }, title: { display: true, text: 'Cases', color: 'var(--text-muted)', font: { size: 10 } } }
+      }
+    },
+    plugins: [ChartDataLabels]
+  });
+
+  new Chart(document.getElementById(chartHbrId), {
+    type: 'bar',
+    data: {
+      labels: Array.from({length:11}, (_,i) => i),
+      datasets: [{ data: hbrData, backgroundColor: hbrData.map((_,i) => scoreColor(i)), borderRadius: 3, borderSkipped: false }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        datalabels: {
+          display: ctx => ctx.dataset.data[ctx.dataIndex] != null,
+          anchor: 'end', align: 'end', color: 'var(--text-muted)', font: { size: 9 },
+          formatter: v => v != null ? v + 'h' : '',
         }
+      },
+      scales: {
+        ...sharedScaleOpts,
+        y: { grid: { color: 'var(--border)' }, ticks: { color: 'var(--text-muted)', font: { size: 10 } }, title: { display: true, text: 'Avg Hrs', color: 'var(--text-muted)', font: { size: 10 } } }
       }
     },
     plugins: [ChartDataLabels]

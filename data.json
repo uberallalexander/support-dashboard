@@ -10,7 +10,7 @@
     "spamCount": 302,
     "avgHBRexclOnHold": 30.5,
     "avgV1": 3.0,
-    "avgComplexity": 2.48
+    "avgComplexity": 3.11
   },
   "statusData": [
     {
@@ -274,7 +274,7 @@
       "touchpoints": 2.1,
       "resolutionHrs": 121.4,
       "complexity": 2.48,
-      "conversationComplexity": 2.06,
+      "conversationComplexity": 2.43,
       "convAvgMsgs": 2.48,
       "convAvgLength": 632.4,
       "convAvgQuestions": 3.46,
@@ -283,13 +283,13 @@
       "caseExamples": {
         "byMsgCount": [
           {
-            "number": "00457723",
-            "subject": "Same issue unresolved",
+            "number": "00457512",
+            "subject": "Google Verification + Duplicate",
             "value": 10
           },
           {
-            "number": "00457512",
-            "subject": "Google Verification + Duplicate",
+            "number": "00457723",
+            "subject": "Same issue unresolved",
             "value": 10
           },
           {
@@ -334,7 +334,30 @@
         ]
       },
       "convAvgClientMsgs": 2.6,
-      "convAvgClientLength": 668.4
+      "convAvgClientLength": 668.4,
+      "complexityDist": [
+        53,
+        66,
+        58,
+        32,
+        43,
+        27,
+        17,
+        4,
+        2,
+        0,
+        0
+      ],
+      "hbrByComplexity": {
+        "1": 39.2,
+        "4": 52.5,
+        "6": 70.2,
+        "3": 45.5,
+        "2": 48.0,
+        "0": 16.2,
+        "5": 62.3,
+        "7": 94.0
+      }
     },
     {
       "name": "Jürgen Sömen",
@@ -345,7 +368,7 @@
       "touchpoints": 2.49,
       "resolutionHrs": 110.2,
       "complexity": 2.44,
-      "conversationComplexity": 2.58,
+      "conversationComplexity": 3.16,
       "convAvgMsgs": 3.14,
       "convAvgLength": 754.8,
       "convAvgQuestions": 7.61,
@@ -364,8 +387,8 @@
             "value": 10
           },
           {
-            "number": "00456800",
-            "subject": "WG: FITINN Italien -Google Maps",
+            "number": "00457673",
+            "subject": "Import file",
             "value": 10
           }
         ],
@@ -381,8 +404,8 @@
             "value": 14
           },
           {
-            "number": "00457681",
-            "subject": "Office Relocation – Support needed for Location Updates acro",
+            "number": "00456958",
+            "subject": "RE: OMR Jet - 4screen",
             "value": 11
           }
         ],
@@ -405,7 +428,32 @@
         ]
       },
       "convAvgClientMsgs": 2.76,
-      "convAvgClientLength": 857.1
+      "convAvgClientLength": 857.1,
+      "complexityDist": [
+        11,
+        58,
+        29,
+        20,
+        40,
+        18,
+        27,
+        7,
+        3,
+        3,
+        0
+      ],
+      "hbrByComplexity": {
+        "2": 28.7,
+        "6": 54.3,
+        "4": 27.0,
+        "1": 9.5,
+        "5": 48.5,
+        "8": 68.5,
+        "0": 5.1,
+        "3": 26.7,
+        "7": 109.4,
+        "9": 20.8
+      }
     },
     {
       "name": "Vincent Riehl",
@@ -416,7 +464,7 @@
       "touchpoints": 2.49,
       "resolutionHrs": 74.7,
       "complexity": 2.4,
-      "conversationComplexity": 2.5,
+      "conversationComplexity": 3.03,
       "convAvgMsgs": 3.09,
       "convAvgLength": 647.7,
       "convAvgQuestions": 5.39,
@@ -425,18 +473,18 @@
       "caseExamples": {
         "byMsgCount": [
           {
-            "number": "00456970",
-            "subject": "LAFORET | Export Place IDs Google pour nos fiches GMB",
-            "value": 9
-          },
-          {
             "number": "00457688",
             "subject": "Anomalie NF040548",
             "value": 9
           },
           {
-            "number": "00457663",
-            "subject": "Support Apple Business - MANN+HUMMEL",
+            "number": "00456970",
+            "subject": "LAFORET | Export Place IDs Google pour nos fiches GMB",
+            "value": 9
+          },
+          {
+            "number": "00457189",
+            "subject": "Google (re)connection issue",
             "value": 8
           }
         ],
@@ -476,7 +524,32 @@
         ]
       },
       "convAvgClientMsgs": 2.56,
-      "convAvgClientLength": 751.8
+      "convAvgClientLength": 751.8,
+      "complexityDist": [
+        12,
+        47,
+        34,
+        39,
+        28,
+        10,
+        15,
+        5,
+        5,
+        4,
+        0
+      ],
+      "hbrByComplexity": {
+        "1": 12.4,
+        "4": 25.0,
+        "2": 11.1,
+        "7": 68.5,
+        "0": 4.2,
+        "3": 13.6,
+        "5": 6.7,
+        "6": 36.2,
+        "8": 77.4,
+        "9": 9.0
+      }
     },
     {
       "name": "Rida Malouh",
@@ -487,7 +560,7 @@
       "touchpoints": 1.97,
       "resolutionHrs": 69.1,
       "complexity": 2.35,
-      "conversationComplexity": 2.33,
+      "conversationComplexity": 3.1,
       "convAvgMsgs": 2.58,
       "convAvgLength": 688.2,
       "convAvgQuestions": 4.07,
@@ -547,7 +620,32 @@
         ]
       },
       "convAvgClientMsgs": 2.41,
-      "convAvgClientLength": 817.6
+      "convAvgClientLength": 817.6,
+      "complexityDist": [
+        14,
+        43,
+        32,
+        28,
+        25,
+        27,
+        11,
+        6,
+        5,
+        2,
+        1
+      ],
+      "hbrByComplexity": {
+        "6": 33.8,
+        "4": 15.7,
+        "1": 8.3,
+        "5": 52.3,
+        "8": 49.1,
+        "3": 11.6,
+        "0": 9.3,
+        "7": 31.1,
+        "2": 8.4,
+        "9": 35.4
+      }
     },
     {
       "name": "Victoria Sene Ríos",
@@ -558,7 +656,7 @@
       "touchpoints": 2.19,
       "resolutionHrs": 134.1,
       "complexity": 2.35,
-      "conversationComplexity": 2.79,
+      "conversationComplexity": 3.76,
       "convAvgMsgs": 2.89,
       "convAvgLength": 941.6,
       "convAvgQuestions": 3.96,
@@ -618,7 +716,31 @@
         ]
       },
       "convAvgClientMsgs": 2.42,
-      "convAvgClientLength": 979.5
+      "convAvgClientLength": 979.5,
+      "complexityDist": [
+        7,
+        43,
+        19,
+        13,
+        26,
+        33,
+        21,
+        14,
+        6,
+        3,
+        2
+      ],
+      "hbrByComplexity": {
+        "7": 38.4,
+        "1": 6.2,
+        "0": 3.8,
+        "2": 22.4,
+        "5": 33.6,
+        "4": 18.6,
+        "8": 31.4,
+        "3": 11.8,
+        "6": 31.6
+      }
     },
     {
       "name": "Stephan Duerrnagel",
@@ -629,7 +751,7 @@
       "touchpoints": 1.99,
       "resolutionHrs": 51.5,
       "complexity": 2.42,
-      "conversationComplexity": 2.3,
+      "conversationComplexity": 3.04,
       "convAvgMsgs": 2.71,
       "convAvgLength": 1041.0,
       "convAvgQuestions": 3.91,
@@ -660,13 +782,13 @@
             "value": 9
           },
           {
-            "number": "00457317",
-            "subject": "Yext sync time a lot shorter than Uberall one",
+            "number": "00457824",
+            "subject": "IKEA Australia: WA Apple Maps dont show correct store hours",
             "value": 7
           },
           {
-            "number": "00457824",
-            "subject": "IKEA Australia: WA Apple Maps dont show correct store hours",
+            "number": "00457317",
+            "subject": "Yext sync time a lot shorter than Uberall one",
             "value": 7
           }
         ],
@@ -689,7 +811,31 @@
         ]
       },
       "convAvgClientMsgs": 2.03,
-      "convAvgClientLength": 776.6
+      "convAvgClientLength": 776.6,
+      "complexityDist": [
+        13,
+        39,
+        28,
+        21,
+        21,
+        24,
+        12,
+        7,
+        5,
+        0,
+        0
+      ],
+      "hbrByComplexity": {
+        "5": 15.9,
+        "1": 5.9,
+        "7": 43.0,
+        "3": 3.1,
+        "2": 8.0,
+        "6": 6.2,
+        "4": 21.7,
+        "8": 46.3,
+        "0": 3.7
+      }
     },
     {
       "name": "Maria Fontiveros Villasana",
@@ -700,7 +846,7 @@
       "touchpoints": 2.96,
       "resolutionHrs": 93.0,
       "complexity": 2.4,
-      "conversationComplexity": 2.93,
+      "conversationComplexity": 3.39,
       "convAvgMsgs": 3.69,
       "convAvgLength": 657.4,
       "convAvgQuestions": 5.93,
@@ -760,7 +906,31 @@
         ]
       },
       "convAvgClientMsgs": 3.2,
-      "convAvgClientLength": 781.2
+      "convAvgClientLength": 781.2,
+      "complexityDist": [
+        5,
+        26,
+        31,
+        15,
+        14,
+        19,
+        11,
+        7,
+        6,
+        0,
+        0
+      ],
+      "hbrByComplexity": {
+        "1": 6.9,
+        "2": 16.0,
+        "6": 32.3,
+        "3": 18.4,
+        "4": 25.7,
+        "8": 47.3,
+        "7": 42.0,
+        "5": 44.8,
+        "0": 2.6
+      }
     },
     {
       "name": "Jhonric Canillo",
@@ -771,7 +941,7 @@
       "touchpoints": 3.3,
       "resolutionHrs": 154.7,
       "complexity": 2.5,
-      "conversationComplexity": 2.82,
+      "conversationComplexity": 3.31,
       "convAvgMsgs": 3.85,
       "convAvgLength": 465.7,
       "convAvgQuestions": 5.06,
@@ -831,7 +1001,31 @@
         ]
       },
       "convAvgClientMsgs": 3.28,
-      "convAvgClientLength": 658.7
+      "convAvgClientLength": 658.7,
+      "complexityDist": [
+        5,
+        34,
+        19,
+        15,
+        13,
+        19,
+        20,
+        5,
+        4,
+        0,
+        0
+      ],
+      "hbrByComplexity": {
+        "5": 70.2,
+        "3": 41.1,
+        "6": 103.9,
+        "1": 14.4,
+        "2": 30.0,
+        "4": 58.0,
+        "7": 98.5,
+        "8": 136.6,
+        "0": 0.2
+      }
     },
     {
       "name": "Anna-Christin Voigt",
@@ -842,7 +1036,7 @@
       "touchpoints": 2.25,
       "resolutionHrs": 40.9,
       "complexity": 2.32,
-      "conversationComplexity": 1.75,
+      "conversationComplexity": 2.39,
       "convAvgMsgs": 1.77,
       "convAvgLength": 821.6,
       "convAvgQuestions": 5.29,
@@ -851,18 +1045,18 @@
       "caseExamples": {
         "byMsgCount": [
           {
-            "number": "00458413",
-            "subject": "Duplicate - Listings",
-            "value": 6
-          },
-          {
-            "number": "00457722",
-            "subject": "Localsearch | Large syncing issue identified",
-            "value": 6
-          },
-          {
             "number": "00458426",
             "subject": "Temporärer Adresswechsel wegen Umbaus – beste Vorgehensweise",
+            "value": 6
+          },
+          {
+            "number": "00458763",
+            "subject": "Autohaus Larl GmbH / Längen- und Breitengrad wird nicht über",
+            "value": 6
+          },
+          {
+            "number": "00458413",
+            "subject": "Duplicate - Listings",
             "value": 6
           }
         ],
@@ -878,8 +1072,8 @@
             "value": 6
           },
           {
-            "number": "00457142",
-            "subject": "Urgent: Google Listing Activation - Store 3003 Valvert",
+            "number": "00458761",
+            "subject": "WG: Uberall Anfrage 00451956: Bing [ thread::X0ZqFEn5d1Kj87y",
             "value": 5
           }
         ],
@@ -902,7 +1096,30 @@
         ]
       },
       "convAvgClientMsgs": 1.8,
-      "convAvgClientLength": 808.1
+      "convAvgClientLength": 808.1,
+      "complexityDist": [
+        31,
+        19,
+        21,
+        11,
+        18,
+        6,
+        8,
+        3,
+        0,
+        1,
+        1
+      ],
+      "hbrByComplexity": {
+        "1": 9.0,
+        "3": 23.9,
+        "2": 13.0,
+        "0": 3.4,
+        "4": 23.7,
+        "5": 19.9,
+        "6": 35.2,
+        "7": 50.7
+      }
     },
     {
       "name": "Patrick Paul Bayor",
@@ -913,7 +1130,7 @@
       "touchpoints": 2.84,
       "resolutionHrs": 167.6,
       "complexity": 2.6,
-      "conversationComplexity": 2.49,
+      "conversationComplexity": 3.0,
       "convAvgMsgs": 3.37,
       "convAvgLength": 578.0,
       "convAvgQuestions": 6.11,
@@ -922,13 +1139,13 @@
       "caseExamples": {
         "byMsgCount": [
           {
-            "number": "00457801",
-            "subject": "FW: Uberall | Hat Creek Burgers Account Manager Intro",
+            "number": "00457156",
+            "subject": "New import from Google | Metaire Bank | 8 locations",
             "value": 14
           },
           {
-            "number": "00457156",
-            "subject": "New import from Google | Metaire Bank | 8 locations",
+            "number": "00457801",
+            "subject": "FW: Uberall | Hat Creek Burgers Account Manager Intro",
             "value": 14
           },
           {
@@ -973,7 +1190,30 @@
         ]
       },
       "convAvgClientMsgs": 2.75,
-      "convAvgClientLength": 637.1
+      "convAvgClientLength": 637.1,
+      "complexityDist": [
+        14,
+        22,
+        16,
+        12,
+        17,
+        12,
+        16,
+        4,
+        0,
+        0,
+        0
+      ],
+      "hbrByComplexity": {
+        "1": 61.8,
+        "5": 69.4,
+        "6": 89.7,
+        "2": 62.5,
+        "3": 51.6,
+        "0": 11.1,
+        "4": 53.3,
+        "7": 74.5
+      }
     },
     {
       "name": "John Paul Pineda",
@@ -984,7 +1224,7 @@
       "touchpoints": 2.51,
       "resolutionHrs": 119.7,
       "complexity": 2.51,
-      "conversationComplexity": 2.64,
+      "conversationComplexity": 3.39,
       "convAvgMsgs": 3.07,
       "convAvgLength": 620.3,
       "convAvgQuestions": 4.33,
@@ -993,13 +1233,13 @@
       "caseExamples": {
         "byMsgCount": [
           {
-            "number": "00457472",
-            "subject": "FW: Social Media Publisher - Addition of Tampa Market",
+            "number": "00456816",
+            "subject": "Facebook connection issue",
             "value": 9
           },
           {
-            "number": "00456816",
-            "subject": "Facebook connection issue",
+            "number": "00457472",
+            "subject": "FW: Social Media Publisher - Addition of Tampa Market",
             "value": 9
           },
           {
@@ -1010,13 +1250,13 @@
         ],
         "byClientMsgs": [
           {
-            "number": "00458025",
-            "subject": "Re: MaidPro Westerville",
+            "number": "00457802",
+            "subject": "Regarding Little Caesars 3684-0002 Closure Status",
             "value": 15
           },
           {
-            "number": "00457802",
-            "subject": "Regarding Little Caesars 3684-0002 Closure Status",
+            "number": "00458025",
+            "subject": "Re: MaidPro Westerville",
             "value": 15
           },
           {
@@ -1044,7 +1284,31 @@
         ]
       },
       "convAvgClientMsgs": 2.81,
-      "convAvgClientLength": 723.9
+      "convAvgClientLength": 723.9,
+      "complexityDist": [
+        9,
+        18,
+        8,
+        16,
+        19,
+        15,
+        4,
+        7,
+        4,
+        0,
+        0
+      ],
+      "hbrByComplexity": {
+        "3": 23.8,
+        "2": 52.2,
+        "5": 37.4,
+        "1": 38.9,
+        "4": 53.6,
+        "7": 86.0,
+        "0": 17.0,
+        "8": 39.5,
+        "6": 41.2
+      }
     },
     {
       "name": "Fernando Viana",
@@ -1055,7 +1319,7 @@
       "touchpoints": 2.86,
       "resolutionHrs": 83.7,
       "complexity": 2.33,
-      "conversationComplexity": 3.36,
+      "conversationComplexity": 4.49,
       "convAvgMsgs": 3.61,
       "convAvgLength": 764.6,
       "convAvgQuestions": 4.41,
@@ -1115,7 +1379,31 @@
         ]
       },
       "convAvgClientMsgs": 2.93,
-      "convAvgClientLength": 684.1
+      "convAvgClientLength": 684.1,
+      "complexityDist": [
+        1,
+        4,
+        2,
+        6,
+        8,
+        6,
+        12,
+        2,
+        2,
+        1,
+        0
+      ],
+      "hbrByComplexity": {
+        "7": 25.3,
+        "3": 19.1,
+        "4": 35.2,
+        "6": 56.8,
+        "1": 14.6,
+        "2": 2.7,
+        "0": 0.3,
+        "5": 29.2,
+        "8": 43.3
+      }
     },
     {
       "name": "Joel Alob",
@@ -1126,7 +1414,7 @@
       "touchpoints": 2.55,
       "resolutionHrs": 67.3,
       "complexity": 2.33,
-      "conversationComplexity": 2.41,
+      "conversationComplexity": 3.03,
       "convAvgMsgs": 2.67,
       "convAvgLength": 522.2,
       "convAvgQuestions": 4.29,
@@ -1145,8 +1433,8 @@
             "value": 6
           },
           {
-            "number": "00457237",
-            "subject": "Re: [EXTERNAL] Re: App - Barcode size and Google Pay Wallet",
+            "number": "00457039",
+            "subject": "New User Access",
             "value": 5
           }
         ],
@@ -1169,13 +1457,13 @@
         ],
         "byMsgLength": [
           {
-            "number": "00457504",
-            "subject": "Re:[## 5839 ##] Ad Account Alignment: 3393 (ID 6151290519429",
+            "number": "00457480",
+            "subject": "Uberall Yelp Connections",
             "value": 791.0
           },
           {
-            "number": "00457480",
-            "subject": "Uberall Yelp Connections",
+            "number": "00457504",
+            "subject": "Re:[## 5839 ##] Ad Account Alignment: 3393 (ID 6151290519429",
             "value": 791.0
           },
           {
@@ -1186,7 +1474,29 @@
         ]
       },
       "convAvgClientMsgs": 2.5,
-      "convAvgClientLength": 773.9
+      "convAvgClientLength": 773.9,
+      "complexityDist": [
+        4,
+        7,
+        4,
+        4,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0,
+        0
+      ],
+      "hbrByComplexity": {
+        "4": 29.1,
+        "1": 12.8,
+        "6": 49.4,
+        "5": 85.1,
+        "0": 0.4,
+        "3": 63.9,
+        "2": 16.0
+      }
     },
     {
       "name": "Ryan Quinn",
@@ -1197,7 +1507,7 @@
       "touchpoints": 2.18,
       "resolutionHrs": 93.6,
       "complexity": 2.36,
-      "conversationComplexity": 2.92,
+      "conversationComplexity": 4.06,
       "convAvgMsgs": 3.29,
       "convAvgLength": 658.9,
       "convAvgQuestions": 6.93,
@@ -1257,7 +1567,27 @@
         ]
       },
       "convAvgClientMsgs": 2.68,
-      "convAvgClientLength": 709.7
+      "convAvgClientLength": 709.7,
+      "complexityDist": [
+        0,
+        0,
+        6,
+        9,
+        4,
+        3,
+        3,
+        1,
+        1,
+        1,
+        0
+      ],
+      "hbrByComplexity": {
+        "5": 22.0,
+        "8": 34.3,
+        "3": 14.8,
+        "9": 83.1,
+        "7": 3.5
+      }
     },
     {
       "name": "Geneca Rapada",
@@ -1268,7 +1598,7 @@
       "touchpoints": 3.43,
       "resolutionHrs": 173.7,
       "complexity": 2.29,
-      "conversationComplexity": 3.36,
+      "conversationComplexity": 4.29,
       "convAvgMsgs": 4.0,
       "convAvgLength": 616.3,
       "convAvgQuestions": 4.36,
@@ -1287,8 +1617,8 @@
             "value": 8
           },
           {
-            "number": "00457918",
-            "subject": "Updated Facebook Cover Page",
+            "number": "00457493",
+            "subject": "Apple & Yelp incorrect address display / Home Grown Farm and",
             "value": 6
           }
         ],
@@ -1328,7 +1658,30 @@
         ]
       },
       "convAvgClientMsgs": 3.38,
-      "convAvgClientLength": 582.8
+      "convAvgClientLength": 582.8,
+      "complexityDist": [
+        0,
+        1,
+        5,
+        4,
+        3,
+        4,
+        3,
+        2,
+        2,
+        0,
+        0
+      ],
+      "hbrByComplexity": {
+        "7": 115.8,
+        "3": 70.0,
+        "2": 37.2,
+        "6": 130.5,
+        "4": 27.5,
+        "8": 97.9,
+        "5": 52.8,
+        "1": 37.1
+      }
     }
   ],
   "issueTypeData": [
@@ -1397,68 +1750,68 @@
   "complexityBuckets": [
     {
       "label": "0",
-      "value": 201,
+      "value": 179,
       "avgV1": 3.0,
-      "avgHBR": 9.7
+      "avgHBR": 9.6
     },
     {
       "label": "1",
-      "value": 508,
+      "value": 427,
       "avgV1": 3.0,
-      "avgHBR": 16.3
+      "avgHBR": 16.8
     },
     {
       "label": "2",
-      "value": 440,
+      "value": 312,
       "avgV1": 3.0,
-      "avgHBR": 22.8
+      "avgHBR": 24.3
     },
     {
       "label": "3",
-      "value": 281,
+      "value": 245,
       "avgV1": 3.0,
-      "avgHBR": 35.2
+      "avgHBR": 24.7
     },
     {
       "label": "4",
-      "value": 260,
+      "value": 289,
       "avgV1": 3.0,
-      "avgHBR": 41.9
+      "avgHBR": 32.8
     },
     {
       "label": "5",
-      "value": 197,
+      "value": 225,
       "avgV1": 3.0,
-      "avgHBR": 63.9
+      "avgHBR": 44.7
     },
     {
       "label": "6",
-      "value": 87,
+      "value": 185,
       "avgV1": 3.0,
-      "avgHBR": 69.8
+      "avgHBR": 55.4
     },
     {
       "label": "7",
-      "value": 21,
+      "value": 74,
       "avgV1": 3.0,
-      "avgHBR": 47.8
+      "avgHBR": 61.1
     },
     {
       "label": "8",
-      "value": 5,
+      "value": 45,
       "avgV1": 3.0,
-      "avgHBR": 41.3
+      "avgHBR": 59.7
     },
     {
       "label": "9",
-      "value": 0,
-      "avgV1": null,
-      "avgHBR": null
+      "value": 15,
+      "avgV1": 3.0,
+      "avgHBR": 32.1
     },
     {
       "label": "10",
-      "value": 0,
-      "avgV1": null,
+      "value": 4,
+      "avgV1": 3.0,
       "avgHBR": null
     }
   ]
