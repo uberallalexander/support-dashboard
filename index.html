@@ -972,7 +972,7 @@ function renderAgents() {
 
   // First response (filtered when complexity active)
   makeChart('chart-first-response', 'bar',
-    top.map(firstName), top.map(a => a._firstResp),
+    top.map(firstName), top.map(a => a._firstResp != null ? +a._firstResp.toFixed(1) : null),
     { colors: top.map(a => (a._firstResp||0) <= 24 ? '#059669' : (a._firstResp||0) <= 48 ? '#d97706' : '#dc2626') });
 
   // Resolution time (filtered when complexity filter active)
