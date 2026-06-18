@@ -207,18 +207,18 @@ const CONFIG = {
           <div style="height:220px;position:relative"><canvas id="chart-region"></canvas></div>
         </div>
       </div>
-      <!-- Hourly intake -->
-      <div class="card p-5">
-        <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:4px">Case Intake by Hour of Day</h3>
-        <p style="font-size:0.72rem;color:var(--text-muted);margin-bottom:14px">UTC — add +2h for Berlin, +1h for London</p>
-        <div style="height:200px;position:relative"><canvas id="chart-hourly"></canvas></div>
-      </div>
-      <!-- Conversation complexity distribution -->
+      <!-- Conversation complexity distribution — directly below complexity KPIs -->
       <div class="card p-5" id="complexity-dist-card" style="display:none">
         <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:4px">Cases by Conversation Complexity</h3>
         <p style="font-size:0.72rem;color:var(--text-muted);margin-bottom:14px">Distribution of individual case scores (0–10) across all agents</p>
         <div style="height:200px;position:relative"><canvas id="chart-complexity-dist"></canvas></div>
         <div id="complexity-bucket-table"></div>
+      </div>
+      <!-- Hourly intake -->
+      <div class="card p-5">
+        <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:4px">Case Intake by Hour of Day</h3>
+        <p style="font-size:0.72rem;color:var(--text-muted);margin-bottom:14px">UTC — add +2h for Berlin, +1h for London</p>
+        <div style="height:200px;position:relative"><canvas id="chart-hourly"></canvas></div>
       </div>
     </div>
 
@@ -517,27 +517,30 @@ function toggleAgentExpand(row, agentName, idx) {
     }
   };
 
+  const expandChartOpts = (yTitle, labelFn) => ({
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      datalabels: {
+        display: ctx => (ctx.dataset.data[ctx.dataIndex] ?? 0) > 0,
+        anchor: 'center', align: 'center',
+        color: '#fff', font: { size: 11, weight: '600' },
+        formatter: labelFn,
+      }
+    },
+    scales: {
+      ...sharedScaleOpts,
+      y: { grid: { color: '#eef0f4' }, ticks: { color: 'var(--text-muted)', font: { size: 10 } }, title: { display: true, text: yTitle, color: 'var(--text-muted)', font: { size: 10 } } }
+    }
+  });
+
   new Chart(document.getElementById(chartDistId), {
     type: 'bar',
     data: {
       labels: Array.from({length:11}, (_,i) => i),
       datasets: [{ data: dist, backgroundColor: dist.map((_,i) => scoreColor(i)), borderRadius: 3, borderSkipped: false }]
     },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: {
-        legend: { display: false },
-        datalabels: {
-          display: ctx => ctx.dataset.data[ctx.dataIndex] > 0,
-          anchor: 'end', align: 'end', color: 'var(--text-muted)', font: { size: 9 },
-          formatter: v => v,
-        }
-      },
-      scales: {
-        ...sharedScaleOpts,
-        y: { grid: { color: 'var(--border)' }, ticks: { color: 'var(--text-muted)', font: { size: 10 } }, title: { display: true, text: 'Cases', color: 'var(--text-muted)', font: { size: 10 } } }
-      }
-    },
+    options: expandChartOpts('Cases', v => v || ''),
     plugins: [ChartDataLabels]
   });
 
@@ -547,21 +550,7 @@ function toggleAgentExpand(row, agentName, idx) {
       labels: Array.from({length:11}, (_,i) => i),
       datasets: [{ data: hbrData, backgroundColor: hbrData.map((_,i) => scoreColor(i)), borderRadius: 3, borderSkipped: false }]
     },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: {
-        legend: { display: false },
-        datalabels: {
-          display: ctx => ctx.dataset.data[ctx.dataIndex] != null,
-          anchor: 'end', align: 'end', color: 'var(--text-muted)', font: { size: 9 },
-          formatter: v => v != null ? v + 'h' : '',
-        }
-      },
-      scales: {
-        ...sharedScaleOpts,
-        y: { grid: { color: 'var(--border)' }, ticks: { color: 'var(--text-muted)', font: { size: 10 } }, title: { display: true, text: 'Avg Hrs', color: 'var(--text-muted)', font: { size: 10 } } }
-      }
-    },
+    options: expandChartOpts('Avg Hrs', v => v != null ? v + 'h' : ''),
     plugins: [ChartDataLabels]
   });
 }
@@ -786,7 +775,9 @@ window.resetAgentFilters = function() {
 };
 
 function agentPassesFilter(a) {
-  if (!activeRegions.has(a.region)) return false;
+  // Agents with no region assigned pass the region filter only when all regions are active
+  const regionOk = a.region ? activeRegions.has(a.region) : activeRegions.size === REGION_OPTIONS.length;
+  if (!regionOk) return false;
   const sc = a.conversationComplexity ?? 0;
   return COMPLEXITY_OPTIONS.some(o => activeComplexity.has(o.label) && sc >= o.min && sc <= o.max);
 }
