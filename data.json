@@ -492,10 +492,17 @@
         "6": 5.93,
         "7": 7.03,
         "8": 7.62
+      },
+      "tcStats": {
+        "total": 7,
+        "knowledgeGap": 3,
+        "doIntent": 0,
+        "open": 3,
+        "done": 1
       }
     },
     {
-      "name": "Jürgen Sömen",
+      "name": "J\u00fcrgen S\u00f6men",
       "cases": 213,
       "csat": 8.9,
       "firstResponseHrs": 17.5,
@@ -513,12 +520,12 @@
         "byMsgCount": [
           {
             "number": "00457681",
-            "subject": "Office Relocation – Support needed for Location Updates acro",
+            "subject": "Office Relocation \u2013 Support needed for Location Updates acro",
             "value": 12
           },
           {
             "number": "00457274",
-            "subject": "Logo wird nicht im GMB übertragen: HG Reinigung Hakif Grajqe",
+            "subject": "Logo wird nicht im GMB \u00fcbertragen: HG Reinigung Hakif Grajqe",
             "value": 10
           },
           {
@@ -737,6 +744,13 @@
         "4": 4.02,
         "8": 8.0,
         "9": 8.59
+      },
+      "tcStats": {
+        "total": 21,
+        "knowledgeGap": 10,
+        "doIntent": 0,
+        "open": 2,
+        "done": 9
       }
     },
     {
@@ -775,7 +789,7 @@
         "byClientMsgs": [
           {
             "number": "00457814",
-            "subject": "Re: Taux de réponse sur Uberall",
+            "subject": "Re: Taux de r\u00e9ponse sur Uberall",
             "value": 18
           },
           {
@@ -785,7 +799,7 @@
           },
           {
             "number": "00457199",
-            "subject": "RE: [EXTERNAL] Uberall Case 00452533: Google display Issue –",
+            "subject": "RE: [EXTERNAL] Uberall Case 00452533: Google display Issue \u2013",
             "value": 10
           }
         ],
@@ -977,6 +991,13 @@
         "8": 8.28,
         "7": 6.98,
         "5": 4.96
+      },
+      "tcStats": {
+        "total": 11,
+        "knowledgeGap": 2,
+        "doIntent": 4,
+        "open": 5,
+        "done": 4
       }
     },
     {
@@ -1008,7 +1029,7 @@
           },
           {
             "number": "00457894",
-            "subject": "Dysfonctionnements chatbot Le Diamant Bleu — preuves de bugs",
+            "subject": "Dysfonctionnements chatbot Le Diamant Bleu \u2014 preuves de bugs",
             "value": 9
           }
         ],
@@ -1025,14 +1046,14 @@
           },
           {
             "number": "00457894",
-            "subject": "Dysfonctionnements chatbot Le Diamant Bleu — preuves de bugs",
+            "subject": "Dysfonctionnements chatbot Le Diamant Bleu \u2014 preuves de bugs",
             "value": 11
           }
         ],
         "byMsgLength": [
           {
             "number": "00457894",
-            "subject": "Dysfonctionnements chatbot Le Diamant Bleu — preuves de bugs",
+            "subject": "Dysfonctionnements chatbot Le Diamant Bleu \u2014 preuves de bugs",
             "value": 1264.7
           },
           {
@@ -1106,7 +1127,7 @@
           },
           {
             "key": "DO-44374",
-            "summary": "TASK - Métropolis Charging - Ghost listings audit",
+            "summary": "TASK - M\u00e9tropolis Charging - Ghost listings audit",
             "status": "In Progress",
             "project": "DO",
             "created": "2026-06-16",
@@ -1146,7 +1167,7 @@
           },
           {
             "key": "SOC-4836",
-            "summary": "Social - FE - Remove automatic “copy” text when duplicating posts",
+            "summary": "Social - FE - Remove automatic \u201ccopy\u201d text when duplicating posts",
             "status": "OPEN",
             "project": "SOC",
             "created": "2026-06-11",
@@ -1219,10 +1240,17 @@
         "6": 6.02,
         "9": 8.78,
         "10": 9.54
+      },
+      "tcStats": {
+        "total": 9,
+        "knowledgeGap": 2,
+        "doIntent": 0,
+        "open": 2,
+        "done": 5
       }
     },
     {
-      "name": "Victoria Sene Ríos",
+      "name": "Victoria Sene R\u00edos",
       "cases": 184,
       "csat": 8.3,
       "firstResponseHrs": 23.2,
@@ -1240,7 +1268,7 @@
         "byMsgCount": [
           {
             "number": "00456833",
-            "subject": "Issue with verification status – Oliver Green (Utrecht) N: 6",
+            "subject": "Issue with verification status \u2013 Oliver Green (Utrecht) N: 6",
             "value": 11
           },
           {
@@ -1262,12 +1290,12 @@
           },
           {
             "number": "00456833",
-            "subject": "Issue with verification status – Oliver Green (Utrecht) N: 6",
+            "subject": "Issue with verification status \u2013 Oliver Green (Utrecht) N: 6",
             "value": 11
           },
           {
             "number": "00456828",
-            "subject": "FW: Bitte um Löschung bzw. Sperrung meiner personenbezogenen",
+            "subject": "FW: Bitte um L\u00f6schung bzw. Sperrung meiner personenbezogenen",
             "value": 10
           }
         ],
@@ -1284,7 +1312,7 @@
           },
           {
             "number": "00458220",
-            "subject": "API-Zugriff für Uberall Partner-Account / Nutzung von Locati",
+            "subject": "API-Zugriff f\u00fcr Uberall Partner-Account / Nutzung von Locati",
             "value": 1481.2
           }
         ]
@@ -1462,6 +1490,13 @@
         "3": 3.05,
         "7": 6.94,
         "0": 0.0
+      },
+      "tcStats": {
+        "total": 16,
+        "knowledgeGap": 8,
+        "doIntent": 0,
+        "open": 5,
+        "done": 3
       }
     },
     {
@@ -1527,7 +1562,7 @@
           },
           {
             "number": "00457225",
-            "subject": "Markt-ID 8002803 EDEKA Express Würzburg",
+            "subject": "Markt-ID 8002803 EDEKA Express W\u00fcrzburg",
             "value": 2305.5
           }
         ]
@@ -1701,6 +1736,13 @@
         "3": 3.07,
         "0": 0.0,
         "8": 7.97
+      },
+      "tcStats": {
+        "total": 11,
+        "knowledgeGap": 1,
+        "doIntent": 0,
+        "open": 7,
+        "done": 3
       }
     },
     {
@@ -1722,7 +1764,7 @@
         "byMsgCount": [
           {
             "number": "00457696",
-            "subject": "Ayuda conectar ubicación",
+            "subject": "Ayuda conectar ubicaci\u00f3n",
             "value": 13
           },
           {
@@ -1739,7 +1781,7 @@
         "byClientMsgs": [
           {
             "number": "00457696",
-            "subject": "Ayuda conectar ubicación",
+            "subject": "Ayuda conectar ubicaci\u00f3n",
             "value": 15
           },
           {
@@ -1841,7 +1883,7 @@
           },
           {
             "key": "IN-1812",
-            "summary": "Tyredating - Home Page – \"Visibility Boosters\" Recommendations Do Not Reflect Ac",
+            "summary": "Tyredating - Home Page \u2013 \"Visibility Boosters\" Recommendations Do Not Reflect Ac",
             "status": "Dev Close",
             "project": "IN",
             "created": "2026-06-17",
@@ -1857,7 +1899,7 @@
           },
           {
             "key": "DO-44380",
-            "summary": "Listings - SP 3279 Barceló - Google: listing stuck in processing for too long",
+            "summary": "Listings - SP 3279 Barcel\u00f3 - Google: listing stuck in processing for too long",
             "status": "Waiting",
             "project": "DO",
             "created": "2026-06-16",
@@ -1938,6 +1980,13 @@
         "5": 5.01,
         "3": 3.07,
         "0": 0.09
+      },
+      "tcStats": {
+        "total": 6,
+        "knowledgeGap": 2,
+        "doIntent": 0,
+        "open": 3,
+        "done": 1
       }
     },
     {
@@ -2171,6 +2220,13 @@
         "5": 4.96,
         "1": 0.83,
         "2": 2.06
+      },
+      "tcStats": {
+        "total": 3,
+        "knowledgeGap": 0,
+        "doIntent": 0,
+        "open": 1,
+        "done": 2
       }
     },
     {
@@ -2197,7 +2253,7 @@
           },
           {
             "number": "00458426",
-            "subject": "Temporärer Adresswechsel wegen Umbaus – beste Vorgehensweise",
+            "subject": "Tempor\u00e4rer Adresswechsel wegen Umbaus \u2013 beste Vorgehensweise",
             "value": 6
           },
           {
@@ -2214,7 +2270,7 @@
           },
           {
             "number": "00458426",
-            "subject": "Temporärer Adresswechsel wegen Umbaus – beste Vorgehensweise",
+            "subject": "Tempor\u00e4rer Adresswechsel wegen Umbaus \u2013 beste Vorgehensweise",
             "value": 6
           },
           {
@@ -2236,7 +2292,7 @@
           },
           {
             "number": "00458501",
-            "subject": "Reseñas",
+            "subject": "Rese\u00f1as",
             "value": 1141.3
           }
         ]
@@ -2393,6 +2449,13 @@
         "9": 8.78,
         "6": 5.85,
         "10": 9.94
+      },
+      "tcStats": {
+        "total": 1,
+        "knowledgeGap": 0,
+        "doIntent": 0,
+        "open": 0,
+        "done": 1
       }
     },
     {
@@ -2623,6 +2686,13 @@
         "3": 2.96,
         "0": 0.07,
         "7": 7.14
+      },
+      "tcStats": {
+        "total": 3,
+        "knowledgeGap": 0,
+        "doIntent": 0,
+        "open": 2,
+        "done": 1
       }
     },
     {
@@ -2851,6 +2921,13 @@
         "2": 2.18,
         "7": 6.98,
         "8": 8.18
+      },
+      "tcStats": {
+        "total": 2,
+        "knowledgeGap": 0,
+        "doIntent": 0,
+        "open": 0,
+        "done": 2
       }
     },
     {
@@ -2906,7 +2983,7 @@
         "byMsgLength": [
           {
             "number": "00457168",
-            "subject": "Bulk Update of Incorrect Social Media Links – Angry Crab Sha",
+            "subject": "Bulk Update of Incorrect Social Media Links \u2013 Angry Crab Sha",
             "value": 1311.7
           },
           {
@@ -3084,6 +3161,13 @@
         "9": 8.62,
         "7": 6.96,
         "2": 2.19
+      },
+      "tcStats": {
+        "total": 5,
+        "knowledgeGap": 3,
+        "doIntent": 0,
+        "open": 0,
+        "done": 2
       }
     },
     {
@@ -3278,6 +3362,13 @@
         "1": 0.8,
         "3": 3.06,
         "5": 5.06
+      },
+      "tcStats": {
+        "total": 0,
+        "knowledgeGap": 0,
+        "doIntent": 0,
+        "open": 0,
+        "done": 0
       }
     },
     {
@@ -3451,6 +3542,13 @@
         "7": 7.47,
         "6": 5.97,
         "8": 7.86
+      },
+      "tcStats": {
+        "total": 1,
+        "knowledgeGap": 1,
+        "doIntent": 0,
+        "open": 0,
+        "done": 0
       }
     },
     {
@@ -3599,7 +3697,7 @@
           },
           {
             "key": "AR-5404",
-            "summary": "BE - Whitelist Domain for Advanced Analytics – SP ID 3539",
+            "summary": "BE - Whitelist Domain for Advanced Analytics \u2013 SP ID 3539",
             "status": "OPEN",
             "project": "AR",
             "created": "2026-06-10",
@@ -3669,6 +3767,13 @@
         "7": 6.55,
         "1": 1.17,
         "4": 4.31
+      },
+      "tcStats": {
+        "total": 4,
+        "knowledgeGap": 3,
+        "doIntent": 0,
+        "open": 0,
+        "done": 1
       }
     }
   ],

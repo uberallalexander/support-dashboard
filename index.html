@@ -230,9 +230,10 @@ const CONFIG = {
           <span style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em">Region</span>
           <div id="filter-region" style="display:flex;gap:6px"></div>
         </div>
-        <div style="display:flex;align-items:center;gap:10px">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
           <span style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em">Conv. Complexity Score</span>
-          <div id="filter-complexity" style="display:flex;gap:6px"></div>
+          <div id="filter-complexity" style="display:flex;gap:4px;flex-wrap:wrap"></div>
+          <button onclick="deselectAllComplexity()" style="font-size:0.7rem;color:var(--text-muted);background:none;border:1px solid var(--border);border-radius:12px;cursor:pointer;padding:3px 9px;line-height:1.3">Deselect all</button>
         </div>
         <button onclick="resetAgentFilters()" style="margin-left:auto;font-size:0.72rem;color:var(--accent);background:none;border:none;cursor:pointer;padding:0">Reset filters</button>
       </div>
@@ -496,6 +497,31 @@ function toggleAgentExpand(row, agentName, idx) {
   const hbrData = Array.from({length:11}, (_,i) => hbrRaw[i] ?? null);
   const scoreColor = i => i <= 3 ? '#22c55e' : i <= 6 ? '#f59e0b' : '#ef4444';
 
+  // TC/DO process insights section
+  const tcInsightsHtml = (() => {
+    const tc = agent.tcStats;
+    if (!tc || tc.total === 0) return '';
+    const knowledgeGapPct = tc.total > 0 ? Math.round(tc.knowledgeGap / tc.total * 100) : 0;
+    const doIntentPct = tc.total > 0 ? Math.round(tc.doIntent / tc.total * 100) : 0;
+    const openPct = tc.total > 0 ? Math.round(tc.open / tc.total * 100) : 0;
+    const statBox = (label, value, sub, color) => `
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:10px 14px;min-width:100px">
+        <div style="font-size:1.1rem;font-weight:700;color:${color}">${value}</div>
+        <div style="font-size:0.68rem;font-weight:600;color:var(--text-main);margin-top:1px">${label}</div>
+        ${sub ? `<div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">${sub}</div>` : ''}
+      </div>`;
+    return `
+    <div style="margin-top:20px">
+      <div style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:10px">TC / DO Process (last 30d)</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        ${statBox('TC Tickets Created', tc.total, 'via Ticket Collector', 'var(--text-main)')}
+        ${statBox('Closed as Not an Issue', tc.knowledgeGap, `${knowledgeGapPct}% of TC tickets · knowledge gap indicator`, '#dc2626')}
+        ${statBox('DO Escalations Flagged', tc.doIntent, `${doIntentPct}% of TC tickets · manual task`, '#0891b2')}
+        ${statBox('Still Open in TC', tc.open, `${openPct}% pending OS triage`, '#b45309')}
+      </div>
+    </div>`;
+  })();
+
   // Jira recent tickets section
   const jiraHtml = (() => {
     const j = agent.jira;
@@ -562,6 +588,7 @@ function toggleAgentExpand(row, agentName, idx) {
         <div style="position:relative;height:150px"><canvas id="${chartHbrId}"></canvas></div>
       </div>
     </div>
+    ${tcInsightsHtml}
     ${jiraHtml}`;
 
   const sharedScaleOpts = {
@@ -815,8 +842,11 @@ window.toggleRegion = function(r) {
   renderFilterChips(); renderAgents();
 };
 window.toggleComplexityScore = function(s) {
-  if (activeComplexityScores.has(s) && activeComplexityScores.size === 1) return;
   activeComplexityScores.has(s) ? activeComplexityScores.delete(s) : activeComplexityScores.add(s);
+  renderFilterChips(); renderAgents();
+};
+window.deselectAllComplexity = function() {
+  activeComplexityScores = new Set();
   renderFilterChips(); renderAgents();
 };
 window.resetAgentFilters = function() {
@@ -842,16 +872,18 @@ function filteredMetricForAgent(a, field) {
   return totalCases > 0 ? weightedSum / totalCases : null;
 }
 
+const complexityFilterActive = () => activeComplexityScores.size > 0 && activeComplexityScores.size < 11;
+
 function agentPassesFilter(a) {
   const regionOk = a.region ? activeRegions.has(a.region) : activeRegions.size === REGION_OPTIONS.length;
   if (!regionOk) return false;
-  if (activeComplexityScores.size === 11) return true;
+  if (!complexityFilterActive()) return true;
   return filteredCasesForAgent(a) > 0;
 }
 
 function renderAgents() {
   renderFilterChips();
-  const isFilteredComplexity = activeComplexityScores.size < 11;
+  const isFilteredComplexity = complexityFilterActive();
   const rawAgents = data.agentData.filter(a => !a.name.includes('Queue') && !a.name.includes('Legal') && agentPassesFilter(a));
 
   // Attach filtered metrics to each agent row
