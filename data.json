@@ -359,8 +359,8 @@
             "value": 12
           },
           {
-            "number": "00457673",
-            "subject": "Import file",
+            "number": "00457274",
+            "subject": "Logo wird nicht im GMB übertragen: HG Reinigung Hakif Grajqe",
             "value": 10
           },
           {
@@ -381,8 +381,8 @@
             "value": 14
           },
           {
-            "number": "00456958",
-            "subject": "RE: OMR Jet - 4screen",
+            "number": "00457681",
+            "subject": "Office Relocation – Support needed for Location Updates acro",
             "value": 11
           }
         ],
@@ -425,18 +425,18 @@
       "caseExamples": {
         "byMsgCount": [
           {
-            "number": "00457688",
-            "subject": "Anomalie NF040548",
-            "value": 9
-          },
-          {
             "number": "00456970",
             "subject": "LAFORET | Export Place IDs Google pour nos fiches GMB",
             "value": 9
           },
           {
-            "number": "00457740",
-            "subject": "Fiche Google Mont-Saint-Michel",
+            "number": "00457688",
+            "subject": "Anomalie NF040548",
+            "value": 9
+          },
+          {
+            "number": "00457663",
+            "subject": "Support Apple Business - MANN+HUMMEL",
             "value": 8
           }
         ],
@@ -501,13 +501,13 @@
             "value": 12
           },
           {
-            "number": "00457064",
-            "subject": "Facebook Listing Connection",
+            "number": "00457894",
+            "subject": "Dysfonctionnements chatbot Le Diamant Bleu — preuves de bugs",
             "value": 9
           },
           {
-            "number": "00457894",
-            "subject": "Dysfonctionnements chatbot Le Diamant Bleu — preuves de bugs",
+            "number": "00457064",
+            "subject": "Facebook Listing Connection",
             "value": 9
           }
         ],
@@ -518,13 +518,13 @@
             "value": 12
           },
           {
-            "number": "00457939",
-            "subject": "Re: Facebook Connection Links",
+            "number": "00457894",
+            "subject": "Dysfonctionnements chatbot Le Diamant Bleu — preuves de bugs",
             "value": 11
           },
           {
-            "number": "00457894",
-            "subject": "Dysfonctionnements chatbot Le Diamant Bleu — preuves de bugs",
+            "number": "00457939",
+            "subject": "Re: Facebook Connection Links",
             "value": 11
           }
         ],
@@ -577,8 +577,8 @@
             "value": 9
           },
           {
-            "number": "00457420",
-            "subject": "FW: Request to Update Google Business Profile Information fo",
+            "number": "00456844",
+            "subject": "Eurobaustoff: Whitelist Problem",
             "value": 8
           }
         ],
@@ -638,13 +638,13 @@
       "caseExamples": {
         "byMsgCount": [
           {
-            "number": "00457679",
-            "subject": "Paris Flagship Store - Temp Closed",
+            "number": "00457565",
+            "subject": "Raynes Park Headmasters Apple Maps issue",
             "value": 9
           },
           {
-            "number": "00457565",
-            "subject": "Raynes Park Headmasters Apple Maps issue",
+            "number": "00457679",
+            "subject": "Paris Flagship Store - Temp Closed",
             "value": 9
           },
           {
@@ -785,13 +785,13 @@
             "value": 16
           },
           {
-            "number": "00457618",
-            "subject": "DPF Alternatives Albertville, AL - Website update",
+            "number": "00456857",
+            "subject": "Re: Franchise 1730 Facebook/Uber all charges",
             "value": 11
           },
           {
-            "number": "00456857",
-            "subject": "Re: Franchise 1730 Facebook/Uber all charges",
+            "number": "00457618",
+            "subject": "DPF Alternatives Albertville, AL - Website update",
             "value": 11
           }
         ],
@@ -851,18 +851,18 @@
       "caseExamples": {
         "byMsgCount": [
           {
+            "number": "00458413",
+            "subject": "Duplicate - Listings",
+            "value": 6
+          },
+          {
             "number": "00457722",
             "subject": "Localsearch | Large syncing issue identified",
             "value": 6
           },
           {
-            "number": "00458763",
-            "subject": "Autohaus Larl GmbH / Längen- und Breitengrad wird nicht über",
-            "value": 6
-          },
-          {
-            "number": "00458413",
-            "subject": "Duplicate - Listings",
+            "number": "00458426",
+            "subject": "Temporärer Adresswechsel wegen Umbaus – beste Vorgehensweise",
             "value": 6
           }
         ],
@@ -878,8 +878,8 @@
             "value": 6
           },
           {
-            "number": "00457928",
-            "subject": "Kündigung Dienstleistungsvertrag – VRN: LOQU-UB-INITIAL-89",
+            "number": "00457142",
+            "subject": "Urgent: Google Listing Activation - Store 3003 Valvert",
             "value": 5
           }
         ],
@@ -922,13 +922,13 @@
       "caseExamples": {
         "byMsgCount": [
           {
-            "number": "00457156",
-            "subject": "New import from Google | Metaire Bank | 8 locations",
+            "number": "00457801",
+            "subject": "FW: Uberall | Hat Creek Burgers Account Manager Intro",
             "value": 14
           },
           {
-            "number": "00457801",
-            "subject": "FW: Uberall | Hat Creek Burgers Account Manager Intro",
+            "number": "00457156",
+            "subject": "New import from Google | Metaire Bank | 8 locations",
             "value": 14
           },
           {
@@ -949,8 +949,8 @@
             "value": 14
           },
           {
-            "number": "00457033",
-            "subject": "Ticket: Apple Maps Schedule Appointment",
+            "number": "00457699",
+            "subject": "[RES] re-Verification escalation request",
             "value": 9
           }
         ],
@@ -1010,13 +1010,13 @@
         ],
         "byClientMsgs": [
           {
-            "number": "00457802",
-            "subject": "Regarding Little Caesars 3684-0002 Closure Status",
+            "number": "00458025",
+            "subject": "Re: MaidPro Westerville",
             "value": 15
           },
           {
-            "number": "00458025",
-            "subject": "Re: MaidPro Westerville",
+            "number": "00457802",
+            "subject": "Regarding Little Caesars 3684-0002 Closure Status",
             "value": 15
           },
           {
@@ -1037,8 +1037,8 @@
             "value": 798.0
           },
           {
-            "number": "00458224",
-            "subject": "RE: INC12471503: Store #80664 - DM is asking about incorrect",
+            "number": "00456983",
+            "subject": "Progress Update - TapClicks Security Notice",
             "value": 791.0
           }
         ]
@@ -1074,8 +1074,8 @@
             "value": 7
           },
           {
-            "number": "00457170",
-            "subject": "URGENT Request: Regarding listings - Vitals",
+            "number": "00457015",
+            "subject": "Location Sync",
             "value": 6
           }
         ],
@@ -1145,8 +1145,8 @@
             "value": 6
           },
           {
-            "number": "00457039",
-            "subject": "New User Access",
+            "number": "00457237",
+            "subject": "Re: [EXTERNAL] Re: App - Barcode size and Google Pay Wallet",
             "value": 5
           }
         ],
@@ -1169,13 +1169,13 @@
         ],
         "byMsgLength": [
           {
-            "number": "00457480",
-            "subject": "Uberall Yelp Connections",
+            "number": "00457504",
+            "subject": "Re:[## 5839 ##] Ad Account Alignment: 3393 (ID 6151290519429",
             "value": 791.0
           },
           {
-            "number": "00457504",
-            "subject": "Re:[## 5839 ##] Ad Account Alignment: 3393 (ID 6151290519429",
+            "number": "00457480",
+            "subject": "Uberall Yelp Connections",
             "value": 791.0
           },
           {
@@ -1287,8 +1287,8 @@
             "value": 8
           },
           {
-            "number": "00457153",
-            "subject": "Incorrect Info Published - Apple Maps - (Location ID: 026) A",
+            "number": "00457918",
+            "subject": "Updated Facebook Cover Page",
             "value": 6
           }
         ],

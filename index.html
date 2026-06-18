@@ -494,8 +494,29 @@ function toggleAgentExpand(row, agentName, idx) {
       </tr>`).join('')}</tbody>
     </table>`;
   };
+  const chartId = `chart-dist-${idx}`;
   content.innerHTML = `
-    <div style="font-weight:600;font-size:0.8rem;color:var(--text-main);margin-bottom:12px">${agentName} — Case Examples</div>
+    <div style="font-weight:600;font-size:0.8rem;color:var(--text-main);margin-bottom:14px">${agentName}</div>
+    <div style="display:grid;grid-template-columns:280px 1fr;gap:20px;align-items:start;margin-bottom:18px">
+      <div>
+        <div style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:8px">Complexity Distribution</div>
+        <canvas id="${chartId}" height="140"></canvas>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:10px 12px">
+          <div style="font-size:0.68rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em">Avg Complexity</div>
+          <div style="font-size:1.3rem;font-weight:700;color:var(--accent);margin-top:2px">${(agent.conversationComplexity||0).toFixed(1)}</div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:10px 12px">
+          <div style="font-size:0.68rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em">Avg Agent Msgs</div>
+          <div style="font-size:1.3rem;font-weight:700;color:var(--text-main);margin-top:2px">${(agent.convAvgMsgs||0).toFixed(1)}</div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:10px 12px">
+          <div style="font-size:0.68rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em">Avg Client Msgs</div>
+          <div style="font-size:1.3rem;font-weight:700;color:var(--text-main);margin-top:2px">${(agent.convAvgClientMsgs||0).toFixed(1)}</div>
+        </div>
+      </div>
+    </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       <div>
         <div style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:6px">Most Agent Messages</div>
@@ -510,6 +531,52 @@ function toggleAgentExpand(row, agentName, idx) {
         ${exampleTable(ex.byMsgLength, 'Chars')}
       </div>
     </div>`;
+  // Render distribution chart
+  const dist = agent.complexityDist || Array(11).fill(0);
+  const scoreColor = i => {
+    if (i <= 3) return '#22c55e';
+    if (i <= 6) return '#f59e0b';
+    return '#ef4444';
+  };
+  new Chart(document.getElementById(chartId), {
+    type: 'bar',
+    data: {
+      labels: dist.map((_, i) => i),
+      datasets: [{
+        data: dist,
+        backgroundColor: dist.map((_, i) => scoreColor(i)),
+        borderRadius: 3,
+        borderSkipped: false,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        datalabels: {
+          display: ctx => ctx.dataset.data[ctx.dataIndex] > 0,
+          anchor: 'end', align: 'end',
+          color: 'var(--text-muted)',
+          font: { size: 9 },
+          formatter: v => v,
+        }
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          ticks: { color: 'var(--text-muted)', font: { size: 10 } },
+          title: { display: true, text: 'Score', color: 'var(--text-muted)', font: { size: 10 } }
+        },
+        y: {
+          grid: { color: 'var(--border)' },
+          ticks: { color: 'var(--text-muted)', font: { size: 10 }, stepSize: 1 },
+          title: { display: true, text: 'Cases', color: 'var(--text-muted)', font: { size: 10 } }
+        }
+      }
+    },
+    plugins: [ChartDataLabels]
+  });
 }
 
 // ── Spam filter ───────────────────────────────────────────────────────────
