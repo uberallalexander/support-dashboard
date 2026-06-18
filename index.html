@@ -231,7 +231,7 @@ const CONFIG = {
           <div id="filter-region" style="display:flex;gap:6px"></div>
         </div>
         <div style="display:flex;align-items:center;gap:10px">
-          <span style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em">Complexity</span>
+          <span style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em">Conv. Complexity Score</span>
           <div id="filter-complexity" style="display:flex;gap:6px"></div>
         </div>
         <button onclick="resetAgentFilters()" style="margin-left:auto;font-size:0.72rem;color:var(--accent);background:none;border:none;cursor:pointer;padding:0">Reset filters</button>
@@ -830,14 +830,14 @@ function filteredCasesForAgent(a) {
   return Array.from(activeComplexityScores).reduce((sum, s) => sum + (dist[s] || 0), 0);
 }
 
-function filteredHBRForAgent(a) {
-  const hbr = a.hbrByComplexity || {};
+function filteredMetricForAgent(a, field) {
+  const byScore = a[field] || {};
   const dist = a.complexityDist || Array(11).fill(0);
   let totalCases = 0, weightedSum = 0;
   Array.from(activeComplexityScores).forEach(s => {
     const cnt = dist[s] || 0;
-    const h = hbr[String(s)];
-    if (cnt > 0 && h != null) { totalCases += cnt; weightedSum += h * cnt; }
+    const v = byScore[String(s)];
+    if (cnt > 0 && v != null) { totalCases += cnt; weightedSum += v * cnt; }
   });
   return totalCases > 0 ? weightedSum / totalCases : null;
 }
@@ -856,14 +856,27 @@ function renderAgents() {
 
   // Attach filtered metrics to each agent row
   const allAgents = rawAgents.map(a => {
-    const fc = isFilteredComplexity ? filteredCasesForAgent(a) : a.cases;
-    const fHBR = isFilteredComplexity ? filteredHBRForAgent(a) : a.resolutionHrs;
-    return { ...a, _cases: fc, _resolutionHrs: fHBR };
+    if (!isFilteredComplexity) return {
+      ...a, _cases: a.cases, _resolutionHrs: a.resolutionHrs,
+      _firstResp: a.firstResponseHrs, _ongoingResp: a.ongoingResponseHrs,
+      _touchpoints: a.touchpoints, _csat: a.csat,
+    };
+    return {
+      ...a,
+      _cases:       filteredCasesForAgent(a),
+      _resolutionHrs: filteredMetricForAgent(a, 'hbrByComplexity'),
+      _firstResp:   filteredMetricForAgent(a, 'firstRespByComplexity'),
+      _ongoingResp: filteredMetricForAgent(a, 'ongoingRespByComplexity'),
+      _touchpoints: filteredMetricForAgent(a, 'touchpointsByComplexity'),
+      _csat:        filteredMetricForAgent(a, 'csatByComplexity'),
+    };
   });
 
   // Sort by selected column, nulls last
   const sortVal = a => agentSortKey === 'cases' ? a._cases
     : agentSortKey === 'resolutionHrs' ? a._resolutionHrs
+    : agentSortKey === 'firstResponseHrs' ? a._firstResp
+    : agentSortKey === 'touchpoints' ? a._touchpoints
     : a[agentSortKey];
   const agents = [...allAgents].sort((a, b) => {
     let av = sortVal(a), bv = sortVal(b);
@@ -871,27 +884,24 @@ function renderAgents() {
     if (bv === null || bv === undefined) return -1;
     return (av < bv ? -1 : av > bv ? 1 : 0) * agentSortDir;
   });
-  const top = agents.slice(0, 12);
+  const top = agents; // show all agents in charts
   const firstName = a => a.name.split(' ')[0];
 
-  // Team-level KPI strip (uses filtered resolution when active)
-  const teamAvgField = (key) => {
-    const vals = agents.filter(a => a[key] !== null && a[key] !== undefined);
-    return vals.length ? vals.reduce((s, a) => s + a[key], 0) / vals.length : null;
-  };
+  // Team-level KPI strip — all metrics filtered when complexity active
   const teamAvgFiltered = (fn) => {
     const vals = agents.map(fn).filter(v => v !== null && v !== undefined);
     return vals.length ? vals.reduce((s, v) => s + v, 0) / vals.length : null;
   };
+  const suffix = isFilteredComplexity ? ' *' : '';
   const kpis = [
-    { label: 'Avg First Response', value: teamAvgField('firstResponseHrs'), unit: 'hrs', good: v => v < 24 },
-    { label: `Avg Resolution Time${isFilteredComplexity ? ' *' : ''}`, value: teamAvgFiltered(a => a._resolutionHrs), unit: 'hrs', good: v => v < 72 },
-    { label: 'Avg Touchpoints', value: teamAvgField('touchpoints'), unit: '', good: v => v < 3 },
-    { label: 'Avg Complexity', value: teamAvgField('complexity'), unit: '/ 6', good: () => true },
+    { label: `Avg First Response${suffix}`, value: teamAvgFiltered(a => a._firstResp), unit: 'hrs', good: v => v < 24 },
+    { label: `Avg Resolution Time${suffix}`, value: teamAvgFiltered(a => a._resolutionHrs), unit: 'hrs', good: v => v < 72 },
+    { label: `Avg Touchpoints${suffix}`, value: teamAvgFiltered(a => a._touchpoints), unit: '', good: v => v < 3 },
+    { label: 'Avg Complexity', value: teamAvgFiltered(a => a.complexity), unit: '/ 6', good: () => true },
   ];
   document.getElementById('agent-kpi-strip').innerHTML = kpis.map(k => {
-    const val = k.value !== null ? k.value.toFixed(1) : '—';
-    const color = k.value !== null && k.good(k.value) ? '#15803d' : '#b45309';
+    const val = k.value !== null && k.value !== undefined ? k.value.toFixed(1) : '—';
+    const color = k.value !== null && k.value !== undefined && k.good(k.value) ? '#15803d' : '#b45309';
     return `<div class="card p-4">
       <div style="color:var(--text-muted);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">${k.label}</div>
       <div style="font-size:1.5rem;font-weight:800;color:${color}">${val}<span style="font-size:0.8rem;font-weight:400;color:var(--text-muted);margin-left:3px">${k.unit}</span></div>
@@ -901,14 +911,14 @@ function renderAgents() {
   // Cases chart (filtered)
   makeChart('chart-agents', 'bar', top.map(firstName), top.map(a => a._cases), { horizontal: true });
 
-  // First response (full-period, not filtered by complexity score)
+  // First response (filtered when complexity active)
   makeChart('chart-first-response', 'bar',
-    top.map(firstName), top.map(a => a.firstResponseHrs),
-    { colors: top.map(a => a.firstResponseHrs <= 24 ? '#059669' : a.firstResponseHrs <= 48 ? '#d97706' : '#dc2626') });
+    top.map(firstName), top.map(a => a._firstResp),
+    { colors: top.map(a => (a._firstResp||0) <= 24 ? '#059669' : (a._firstResp||0) <= 48 ? '#d97706' : '#dc2626') });
 
   // Resolution time (filtered when complexity filter active)
   makeChart('chart-resolution', 'bar',
-    top.map(firstName), top.map(a => a._resolutionHrs),
+    top.map(firstName), top.map(a => a._resolutionHrs != null ? +a._resolutionHrs.toFixed(1) : null),
     { colors: top.map(a => (a._resolutionHrs||0) <= 72 ? '#059669' : (a._resolutionHrs||0) <= 120 ? '#d97706' : '#dc2626') });
 
   // Full agent table
@@ -934,14 +944,15 @@ function renderAgents() {
   makeTable('agent-table', [
     { label: 'Agent', key: 'name' },
     { label: sth('Cases', 'cases'), key: 'cases', render: r => r._cases.toLocaleString() },
-    { label: sth('First Resp.', 'firstResponseHrs'), key: '_fr', render: r => hrs(r.firstResponseHrs) },
-    { label: sth('Avg Resp.', 'ongoingResponseHrs'), key: '_ar', render: r => hrs(r.ongoingResponseHrs) },
+    { label: sth('First Resp.', 'firstResponseHrs'), key: '_fr', render: r => hrs(r._firstResp) },
+    { label: sth('Avg Resp.', 'ongoingResponseHrs'), key: '_ar', render: r => hrs(r._ongoingResp) },
     { label: sth('Resolution', 'resolutionHrs'), key: '_res', render: r => hrs(r._resolutionHrs) },
-    { label: sth('Touchpoints', 'touchpoints'), key: 'touchpoints', render: r => r.touchpoints !== undefined ? r.touchpoints.toFixed(1) : '—' },
+    { label: sth('Touchpoints', 'touchpoints'), key: 'touchpoints', render: r => r._touchpoints != null ? r._touchpoints.toFixed(1) : '—' },
     { label: sth('CSAT Score', 'csat'), key: '_csatScore', render: r => {
-      if (!r.csat) return '<span style="color:var(--text-muted)">—</span>';
-      const c = r.csat >= 9 ? '#15803d' : r.csat >= 7 ? '#b45309' : '#b91c1c';
-      return `<span style="font-weight:600;color:${c}">${r.csat}<span style="color:var(--text-muted);font-weight:400;font-size:0.7rem">/10</span></span>`;
+      const v = r._csat;
+      if (v == null) return '<span style="color:var(--text-muted)">—</span>';
+      const c = v >= 9 ? '#15803d' : v >= 7 ? '#b45309' : '#b91c1c';
+      return `<span style="font-weight:600;color:${c}">${v.toFixed(1)}<span style="color:var(--text-muted);font-weight:400;font-size:0.7rem">/10</span></span>`;
     }},
     { label: sth('CSAT %', 'csatPct'), key: '_csatPct', render: r => {
       if (r.csatPct === null || r.csatPct === undefined) return '<span style="color:var(--text-muted)">—</span>';
