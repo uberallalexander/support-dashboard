@@ -10,7 +10,9 @@
     "spamCount": 302,
     "avgHBRexclOnHold": 30.5,
     "avgV1": 3.0,
-    "avgComplexity": 3.11
+    "avgComplexity": 3.11,
+    "csatTotalReceived": 65,
+    "avgCsatPct": 94.0
   },
   "statusData": [
     {
@@ -357,7 +359,8 @@
         "0": 16.2,
         "5": 62.3,
         "7": 94.0
-      }
+      },
+      "region": "US-CAN"
     },
     {
       "name": "Jürgen Sömen",
@@ -453,7 +456,8 @@
         "3": 26.7,
         "7": 109.4,
         "9": 20.8
-      }
+      },
+      "region": "EMEA"
     },
     {
       "name": "Vincent Riehl",
@@ -549,7 +553,8 @@
         "6": 36.2,
         "8": 77.4,
         "9": 9.0
-      }
+      },
+      "region": "EMEA"
     },
     {
       "name": "Rida Malouh",
@@ -645,7 +650,8 @@
         "7": 31.1,
         "2": 8.4,
         "9": 35.4
-      }
+      },
+      "region": "EMEA"
     },
     {
       "name": "Victoria Sene Ríos",
@@ -740,7 +746,8 @@
         "8": 31.4,
         "3": 11.8,
         "6": 31.6
-      }
+      },
+      "region": "EMEA"
     },
     {
       "name": "Stephan Duerrnagel",
@@ -835,7 +842,8 @@
         "4": 21.7,
         "8": 46.3,
         "0": 3.7
-      }
+      },
+      "region": "EMEA"
     },
     {
       "name": "Maria Fontiveros Villasana",
@@ -930,7 +938,8 @@
         "7": 42.0,
         "5": 44.8,
         "0": 2.6
-      }
+      },
+      "region": "EMEA"
     },
     {
       "name": "Jhonric Canillo",
@@ -1025,7 +1034,8 @@
         "7": 98.5,
         "8": 136.6,
         "0": 0.2
-      }
+      },
+      "region": "US-CAN"
     },
     {
       "name": "Anna-Christin Voigt",
@@ -1119,7 +1129,8 @@
         "5": 19.9,
         "6": 35.2,
         "7": 50.7
-      }
+      },
+      "region": "EMEA"
     },
     {
       "name": "Patrick Paul Bayor",
@@ -1213,7 +1224,8 @@
         "0": 11.1,
         "4": 53.3,
         "7": 74.5
-      }
+      },
+      "region": "US-CAN"
     },
     {
       "name": "John Paul Pineda",
@@ -1308,7 +1320,8 @@
         "0": 17.0,
         "8": 39.5,
         "6": 41.2
-      }
+      },
+      "region": "US-CAN"
     },
     {
       "name": "Fernando Viana",
@@ -1403,7 +1416,8 @@
         "0": 0.3,
         "5": 29.2,
         "8": 43.3
-      }
+      },
+      "region": "US-CAN"
     },
     {
       "name": "Joel Alob",
@@ -1496,7 +1510,8 @@
         "0": 0.4,
         "3": 63.9,
         "2": 16.0
-      }
+      },
+      "region": "US-CAN"
     },
     {
       "name": "Ryan Quinn",
@@ -1587,7 +1602,8 @@
         "3": 14.8,
         "9": 83.1,
         "7": 3.5
-      }
+      },
+      "region": "US-CAN"
     },
     {
       "name": "Geneca Rapada",
@@ -1681,7 +1697,8 @@
         "8": 97.9,
         "5": 52.8,
         "1": 37.1
-      }
+      },
+      "region": "US-CAN"
     }
   ],
   "issueTypeData": [

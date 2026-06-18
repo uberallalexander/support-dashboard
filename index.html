@@ -172,7 +172,7 @@ const CONFIG = {
         <div class="card kpi-card p-5">
           <div style="color:var(--text-muted);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Avg CSAT</div>
           <div id="kpi-csat" style="font-size:2rem;font-weight:800;color:#15803d">—</div>
-          <div id="kpi-csat-scale" style="color:var(--text-muted);font-size:0.75rem;margin-top:4px">—</div>
+          <div id="kpi-csat-sub" style="color:var(--text-muted);font-size:0.75rem;margin-top:4px">—</div>
         </div>
         <div class="card kpi-card p-5">
           <div style="color:var(--text-muted);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Queue Backlog</div>
@@ -180,6 +180,8 @@ const CONFIG = {
           <div style="color:var(--text-muted);font-size:0.75rem;margin-top:4px">unassigned cases</div>
         </div>
       </div>
+      <!-- Complexity + Resolution KPI row — directly under main KPIs -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="complexity-kpi-strip"></div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="card p-5">
           <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:16px">Case Status Distribution</h3>
@@ -211,8 +213,6 @@ const CONFIG = {
         <p style="font-size:0.72rem;color:var(--text-muted);margin-bottom:14px">UTC — add +2h for Berlin, +1h for London</p>
         <div style="height:200px;position:relative"><canvas id="chart-hourly"></canvas></div>
       </div>
-      <!-- Complexity + Resolution KPI row -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="complexity-kpi-strip"></div>
       <!-- Conversation complexity distribution -->
       <div class="card p-5" id="complexity-dist-card" style="display:none">
         <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:4px">Cases by Conversation Complexity</h3>
@@ -224,6 +224,18 @@ const CONFIG = {
 
     <!-- ── AGENTS ───────────────────────────────────────────────────────── -->
     <div id="tab-agents" class="hidden space-y-5">
+      <!-- Filter bar -->
+      <div class="card p-4" style="display:flex;flex-wrap:wrap;gap:20px;align-items:center">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em">Region</span>
+          <div id="filter-region" style="display:flex;gap:6px"></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em">Complexity</span>
+          <div id="filter-complexity" style="display:flex;gap:6px"></div>
+        </div>
+        <button onclick="resetAgentFilters()" style="margin-left:auto;font-size:0.72rem;color:var(--accent);background:none;border:none;cursor:pointer;padding:0">Reset filters</button>
+      </div>
       <!-- Agent KPI strip -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="agent-kpi-strip"></div>
 
@@ -415,17 +427,17 @@ function makeChart(id, type, labels, values, opts = {}) {
         },
         tooltip: { callbacks: { label: c => `  ${c.label}: ${c.parsed?.toLocaleString?.() ?? c.parsed}` } },
         datalabels: isBar ? {
-          anchor: isHorizontal ? 'end' : 'end',
-          align: isHorizontal ? 'end' : 'top',
-          color: '#5b6882',
-          font: { size: 10, weight: '500' },
-          formatter: v => v >= 1000 ? (v/1000).toFixed(1) + 'k' : v,
-          clamp: true,
+          anchor: 'center',
+          align: 'center',
+          color: '#fff',
+          font: { size: 11, weight: '600' },
+          formatter: v => v >= 1000 ? (v/1000).toFixed(1) + 'k' : (v || ''),
+          display: ctx => (ctx.dataset.data[ctx.dataIndex] || 0) > 0,
         } : false,
       },
       scales: isBar ? {
-        x: { ticks: { color: '#5b6882', font: { size: 10 } }, grid: { color: '#e5e7ef' } },
-        y: { ticks: { color: '#5b6882', font: { size: 10 } }, grid: { color: '#e5e7ef' }, ...(opts.yOpts || {}) },
+        x: { ticks: { color: '#5b6882', font: { size: 10 } }, grid: { color: '#eef0f4' } },
+        y: { ticks: { color: '#5b6882', font: { size: 10 } }, grid: { color: '#eef0f4' }, ...(opts.yOpts || {}) },
       } : undefined,
       indexAxis: isHorizontal ? 'y' : 'x',
       layout: isBar ? { padding: { top: isHorizontal ? 0 : 16, right: isHorizontal ? 40 : 0 } } : undefined,
@@ -477,23 +489,6 @@ function toggleAgentExpand(row, agentName, idx) {
     content.innerHTML = `<p style="color:var(--text-muted);font-size:0.8rem">No case examples available — will populate on next daily sync.</p>`;
     return;
   }
-  const ex = agent.caseExamples;
-  const sfBase = 'https://uberall.my.salesforce.com/';
-  const exampleTable = (cases, valueLabel) => {
-    if (!cases || !cases.length) return '<em style="color:var(--text-muted);font-size:0.75rem">No data</em>';
-    return `<table style="width:100%;font-size:0.75rem;border-collapse:collapse">
-      <thead><tr>
-        <th style="text-align:left;color:var(--text-muted);font-size:0.68rem;padding:2px 6px">Case</th>
-        <th style="text-align:left;color:var(--text-muted);font-size:0.68rem;padding:2px 6px">Subject</th>
-        <th style="text-align:right;color:var(--text-muted);font-size:0.68rem;padding:2px 6px">${valueLabel}</th>
-      </tr></thead>
-      <tbody>${cases.map(c => `<tr style="border-top:1px solid var(--border)">
-        <td style="padding:4px 6px;white-space:nowrap"><a href="${sfBase}${c.caseId}" target="_blank" style="color:var(--accent);font-weight:600">#${c.caseNumber}</a></td>
-        <td style="padding:4px 6px;color:var(--text-main)">${c.subject}</td>
-        <td style="padding:4px 6px;text-align:right;color:var(--text-main);font-weight:600">${c.value}</td>
-      </tr>`).join('')}</tbody>
-    </table>`;
-  };
   const chartDistId = `chart-dist-${idx}`;
   const chartHbrId  = `chart-hbr-${idx}`;
   const dist    = agent.complexityDist  || Array(11).fill(0);
@@ -503,7 +498,7 @@ function toggleAgentExpand(row, agentName, idx) {
 
   content.innerHTML = `
     <div style="font-weight:600;font-size:0.8rem;color:var(--text-main);margin-bottom:14px">${agentName}</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:18px">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
       <div>
         <div style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:8px">Complexity Distribution (# cases)</div>
         <div style="position:relative;height:150px"><canvas id="${chartDistId}"></canvas></div>
@@ -511,20 +506,6 @@ function toggleAgentExpand(row, agentName, idx) {
       <div>
         <div style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:8px">Avg Resolution Time by Complexity (hrs excl. on hold)</div>
         <div style="position:relative;height:150px"><canvas id="${chartHbrId}"></canvas></div>
-      </div>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div>
-        <div style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:6px">Most Agent Messages</div>
-        ${exampleTable(ex.byMsgCount, 'Agent Msgs')}
-      </div>
-      <div>
-        <div style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:6px">Most Client Messages</div>
-        ${exampleTable(ex.byClientMsgs, 'Client Msgs')}
-      </div>
-      <div>
-        <div style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:6px">Longest Agent Messages (avg chars)</div>
-        ${exampleTable(ex.byMsgLength, 'Chars')}
       </div>
     </div>`;
 
@@ -623,8 +604,10 @@ function renderAll() {
   document.getElementById('kpi-total').textContent = kpis.total.toLocaleString();
   document.getElementById('kpi-period').textContent = periodLabel + (excludeSpam ? ' · excl. Spam' : '');
   document.getElementById('kpi-open').textContent = kpis.open.toLocaleString();
-  document.getElementById('kpi-csat').textContent = kpis.avgCsat;
-  document.getElementById('kpi-csat-scale').textContent = `out of ${kpis.csatScale}`;
+  const csatPct = kpis.avgCsatPct != null ? kpis.avgCsatPct.toFixed(2) + '%' : (kpis.avgCsat ? (kpis.avgCsat / kpis.csatScale * 100).toFixed(2) + '%' : '—');
+  document.getElementById('kpi-csat').textContent = csatPct;
+  const csatReceived = kpis.csatTotalReceived || 0;
+  document.getElementById('kpi-csat-sub').textContent = `${csatReceived} received`;
   document.getElementById('kpi-queue').textContent = kpis.queueBacklog.toLocaleString();
 
   // Last updated
@@ -762,8 +745,55 @@ window.sortAgentTable = function(key) {
   renderAgents();
 };
 
+// ── Agent filters ─────────────────────────────────────────────────────────
+const REGION_OPTIONS = ['EMEA', 'US-CAN'];
+const COMPLEXITY_OPTIONS = [
+  { label: 'Low (0–3)', min: 0, max: 3 },
+  { label: 'Medium (4–6)', min: 4, max: 6 },
+  { label: 'High (7–10)', min: 7, max: 10 },
+];
+let activeRegions = new Set(REGION_OPTIONS);
+let activeComplexity = new Set(COMPLEXITY_OPTIONS.map(o => o.label));
+
+function renderFilterChips() {
+  const chipStyle = (active) =>
+    `cursor:pointer;padding:4px 12px;border-radius:20px;font-size:0.72rem;font-weight:600;border:1.5px solid;transition:all 0.15s;` +
+    (active ? `background:var(--accent);color:#fff;border-color:var(--accent);` : `background:transparent;color:var(--text-muted);border-color:var(--border);`);
+
+  document.getElementById('filter-region').innerHTML = REGION_OPTIONS.map(r =>
+    `<button onclick="toggleRegion('${r}')" id="chip-region-${r}" style="${chipStyle(activeRegions.has(r))}">${r}</button>`
+  ).join('');
+
+  document.getElementById('filter-complexity').innerHTML = COMPLEXITY_OPTIONS.map(o =>
+    `<button onclick="toggleComplexity('${o.label}')" id="chip-comp-${o.label.split(' ')[0]}" style="${chipStyle(activeComplexity.has(o.label))}">${o.label}</button>`
+  ).join('');
+}
+
+window.toggleRegion = function(r) {
+  if (activeRegions.has(r) && activeRegions.size === 1) return; // keep at least one
+  activeRegions.has(r) ? activeRegions.delete(r) : activeRegions.add(r);
+  renderFilterChips(); renderAgents();
+};
+window.toggleComplexity = function(label) {
+  if (activeComplexity.has(label) && activeComplexity.size === 1) return;
+  activeComplexity.has(label) ? activeComplexity.delete(label) : activeComplexity.add(label);
+  renderFilterChips(); renderAgents();
+};
+window.resetAgentFilters = function() {
+  activeRegions = new Set(REGION_OPTIONS);
+  activeComplexity = new Set(COMPLEXITY_OPTIONS.map(o => o.label));
+  renderFilterChips(); renderAgents();
+};
+
+function agentPassesFilter(a) {
+  if (!activeRegions.has(a.region)) return false;
+  const sc = a.conversationComplexity ?? 0;
+  return COMPLEXITY_OPTIONS.some(o => activeComplexity.has(o.label) && sc >= o.min && sc <= o.max);
+}
+
 function renderAgents() {
-  const allAgents = data.agentData.filter(a => !a.name.includes('Queue') && !a.name.includes('Legal'));
+  renderFilterChips();
+  const allAgents = data.agentData.filter(a => !a.name.includes('Queue') && !a.name.includes('Legal') && agentPassesFilter(a));
   // Sort by selected column, nulls last
   const agents = [...allAgents].sort((a, b) => {
     let av = a[agentSortKey], bv = b[agentSortKey];
