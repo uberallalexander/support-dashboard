@@ -500,7 +500,7 @@ function toggleAgentExpand(row, agentName, idx) {
     <div style="display:grid;grid-template-columns:280px 1fr;gap:20px;align-items:start;margin-bottom:18px">
       <div>
         <div style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:8px">Complexity Distribution</div>
-        <canvas id="${chartId}" height="140"></canvas>
+        <div style="position:relative;height:140px"><canvas id="${chartId}"></canvas></div>
       </div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:10px 12px">
