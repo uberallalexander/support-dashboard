@@ -214,6 +214,12 @@ const CONFIG = {
         <div style="height:200px;position:relative"><canvas id="chart-complexity-dist"></canvas></div>
         <div id="complexity-bucket-table"></div>
       </div>
+      <!-- CSAT per CCS -->
+      <div class="card p-5" id="csat-per-ccs-card" style="display:none">
+        <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:4px">CSAT by Conversation Complexity</h3>
+        <p style="font-size:0.72rem;color:var(--text-muted);margin-bottom:14px">CSAT responses received and average score per complexity bucket (0–10)</p>
+        <div style="height:200px;position:relative"><canvas id="chart-csat-per-ccs"></canvas></div>
+      </div>
       <!-- Hourly intake -->
       <div class="card p-5">
         <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:4px">Case Intake by Hour of Day</h3>
@@ -805,6 +811,72 @@ function renderOverview() {
     makeChart('chart-complexity-dist', 'bar',
       buckets.map(b => b.label), buckets.map(b => b.value),
       { colors });
+
+    // CSAT per CCS chart
+    document.getElementById('csat-per-ccs-card').style.display = '';
+    const csatCountByCcs = Array(11).fill(0);
+    const csatSumByCcs   = Array(11).fill(0);
+    for (const a of data.agentData) {
+      const cnt = a.csatCountByComplexity || {};
+      const avg = a.csatByComplexity     || {};
+      for (let s = 0; s <= 10; s++) {
+        const c = cnt[String(s)] || cnt[s] || 0;
+        const v = avg[String(s)] ?? avg[s] ?? null;
+        if (c > 0 && v != null) { csatCountByCcs[s] += c; csatSumByCcs[s] += v * c; }
+      }
+    }
+    const csatAvgByCcs = csatCountByCcs.map((c, s) => c > 0 ? +(csatSumByCcs[s] / c).toFixed(1) : null);
+    const ccsLabels = Array.from({length:11}, (_, i) => String(i));
+    const scoreCol  = i => i <= 3 ? '#22c55e' : i <= 6 ? '#f59e0b' : '#ef4444';
+
+    const existingCsatChart = Chart.getChart('chart-csat-per-ccs');
+    if (existingCsatChart) existingCsatChart.destroy();
+    new Chart(document.getElementById('chart-csat-per-ccs'), {
+      type: 'bar',
+      data: {
+        labels: ccsLabels,
+        datasets: [
+          {
+            label: 'CSAT Received',
+            data: csatCountByCcs,
+            backgroundColor: ccsLabels.map((_, i) => scoreCol(i)),
+            borderRadius: 3, borderSkipped: false,
+            yAxisID: 'y',
+          },
+          {
+            label: 'Avg CSAT Score',
+            data: csatAvgByCcs,
+            type: 'line',
+            borderColor: '#6366f1',
+            backgroundColor: 'transparent',
+            pointBackgroundColor: csatAvgByCcs.map((v, i) => v != null ? '#6366f1' : 'transparent'),
+            pointRadius: csatAvgByCcs.map(v => v != null ? 4 : 0),
+            tension: 0.3,
+            yAxisID: 'y2',
+          }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: true, position: 'top', labels: { font: { size: 11 }, color: 'var(--text-muted)', boxWidth: 12 } },
+          datalabels: {
+            display: ctx => ctx.datasetIndex === 0 && ctx.dataset.data[ctx.dataIndex] > 0,
+            anchor: 'center', align: 'center',
+            color: '#fff', font: { size: 11, weight: '600' },
+            formatter: v => v,
+          }
+        },
+        scales: {
+          x: { grid: { display: false }, ticks: { color: 'var(--text-muted)', font: { size: 10 } },
+               title: { display: true, text: 'Conversation Complexity Score', color: 'var(--text-muted)', font: { size: 10 } } },
+          y:  { position: 'left',  grid: { color: '#eef0f4' }, ticks: { color: 'var(--text-muted)', font: { size: 10 } },
+                title: { display: true, text: 'CSAT Received', color: 'var(--text-muted)', font: { size: 10 } }, beginAtZero: true },
+          y2: { position: 'right', grid: { display: false }, ticks: { color: '#6366f1', font: { size: 10 } },
+                title: { display: true, text: 'Avg Score /10', color: '#6366f1', font: { size: 10 } }, min: 0, max: 10 },
+        }
+      }
+    });
 
     const thS = `color:var(--text-muted);font-size:0.68rem;text-transform:uppercase;letter-spacing:0.06em;font-weight:600;padding:5px 10px`;
     const tdS = (center) => `padding:5px 10px;font-size:0.8rem;text-align:${center?'center':'left'};border-top:1px solid var(--border)`;

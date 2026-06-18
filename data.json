@@ -312,8 +312,8 @@
             "value": 15
           },
           {
-            "number": "00457721",
-            "subject": "Google Profile Link Help",
+            "number": "00458304",
+            "subject": "New store 2094",
             "value": 10
           }
         ],
@@ -351,12 +351,12 @@
         0
       ],
       "hbrByComplexity": {
-        "0": 16.2,
-        "5": 62.3,
-        "4": 52.5,
-        "3": 45.5,
         "2": 48.0,
         "1": 39.2,
+        "5": 62.3,
+        "4": 52.5,
+        "0": 16.2,
+        "3": 45.5,
         "6": 70.2,
         "7": 94.0
       },
@@ -447,35 +447,35 @@
       },
       "jiraAccountId": "60c3766ea01e11006a1d4d51",
       "firstRespByComplexity": {
-        "5": 36.7,
         "2": 116.0,
-        "3": 62.1,
-        "4": 22.1,
-        "6": 5.0,
-        "7": 23.8,
         "1": 124.7,
-        "8": 6.4
+        "5": 36.7,
+        "4": 22.1,
+        "3": 62.1,
+        "6": 5.0,
+        "8": 6.4,
+        "7": 23.8
       },
       "ongoingRespByComplexity": {
-        "0": 0.0,
+        "2": 14.5,
+        "1": 22.6,
         "5": 7.7,
         "4": 8.9,
-        "2": 14.5,
         "3": 10.5,
         "6": 8.3,
-        "7": 2.4,
-        "1": 22.6,
-        "8": 10.1
+        "8": 10.1,
+        "0": 0.0,
+        "7": 2.4
       },
       "touchpointsByComplexity": {
-        "5": 2.88,
         "2": 1.67,
-        "3": 1.92,
-        "4": 2.47,
-        "6": 4.43,
-        "7": 5.75,
         "1": 1.31,
-        "8": 8.0
+        "5": 2.88,
+        "4": 2.47,
+        "3": 1.92,
+        "6": 4.43,
+        "8": 8.0,
+        "7": 5.75
       },
       "csatByComplexity": {
         "5": 10.0,
@@ -483,15 +483,15 @@
         "4": 10.0
       },
       "avgScoreByComplexity": {
-        "0": 0.04,
+        "2": 2.2,
+        "1": 0.9,
         "5": 4.93,
         "4": 3.96,
-        "2": 2.2,
+        "0": 0.04,
         "3": 3.05,
-        "1": 0.9,
         "6": 5.93,
-        "7": 7.03,
-        "8": 7.62
+        "8": 7.62,
+        "7": 7.03
       },
       "tcStats": {
         "total": 10,
@@ -510,10 +510,15 @@
           "DO": 5,
           "WEB": 1
         }
+      },
+      "csatCountByComplexity": {
+        "5": 1,
+        "1": 1,
+        "4": 1
       }
     },
     {
-      "name": "J\u00fcrgen S\u00f6men",
+      "name": "Jürgen Sömen",
       "cases": 213,
       "csat": 8.9,
       "firstResponseHrs": 17.5,
@@ -531,12 +536,12 @@
         "byMsgCount": [
           {
             "number": "00457681",
-            "subject": "Office Relocation \u2013 Support needed for Location Updates acro",
+            "subject": "Office Relocation – Support needed for Location Updates acro",
             "value": 12
           },
           {
-            "number": "00457274",
-            "subject": "Logo wird nicht im GMB \u00fcbertragen: HG Reinigung Hakif Grajqe",
+            "number": "00456800",
+            "subject": "WG: FITINN Italien -Google Maps",
             "value": 10
           },
           {
@@ -596,15 +601,15 @@
         0
       ],
       "hbrByComplexity": {
-        "5": 48.5,
-        "1": 9.5,
-        "0": 5.1,
-        "2": 28.7,
-        "6": 54.3,
-        "3": 26.7,
-        "7": 109.4,
         "4": 27.0,
+        "2": 28.7,
+        "0": 5.1,
+        "6": 54.3,
+        "1": 9.5,
+        "3": 26.7,
         "8": 68.5,
+        "7": 109.4,
+        "5": 48.5,
         "9": 20.8
       },
       "region": "EMEA",
@@ -702,58 +707,58 @@
       },
       "jiraAccountId": "712020:10fe39d9-7de2-4495-9805-02e3bfa06d9b",
       "firstRespByComplexity": {
-        "5": 13.2,
-        "1": 15.2,
-        "0": 12.0,
         "2": 14.2,
+        "0": 12.0,
+        "4": 17.5,
         "6": 17.9,
+        "8": 4.1,
+        "1": 15.2,
         "3": 9.4,
         "7": 10.7,
-        "4": 17.5,
-        "8": 4.1,
+        "5": 13.2,
         "9": 8.5
       },
       "ongoingRespByComplexity": {
-        "5": 6.4,
-        "1": 2.6,
-        "0": 0.0,
         "2": 6.8,
+        "0": 0.0,
+        "4": 4.6,
         "6": 4.9,
+        "8": 9.8,
+        "1": 2.6,
         "3": 2.8,
         "7": 15.1,
-        "4": 4.6,
-        "8": 9.8,
+        "5": 6.4,
         "9": 6.1
       },
       "touchpointsByComplexity": {
-        "5": 3.19,
-        "1": 1.46,
-        "0": 1.0,
         "2": 2.07,
+        "0": 1.0,
+        "4": 2.17,
         "6": 4.11,
+        "8": 4.67,
+        "1": 1.46,
         "3": 1.79,
         "7": 5.57,
-        "4": 2.17,
-        "8": 4.67,
+        "5": 3.19,
         "9": 6.67
       },
       "csatByComplexity": {
-        "5": 10.0,
-        "3": 10.0,
         "4": 7.75,
         "8": 10.0,
+        "5": 10.0,
+        "3": 10.0,
         "0": 10.0
       },
       "avgScoreByComplexity": {
-        "5": 5.0,
+        "4": 4.02,
         "1": 0.8,
         "0": 0.0,
         "2": 2.16,
         "6": 6.07,
         "3": 3.02,
-        "7": 7.03,
-        "4": 4.02,
         "8": 8.0,
+        "7": 7.03,
+        "5": 5.0,
         "9": 8.59
       },
       "tcStats": {
@@ -777,6 +782,13 @@
           "LH": 1,
           "ACMO": 1
         }
+      },
+      "csatCountByComplexity": {
+        "4": 4,
+        "8": 1,
+        "5": 1,
+        "3": 1,
+        "0": 1
       }
     },
     {
@@ -797,25 +809,25 @@
       "caseExamples": {
         "byMsgCount": [
           {
-            "number": "00457688",
-            "subject": "Anomalie NF040548",
-            "value": 9
-          },
-          {
             "number": "00456970",
             "subject": "LAFORET | Export Place IDs Google pour nos fiches GMB",
             "value": 9
           },
           {
-            "number": "00457663",
-            "subject": "Support Apple Business - MANN+HUMMEL",
+            "number": "00457688",
+            "subject": "Anomalie NF040548",
+            "value": 9
+          },
+          {
+            "number": "00457740",
+            "subject": "Fiche Google Mont-Saint-Michel",
             "value": 8
           }
         ],
         "byClientMsgs": [
           {
             "number": "00457814",
-            "subject": "Re: Taux de r\u00e9ponse sur Uberall",
+            "subject": "Re: Taux de réponse sur Uberall",
             "value": 18
           },
           {
@@ -825,7 +837,7 @@
           },
           {
             "number": "00457199",
-            "subject": "RE: [EXTERNAL] Uberall Case 00452533: Google display Issue \u2013",
+            "subject": "RE: [EXTERNAL] Uberall Case 00452533: Google display Issue –",
             "value": 10
           }
         ],
@@ -863,16 +875,16 @@
         0
       ],
       "hbrByComplexity": {
-        "4": 25.0,
-        "3": 13.6,
-        "0": 4.2,
-        "2": 11.1,
-        "1": 12.4,
         "6": 36.2,
-        "9": 9.0,
+        "1": 12.4,
+        "4": 25.0,
+        "5": 6.7,
+        "3": 13.6,
         "8": 77.4,
         "7": 68.5,
-        "5": 6.7
+        "2": 11.1,
+        "0": 4.2,
+        "9": 9.0
       },
       "region": "EMEA",
       "jira": {
@@ -967,56 +979,56 @@
       },
       "jiraAccountId": "60c3765220d2dd00705f25f7",
       "firstRespByComplexity": {
-        "4": 17.3,
-        "3": 11.1,
         "6": 17.9,
-        "2": 21.0,
-        "9": 6.8,
+        "3": 11.1,
         "1": 30.6,
+        "4": 17.3,
+        "5": 10.0,
         "8": 15.7,
         "7": 7.2,
-        "5": 10.0
+        "2": 21.0,
+        "9": 6.8
       },
       "ongoingRespByComplexity": {
-        "4": 6.6,
-        "3": 3.9,
-        "0": 0.0,
         "6": 6.6,
-        "2": 3.8,
-        "9": 9.9,
+        "3": 3.9,
         "1": 2.0,
+        "4": 6.6,
+        "5": 3.1,
         "8": 7.8,
         "7": 11.2,
-        "5": 3.1
+        "2": 3.8,
+        "0": 0.0,
+        "9": 9.9
       },
       "touchpointsByComplexity": {
-        "4": 2.95,
-        "3": 2.0,
         "6": 4.2,
-        "2": 2.0,
-        "9": 6.0,
+        "3": 2.0,
         "1": 1.38,
+        "4": 2.95,
+        "5": 2.56,
         "8": 5.2,
         "7": 5.2,
-        "5": 2.56
+        "2": 2.0,
+        "9": 6.0
       },
       "csatByComplexity": {
-        "9": 5.0,
         "3": 10.0,
-        "6": 10.0,
-        "4": 1.0
+        "9": 5.0,
+        "4": 1.0,
+        "6": 10.0
       },
       "avgScoreByComplexity": {
-        "4": 4.0,
-        "0": 0.03,
+        "6": 6.05,
         "1": 0.97,
         "3": 3.06,
-        "6": 6.05,
-        "2": 2.19,
-        "9": 8.88,
+        "5": 4.96,
+        "4": 4.0,
         "8": 8.28,
         "7": 6.98,
-        "5": 4.96
+        "2": 2.19,
+        "0": 0.03,
+        "9": 8.88
       },
       "tcStats": {
         "total": 7,
@@ -1032,6 +1044,12 @@
           "TC": 3,
           "DO": 4
         }
+      },
+      "csatCountByComplexity": {
+        "3": 1,
+        "9": 1,
+        "4": 1,
+        "6": 1
       }
     },
     {
@@ -1063,7 +1081,7 @@
           },
           {
             "number": "00457894",
-            "subject": "Dysfonctionnements chatbot Le Diamant Bleu \u2014 preuves de bugs",
+            "subject": "Dysfonctionnements chatbot Le Diamant Bleu — preuves de bugs",
             "value": 9
           }
         ],
@@ -1080,14 +1098,14 @@
           },
           {
             "number": "00457894",
-            "subject": "Dysfonctionnements chatbot Le Diamant Bleu \u2014 preuves de bugs",
+            "subject": "Dysfonctionnements chatbot Le Diamant Bleu — preuves de bugs",
             "value": 11
           }
         ],
         "byMsgLength": [
           {
             "number": "00457894",
-            "subject": "Dysfonctionnements chatbot Le Diamant Bleu \u2014 preuves de bugs",
+            "subject": "Dysfonctionnements chatbot Le Diamant Bleu — preuves de bugs",
             "value": 1264.7
           },
           {
@@ -1118,15 +1136,15 @@
         1
       ],
       "hbrByComplexity": {
+        "4": 15.7,
+        "6": 33.8,
         "1": 8.3,
         "5": 52.3,
-        "8": 49.1,
-        "2": 8.4,
-        "4": 15.7,
         "0": 9.3,
         "3": 11.6,
+        "8": 49.1,
         "7": 31.1,
-        "6": 33.8,
+        "2": 8.4,
         "9": 35.4
       },
       "region": "EMEA",
@@ -1161,7 +1179,7 @@
           },
           {
             "key": "DO-44374",
-            "summary": "TASK - M\u00e9tropolis Charging - Ghost listings audit",
+            "summary": "TASK - Métropolis Charging - Ghost listings audit",
             "status": "In Progress",
             "project": "DO",
             "created": "2026-06-16",
@@ -1201,7 +1219,7 @@
           },
           {
             "key": "SOC-4836",
-            "summary": "Social - FE - Remove automatic \u201ccopy\u201d text when duplicating posts",
+            "summary": "Social - FE - Remove automatic “copy” text when duplicating posts",
             "status": "OPEN",
             "project": "SOC",
             "created": "2026-06-11",
@@ -1219,59 +1237,59 @@
       },
       "jiraAccountId": "712020:57b83b0a-e0ad-4e27-a12a-b0d4f7d7d94e",
       "firstRespByComplexity": {
-        "1": 17.2,
-        "5": 11.4,
-        "8": 40.9,
-        "2": 21.8,
-        "3": 18.1,
         "4": 18.2,
-        "7": 8.1,
         "6": 27.0,
+        "5": 11.4,
+        "1": 17.2,
+        "8": 40.9,
+        "3": 18.1,
+        "2": 21.8,
+        "7": 8.1,
+        "0": 30.8,
         "9": 15.0,
-        "10": 2.1,
-        "0": 30.8
+        "10": 2.1
       },
       "ongoingRespByComplexity": {
-        "1": 0.0,
-        "5": 3.9,
-        "8": 5.9,
-        "2": 3.8,
-        "3": 3.2,
         "4": 5.1,
-        "7": 4.2,
         "6": 5.2,
+        "5": 3.9,
+        "1": 0.0,
+        "8": 5.9,
+        "3": 3.2,
+        "2": 3.8,
+        "7": 4.2,
+        "0": 6.4,
         "9": 7.3,
-        "10": 4.8,
-        "0": 6.4
+        "10": 4.8
       },
       "touchpointsByComplexity": {
-        "1": 1.0,
-        "5": 2.43,
-        "8": 4.2,
-        "2": 1.09,
-        "3": 1.55,
         "4": 1.84,
-        "7": 3.0,
         "6": 3.0,
+        "5": 2.43,
+        "1": 1.0,
+        "8": 4.2,
+        "3": 1.55,
+        "2": 1.09,
+        "7": 3.0,
+        "0": 1.0,
         "9": 8.0,
-        "10": 9.0,
-        "0": 1.0
+        "10": 9.0
       },
       "csatByComplexity": {
         "7": 10.0,
-        "5": 10.0,
-        "8": 10.0
+        "8": 10.0,
+        "5": 10.0
       },
       "avgScoreByComplexity": {
+        "4": 3.97,
+        "6": 6.02,
         "1": 0.95,
         "5": 4.95,
-        "8": 7.92,
-        "2": 2.15,
-        "3": 3.02,
-        "4": 3.97,
         "0": 0.03,
+        "3": 3.02,
+        "8": 7.92,
         "7": 6.82,
-        "6": 6.02,
+        "2": 2.15,
         "9": 8.78,
         "10": 9.54
       },
@@ -1289,10 +1307,15 @@
           "TC": 2,
           "DO": 4
         }
+      },
+      "csatCountByComplexity": {
+        "7": 2,
+        "8": 1,
+        "5": 1
       }
     },
     {
-      "name": "Victoria Sene R\u00edos",
+      "name": "Victoria Sene Ríos",
       "cases": 184,
       "csat": 8.3,
       "firstResponseHrs": 23.2,
@@ -1310,7 +1333,7 @@
         "byMsgCount": [
           {
             "number": "00456833",
-            "subject": "Issue with verification status \u2013 Oliver Green (Utrecht) N: 6",
+            "subject": "Issue with verification status – Oliver Green (Utrecht) N: 6",
             "value": 11
           },
           {
@@ -1319,8 +1342,8 @@
             "value": 9
           },
           {
-            "number": "00456844",
-            "subject": "Eurobaustoff: Whitelist Problem",
+            "number": "00457420",
+            "subject": "FW: Request to Update Google Business Profile Information fo",
             "value": 8
           }
         ],
@@ -1332,12 +1355,12 @@
           },
           {
             "number": "00456833",
-            "subject": "Issue with verification status \u2013 Oliver Green (Utrecht) N: 6",
+            "subject": "Issue with verification status – Oliver Green (Utrecht) N: 6",
             "value": 11
           },
           {
             "number": "00456828",
-            "subject": "FW: Bitte um L\u00f6schung bzw. Sperrung meiner personenbezogenen",
+            "subject": "FW: Bitte um Löschung bzw. Sperrung meiner personenbezogenen",
             "value": 10
           }
         ],
@@ -1354,7 +1377,7 @@
           },
           {
             "number": "00458220",
-            "subject": "API-Zugriff f\u00fcr Uberall Partner-Account / Nutzung von Locati",
+            "subject": "API-Zugriff für Uberall Partner-Account / Nutzung von Locati",
             "value": 1481.2
           }
         ]
@@ -1375,15 +1398,15 @@
         2
       ],
       "hbrByComplexity": {
-        "1": 6.2,
-        "6": 31.6,
+        "7": 38.4,
         "5": 33.6,
+        "1": 6.2,
         "4": 18.6,
         "2": 22.4,
         "8": 31.4,
+        "0": 3.8,
         "3": 11.8,
-        "7": 38.4,
-        "0": 3.8
+        "6": 31.6
       },
       "region": "EMEA",
       "jira": {
@@ -1477,43 +1500,43 @@
       },
       "jiraAccountId": "712020:1e890bc6-894c-462b-9434-517f44b64e87",
       "firstRespByComplexity": {
-        "6": 15.3,
-        "9": 32.2,
-        "5": 19.7,
-        "2": 10.5,
-        "4": 22.1,
-        "10": 8.4,
-        "8": 41.4,
-        "1": 14.4,
         "7": 28.8,
+        "4": 22.1,
+        "5": 19.7,
+        "6": 15.2,
+        "2": 10.5,
+        "8": 41.4,
+        "0": 5.0,
         "3": 14.0,
-        "0": 5.0
+        "9": 32.2,
+        "1": 14.4,
+        "10": 8.4
       },
       "ongoingRespByComplexity": {
-        "6": 9.4,
-        "9": 11.0,
-        "5": 6.9,
-        "2": 1.5,
-        "4": 7.1,
-        "10": 14.8,
-        "8": 12.2,
-        "1": 1.6,
         "7": 7.1,
+        "4": 7.1,
+        "5": 6.9,
+        "6": 9.4,
+        "2": 1.5,
+        "8": 12.2,
+        "0": 0.5,
         "3": 8.2,
-        "0": 0.5
+        "9": 11.0,
+        "1": 1.6,
+        "10": 14.8
       },
       "touchpointsByComplexity": {
-        "6": 2.56,
-        "9": 4.33,
-        "5": 2.23,
-        "2": 2.25,
-        "4": 1.67,
-        "10": 4.5,
-        "8": 4.0,
-        "1": 1.67,
         "7": 3.71,
+        "4": 1.67,
+        "5": 2.23,
+        "6": 2.56,
+        "2": 2.25,
+        "8": 4.0,
+        "0": 1.0,
         "3": 1.56,
-        "0": 1.0
+        "9": 4.33,
+        "1": 1.67,
+        "10": 4.5
       },
       "csatByComplexity": {
         "8": 5.0,
@@ -1521,17 +1544,17 @@
         "6": 10.0
       },
       "avgScoreByComplexity": {
-        "1": 0.87,
-        "6": 5.96,
-        "9": 8.61,
-        "5": 5.03,
-        "2": 2.07,
-        "4": 4.03,
-        "10": 9.98,
-        "8": 8.07,
-        "3": 3.05,
         "7": 6.94,
-        "0": 0.0
+        "4": 4.03,
+        "5": 5.03,
+        "6": 5.96,
+        "1": 0.87,
+        "2": 2.07,
+        "8": 8.08,
+        "3": 3.05,
+        "0": 0.0,
+        "9": 8.61,
+        "10": 9.98
       },
       "tcStats": {
         "total": 8,
@@ -1552,6 +1575,11 @@
           "TC": 5,
           "MOB": 1
         }
+      },
+      "csatCountByComplexity": {
+        "8": 1,
+        "3": 1,
+        "6": 1
       }
     },
     {
@@ -1617,7 +1645,7 @@
           },
           {
             "number": "00457225",
-            "subject": "Markt-ID 8002803 EDEKA Express W\u00fcrzburg",
+            "subject": "Markt-ID 8002803 EDEKA Express Würzburg",
             "value": 2305.5
           }
         ]
@@ -1638,15 +1666,15 @@
         0
       ],
       "hbrByComplexity": {
-        "7": 43.0,
-        "2": 8.0,
-        "1": 5.9,
+        "3": 3.1,
         "6": 6.2,
         "4": 21.7,
-        "5": 15.9,
-        "3": 3.1,
         "0": 3.7,
-        "8": 46.3
+        "1": 5.9,
+        "5": 15.9,
+        "2": 8.0,
+        "8": 46.3,
+        "7": 43.0
       },
       "region": "EMEA",
       "jira": {
@@ -1740,57 +1768,57 @@
       },
       "jiraAccountId": "712020:b8d0da18-7ff1-485d-b0e3-80f46622e803",
       "firstRespByComplexity": {
-        "7": 14.0,
-        "2": 18.8,
+        "3": 9.4,
         "6": 9.2,
         "4": 9.8,
-        "1": 13.8,
-        "5": 8.9,
-        "3": 9.4,
         "0": 12.8,
-        "8": 16.2
+        "5": 8.9,
+        "1": 13.8,
+        "2": 18.8,
+        "8": 16.2,
+        "7": 14.0
       },
       "ongoingRespByComplexity": {
-        "7": 4.5,
-        "2": 1.5,
+        "3": 2.2,
         "6": 1.5,
         "4": 2.4,
-        "1": 2.1,
-        "5": 2.1,
-        "3": 2.2,
         "0": 0.0,
-        "8": 6.5
+        "5": 2.1,
+        "1": 2.1,
+        "2": 1.5,
+        "8": 6.5,
+        "7": 4.5
       },
       "touchpointsByComplexity": {
-        "7": 4.71,
-        "2": 1.44,
+        "3": 1.22,
         "6": 2.58,
         "4": 1.79,
-        "1": 1.2,
-        "5": 2.39,
-        "3": 1.22,
         "0": 1.0,
-        "8": 5.6
+        "5": 2.39,
+        "1": 1.2,
+        "2": 1.44,
+        "8": 5.6,
+        "7": 4.71
       },
       "csatByComplexity": {
         "1": 5.33,
         "0": 10.0,
+        "5": 10.0,
         "2": 10.0,
-        "4": 10.0,
         "3": 10.0,
         "7": 10.0,
-        "5": 10.0
+        "4": 10.0
       },
       "avgScoreByComplexity": {
+        "3": 3.07,
         "1": 0.78,
-        "7": 6.95,
-        "2": 2.18,
         "6": 5.83,
         "4": 3.98,
-        "5": 4.96,
-        "3": 3.07,
         "0": 0.0,
-        "8": 7.97
+        "5": 4.96,
+        "2": 2.18,
+        "8": 7.97,
+        "7": 6.95
       },
       "tcStats": {
         "total": 14,
@@ -1810,6 +1838,15 @@
           "DO": 2,
           "AC": 1
         }
+      },
+      "csatCountByComplexity": {
+        "1": 3,
+        "0": 1,
+        "5": 3,
+        "2": 1,
+        "3": 1,
+        "7": 1,
+        "4": 1
       }
     },
     {
@@ -1831,7 +1868,7 @@
         "byMsgCount": [
           {
             "number": "00457696",
-            "subject": "Ayuda conectar ubicaci\u00f3n",
+            "subject": "Ayuda conectar ubicación",
             "value": 13
           },
           {
@@ -1848,7 +1885,7 @@
         "byClientMsgs": [
           {
             "number": "00457696",
-            "subject": "Ayuda conectar ubicaci\u00f3n",
+            "subject": "Ayuda conectar ubicación",
             "value": 15
           },
           {
@@ -1896,14 +1933,14 @@
         0
       ],
       "hbrByComplexity": {
-        "7": 42.0,
-        "1": 6.9,
-        "8": 47.3,
-        "6": 32.3,
-        "5": 44.8,
-        "2": 16.0,
         "3": 18.4,
         "4": 25.7,
+        "6": 32.3,
+        "2": 16.0,
+        "5": 44.8,
+        "1": 6.9,
+        "7": 42.0,
+        "8": 47.3,
         "0": 2.6
       },
       "region": "EMEA",
@@ -1950,7 +1987,7 @@
           },
           {
             "key": "IN-1812",
-            "summary": "Tyredating - Home Page \u2013 \"Visibility Boosters\" Recommendations Do Not Reflect Ac",
+            "summary": "Tyredating - Home Page – \"Visibility Boosters\" Recommendations Do Not Reflect Ac",
             "status": "Dev Close",
             "project": "IN",
             "created": "2026-06-17",
@@ -1966,7 +2003,7 @@
           },
           {
             "key": "DO-44380",
-            "summary": "Listings - SP 3279 Barcel\u00f3 - Google: listing stuck in processing for too long",
+            "summary": "Listings - SP 3279 Barceló - Google: listing stuck in processing for too long",
             "status": "Waiting",
             "project": "DO",
             "created": "2026-06-16",
@@ -2000,52 +2037,52 @@
       },
       "jiraAccountId": "712020:07fe05e4-71c7-4a76-924d-5c5a4aa7e834",
       "firstRespByComplexity": {
-        "4": 6.5,
-        "7": 9.6,
-        "8": 6.6,
+        "3": 13.8,
         "1": 12.6,
+        "4": 6.5,
         "6": 17.4,
-        "5": 6.3,
         "2": 7.9,
-        "3": 13.8
+        "5": 6.3,
+        "8": 6.6,
+        "7": 9.6
       },
       "ongoingRespByComplexity": {
-        "4": 5.1,
-        "7": 5.0,
-        "8": 4.2,
-        "1": 1.3,
-        "6": 6.8,
-        "5": 4.0,
-        "2": 3.1,
         "3": 3.1,
+        "1": 1.3,
+        "4": 5.1,
+        "6": 6.8,
+        "2": 3.1,
+        "5": 4.0,
+        "8": 4.2,
+        "7": 5.0,
         "0": 0.0
       },
       "touchpointsByComplexity": {
-        "4": 3.09,
-        "7": 6.14,
-        "8": 6.0,
+        "3": 2.0,
         "1": 1.17,
+        "4": 3.09,
         "6": 3.5,
-        "5": 4.13,
         "2": 2.32,
-        "3": 2.0
+        "5": 4.13,
+        "8": 6.0,
+        "7": 6.14
       },
       "csatByComplexity": {
-        "8": 10.0,
-        "1": 10.0,
         "6": 10.0,
+        "4": 10.0,
         "2": 10.0,
-        "4": 10.0
+        "1": 10.0,
+        "8": 10.0
       },
       "avgScoreByComplexity": {
-        "2": 2.21,
-        "4": 4.01,
-        "7": 6.91,
-        "1": 0.97,
-        "8": 8.06,
-        "6": 5.98,
-        "5": 5.01,
         "3": 3.07,
+        "1": 0.97,
+        "4": 4.01,
+        "6": 5.98,
+        "2": 2.21,
+        "5": 5.01,
+        "8": 8.06,
+        "7": 6.91,
         "0": 0.09
       },
       "tcStats": {
@@ -2064,6 +2101,13 @@
           "IN": 1,
           "LH": 1
         }
+      },
+      "csatCountByComplexity": {
+        "6": 1,
+        "4": 1,
+        "2": 1,
+        "1": 1,
+        "8": 1
       }
     },
     {
@@ -2150,15 +2194,15 @@
         0
       ],
       "hbrByComplexity": {
-        "8": 136.6,
-        "6": 103.9,
         "3": 41.1,
-        "7": 98.5,
-        "5": 70.2,
+        "6": 103.9,
         "1": 14.4,
-        "2": 30.0,
         "4": 58.0,
-        "0": 0.2
+        "2": 30.0,
+        "5": 70.2,
+        "8": 136.6,
+        "0": 0.2,
+        "7": 98.5
       },
       "region": "US-CAN",
       "jira": {
@@ -2252,51 +2296,51 @@
       },
       "jiraAccountId": "61d450f39ee70a00685fe638",
       "firstRespByComplexity": {
-        "4": 43.2,
-        "8": 14.9,
         "6": 3.3,
-        "3": 0.6,
-        "7": 1.3,
-        "5": 21.7,
         "2": 1.3,
+        "3": 0.6,
+        "8": 14.9,
+        "5": 21.7,
+        "4": 43.2,
+        "7": 1.3,
         "1": 0.1
       },
       "ongoingRespByComplexity": {
-        "4": 12.2,
-        "8": 9.9,
         "6": 4.6,
-        "3": 1.5,
-        "7": 3.1,
-        "5": 6.7,
         "2": 1.0,
+        "3": 1.5,
         "1": 0.0,
+        "8": 9.9,
+        "5": 6.7,
+        "4": 12.2,
+        "7": 3.1,
         "0": 0.0
       },
       "touchpointsByComplexity": {
-        "4": 3.71,
-        "8": 5.25,
         "6": 5.33,
-        "3": 2.67,
-        "7": 10.0,
-        "5": 4.93,
         "2": 1.83,
+        "3": 2.67,
+        "8": 5.25,
+        "5": 4.93,
+        "4": 3.71,
+        "7": 10.0,
         "1": 1.0
       },
       "csatByComplexity": {
-        "2": 10.0,
         "6": 10.0,
+        "2": 10.0,
         "4": 10.0
       },
       "avgScoreByComplexity": {
-        "4": 4.06,
-        "8": 7.94,
-        "6": 5.91,
         "3": 2.95,
-        "7": 6.98,
-        "0": 0.07,
-        "5": 4.96,
+        "6": 5.91,
         "1": 0.83,
-        "2": 2.06
+        "4": 4.06,
+        "2": 2.06,
+        "5": 4.96,
+        "8": 7.94,
+        "0": 0.07,
+        "7": 6.98
       },
       "tcStats": {
         "total": 9,
@@ -2314,6 +2358,11 @@
           "TC": 1,
           "LH": 1
         }
+      },
+      "csatCountByComplexity": {
+        "6": 1,
+        "2": 1,
+        "4": 1
       }
     },
     {
@@ -2339,13 +2388,13 @@
             "value": 6
           },
           {
-            "number": "00458426",
-            "subject": "Tempor\u00e4rer Adresswechsel wegen Umbaus \u2013 beste Vorgehensweise",
+            "number": "00458763",
+            "subject": "Autohaus Larl GmbH / Längen- und Breitengrad wird nicht über",
             "value": 6
           },
           {
-            "number": "00457722",
-            "subject": "Localsearch | Large syncing issue identified",
+            "number": "00458426",
+            "subject": "Temporärer Adresswechsel wegen Umbaus – beste Vorgehensweise",
             "value": 6
           }
         ],
@@ -2357,7 +2406,7 @@
           },
           {
             "number": "00458426",
-            "subject": "Tempor\u00e4rer Adresswechsel wegen Umbaus \u2013 beste Vorgehensweise",
+            "subject": "Temporärer Adresswechsel wegen Umbaus – beste Vorgehensweise",
             "value": 6
           },
           {
@@ -2379,7 +2428,7 @@
           },
           {
             "number": "00458501",
-            "subject": "Rese\u00f1as",
+            "subject": "Reseñas",
             "value": 1141.3
           }
         ]
@@ -2400,12 +2449,12 @@
         1
       ],
       "hbrByComplexity": {
-        "0": 3.4,
-        "7": 50.7,
         "4": 23.7,
+        "0": 3.4,
         "3": 23.9,
         "2": 13.0,
         "1": 9.0,
+        "7": 50.7,
         "5": 19.9,
         "6": 35.2
       },
@@ -2494,47 +2543,47 @@
       },
       "jiraAccountId": "60c377df2bd21400699a55c8",
       "firstRespByComplexity": {
-        "2": 4.6,
-        "1": 13.0,
-        "5": 0.5,
+        "3": 185.3,
         "9": 150.4,
-        "6": 8.9,
         "4": 16.3,
-        "10": 14.6,
-        "3": 185.3
+        "1": 13.0,
+        "6": 8.9,
+        "2": 4.6,
+        "5": 0.5,
+        "10": 14.6
       },
       "ongoingRespByComplexity": {
-        "0": 0.0,
-        "2": 0.0,
-        "1": 0.0,
         "4": 3.5,
         "3": 13.8,
-        "5": 0.3,
         "9": 4.4,
+        "2": 0.0,
+        "1": 0.0,
+        "5": 0.3,
         "6": 1.7,
+        "0": 0.0,
         "10": 9.8
       },
       "touchpointsByComplexity": {
-        "2": 1.0,
-        "1": 1.0,
-        "5": 1.0,
+        "3": 1.5,
         "9": 5.0,
-        "6": 2.67,
         "4": 1.75,
-        "10": 5.0,
-        "3": 1.5
+        "1": 1.0,
+        "6": 2.67,
+        "2": 1.0,
+        "5": 1.0,
+        "10": 5.0
       },
       "csatByComplexity": {},
       "avgScoreByComplexity": {
-        "2": 2.13,
-        "0": 0.03,
-        "7": 6.98,
         "4": 3.85,
+        "0": 0.03,
         "3": 3.0,
         "1": 1.0,
-        "5": 5.13,
-        "9": 8.78,
+        "2": 2.13,
         "6": 5.85,
+        "9": 8.78,
+        "7": 6.98,
+        "5": 5.13,
         "10": 9.94
       },
       "tcStats": {
@@ -2550,7 +2599,8 @@
         "byProject": {
           "DO": 1
         }
-      }
+      },
+      "csatCountByComplexity": {}
     },
     {
       "name": "Patrick Paul Bayor",
@@ -2638,11 +2688,11 @@
       "hbrByComplexity": {
         "4": 53.3,
         "5": 69.4,
-        "6": 89.7,
-        "1": 61.8,
         "2": 62.5,
         "0": 11.1,
+        "1": 61.8,
         "3": 51.6,
+        "6": 89.7,
         "7": 74.5
       },
       "region": "US-CAN",
@@ -2741,44 +2791,44 @@
       "firstRespByComplexity": {
         "5": 21.9,
         "6": 14.7,
-        "3": 5.0,
+        "4": 60.2,
         "2": 106.9,
         "1": 106.8,
-        "0": 139.8,
-        "4": 60.2,
-        "7": 54.2
+        "3": 5.0,
+        "7": 54.2,
+        "0": 139.8
       },
       "ongoingRespByComplexity": {
-        "4": 18.6,
         "5": 6.3,
         "6": 5.2,
-        "3": 19.5,
+        "4": 18.6,
         "2": 23.2,
-        "1": 18.3,
         "0": 0.0,
+        "1": 18.3,
+        "3": 19.5,
         "7": 14.5
       },
       "touchpointsByComplexity": {
         "5": 4.67,
         "6": 5.73,
-        "3": 2.0,
+        "4": 2.22,
         "2": 1.57,
         "1": 1.8,
-        "0": 1.0,
-        "4": 2.22,
-        "7": 5.25
+        "3": 2.0,
+        "7": 5.25,
+        "0": 1.0
       },
       "csatByComplexity": {
         "6": 10.0
       },
       "avgScoreByComplexity": {
         "4": 3.86,
+        "0": 0.07,
         "5": 4.92,
         "6": 5.95,
-        "1": 0.96,
         "2": 2.06,
+        "1": 0.96,
         "3": 2.96,
-        "0": 0.07,
         "7": 7.14
       },
       "tcStats": {
@@ -2796,6 +2846,9 @@
           "TC": 1,
           "WEB": 2
         }
+      },
+      "csatCountByComplexity": {
+        "6": 1
       }
     },
     {
@@ -2884,13 +2937,13 @@
       "hbrByComplexity": {
         "1": 38.9,
         "3": 23.8,
-        "5": 37.4,
-        "6": 41.2,
         "4": 53.6,
-        "2": 52.2,
+        "5": 37.4,
         "0": 17.0,
-        "8": 39.5,
-        "7": 86.0
+        "7": 86.0,
+        "6": 41.2,
+        "2": 52.2,
+        "8": 39.5
       },
       "region": "US-CAN",
       "jira": {
@@ -2981,34 +3034,34 @@
       },
       "jiraAccountId": "712020:f5acaba4-f9c7-48e4-9c91-0523ef40df7b",
       "firstRespByComplexity": {
-        "3": 54.1,
-        "5": 66.8,
-        "6": 76.8,
         "1": 105.8,
+        "3": 54.1,
         "4": 71.6,
+        "5": 66.8,
         "7": 31.2,
         "8": 38.5,
-        "2": 76.3
+        "6": 76.8,
+        "2": 76.2
       },
       "ongoingRespByComplexity": {
-        "3": 17.7,
-        "5": 14.0,
-        "6": 21.2,
-        "4": 10.5,
         "1": 4.5,
+        "3": 17.7,
+        "4": 10.5,
+        "5": 14.0,
         "0": 0.0,
         "7": 2.2,
         "8": 5.3,
+        "6": 21.2,
         "2": 28.3
       },
       "touchpointsByComplexity": {
-        "3": 1.64,
-        "5": 2.92,
-        "6": 4.0,
         "1": 1.33,
+        "3": 1.64,
         "4": 3.09,
+        "5": 2.92,
         "7": 3.86,
         "8": 5.25,
+        "6": 4.0,
         "2": 1.25
       },
       "csatByComplexity": {
@@ -3017,13 +3070,13 @@
       "avgScoreByComplexity": {
         "1": 0.92,
         "3": 3.03,
-        "5": 4.93,
-        "6": 5.93,
         "4": 4.04,
+        "5": 4.93,
         "0": 0.09,
-        "2": 2.18,
         "7": 6.98,
-        "8": 8.18
+        "8": 8.18,
+        "6": 5.93,
+        "2": 2.18
       },
       "tcStats": {
         "total": 4,
@@ -3038,6 +3091,9 @@
         "byProject": {
           "DO": 4
         }
+      },
+      "csatCountByComplexity": {
+        "4": 1
       }
     },
     {
@@ -3093,7 +3149,7 @@
         "byMsgLength": [
           {
             "number": "00457168",
-            "subject": "Bulk Update of Incorrect Social Media Links \u2013 Angry Crab Sha",
+            "subject": "Bulk Update of Incorrect Social Media Links – Angry Crab Sha",
             "value": 1311.7
           },
           {
@@ -3124,13 +3180,13 @@
         0
       ],
       "hbrByComplexity": {
+        "1": 14.6,
         "5": 29.2,
+        "0": 0.3,
+        "4": 35.2,
         "6": 56.8,
         "8": 43.3,
-        "0": 0.3,
-        "1": 14.6,
         "3": 19.1,
-        "4": 35.2,
         "2": 2.7,
         "7": 25.3
       },
@@ -3224,53 +3280,53 @@
       },
       "jiraAccountId": "712020:4d9a9233-9ff8-4563-a1c0-3799fc530f3d",
       "firstRespByComplexity": {
-        "5": 0.6,
-        "8": 1.0,
-        "6": 1.6,
         "1": 12.9,
         "4": 1.6,
-        "3": 2.2,
-        "9": 2.3,
+        "5": 0.6,
         "7": 0.8,
-        "2": 0.3
+        "6": 1.6,
+        "8": 1.0,
+        "3": 2.2,
+        "2": 0.3,
+        "9": 2.3
       },
       "ongoingRespByComplexity": {
-        "5": 2.3,
-        "8": 9.1,
-        "6": 2.7,
-        "0": 0.0,
         "1": 16.4,
         "4": 5.6,
-        "3": 1.3,
-        "9": 0.0,
+        "6": 2.7,
+        "5": 2.3,
         "7": 16.9,
-        "2": 0.2
+        "0": 0.0,
+        "8": 9.1,
+        "3": 1.3,
+        "2": 0.2,
+        "9": 0.0
       },
       "touchpointsByComplexity": {
-        "5": 3.33,
-        "8": 4.5,
-        "6": 3.08,
         "1": 1.5,
         "4": 2.14,
-        "3": 1.67,
-        "9": 5.0,
+        "6": 3.08,
+        "5": 3.33,
         "7": 4.0,
-        "2": 2.5
+        "8": 4.5,
+        "3": 1.67,
+        "2": 2.5,
+        "9": 5.0
       },
       "csatByComplexity": {
         "2": 10.0
       },
       "avgScoreByComplexity": {
-        "5": 4.95,
-        "8": 7.81,
-        "6": 5.98,
-        "0": 0.26,
         "1": 0.96,
         "4": 4.01,
-        "3": 2.93,
-        "9": 8.62,
+        "6": 5.98,
+        "5": 4.95,
         "7": 6.96,
-        "2": 2.19
+        "0": 0.26,
+        "8": 7.81,
+        "3": 2.93,
+        "2": 2.19,
+        "9": 8.62
       },
       "tcStats": {
         "total": 27,
@@ -3295,6 +3351,9 @@
           "LIS": 1,
           "LH": 1
         }
+      },
+      "csatCountByComplexity": {
+        "2": 1
       }
     },
     {
@@ -3349,13 +3408,13 @@
         ],
         "byMsgLength": [
           {
-            "number": "00457480",
-            "subject": "Uberall Yelp Connections",
+            "number": "00457504",
+            "subject": "Re:[## 5839 ##] Ad Account Alignment: 3393 (ID 6151290519429",
             "value": 791.0
           },
           {
-            "number": "00457504",
-            "subject": "Re:[## 5839 ##] Ad Account Alignment: 3393 (ID 6151290519429",
+            "number": "00457480",
+            "subject": "Uberall Yelp Connections",
             "value": 791.0
           },
           {
@@ -3382,12 +3441,12 @@
       ],
       "hbrByComplexity": {
         "0": 0.4,
-        "6": 49.4,
         "4": 29.1,
-        "2": 16.0,
-        "1": 12.8,
+        "6": 49.4,
+        "5": 85.1,
         "3": 63.9,
-        "5": 85.1
+        "2": 16.0,
+        "1": 12.8
       },
       "region": "US-CAN",
       "jira": {
@@ -3459,36 +3518,36 @@
         "6": 1.1,
         "4": 1.3,
         "3": 1.6,
+        "2": 1.0,
         "5": 1.8,
-        "1": 3.2,
-        "2": 1.0
+        "1": 3.2
       },
       "ongoingRespByComplexity": {
         "0": 0.0,
         "6": 4.3,
         "4": 3.6,
-        "1": 0.6,
         "3": 1.0,
-        "5": 0.1,
-        "2": 1.0
+        "2": 1.0,
+        "1": 0.6,
+        "5": 0.1
       },
       "touchpointsByComplexity": {
         "6": 5.25,
         "4": 2.22,
-        "1": 1.0,
         "3": 1.33,
-        "5": 4.0,
-        "2": 1.0
+        "2": 1.0,
+        "1": 1.0,
+        "5": 4.0
       },
       "csatByComplexity": {},
       "avgScoreByComplexity": {
         "0": 0.17,
-        "6": 5.99,
         "4": 4.18,
-        "2": 2.17,
-        "1": 0.8,
+        "6": 5.99,
+        "5": 5.06,
         "3": 3.06,
-        "5": 5.06
+        "2": 2.17,
+        "1": 0.8
       },
       "tcStats": {
         "total": 20,
@@ -3508,7 +3567,8 @@
           "TC": 6,
           "WEB": 1
         }
-      }
+      },
+      "csatCountByComplexity": {}
     },
     {
       "name": "Ryan Quinn",
@@ -3594,11 +3654,11 @@
         0
       ],
       "hbrByComplexity": {
-        "9": 83.1,
-        "5": 22.0,
-        "3": 14.8,
         "7": 3.5,
-        "8": 34.3
+        "5": 22.0,
+        "8": 34.3,
+        "9": 83.1,
+        "3": 14.8
       },
       "region": "US-CAN",
       "jira": {
@@ -3660,27 +3720,27 @@
       },
       "jiraAccountId": "712020:16c67fc4-a8a6-4f7d-83ea-0aac74448201",
       "firstRespByComplexity": {
-        "9": 1.9,
-        "7": 15.5
+        "7": 15.5,
+        "9": 1.9
       },
       "ongoingRespByComplexity": {
-        "9": 0.0,
-        "7": 31.2
+        "7": 31.2,
+        "9": 0.0
       },
       "touchpointsByComplexity": {
-        "9": 9.0,
-        "7": 4.0
+        "7": 4.0,
+        "9": 9.0
       },
       "csatByComplexity": {},
       "avgScoreByComplexity": {
+        "7": 7.47,
         "2": 2.06,
-        "9": 9.04,
-        "4": 4.13,
         "3": 3.06,
         "5": 5.03,
-        "7": 7.47,
+        "4": 4.13,
         "6": 5.97,
-        "8": 7.86
+        "8": 7.86,
+        "9": 9.04
       },
       "tcStats": {
         "total": 4,
@@ -3698,7 +3758,8 @@
           "TC": 1,
           "DO": 3
         }
-      }
+      },
+      "csatCountByComplexity": {}
     },
     {
       "name": "Geneca Rapada",
@@ -3728,8 +3789,8 @@
             "value": 8
           },
           {
-            "number": "00457918",
-            "subject": "Updated Facebook Cover Page",
+            "number": "00457153",
+            "subject": "Incorrect Info Published - Apple Maps - (Location ID: 026) A",
             "value": 6
           }
         ],
@@ -3784,14 +3845,14 @@
         0
       ],
       "hbrByComplexity": {
-        "2": 37.2,
-        "8": 97.9,
-        "3": 70.0,
-        "7": 115.8,
-        "1": 37.1,
         "6": 130.5,
         "5": 52.8,
-        "4": 27.5
+        "3": 70.0,
+        "7": 115.8,
+        "2": 37.2,
+        "8": 97.9,
+        "4": 27.5,
+        "1": 37.1
       },
       "region": "US-CAN",
       "jira": {
@@ -3846,7 +3907,7 @@
           },
           {
             "key": "AR-5404",
-            "summary": "BE - Whitelist Domain for Advanced Analytics \u2013 SP ID 3539",
+            "summary": "BE - Whitelist Domain for Advanced Analytics – SP ID 3539",
             "status": "OPEN",
             "project": "AR",
             "created": "2026-06-10",
@@ -3880,42 +3941,42 @@
       },
       "jiraAccountId": "712020:ab64ada0-b268-46d2-ba28-41e33a31603f",
       "firstRespByComplexity": {
-        "8": 29.0,
-        "5": 61.7,
-        "3": 4.2,
         "6": 0.5,
+        "4": 78.0,
+        "5": 61.7,
         "7": 3.7,
+        "8": 29.0,
         "2": 4.9,
-        "4": 78.0
+        "3": 4.2
       },
       "ongoingRespByComplexity": {
+        "6": 9.7,
+        "4": 5.5,
+        "5": 28.6,
+        "7": 1.0,
         "8": 5.8,
         "2": 2.4,
-        "5": 28.6,
-        "3": 3.3,
-        "6": 9.7,
-        "7": 1.0,
-        "4": 5.5
+        "3": 3.3
       },
       "touchpointsByComplexity": {
+        "6": 4.33,
+        "4": 3.0,
+        "5": 5.33,
+        "7": 8.0,
         "8": 5.0,
         "2": 1.5,
-        "5": 5.33,
-        "3": 2.5,
-        "6": 4.33,
-        "7": 8.0,
-        "4": 3.0
+        "3": 2.5
       },
       "csatByComplexity": {},
       "avgScoreByComplexity": {
-        "2": 1.99,
-        "8": 7.62,
-        "5": 5.23,
-        "3": 2.78,
         "6": 6.16,
+        "5": 5.23,
+        "4": 4.31,
+        "3": 2.79,
         "7": 6.55,
-        "1": 1.17,
-        "4": 4.31
+        "8": 7.62,
+        "2": 1.99,
+        "1": 1.17
       },
       "tcStats": {
         "total": 4,
@@ -3933,7 +3994,8 @@
           "DO": 2,
           "TC": 2
         }
-      }
+      },
+      "csatCountByComplexity": {}
     }
   ],
   "issueTypeData": [
