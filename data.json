@@ -444,7 +444,8 @@
             "url": "https://uberall.atlassian.net/browse/DO-44342"
           }
         ]
-      }
+      },
+      "jiraAccountId": "60c3766ea01e11006a1d4d51"
     },
     {
       "name": "J\u00fcrgen S\u00f6men",
@@ -633,7 +634,8 @@
             "url": "https://uberall.atlassian.net/browse/DO-44369"
           }
         ]
-      }
+      },
+      "jiraAccountId": "712020:10fe39d9-7de2-4495-9805-02e3bfa06d9b"
     },
     {
       "name": "Vincent Riehl",
@@ -820,7 +822,8 @@
             "url": "https://uberall.atlassian.net/browse/LH-894"
           }
         ]
-      }
+      },
+      "jiraAccountId": "60c3765220d2dd00705f25f7"
     },
     {
       "name": "Rida Malouh",
@@ -1004,7 +1007,8 @@
             "url": "https://uberall.atlassian.net/browse/TC-28190"
           }
         ]
-      }
+      },
+      "jiraAccountId": "712020:57b83b0a-e0ad-4e27-a12a-b0d4f7d7d94e"
     },
     {
       "name": "Victoria Sene R\u00edos",
@@ -1189,7 +1193,8 @@
             "url": "https://uberall.atlassian.net/browse/MOB-1578"
           }
         ]
-      }
+      },
+      "jiraAccountId": "712020:1e890bc6-894c-462b-9434-517f44b64e87"
     },
     {
       "name": "Stephan Duerrnagel",
@@ -1374,7 +1379,8 @@
             "url": "https://uberall.atlassian.net/browse/DO-44385"
           }
         ]
-      }
+      },
+      "jiraAccountId": "712020:b8d0da18-7ff1-485d-b0e3-80f46622e803"
     },
     {
       "name": "Maria Fontiveros Villasana",
@@ -1561,7 +1567,8 @@
             "url": "https://uberall.atlassian.net/browse/DO-44293"
           }
         ]
-      }
+      },
+      "jiraAccountId": "712020:07fe05e4-71c7-4a76-924d-5c5a4aa7e834"
     },
     {
       "name": "Jhonric Canillo",
@@ -1746,7 +1753,8 @@
             "url": "https://uberall.atlassian.net/browse/DO-44337"
           }
         ]
-      }
+      },
+      "jiraAccountId": "61d450f39ee70a00685fe638"
     },
     {
       "name": "Anna-Christin Voigt",
@@ -1923,7 +1931,8 @@
             "url": "https://uberall.atlassian.net/browse/SAL-3323"
           }
         ]
-      }
+      },
+      "jiraAccountId": "60c377df2bd21400699a55c8"
     },
     {
       "name": "Patrick Paul Bayor",
@@ -2109,7 +2118,8 @@
             "url": "https://uberall.atlassian.net/browse/WEB-5754"
           }
         ]
-      }
+      },
+      "jiraAccountId": "712020:bef43ad9-4b43-4884-8d40-925a0ac69d93"
     },
     {
       "name": "John Paul Pineda",
@@ -2291,7 +2301,8 @@
             "url": "https://uberall.atlassian.net/browse/DO-44307"
           }
         ]
-      }
+      },
+      "jiraAccountId": "712020:f5acaba4-f9c7-48e4-9c91-0523ef40df7b"
     },
     {
       "name": "Fernando Viana",
@@ -2474,7 +2485,8 @@
             "url": "https://uberall.atlassian.net/browse/DO-44250"
           }
         ]
-      }
+      },
+      "jiraAccountId": "712020:4d9a9233-9ff8-4563-a1c0-3799fc530f3d"
     },
     {
       "name": "Joel Alob",
@@ -2632,7 +2644,8 @@
             "url": "https://uberall.atlassian.net/browse/TC-27936"
           }
         ]
-      }
+      },
+      "jiraAccountId": "617a6b77b9c549006ffe4337"
     },
     {
       "name": "Ryan Quinn",
@@ -2781,7 +2794,8 @@
             "url": "https://uberall.atlassian.net/browse/SOC-4815"
           }
         ]
-      }
+      },
+      "jiraAccountId": "712020:16c67fc4-a8a6-4f7d-83ea-0aac74448201"
     },
     {
       "name": "Geneca Rapada",
@@ -2960,7 +2974,8 @@
             "url": "https://uberall.atlassian.net/browse/TC-28152"
           }
         ]
-      }
+      },
+      "jiraAccountId": "712020:ab64ada0-b268-46d2-ba28-41e33a31603f"
     }
   ],
   "issueTypeData": [
