@@ -748,8 +748,8 @@ window.sortAgentTable = function(key) {
 // ── Agent filters ─────────────────────────────────────────────────────────
 const REGION_OPTIONS = ['EMEA', 'US-CAN'];
 const COMPLEXITY_OPTIONS = [
-  { label: 'Low (0–3)', min: 0, max: 3 },
-  { label: 'Medium (4–6)', min: 4, max: 6 },
+  { label: 'Low (0–3)', min: 0, max: 3.999 },
+  { label: 'Medium (4–6)', min: 4, max: 6.999 },
   { label: 'High (7–10)', min: 7, max: 10 },
 ];
 let activeRegions = new Set(REGION_OPTIONS);
