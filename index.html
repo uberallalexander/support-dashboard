@@ -542,13 +542,16 @@ function toggleAgentExpand(row, agentName, idx) {
   expandRow.style.display = '';
   row.style.background = 'var(--accent-light)';
   const agent = (getPeriodData().agentData || data.agentData || []).find(a => a.name === agentName);
-  if (!agent || !agent.caseExamples) {
-    content.innerHTML = `<p style="color:var(--text-muted);font-size:0.8rem">No case examples available — will populate on next daily sync.</p>`;
+  if (!agent) {
+    content.innerHTML = `<p style="color:var(--text-muted);font-size:0.8rem">No data available for this agent.</p>`;
     return;
   }
   const chartDistId = `chart-dist-${idx}`;
   const chartHbrId  = `chart-hbr-${idx}`;
-  const dist    = agent.complexityDist  || Array(11).fill(0);
+  // complexityDist may be a list [n0,n1,...] or a dict {'0':n0,...}; normalise to an 11-element array
+  const rawDist = agent.complexityDist;
+  const dist = Array.from({length:11}, (_,i) =>
+    Array.isArray(rawDist) ? (rawDist[i] || 0) : ((rawDist && rawDist[i]) || 0));
   const hbrRaw  = agent.hbrByComplexity || {};
   const hbrData = Array.from({length:11}, (_,i) => hbrRaw[i] ?? null);
   const scoreColor = i => i <= 3 ? '#22c55e' : i <= 6 ? '#f59e0b' : '#ef4444';
