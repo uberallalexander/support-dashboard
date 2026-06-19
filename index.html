@@ -357,7 +357,11 @@ function mergePeriods(periods) {
         ? ((f1||0)*w1 + (f2||0)*w2) / wt : (f1 ?? f2);
       m.cases = wt;
       m.spamCases = (m.spamCases||0) + (a.spamCases||0);
-      m.csatTotal = (m.csatTotal||0) + (a.csatTotal||0);
+      // csatPct: weight by CSAT responses count (csatTotal), not case count
+      const ct1 = m.csatTotal || 0, ct2 = a.csatTotal || 0;
+      const pos1 = Math.round((m.csatPct||0)/100 * ct1), pos2 = Math.round((a.csatPct||0)/100 * ct2);
+      m.csatTotal = ct1 + ct2;
+      m.csatPct = m.csatTotal > 0 ? Math.round((pos1+pos2)/m.csatTotal*100) : null;
       m.firstResponseHrs = wavg(m.firstResponseHrs, a.firstResponseHrs);
       m.ongoingResponseHrs = wavg(m.ongoingResponseHrs, a.ongoingResponseHrs);
       m.resolutionHrs = wavg(m.resolutionHrs, a.resolutionHrs);
@@ -365,9 +369,6 @@ function mergePeriods(periods) {
       m.csat = wavg(m.csat, a.csat);
       m.complexity = wavg(m.complexity, a.complexity);
       m.conversationComplexity = wavg(m.conversationComplexity, a.conversationComplexity);
-      // csatPct: weighted positive responses
-      const pos1 = Math.round((m.csatPct||0)/100 * w1), pos2 = Math.round((a.csatPct||0)/100 * w2);
-      m.csatPct = (m.csatTotal > 0) ? Math.round((pos1+pos2)/m.csatTotal*100) : null;
       // complexityDist: sum per bucket
       const d1 = m.complexityDist || {}, d2 = a.complexityDist || {};
       const allBuckets = new Set([...Object.keys(d1), ...Object.keys(d2)]);
@@ -648,6 +649,13 @@ function toggleAgentExpand(row, agentName, idx) {
   // Close all other expanded rows first
   document.querySelectorAll('.agent-expand-row').forEach(r => r.style.display = 'none');
   document.querySelectorAll('.agent-row').forEach(r => r.style.background = '');
+  // Build period label for section headers
+  const periodLabel = (() => {
+    const keys = [...activePeriods];
+    if (!data || !data.periods) return 'selected period';
+    const labels = keys.map(k => data.periods[k]?.meta?.label || k);
+    return labels.join(' + ');
+  })();
   if (isOpen) return;
   expandRow.style.display = '';
   row.style.background = 'var(--accent-light)';
@@ -687,7 +695,7 @@ function toggleAgentExpand(row, agentName, idx) {
     return `
     <div style="margin-top:20px">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
-        <div style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em">TC / DO Process (last 30d)</div>
+        <div style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em">TC / DO Process (${periodLabel})</div>
         <div style="display:flex;gap:6px;flex-wrap:wrap">${projectBadges}</div>
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
@@ -746,7 +754,7 @@ function toggleAgentExpand(row, agentName, idx) {
     return `
     <div style="margin-top:20px">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
-        <div style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em">Jira Tickets (last 30d)</div>
+        <div style="font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em">Jira Tickets (${periodLabel})</div>
         <div style="display:flex;gap:10px;align-items:center">
           <span style="font-weight:700;font-size:0.85rem">${j.total}</span>
           <span style="font-size:0.72rem;color:#dc2626">${j.open} open</span>
