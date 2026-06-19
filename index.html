@@ -288,6 +288,18 @@ const CONFIG = {
           <div style="height:300px;position:relative"><canvas id="chart-issue-types"></canvas></div>
         </div>
       </div>
+      <!-- EMEA vs US-CAN topic comparison -->
+      <div class="card p-5" id="region-topic-card">
+        <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:4px">Issue Types: EMEA vs US-CAN</h3>
+        <p style="font-size:0.72rem;color:var(--text-muted);margin-bottom:16px">% of cases per region · top 10 issue types</p>
+        <div style="height:320px;position:relative"><canvas id="chart-topic-region"></canvas></div>
+      </div>
+      <!-- Topic by hour heatmap -->
+      <div class="card p-5" id="topic-hour-card">
+        <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:4px">Issue Volume by Hour (UTC)</h3>
+        <p style="font-size:0.72rem;color:var(--text-muted);margin-bottom:16px">Top 7 issue types · case creation time</p>
+        <div style="height:320px;position:relative"><canvas id="chart-topic-hour"></canvas></div>
+      </div>
       <div class="card p-5">
         <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:16px">Full Topic Breakdown</h3>
         <div id="topic-table"></div>
@@ -1212,6 +1224,85 @@ function renderTopics() {
   makeChart('chart-issue-types', 'bar',
     issueTypeData.map(r => r.label), issueTypeData.map(r => r.value),
     { horizontal: true });
+
+  // EMEA vs US-CAN grouped bar chart
+  const regionData = data.topicByRegion;
+  if (regionData) {
+    const allLabels = [...new Set([
+      ...regionData['EMEA'].map(r => r.label),
+      ...regionData['US-CAN'].map(r => r.label),
+    ])];
+    // Sort by combined pct
+    const combined = allLabels.map(l => {
+      const e = (regionData['EMEA'].find(r => r.label === l) || {}).pct || 0;
+      const u = (regionData['US-CAN'].find(r => r.label === l) || {}).pct || 0;
+      return { label: l, e, u };
+    }).sort((a, b) => (b.e + b.u) - (a.e + a.u));
+    const labels = combined.map(r => r.label);
+    const emeaPcts = combined.map(r => r.e);
+    const uscanPcts = combined.map(r => r.u);
+
+    if (charts['chart-topic-region']) { charts['chart-topic-region'].destroy(); }
+    const ctx = document.getElementById('chart-topic-region').getContext('2d');
+    charts['chart-topic-region'] = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels,
+        datasets: [
+          { label: 'EMEA', data: emeaPcts, backgroundColor: '#6366f1', borderRadius: 3 },
+          { label: 'US-CAN', data: uscanPcts, backgroundColor: '#22c55e', borderRadius: 3 },
+        ],
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'top', labels: { color: 'var(--text-muted)', font: { size: 11 } } },
+          tooltip: { callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.x.toFixed(1)}%` } },
+          datalabels: { display: false },
+        },
+        scales: {
+          x: { ticks: { color: 'var(--text-muted)', callback: v => v + '%' }, grid: { color: 'var(--border)' } },
+          y: { ticks: { color: 'var(--text-muted)', font: { size: 11 } }, grid: { display: false } },
+        },
+      },
+    });
+  }
+
+  // Topic by hour stacked area / line chart
+  const topicHour = data.topicByHour;
+  if (topicHour) {
+    const hours = Array.from({ length: 24 }, (_, i) => `${String(i).padStart(2,'0')}:00`);
+    const topicColors = ['#6366f1','#22c55e','#f59e0b','#ef4444','#06b6d4','#a855f7','#f97316'];
+    const datasets = Object.entries(topicHour).map(([topic, counts], i) => ({
+      label: topic,
+      data: counts,
+      borderColor: topicColors[i % topicColors.length],
+      backgroundColor: topicColors[i % topicColors.length] + '22',
+      fill: false,
+      tension: 0.3,
+      pointRadius: 2,
+      borderWidth: 2,
+    }));
+
+    if (charts['chart-topic-hour']) { charts['chart-topic-hour'].destroy(); }
+    const ctx2 = document.getElementById('chart-topic-hour').getContext('2d');
+    charts['chart-topic-hour'] = new Chart(ctx2, {
+      type: 'line',
+      data: { labels: hours, datasets },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'top', labels: { color: 'var(--text-muted)', font: { size: 10 }, boxWidth: 12 } },
+          datalabels: { display: false },
+        },
+        scales: {
+          x: { ticks: { color: 'var(--text-muted)', font: { size: 10 }, maxRotation: 0, autoSkip: true, maxTicksLimit: 12 }, grid: { color: 'var(--border)' } },
+          y: { ticks: { color: 'var(--text-muted)' }, grid: { color: 'var(--border)' }, beginAtZero: true },
+        },
+      },
+    });
+  }
 
   const total = typeData.reduce((s, r) => s + r.value, 0);
   makeTable('topic-table', [
