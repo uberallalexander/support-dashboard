@@ -4142,7 +4142,8 @@
         "avgFirstResp": 18.15,
         "avgResolution": 52.47,
         "avgCsat": 9.86,
-        "csatTotalReceived": 99
+        "csatTotalReceived": 99,
+        "spamCount": 422
       },
       "agentData": [
         {
@@ -5471,7 +5472,139 @@
           "avgCsat": 10.0,
           "csatCount": 24
         }
-      }
+      },
+      "statusData": [
+        {
+          "label": "Closed",
+          "value": 2346
+        },
+        {
+          "label": "Completed",
+          "value": 34
+        },
+        {
+          "label": "In Progress",
+          "value": 15
+        },
+        {
+          "label": "Waiting on Client",
+          "value": 17
+        },
+        {
+          "label": "Waiting on Directory",
+          "value": 58
+        },
+        {
+          "label": "Waiting On Product",
+          "value": 26
+        },
+        {
+          "label": "Waiting On CS",
+          "value": 1
+        },
+        {
+          "label": "On-hold",
+          "value": 9
+        },
+        {
+          "label": "Open",
+          "value": 16
+        },
+        {
+          "label": "Resolved",
+          "value": 13
+        },
+        {
+          "label": "Churned",
+          "value": 4
+        },
+        {
+          "label": "Cancellation Notice",
+          "value": 3
+        }
+      ],
+      "typeData": [
+        {
+          "label": "Location Data Support",
+          "value": 1386
+        },
+        {
+          "label": "Platform Support",
+          "value": 593
+        },
+        {
+          "label": "Locator & Local Pages Support",
+          "value": 79
+        },
+        {
+          "label": "Risk",
+          "value": 34
+        },
+        {
+          "label": "Termination",
+          "value": 14
+        },
+        {
+          "label": "Other",
+          "value": 7
+        },
+        {
+          "label": "CSAT Follow-up",
+          "value": 4
+        },
+        {
+          "label": "UI Defect",
+          "value": 1
+        },
+        {
+          "label": "Inquiry",
+          "value": 1
+        }
+      ],
+      "priorityData": [
+        {
+          "label": "Critical",
+          "value": 24
+        },
+        {
+          "label": "Urgent",
+          "value": 117
+        },
+        {
+          "label": "High",
+          "value": 363
+        },
+        {
+          "label": "Medium",
+          "value": 2028
+        },
+        {
+          "label": "Low",
+          "value": 10
+        }
+      ],
+      "languageData": [
+        {
+          "label": "English",
+          "value": 1798
+        },
+        {
+          "label": "German",
+          "value": 535
+        },
+        {
+          "label": "French",
+          "value": 162
+        },
+        {
+          "label": "Spanish",
+          "value": 42
+        },
+        {
+          "label": "Italian",
+          "value": 5
+        }
+      ]
     },
     "2026-05": {
       "meta": {
@@ -5485,7 +5618,8 @@
         "avgFirstResp": 10.99,
         "avgResolution": 38.17,
         "avgCsat": 9.42,
-        "csatTotalReceived": 81
+        "csatTotalReceived": 81,
+        "spamCount": 252
       },
       "agentData": [
         {
@@ -6801,7 +6935,131 @@
           "avgCsat": 9.17,
           "csatCount": 12
         }
-      }
+      },
+      "statusData": [
+        {
+          "label": "Closed",
+          "value": 1824
+        },
+        {
+          "label": "Completed",
+          "value": 94
+        },
+        {
+          "label": "In Progress",
+          "value": 31
+        },
+        {
+          "label": "Waiting on Client",
+          "value": 39
+        },
+        {
+          "label": "Waiting on Directory",
+          "value": 78
+        },
+        {
+          "label": "Waiting On Product",
+          "value": 45
+        },
+        {
+          "label": "Waiting On CS",
+          "value": 17
+        },
+        {
+          "label": "On-hold",
+          "value": 27
+        },
+        {
+          "label": "Open",
+          "value": 14
+        },
+        {
+          "label": "Resolved",
+          "value": 2
+        },
+        {
+          "label": "Churned",
+          "value": 2
+        }
+      ],
+      "typeData": [
+        {
+          "label": "Location Data Support",
+          "value": 1232
+        },
+        {
+          "label": "Platform Support",
+          "value": 579
+        },
+        {
+          "label": "Locator & Local Pages Support",
+          "value": 56
+        },
+        {
+          "label": "Risk",
+          "value": 18
+        },
+        {
+          "label": "Termination",
+          "value": 14
+        },
+        {
+          "label": "Other",
+          "value": 11
+        },
+        {
+          "label": "CSAT Follow-up",
+          "value": 8
+        },
+        {
+          "label": "Inquiry",
+          "value": 2
+        }
+      ],
+      "priorityData": [
+        {
+          "label": "Critical",
+          "value": 19
+        },
+        {
+          "label": "Urgent",
+          "value": 105
+        },
+        {
+          "label": "High",
+          "value": 324
+        },
+        {
+          "label": "Medium",
+          "value": 1713
+        },
+        {
+          "label": "Low",
+          "value": 11
+        }
+      ],
+      "languageData": [
+        {
+          "label": "English",
+          "value": 1546
+        },
+        {
+          "label": "German",
+          "value": 417
+        },
+        {
+          "label": "French",
+          "value": 130
+        },
+        {
+          "label": "Spanish",
+          "value": 63
+        },
+        {
+          "label": "Italian",
+          "value": 17
+        }
+      ]
     },
     "2026-06": {
       "meta": {
@@ -9389,6 +9647,146 @@
           "value": 4,
           "avgV1": 3.0,
           "avgHBR": null
+        }
+      ],
+      "statusData": [
+        {
+          "label": "Closed",
+          "value": 926
+        },
+        {
+          "label": "Completed",
+          "value": 427
+        },
+        {
+          "label": "In Progress",
+          "value": 189
+        },
+        {
+          "label": "Waiting on Client",
+          "value": 188
+        },
+        {
+          "label": "Waiting on Directory",
+          "value": 132
+        },
+        {
+          "label": "Waiting On Product",
+          "value": 102
+        },
+        {
+          "label": "Waiting On CS",
+          "value": 52
+        },
+        {
+          "label": "On-hold",
+          "value": 51
+        },
+        {
+          "label": "Open",
+          "value": 32
+        },
+        {
+          "label": "Resolved",
+          "value": 2
+        },
+        {
+          "label": "New",
+          "value": 2
+        },
+        {
+          "label": "Churned",
+          "value": 1
+        },
+        {
+          "label": "Cancellation Notice",
+          "value": 1
+        }
+      ],
+      "typeData": [
+        {
+          "label": "Location Data Support",
+          "value": 1244
+        },
+        {
+          "label": "Platform Support",
+          "value": 612
+        },
+        {
+          "label": "Locator & Local Pages Support",
+          "value": 63
+        },
+        {
+          "label": "Risk",
+          "value": 27
+        },
+        {
+          "label": "Other",
+          "value": 26
+        },
+        {
+          "label": "Termination",
+          "value": 16
+        },
+        {
+          "label": "CSAT Follow-up",
+          "value": 9
+        },
+        {
+          "label": "Unknown",
+          "value": 4
+        },
+        {
+          "label": "Inquiry",
+          "value": 2
+        },
+        {
+          "label": "Spam",
+          "value": 302
+        }
+      ],
+      "priorityData": [
+        {
+          "label": "Medium",
+          "value": 1580
+        },
+        {
+          "label": "High",
+          "value": 373
+        },
+        {
+          "label": "Urgent",
+          "value": 126
+        },
+        {
+          "label": "Critical",
+          "value": 19
+        },
+        {
+          "label": "Low",
+          "value": 7
+        }
+      ],
+      "languageData": [
+        {
+          "label": "English",
+          "value": 1425
+        },
+        {
+          "label": "German",
+          "value": 423
+        },
+        {
+          "label": "French",
+          "value": 153
+        },
+        {
+          "label": "Spanish",
+          "value": 69
+        },
+        {
+          "label": "Italian",
+          "value": 20
         }
       ]
     }

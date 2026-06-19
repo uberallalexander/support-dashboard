@@ -735,14 +735,23 @@ function initSpamToggleVisual() {
 }
 
 function filteredData() {
-  // data.json already contains spam-excluded data as the default.
-  // When excludeSpam is OFF, add spam back to totals and type list.
-  if (excludeSpam) return data;
-  const spamCount = data.kpis.spamCount || 0;
-  return {
+  // Merge period-level breakdowns (statusData/typeData/priorityData/languageData) over top-level data.
+  const pd = getPeriodData();
+  const merged = {
     ...data,
-    typeData: [...data.typeData.filter(r => r.label !== 'Spam'), { label: 'Spam', value: spamCount }],
-    kpis: { ...data.kpis, total: data.kpis.total + spamCount },
+    statusData: pd.statusData || data.statusData,
+    typeData: pd.typeData || data.typeData,
+    priorityData: pd.priorityData || data.priorityData,
+    languageData: pd.languageData || data.languageData,
+    kpis: { ...data.kpis, ...(pd.kpis || {}) },
+  };
+  // When excludeSpam is OFF, add spam back to totals and type list.
+  if (excludeSpam) return merged;
+  const spamCount = (pd.kpis || {}).spamCount ?? data.kpis.spamCount ?? 0;
+  return {
+    ...merged,
+    typeData: [...merged.typeData.filter(r => r.label !== 'Spam'), { label: 'Spam', value: spamCount }],
+    kpis: { ...merged.kpis, total: (merged.kpis.total || 0) + spamCount },
   };
 }
 
@@ -818,7 +827,7 @@ function renderOverview() {
 
   // Language chart
   const langColors = ['#7c3aed','#2563eb','#059669','#d97706','#db2777'];
-  const { languageData, regionData, hourlyData } = data;
+  const { languageData, regionData, hourlyData } = filteredData();
   if (languageData) {
     makeChart('chart-language', 'doughnut',
       languageData.map(r => r.label), languageData.map(r => r.value),
