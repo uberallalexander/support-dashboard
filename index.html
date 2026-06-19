@@ -743,6 +743,8 @@ function filteredData() {
     typeData: pd.typeData || data.typeData,
     priorityData: pd.priorityData || data.priorityData,
     languageData: pd.languageData || data.languageData,
+    regionData: pd.regionData || data.regionData,
+    hourlyData: pd.hourlyData || data.hourlyData,
     kpis: { ...data.kpis, ...(pd.kpis || {}) },
   };
   // When excludeSpam is OFF, add spam back to totals and type list.

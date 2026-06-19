@@ -5604,6 +5604,114 @@
           "label": "Italian",
           "value": 5
         }
+      ],
+      "hourlyData": [
+        {
+          "hour": 0,
+          "value": 21
+        },
+        {
+          "hour": 1,
+          "value": 14
+        },
+        {
+          "hour": 2,
+          "value": 11
+        },
+        {
+          "hour": 3,
+          "value": 8
+        },
+        {
+          "hour": 4,
+          "value": 17
+        },
+        {
+          "hour": 5,
+          "value": 33
+        },
+        {
+          "hour": 6,
+          "value": 67
+        },
+        {
+          "hour": 7,
+          "value": 102
+        },
+        {
+          "hour": 8,
+          "value": 167
+        },
+        {
+          "hour": 9,
+          "value": 145
+        },
+        {
+          "hour": 10,
+          "value": 119
+        },
+        {
+          "hour": 11,
+          "value": 131
+        },
+        {
+          "hour": 12,
+          "value": 141
+        },
+        {
+          "hour": 13,
+          "value": 202
+        },
+        {
+          "hour": 14,
+          "value": 171
+        },
+        {
+          "hour": 15,
+          "value": 160
+        },
+        {
+          "hour": 16,
+          "value": 100
+        },
+        {
+          "hour": 17,
+          "value": 95
+        },
+        {
+          "hour": 18,
+          "value": 104
+        },
+        {
+          "hour": 19,
+          "value": 94
+        },
+        {
+          "hour": 20,
+          "value": 83
+        },
+        {
+          "hour": 21,
+          "value": 77
+        },
+        {
+          "hour": 22,
+          "value": 39
+        },
+        {
+          "hour": 23,
+          "value": 19
+        }
+      ],
+      "regionData": [
+        {
+          "label": "EMEA",
+          "value": 1516
+        },
+        {
+          "label": "US-CAN",
+          "value": 975
+        }
       ]
     },
     "2026-05": {
@@ -7058,6 +7166,114 @@
         {
           "label": "Italian",
           "value": 17
+        }
+      ],
+      "hourlyData": [
+        {
+          "hour": 0,
+          "value": 15
+        },
+        {
+          "hour": 1,
+          "value": 8
+        },
+        {
+          "hour": 2,
+          "value": 16
+        },
+        {
+          "hour": 3,
+          "value": 6
+        },
+        {
+          "hour": 4,
+          "value": 16
+        },
+        {
+          "hour": 5,
+          "value": 37
+        },
+        {
+          "hour": 6,
+          "value": 72
+        },
+        {
+          "hour": 7,
+          "value": 114
+        },
+        {
+          "hour": 8,
+          "value": 125
+        },
+        {
+          "hour": 9,
+          "value": 140
+        },
+        {
+          "hour": 10,
+          "value": 124
+        },
+        {
+          "hour": 11,
+          "value": 93
+        },
+        {
+          "hour": 12,
+          "value": 137
+        },
+        {
+          "hour": 13,
+          "value": 152
+        },
+        {
+          "hour": 14,
+          "value": 165
+        },
+        {
+          "hour": 15,
+          "value": 143
+        },
+        {
+          "hour": 16,
+          "value": 109
+        },
+        {
+          "hour": 17,
+          "value": 95
+        },
+        {
+          "hour": 18,
+          "value": 63
+        },
+        {
+          "hour": 19,
+          "value": 99
+        },
+        {
+          "hour": 20,
+          "value": 76
+        },
+        {
+          "hour": 21,
+          "value": 57
+        },
+        {
+          "hour": 22,
+          "value": 39
+        },
+        {
+          "hour": 23,
+          "value": 20
+        }
+      ],
+      "regionData": [
+        {
+          "label": "EMEA",
+          "value": 1286
+        },
+        {
+          "label": "US-CAN",
+          "value": 849
         }
       ]
     },
@@ -9787,6 +10003,118 @@
         {
           "label": "Italian",
           "value": 20
+        }
+      ],
+      "hourlyData": [
+        {
+          "hour": 0,
+          "value": 17
+        },
+        {
+          "hour": 1,
+          "value": 13
+        },
+        {
+          "hour": 2,
+          "value": 7
+        },
+        {
+          "hour": 3,
+          "value": 6
+        },
+        {
+          "hour": 4,
+          "value": 21
+        },
+        {
+          "hour": 5,
+          "value": 40
+        },
+        {
+          "hour": 6,
+          "value": 79
+        },
+        {
+          "hour": 7,
+          "value": 133
+        },
+        {
+          "hour": 8,
+          "value": 157
+        },
+        {
+          "hour": 9,
+          "value": 164
+        },
+        {
+          "hour": 10,
+          "value": 127
+        },
+        {
+          "hour": 11,
+          "value": 112
+        },
+        {
+          "hour": 12,
+          "value": 137
+        },
+        {
+          "hour": 13,
+          "value": 180
+        },
+        {
+          "hour": 14,
+          "value": 164
+        },
+        {
+          "hour": 15,
+          "value": 186
+        },
+        {
+          "hour": 16,
+          "value": 111
+        },
+        {
+          "hour": 17,
+          "value": 99
+        },
+        {
+          "hour": 18,
+          "value": 78
+        },
+        {
+          "hour": 19,
+          "value": 91
+        },
+        {
+          "hour": 20,
+          "value": 81
+        },
+        {
+          "hour": 21,
+          "value": 50
+        },
+        {
+          "hour": 22,
+          "value": 36
+        },
+        {
+          "hour": 23,
+          "value": 16
+        }
+      ],
+      "regionData": [
+        {
+          "label": "EMEA",
+          "value": 1084
+        },
+        {
+          "label": "US-CAN",
+          "value": 767
+        },
+        {
+          "label": "Unassigned",
+          "value": 112
         }
       ]
     }
