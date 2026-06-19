@@ -325,10 +325,116 @@ const CONFIG = {
 // ── State ─────────────────────────────────────────────────────────────────
 let data = null;
 let charts = {};
-let activePeriod = '2026-06';
+let activePeriods = new Set(['2026-06']);
 
 function getPeriodData() {
-  return (data && data.periods && data.periods[activePeriod]) ? data.periods[activePeriod] : data;
+  if (!data || !data.periods) return data;
+  const keys = [...activePeriods].filter(k => data.periods[k]);
+  if (keys.length === 0) return data;
+  if (keys.length === 1) return data.periods[keys[0]];
+  return mergePeriods(keys.map(k => data.periods[k]));
+}
+
+function mergePeriods(periods) {
+  // Merge multiple period objects into one aggregated period
+  const sumArr = (arrs) => {
+    const out = Array(24).fill(0);
+    arrs.forEach(a => (a||[]).forEach((r,i) => { out[i] = (out[i]||0) + (r.value||r||0); }));
+    return out;
+  };
+
+  // Aggregate agentData by name
+  const agentMap = {};
+  periods.forEach(pd => {
+    (pd.agentData || []).forEach(a => {
+      if (!agentMap[a.name]) {
+        agentMap[a.name] = JSON.parse(JSON.stringify(a));
+        return;
+      }
+      const m = agentMap[a.name];
+      const w1 = m.cases || 0, w2 = a.cases || 0, wt = w1 + w2;
+      const wavg = (f1, f2) => (wt > 0 && (f1 != null || f2 != null))
+        ? ((f1||0)*w1 + (f2||0)*w2) / wt : (f1 ?? f2);
+      m.cases = wt;
+      m.spamCases = (m.spamCases||0) + (a.spamCases||0);
+      m.csatTotal = (m.csatTotal||0) + (a.csatTotal||0);
+      m.firstResponseHrs = wavg(m.firstResponseHrs, a.firstResponseHrs);
+      m.ongoingResponseHrs = wavg(m.ongoingResponseHrs, a.ongoingResponseHrs);
+      m.resolutionHrs = wavg(m.resolutionHrs, a.resolutionHrs);
+      m.touchpoints = wavg(m.touchpoints, a.touchpoints);
+      m.csat = wavg(m.csat, a.csat);
+      m.complexity = wavg(m.complexity, a.complexity);
+      m.conversationComplexity = wavg(m.conversationComplexity, a.conversationComplexity);
+      // csatPct: weighted positive responses
+      const pos1 = Math.round((m.csatPct||0)/100 * w1), pos2 = Math.round((a.csatPct||0)/100 * w2);
+      m.csatPct = (m.csatTotal > 0) ? Math.round((pos1+pos2)/m.csatTotal*100) : null;
+      // complexityDist: sum per bucket
+      const d1 = m.complexityDist || {}, d2 = a.complexityDist || {};
+      const allBuckets = new Set([...Object.keys(d1), ...Object.keys(d2)]);
+      const merged = {}; allBuckets.forEach(k => { merged[k] = (d1[k]||0)+(d2[k]||0); });
+      m.complexityDist = merged;
+      // Jira: sum totals, concat recent (dedup by key)
+      if (a.jira) {
+        if (!m.jira) { m.jira = JSON.parse(JSON.stringify(a.jira)); }
+        else {
+          m.jira.total = (m.jira.total||0) + a.jira.total;
+          m.jira.open  = (m.jira.open||0)  + a.jira.open;
+          m.jira.done  = (m.jira.done||0)  + a.jira.done;
+          Object.entries(a.jira.byProject||{}).forEach(([k,v]) => { m.jira.byProject[k] = (m.jira.byProject[k]||0)+v; });
+          const existingKeys = new Set((m.jira.recent||[]).map(r=>r.key));
+          (a.jira.recent||[]).forEach(r => { if (!existingKeys.has(r.key)) m.jira.recent.push(r); });
+          m.jira.recent = m.jira.recent.sort((a,b)=>b.created.localeCompare(a.created)).slice(0,10);
+        }
+      }
+    });
+  });
+
+  // Aggregate kpis
+  const allKpis = periods.map(p => p.kpis || {});
+  const totalCases = allKpis.reduce((s,k) => s+(k.total||0), 0);
+  const wavgKpi = (field) => {
+    let wsum=0, wtot=0;
+    allKpis.forEach((k,i) => { const t=periods[i].kpis?.total||0; if(k[field]!=null){wsum+=k[field]*t;wtot+=t;} });
+    return wtot>0 ? wsum/wtot : null;
+  };
+  const sumKpi = (field) => allKpis.reduce((s,k) => s+(k[field]||0), 0);
+
+  // Aggregate list data (sum by label)
+  const mergeLists = (lists) => {
+    const map = {};
+    lists.forEach(list => (list||[]).forEach(r => { map[r.label] = (map[r.label]||0)+r.value; }));
+    return Object.entries(map).map(([label,value])=>({label,value})).sort((a,b)=>b.value-a.value);
+  };
+
+  // hourlyData: sum by hour
+  const mergeHourly = (hourlyArrays) => {
+    const sums = Array(24).fill(0);
+    hourlyArrays.forEach(arr => (arr||[]).forEach(r => { sums[r.hour] += r.value||0; }));
+    return sums.map((value, hour) => ({hour, value}));
+  };
+
+  const labels = periods.map(p => p.meta?.label||'').filter(Boolean);
+  return {
+    meta: { label: labels.join(' + '), partial: false },
+    kpis: {
+      total: totalCases,
+      open: sumKpi('open'),
+      spamCount: sumKpi('spamCount'),
+      queueBacklog: sumKpi('queueBacklog'),
+      avgFirstResp: wavgKpi('avgFirstResp'),
+      avgResolution: wavgKpi('avgResolution'),
+      avgCsat: wavgKpi('avgCsat'),
+      avgCsatPct: wavgKpi('avgCsatPct'),
+      csatTotalReceived: sumKpi('csatTotalReceived'),
+    },
+    agentData: Object.values(agentMap),
+    statusData: mergeLists(periods.map(p=>p.statusData)),
+    typeData: mergeLists(periods.map(p=>p.typeData)),
+    priorityData: mergeLists(periods.map(p=>p.priorityData)),
+    languageData: mergeLists(periods.map(p=>p.languageData)),
+    regionData: mergeLists(periods.map(p=>p.regionData)),
+    hourlyData: mergeHourly(periods.map(p=>p.hourlyData)),
+  };
 }
 
 function renderPeriodPicker() {
@@ -336,7 +442,7 @@ function renderPeriodPicker() {
   const container = document.getElementById('period-picker-pills');
   if (!container) return;
   container.innerHTML = Object.entries(data.periods).map(([key, period]) => {
-    const isActive = key === activePeriod;
+    const isActive = activePeriods.has(key);
     const label = period.meta ? period.meta.label : key;
     const partial = period.meta && period.meta.partial ? ' <span style="font-size:0.65rem;opacity:0.7">(partial)</span>' : '';
     return `<button onclick="window.switchPeriod('${key}')" style="
@@ -349,7 +455,11 @@ function renderPeriodPicker() {
 }
 
 window.switchPeriod = function(key) {
-  activePeriod = key;
+  if (activePeriods.has(key) && activePeriods.size > 1) {
+    activePeriods.delete(key);
+  } else {
+    activePeriods.add(key);
+  }
   renderPeriodPicker();
   renderTopKpis();
   renderOverview();
@@ -440,7 +550,7 @@ async function loadData() {
   }
   hide('loading');
   initSpamToggleVisual();
-  activePeriod = data.activePeriod || '2026-06';
+  activePeriods = new Set([data.activePeriod || '2026-06']);
   renderPeriodPicker();
   renderAll();
 }
@@ -1100,7 +1210,19 @@ function renderAgents() {
       _ongoingResp: filteredMetricForAgent(a, 'ongoingRespByComplexity'),
       _touchpoints: filteredMetricForAgent(a, 'touchpointsByComplexity'),
       _csat,
-      _convComplexity: filteredMetricForAgent(a, 'avgScoreByComplexity'),
+      _convComplexity: (() => {
+        // Approximate avg CCS for filtered buckets using bucket center as proxy score
+        const rawDist = a.complexityDist;
+        const dist = Array.isArray(rawDist)
+          ? rawDist
+          : Array.from({length:11}, (_,i) => (rawDist && rawDist[String(i)]) || 0);
+        let totalCases = 0, weightedSum = 0;
+        Array.from(activeComplexityScores).forEach(s => {
+          const cnt = dist[s] || 0;
+          if (cnt > 0) { totalCases += cnt; weightedSum += s * cnt; }
+        });
+        return totalCases > 0 ? weightedSum / totalCases : a.conversationComplexity;
+      })(),
       _csatTotal,
       _csatPct:     null,  // can't derive filtered % without per-case good/bad counts
     };

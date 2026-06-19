@@ -4231,7 +4231,44 @@
             "1": 1,
             "2": 2
           },
-          "spamCases": 8
+          "spamCases": 8,
+          "csatPct": 100,
+          "jira": {
+            "total": 3,
+            "open": 0,
+            "done": 3,
+            "byProject": {
+              "LIS": 1,
+              "DO": 1,
+              "TC": 1
+            },
+            "recent": [
+              {
+                "key": "LIS-6404",
+                "summary": "BE - LISTING - Facebook Connect \"Connect\" button",
+                "status": "Closed",
+                "project": "LIS",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/LIS-6404"
+              },
+              {
+                "key": "DO-43829",
+                "summary": "BE - BING - T1 - AUTOMATION []",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43829"
+              },
+              {
+                "key": "TC-27318",
+                "summary": "BE - FACEBOOK - T1 - AUTOMATION [Facebook Connection Issue]",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27318"
+              }
+            ]
+          }
         },
         {
           "name": "J\u00fcrgen S\u00f6men",
@@ -4326,7 +4363,104 @@
             "10": 4,
             "5": 1
           },
-          "spamCases": 23
+          "spamCases": 23,
+          "csatPct": 94,
+          "jira": {
+            "total": 15,
+            "open": 6,
+            "done": 9,
+            "byProject": {
+              "DO": 8,
+              "AR": 2,
+              "LIS": 1,
+              "TC": 1,
+              "MOB": 1,
+              "LH": 1,
+              "REP": 1
+            },
+            "recent": [
+              {
+                "key": "DO-43853",
+                "summary": "BE - GOOGLE - T1 - OTHER []",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43853"
+              },
+              {
+                "key": "AR-5205",
+                "summary": "FE - Analytics - Discrepancy in Analytics Review Count \u2013 Lifetime/Global vs. Yearly Aggregation",
+                "status": "Closed",
+                "project": "AR",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/AR-5205"
+              },
+              {
+                "key": "DO-43852",
+                "summary": "DO - policy violation for one location (client has GPS)",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43852"
+              },
+              {
+                "key": "DO-43843",
+                "summary": "delete Bing ghost-listing",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43843"
+              },
+              {
+                "key": "LIS-6409",
+                "summary": "LIS - BE - location bulk update - changed website not snyced to google because of MSCR",
+                "status": "Closed",
+                "project": "LIS",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/LIS-6409"
+              },
+              {
+                "key": "TC-27372",
+                "summary": "flush cleansing dictionary",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27372"
+              },
+              {
+                "key": "DO-43840",
+                "summary": "BE - APPLE_MAPS - T1 - WRONG_SYNC_STATUS [\"OPENINGHOURS\"]",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43840"
+              },
+              {
+                "key": "DO-43856",
+                "summary": "Location Change Audit Log / Export \u2013 Since January 2026",
+                "status": "Won't Do",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43856"
+              },
+              {
+                "key": "DO-43822",
+                "summary": "GBPro - remove duplicat status from a location",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43822"
+              },
+              {
+                "key": "MOB-1496",
+                "summary": "App - Social Posting - Clicking publishing date greys out the screen",
+                "status": "Ready for Prod",
+                "project": "MOB",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/MOB-1496"
+              }
+            ]
+          }
         },
         {
           "name": "Vincent Riehl",
@@ -4420,7 +4554,53 @@
             "10": 1,
             "1": 1
           },
-          "spamCases": 19
+          "spamCases": 19,
+          "csatPct": 100,
+          "jira": {
+            "total": 4,
+            "open": 1,
+            "done": 3,
+            "byProject": {
+              "IN": 1,
+              "LH": 1,
+              "DO": 1,
+              "TC": 1
+            },
+            "recent": [
+              {
+                "key": "IN-1594",
+                "summary": "BE - Chatbot - Inadequate response",
+                "status": "Closed",
+                "project": "IN",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/IN-1594"
+              },
+              {
+                "key": "LH-758",
+                "summary": "FE - Payment Options reverting back on White Label SP",
+                "status": "Closed",
+                "project": "LH",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/LH-758"
+              },
+              {
+                "key": "DO-43812",
+                "summary": "DO - AM - OH not in sync",
+                "status": "Won't Do",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43812"
+              },
+              {
+                "key": "TC-27333",
+                "summary": "BE - Inbox - Latest Google reviews not displayed",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27333"
+              }
+            ]
+          }
         },
         {
           "name": "Rida Malouh",
@@ -4509,7 +4689,50 @@
             "10": 2,
             "4": 1
           },
-          "spamCases": 2
+          "spamCases": 2,
+          "csatPct": 100,
+          "jira": {
+            "total": 4,
+            "open": 0,
+            "done": 4,
+            "byProject": {
+              "DO": 4
+            },
+            "recent": [
+              {
+                "key": "DO-43787",
+                "summary": "BE - APPLE_MAPS - T1 - NOT_IN_SYNC []",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43787"
+              },
+              {
+                "key": "DO-43788",
+                "summary": "BE - APPLE_MAPS - T1 - NOT_IN_SYNC []",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43788"
+              },
+              {
+                "key": "DO-43791",
+                "summary": "GOOGLE - SHELL -  One-time closure marking request for Nature Energy listings on Google",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43791"
+              },
+              {
+                "key": "DO-43789",
+                "summary": "BE - MAP_QUEST - T2 - OTHER",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43789"
+              }
+            ]
+          }
         },
         {
           "name": "Victoria Sene R\u00edos",
@@ -4595,7 +4818,35 @@
             "10": 1,
             "6": 2
           },
-          "spamCases": 6
+          "spamCases": 6,
+          "csatPct": 100,
+          "jira": {
+            "total": 2,
+            "open": 0,
+            "done": 2,
+            "byProject": {
+              "DO": 1,
+              "TC": 1
+            },
+            "recent": [
+              {
+                "key": "DO-43823",
+                "summary": "BE - APPLE_MAPS - T1 - NOT_IN_SYNC []",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43823"
+              },
+              {
+                "key": "TC-27317",
+                "summary": "REP - Reviews - GOOGLE REVIEW INCOMPLETE - ONLY TEXT SHOWN IN FE - IMAGE MISSING ",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27317"
+              }
+            ]
+          }
         },
         {
           "name": "Stephan Duerrnagel",
@@ -4693,7 +4944,103 @@
             "5": 3,
             "10": 1
           },
-          "spamCases": 42
+          "spamCases": 42,
+          "csatPct": 100,
+          "jira": {
+            "total": 17,
+            "open": 4,
+            "done": 13,
+            "byProject": {
+              "TC": 3,
+              "DO": 10,
+              "CLN": 1,
+              "REP": 1,
+              "LH": 1,
+              "SOC": 1
+            },
+            "recent": [
+              {
+                "key": "TC-27407",
+                "summary": "Task- Apple- IDS and placecard from the database. ",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27407"
+              },
+              {
+                "key": "DO-43857",
+                "summary": "Task: GPS- google verification",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43857"
+              },
+              {
+                "key": "CLN-782",
+                "summary": "BE- Location cleansing- stuck in pending even after cleansing",
+                "status": "Closed",
+                "project": "CLN",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/CLN-782"
+              },
+              {
+                "key": "REP-6281",
+                "summary": "BE- Inbox- Pending approval error 2 pending approvals stuck",
+                "status": "Closed",
+                "project": "REP",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/REP-6281"
+              },
+              {
+                "key": "TC-27389",
+                "summary": "BE - GOOGLE - T1 - AUTOMATION",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27389"
+              },
+              {
+                "key": "LH-765",
+                "summary": "FE -  Short description- keyword score text formatting",
+                "status": "Closed",
+                "project": "LH",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/LH-765"
+              },
+              {
+                "key": "SOC-4731",
+                "summary": "FE- Social- unable to remove directories after duplicating a post",
+                "status": "Closed",
+                "project": "SOC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/SOC-4731"
+              },
+              {
+                "key": "DO-43851",
+                "summary": "BE - BING - T1 - OTHER [\"STREET_NO\"]",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43851"
+              },
+              {
+                "key": "TC-27351",
+                "summary": "Task- Tigger Bing sync via API",
+                "status": "In Progress",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27351"
+              },
+              {
+                "key": "DO-43805",
+                "summary": "Task: GPS-  incorrect google listing status",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43805"
+              }
+            ]
+          }
         },
         {
           "name": "Maria Fontiveros Villasana",
@@ -4784,7 +5131,102 @@
             "5": 1,
             "8": 1
           },
-          "spamCases": 3
+          "spamCases": 3,
+          "csatPct": 100,
+          "jira": {
+            "total": 13,
+            "open": 1,
+            "done": 12,
+            "byProject": {
+              "DO": 8,
+              "ACMO": 1,
+              "TC": 2,
+              "LH": 1,
+              "AR": 1
+            },
+            "recent": [
+              {
+                "key": "DO-43850",
+                "summary": "BE - APPLE_MAPS - T1 - NOT_IN_SYNC []",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43850"
+              },
+              {
+                "key": "DO-43898",
+                "summary": "Hays Travel__BE - Locations - Listings - Google: Phone numbers not displaying",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43898"
+              },
+              {
+                "key": "DO-43849",
+                "summary": "BE - APPLE_MAPS - T1 - OTHER []",
+                "status": "Waiting",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43849"
+              },
+              {
+                "key": "ACMO-981",
+                "summary": "BE - Email - Invitations issue: Not received by users",
+                "status": "Dev Close",
+                "project": "ACMO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/ACMO-981"
+              },
+              {
+                "key": "DO-43841",
+                "summary": "BE - APPLE_MAPS - T1 - OTHER []",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43841"
+              },
+              {
+                "key": "TC-27343",
+                "summary": "BE - Social Post Google - 2 locations not supported",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27343"
+              },
+              {
+                "key": "TC-27342",
+                "summary": "LH - FE - Location Hub: Error when accepting all suggestions for a Location",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27342"
+              },
+              {
+                "key": "LH-754",
+                "summary": "API - Kople - Logo and Cover Image Hardcoding change",
+                "status": "Closed",
+                "project": "LH",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/LH-754"
+              },
+              {
+                "key": "DO-43814",
+                "summary": "BE - APPLE_MAPS - T1 - OTHER [\"OPENINGHOURS\",\"PAYMENT_OPTIONS\",\"LATITUDE\",\"LONGITUDE\"]",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43814"
+              },
+              {
+                "key": "DO-43813",
+                "summary": "BE - BING - T1 - OTHER []",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43813"
+              }
+            ]
+          }
         },
         {
           "name": "Jhonric Canillo",
@@ -4868,7 +5310,67 @@
             "4": 1,
             "10": 2
           },
-          "spamCases": 4
+          "spamCases": 4,
+          "csatPct": 75,
+          "jira": {
+            "total": 6,
+            "open": 0,
+            "done": 6,
+            "byProject": {
+              "IN": 1,
+              "DO": 5
+            },
+            "recent": [
+              {
+                "key": "IN-1600",
+                "summary": "BE - Reputation Score: Key Tasks_Chick-fil-A",
+                "status": "Closed",
+                "project": "IN",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/IN-1600"
+              },
+              {
+                "key": "DO-43854",
+                "summary": "BE - YELP_API - T1 - OTHER []",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43854"
+              },
+              {
+                "key": "DO-43846",
+                "summary": "BE - YELP_API - T1 - OTHER []",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43846"
+              },
+              {
+                "key": "DO-43831",
+                "summary": "BE - ELOCAL - T3 - OTHER [\"ADDRESS_EXTRA\",\"CITY\",\"CATEGORIES\"]",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43831"
+              },
+              {
+                "key": "DO-43830",
+                "summary": "BE - CHAMBER_OF_COMMERCE - T3 - OTHER []",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43830"
+              },
+              {
+                "key": "DO-43860",
+                "summary": "Primary Category - Doula",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43860"
+              }
+            ]
+          }
         },
         {
           "name": "Anna-Christin Voigt",
@@ -4958,7 +5460,43 @@
             "6": 1,
             "2": 1
           },
-          "spamCases": 293
+          "spamCases": 293,
+          "csatPct": 100,
+          "jira": {
+            "total": 3,
+            "open": 0,
+            "done": 3,
+            "byProject": {
+              "DO": 2,
+              "TC": 1
+            },
+            "recent": [
+              {
+                "key": "DO-43867",
+                "summary": "BE - MEINESTADT - T2 - AUTOMATION",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43867"
+              },
+              {
+                "key": "TC-27354",
+                "summary": "BE - Apple Maps - Apple Address Change",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27354"
+              },
+              {
+                "key": "DO-43825",
+                "summary": "Apple Maps - Showing permanently closed on Maps when location is open",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43825"
+              }
+            ]
+          }
         },
         {
           "name": "Patrick Paul Bayor",
@@ -5041,7 +5579,60 @@
             "9": 1,
             "10": 1
           },
-          "spamCases": 2
+          "spamCases": 2,
+          "csatPct": 100,
+          "jira": {
+            "total": 5,
+            "open": 0,
+            "done": 5,
+            "byProject": {
+              "DO": 3,
+              "CLN": 1,
+              "TC": 1
+            },
+            "recent": [
+              {
+                "key": "DO-43859",
+                "summary": "BE - STADTBRANCHENBUCH - T3 - AUTOMATION []",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43859"
+              },
+              {
+                "key": "DO-43858",
+                "summary": "BE - GOOGLE - Snowfox - Claim listing",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43858"
+              },
+              {
+                "key": "CLN-781",
+                "summary": "BE - Cleansing - Stuck on pending cleansing for few months",
+                "status": "Closed",
+                "project": "CLN",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/CLN-781"
+              },
+              {
+                "key": "TC-27353",
+                "summary": "BE - FACEBOOK - Connect fb page manually",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27353"
+              },
+              {
+                "key": "DO-43806",
+                "summary": "BE - YELP_API - Hidden address reflecting online",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43806"
+              }
+            ]
+          }
         },
         {
           "name": "John Paul Pineda",
@@ -5129,7 +5720,92 @@
             "6": 1,
             "8": 1
           },
-          "spamCases": 5
+          "spamCases": 5,
+          "csatPct": 100,
+          "jira": {
+            "total": 9,
+            "open": 0,
+            "done": 9,
+            "byProject": {
+              "DO": 6,
+              "LIS": 1,
+              "TC": 2
+            },
+            "recent": [
+              {
+                "key": "DO-43855",
+                "summary": "BE - APPLE_MAPS - T1 - OTHER []",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43855"
+              },
+              {
+                "key": "LIS-6414",
+                "summary": "FE - Alerts Issue - Directory connection issues not accurate",
+                "status": "Closed",
+                "project": "LIS",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/LIS-6414"
+              },
+              {
+                "key": "DO-43842",
+                "summary": "GPS - Google listing verification documents - Solutions Apnee du Sommeil - Kahnawake",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43842"
+              },
+              {
+                "key": "TC-27377",
+                "summary": "BE - Apple Maps Action links not sent to Apple - Super Chix Chicken",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27377"
+              },
+              {
+                "key": "DO-43845",
+                "summary": " Hearing Care Professionals__BE - APPLE_MAPS - T1 - WRONG_SYNC_STATUS [\"OPENINGHOURS\",\"STREET_NO\",\"STREET\"]",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43845"
+              },
+              {
+                "key": "DO-43844",
+                "summary": "BE - MANTA - T3 - WRONG_SYNC_STATUS [\"STREET_NO\",\"STREET\"]",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43844"
+              },
+              {
+                "key": "TC-27350",
+                "summary": "BE - Apple relocation request - AutoNation",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27350"
+              },
+              {
+                "key": "DO-43809",
+                "summary": "BE - GOOGLE - T1 - OTHER []",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43809"
+              },
+              {
+                "key": "DO-43792",
+                "summary": "BE - Mark Google listing as Permanently Closed - AFB GPS",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43792"
+              }
+            ]
+          }
         },
         {
           "name": "Fernando Viana",
@@ -5212,7 +5888,68 @@
             "10": 2,
             "4": 1
           },
-          "spamCases": 4
+          "spamCases": 4,
+          "csatPct": 100,
+          "jira": {
+            "total": 6,
+            "open": 0,
+            "done": 6,
+            "byProject": {
+              "TC": 2,
+              "CS": 1,
+              "DO": 3
+            },
+            "recent": [
+              {
+                "key": "TC-27387",
+                "summary": "BE - GOOGLE - T1 - WRONG_SYNC_STATUS [\"CATEGORIES\"]",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27387"
+              },
+              {
+                "key": "CS-801",
+                "summary": "Rep - BE/FE - COPIZZA - Google Reviews Ingestion Delays",
+                "status": "Closed",
+                "project": "CS",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/CS-801"
+              },
+              {
+                "key": "TC-27652",
+                "summary": "API - YP Canada - Disable Digest Emails for all Users",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27652"
+              },
+              {
+                "key": "DO-43834",
+                "summary": "BE - GOOGLE - T1 - OTHER [\"STREET\"]",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43834"
+              },
+              {
+                "key": "DO-43833",
+                "summary": "BE - INFO_IS_INFO - T3 - WRONG_SYNC_STATUS [\"ZIP\"]",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43833"
+              },
+              {
+                "key": "DO-43827",
+                "summary": "BE - MANTA - T3 - WRONG_SYNC_STATUS [\"STREET\"]",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43827"
+              }
+            ]
+          }
         },
         {
           "name": "Joel Alob",
@@ -5296,7 +6033,77 @@
             "2": 1,
             "1": 1
           },
-          "spamCases": 4
+          "spamCases": 4,
+          "csatPct": 100,
+          "jira": {
+            "total": 7,
+            "open": 1,
+            "done": 6,
+            "byProject": {
+              "TC": 2,
+              "LIS": 1,
+              "DO": 3,
+              "REP": 1
+            },
+            "recent": [
+              {
+                "key": "TC-27388",
+                "summary": "BE - MANTA - T3 - OTHER []",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27388"
+              },
+              {
+                "key": "LIS-6411",
+                "summary": "FE - Listings - FB Connection process seems to be stuck in a loop",
+                "status": "Closed",
+                "project": "LIS",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/LIS-6411"
+              },
+              {
+                "key": "TC-27363",
+                "summary": "BE - FACEBOOK - T1 - OTHER []",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27363"
+              },
+              {
+                "key": "DO-43832",
+                "summary": "BE - APPLE_MAPS - T1 - WRONG_SYNC_STATUS [\"OPENINGHOURS\"]",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43832"
+              },
+              {
+                "key": "DO-43807",
+                "summary": "BE - APPLE_MAPS - T1 - WRONG_SYNC_STATUS [\"OPENINGHOURS\"]",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43807"
+              },
+              {
+                "key": "REP-6271",
+                "summary": "BE - Review - Automated Responses template visibility issue",
+                "status": "QA",
+                "project": "REP",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/REP-6271"
+              },
+              {
+                "key": "DO-43804",
+                "summary": "DO - Ulta Beauty - Yelp Claim",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43804"
+              }
+            ]
+          }
         },
         {
           "name": "Ryan Quinn",
@@ -5379,7 +6186,66 @@
             "10": 2,
             "4": 1
           },
-          "spamCases": 7
+          "spamCases": 7,
+          "csatPct": 100,
+          "jira": {
+            "total": 6,
+            "open": 1,
+            "done": 5,
+            "byProject": {
+              "DO": 6
+            },
+            "recent": [
+              {
+                "key": "DO-43848",
+                "summary": "FE - Listings (Yelp) - A-Max/Salvation Army - Yelp Claiming Needed",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43848"
+              },
+              {
+                "key": "DO-43835",
+                "summary": "FE - Listings - Birdeye - Remove Photos of Client from Three Listings",
+                "status": "Waiting",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43835"
+              },
+              {
+                "key": "DO-43838",
+                "summary": "BE - PAGES24 - T3 - WRONG_SYNC_STATUS [\"ADDRESS_EXTRA\"]",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43838"
+              },
+              {
+                "key": "DO-43837",
+                "summary": "BE - MY_LOCAL_SERVICES - T3 - WRONG_SYNC_STATUS [\"ADDRESS_EXTRA\"]",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43837"
+              },
+              {
+                "key": "DO-43836",
+                "summary": "BE - US_CITY - T3 - AUTOMATION [\"ADDRESS_EXTRA\"]",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43836"
+              },
+              {
+                "key": "DO-43781",
+                "summary": "FE - Yelp - Atomic Storage Group - Incorrect Phone Numbers",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-43781"
+              }
+            ]
+          }
         },
         {
           "name": "Geneca Rapada",
@@ -5420,7 +6286,9 @@
           },
           "csatByComplexity": {},
           "csatCountByComplexity": {},
-          "spamCases": 0
+          "spamCases": 0,
+          "csatPct": null,
+          "jira": null
         }
       ],
       "complexityBuckets": {
@@ -5830,7 +6698,100 @@
             "9": 1,
             "2": 1
           },
-          "spamCases": 1
+          "spamCases": 1,
+          "csatPct": 100,
+          "jira": {
+            "total": 11,
+            "open": 3,
+            "done": 8,
+            "byProject": {
+              "DO": 8,
+              "TC": 2,
+              "WEB": 1
+            },
+            "recent": [
+              {
+                "key": "DO-44213",
+                "summary": "BE - APPLE_MAPS - T1 - OTHER []",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44213"
+              },
+              {
+                "key": "DO-44210",
+                "summary": "BE - APPLE_MAPS - T1 - AUTOMATION []",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44210"
+              },
+              {
+                "key": "DO-44209",
+                "summary": "BE - BING - T1 - AUTOMATION [\"ADDRESS_DISPLAY\"]",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44209"
+              },
+              {
+                "key": "DO-44208",
+                "summary": "BE - BING - T1 - OTHER []",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44208"
+              },
+              {
+                "key": "DO-44197",
+                "summary": "BE - APPLE_MAPS - T1 - WRONG_SYNC_STATUS [\"OPENINGHOURS\"]",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44197"
+              },
+              {
+                "key": "DO-44195",
+                "summary": "BE - SHOWMELOCAL - T3 - WRONG_SYNC_STATUS [\"WEBSITE\"]",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44195"
+              },
+              {
+                "key": "DO-44183",
+                "summary": "BE - EZLOCAL - T3 - WRONG_SYNC_STATUS [\"PHONE\"]",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44183"
+              },
+              {
+                "key": "DO-44179",
+                "summary": "BE - MAP_QUEST - T2 - OTHER [\"LATITUDE\",\"LONGITUDE\",\"OPENINGHOURS\"]",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44179"
+              },
+              {
+                "key": "TC-27929",
+                "summary": "BE - ABC - Force Connect location to ABC business",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27929"
+              },
+              {
+                "key": "WEB-5642",
+                "summary": "LP  - Banner update Coffee Time + Robin's Donuts",
+                "status": "Closed",
+                "project": "WEB",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/WEB-5642"
+              }
+            ]
+          }
         },
         {
           "name": "J\u00fcrgen S\u00f6men",
@@ -5924,7 +6885,100 @@
             "2": 2,
             "4": 1
           },
-          "spamCases": 2
+          "spamCases": 2,
+          "csatPct": 90,
+          "jira": {
+            "total": 11,
+            "open": 4,
+            "done": 7,
+            "byProject": {
+              "TC": 6,
+              "DO": 2,
+              "REP": 3
+            },
+            "recent": [
+              {
+                "key": "TC-28024",
+                "summary": "BE - GOOGLE - T1 - WRONG_SYNC_STATUS [\"PHOTOS\"]",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-28024"
+              },
+              {
+                "key": "DO-44198",
+                "summary": "BE - BING - T1 - WRONG_SYNC_STATUS [\"STREET\",\"STREET_NO\"]",
+                "status": "Waiting",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44198"
+              },
+              {
+                "key": "DO-44190",
+                "summary": "GPS - claim a location",
+                "status": "More info needed",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44190"
+              },
+              {
+                "key": "TC-27978",
+                "summary": "LH - locations - suggested changes for Attributes",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27978"
+              },
+              {
+                "key": "REP-6367",
+                "summary": "BE - Inbox - no notification for new review sent",
+                "status": "Dev Close",
+                "project": "REP",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/REP-6367"
+              },
+              {
+                "key": "REP-6368",
+                "summary": "BE - Inbox - error when responding to Facebook recommendation - Multi-Business Brand Page",
+                "status": "OPEN",
+                "project": "REP",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/REP-6368"
+              },
+              {
+                "key": "REP-6387",
+                "summary": "BE - Review Tile - review not displayed on the website widget after 48.5 hours",
+                "status": "OPEN",
+                "project": "REP",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/REP-6387"
+              },
+              {
+                "key": "TC-27926",
+                "summary": "Google Post deletion was only partially done",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27926"
+              },
+              {
+                "key": "TC-27924",
+                "summary": "Wrong country doesn't change after cleansing",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27924"
+              },
+              {
+                "key": "TC-27921",
+                "summary": "BE - StoreLocator Widget - does not load",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27921"
+              }
+            ]
+          }
         },
         {
           "name": "Vincent Riehl",
@@ -6017,7 +7071,44 @@
             "10": 1,
             "2": 1
           },
-          "spamCases": 4
+          "spamCases": 4,
+          "csatPct": 86,
+          "jira": {
+            "total": 3,
+            "open": 1,
+            "done": 2,
+            "byProject": {
+              "REP": 1,
+              "TC": 1,
+              "LIS": 1
+            },
+            "recent": [
+              {
+                "key": "REP-6369",
+                "summary": "BE - Inbox - Something went wrong while fetching comments",
+                "status": "OPEN",
+                "project": "REP",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/REP-6369"
+              },
+              {
+                "key": "TC-27983",
+                "summary": "BE - Setup of MB query on FTP",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27983"
+              },
+              {
+                "key": "LIS-6599",
+                "summary": "FE - Dashboard - Error Google connection displayed when it should not be",
+                "status": "Dev Close",
+                "project": "LIS",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/LIS-6599"
+              }
+            ]
+          }
         },
         {
           "name": "Rida Malouh",
@@ -6103,7 +7194,67 @@
             "6": 2,
             "9": 1
           },
-          "spamCases": 4
+          "spamCases": 4,
+          "csatPct": 100,
+          "jira": {
+            "total": 6,
+            "open": 2,
+            "done": 4,
+            "byProject": {
+              "DO": 5,
+              "LIS": 1
+            },
+            "recent": [
+              {
+                "key": "DO-44177",
+                "summary": "BE - BING - T1 - OTHER",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44177"
+              },
+              {
+                "key": "DO-44163",
+                "summary": "TASK - APPLE - Apple Maps shows outdated duplicate listings",
+                "status": "Waiting",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44163"
+              },
+              {
+                "key": "DO-44170",
+                "summary": "BE - APPLE_MAPS - T1 - AUTOMATION []",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44170"
+              },
+              {
+                "key": "DO-44169",
+                "summary": "BE - APPLE_MAPS - T1 - AUTOMATION []",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44169"
+              },
+              {
+                "key": "LIS-6571",
+                "summary": "FE - GOOGLE IMPORT - Multi Business Manager role cannot use \u201cImport from Google\u201d due to incorrect permission check",
+                "status": "Closed",
+                "project": "LIS",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/LIS-6571"
+              },
+              {
+                "key": "DO-44154",
+                "summary": "GOOGLE - TYREDATING - CLAIMING LISTINGS",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44154"
+              }
+            ]
+          }
         },
         {
           "name": "Victoria Sene R\u00edos",
@@ -6191,7 +7342,51 @@
             "4": 1,
             "6": 1
           },
-          "spamCases": 2
+          "spamCases": 2,
+          "csatPct": 100,
+          "jira": {
+            "total": 4,
+            "open": 3,
+            "done": 1,
+            "byProject": {
+              "DO": 3,
+              "TC": 1
+            },
+            "recent": [
+              {
+                "key": "DO-44196",
+                "summary": "BE - APPLE_MAPS - T1 - WRONG_SYNC_STATUS [\"OPENINGHOURS\"]",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44196"
+              },
+              {
+                "key": "DO-44194",
+                "summary": "BE - BING - T1 - AUTOMATION [\"WEBSITE\",\"PHOTOS\",\"SPECIAL_OPENINGHOURS\"]",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44194"
+              },
+              {
+                "key": "DO-44184",
+                "summary": "BE - BING - T1 - OTHER []",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44184"
+              },
+              {
+                "key": "TC-27966",
+                "summary": " SP 2022 RECOVERY - TRIPADVISOR LISTING URL - WRONG TA LISTING URL TO LOCATION LINKED ",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27966"
+              }
+            ]
+          }
         },
         {
           "name": "Stephan Duerrnagel",
@@ -6289,7 +7484,101 @@
             "8": 1,
             "0": 1
           },
-          "spamCases": 81
+          "spamCases": 81,
+          "csatPct": 91,
+          "jira": {
+            "total": 14,
+            "open": 6,
+            "done": 8,
+            "byProject": {
+              "MOB": 1,
+              "DO": 9,
+              "REP": 1,
+              "TC": 3
+            },
+            "recent": [
+              {
+                "key": "MOB-1548",
+                "summary": "FE- UBI- unable to set opening hours via APP",
+                "status": "Closed",
+                "project": "MOB",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/MOB-1548"
+              },
+              {
+                "key": "DO-44207",
+                "summary": "BE - APPLE_MAPS - T1 - WRONG_SYNC_STATUS [\"OPENINGHOURS\"]",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44207"
+              },
+              {
+                "key": "REP-6371",
+                "summary": "FE- Review Management - inbox- blank page when selecting a review",
+                "status": "OPEN",
+                "project": "REP",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/REP-6371"
+              },
+              {
+                "key": "TC-27985",
+                "summary": "BE - GOOGLE - T1 - OTHER [\"SERVICE_AREAS\"]",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27985"
+              },
+              {
+                "key": "DO-44189",
+                "summary": "Task- GPS- Google listing verification assistance",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44189"
+              },
+              {
+                "key": "DO-44219",
+                "summary": "GPS: locations in 'pending edits' stuck in GMB",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44219"
+              },
+              {
+                "key": "DO-44187",
+                "summary": "FE- Apple Maps- directions routes to wrong pin location",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44187"
+              },
+              {
+                "key": "DO-44178",
+                "summary": "BE - BING - T1 - OTHER [\"STREET\",\"CITY\",\"CATEGORIES\",\"LATITUDE\",\"LONGITUDE\"]",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44178"
+              },
+              {
+                "key": "DO-44173",
+                "summary": "BE - BING - T1 - WRONG_SYNC_STATUS [\"NAME\"]",
+                "status": "Waiting",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44173"
+              },
+              {
+                "key": "DO-44174",
+                "summary": "BE - BING - T1 - WRONG_SYNC_STATUS [\"NAME\"]",
+                "status": "Waiting",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44174"
+              }
+            ]
+          }
         },
         {
           "name": "Maria Fontiveros Villasana",
@@ -6380,7 +7669,92 @@
             "6": 1,
             "5": 2
           },
-          "spamCases": 1
+          "spamCases": 1,
+          "csatPct": 83,
+          "jira": {
+            "total": 9,
+            "open": 3,
+            "done": 6,
+            "byProject": {
+              "TC": 3,
+              "DO": 5,
+              "WEB": 1
+            },
+            "recent": [
+              {
+                "key": "TC-28014",
+                "summary": "BE - Locations: Add new Category",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-28014"
+              },
+              {
+                "key": "TC-28011",
+                "summary": "BE - Locations - Category: Translate Category to Finnish",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-28011"
+              },
+              {
+                "key": "DO-44191",
+                "summary": "Change Google verification method",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44191"
+              },
+              {
+                "key": "WEB-5661",
+                "summary": "FE - Analytic - Locator & Pages missing data",
+                "status": "Closed",
+                "project": "WEB",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/WEB-5661"
+              },
+              {
+                "key": "DO-44182",
+                "summary": "BE - BING - T1 - WRONG_SYNC_STATUS [\"NAME\"]",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44182"
+              },
+              {
+                "key": "DO-44181",
+                "summary": "BE - BING - T1 - NOT_IN_SYNC",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44181"
+              },
+              {
+                "key": "DO-44180",
+                "summary": "BE - BING - T1 - WRONG_SYNC_STATUS [\"NAME\"]",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44180"
+              },
+              {
+                "key": "TC-27918",
+                "summary": "BE - APPLE_MAPS - T1 - OTHER",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27918"
+              },
+              {
+                "key": "DO-44160",
+                "summary": "BE - APPLE_MAPS - T1 - OTHER []",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44160"
+              }
+            ]
+          }
         },
         {
           "name": "Jhonric Canillo",
@@ -6469,7 +7843,70 @@
             "10": 2,
             "2": 1
           },
-          "spamCases": 4
+          "spamCases": 4,
+          "csatPct": 100,
+          "jira": {
+            "total": 6,
+            "open": 2,
+            "done": 4,
+            "byProject": {
+              "DO": 2,
+              "TC": 1,
+              "WEB": 1,
+              "LIS": 1,
+              "PP": 1
+            },
+            "recent": [
+              {
+                "key": "DO-44214",
+                "summary": "BE - YELP_API - T1 - OTHER [\"PHOTOS\"]",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44214"
+              },
+              {
+                "key": "TC-28002",
+                "summary": "Delete business group with \"0\" locations- Boostninja",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-28002"
+              },
+              {
+                "key": "DO-44185",
+                "summary": "BE - APPLE_MAPS - Incorrect Hours",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44185"
+              },
+              {
+                "key": "WEB-5654",
+                "summary": "Web - Visionworks - Remove Image Badge from Footer by EOD Friday May 29",
+                "status": "Closed",
+                "project": "WEB",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/WEB-5654"
+              },
+              {
+                "key": "LIS-6580",
+                "summary": "BE - Directories_updating status are Inactive on BE and Updating on FE",
+                "status": "OPEN",
+                "project": "LIS",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/LIS-6580"
+              },
+              {
+                "key": "PP-1458",
+                "summary": "Subscribe Yelp listings_Weed Man",
+                "status": "To Do",
+                "project": "PP",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/PP-1458"
+              }
+            ]
+          }
         },
         {
           "name": "Anna-Christin Voigt",
@@ -6541,7 +7978,26 @@
           },
           "csatByComplexity": {},
           "csatCountByComplexity": {},
-          "spamCases": 149
+          "spamCases": 149,
+          "csatPct": null,
+          "jira": {
+            "total": 1,
+            "open": 0,
+            "done": 1,
+            "byProject": {
+              "TC": 1
+            },
+            "recent": [
+              {
+                "key": "TC-27973",
+                "summary": "FE - Whitelabel - SSL certificate issue",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27973"
+              }
+            ]
+          }
         },
         {
           "name": "Patrick Paul Bayor",
@@ -6628,7 +8084,78 @@
             "9": 2,
             "10": 1
           },
-          "spamCases": 1
+          "spamCases": 1,
+          "csatPct": 100,
+          "jira": {
+            "total": 7,
+            "open": 2,
+            "done": 5,
+            "byProject": {
+              "DO": 3,
+              "LIS": 1,
+              "WEB": 1,
+              "REP": 1,
+              "TC": 1
+            },
+            "recent": [
+              {
+                "key": "DO-44211",
+                "summary": "BE - YELP_API - T1 - NOT_IN_SYNC [\"WEBSITE\"]",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44211"
+              },
+              {
+                "key": "LIS-6584",
+                "summary": "BE - Google Import - Locations import but not found",
+                "status": "Dev Close",
+                "project": "LIS",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/LIS-6584"
+              },
+              {
+                "key": "WEB-5653",
+                "summary": "LLP - Chairman's Brands - Remove \"Delivery\" text from Header area of LP",
+                "status": "Ready for Prod",
+                "project": "WEB",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/WEB-5653"
+              },
+              {
+                "key": "DO-44171",
+                "summary": "BE - YELP_API - T1 - NOT_IN_SYNC [\"OPENING_HOURS\", \"ADDRESS_DISPLAY\"]",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44171"
+              },
+              {
+                "key": "DO-44172",
+                "summary": "BE - YELP_API - T1 - No Yelp page connected",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44172"
+              },
+              {
+                "key": "REP-6370",
+                "summary": "Review - BE - Send Review Request not saving template",
+                "status": "Closed",
+                "project": "REP",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/REP-6370"
+              },
+              {
+                "key": "TC-27906",
+                "summary": "FE - Analytics - Sentiment Report under Reputation redirects to Home",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27906"
+              }
+            ]
+          }
         },
         {
           "name": "John Paul Pineda",
@@ -6711,7 +8238,68 @@
             "10": 1,
             "5": 1
           },
-          "spamCases": 1
+          "spamCases": 1,
+          "csatPct": 100,
+          "jira": {
+            "total": 6,
+            "open": 3,
+            "done": 3,
+            "byProject": {
+              "LIS": 1,
+              "DO": 4,
+              "TC": 1
+            },
+            "recent": [
+              {
+                "key": "LIS-6594",
+                "summary": "BE - Google Import - Review location address import process when importing from Google",
+                "status": "Review",
+                "project": "LIS",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/LIS-6594"
+              },
+              {
+                "key": "DO-44216",
+                "summary": "BE - CHAMBER_OF_COMMERCE - T3 - WRONG_SYNC_STATUS [\"PHONE\"]",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44216"
+              },
+              {
+                "key": "TC-28025",
+                "summary": "BE/FE - Mark location as closed on listings - Bloom Ads",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-28025"
+              },
+              {
+                "key": "DO-44199",
+                "summary": "BE - BING - T1 - WRONG_SYNC_STATUS [\"CATEGORIES\"]",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44199"
+              },
+              {
+                "key": "DO-44162",
+                "summary": "GPS - Google listing access request - CMG",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44162"
+              },
+              {
+                "key": "DO-44168",
+                "summary": "BE - BING - T1 - WRONG_SYNC_STATUS [\"PHOTOS\"]",
+                "status": "Waiting",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44168"
+              }
+            ]
+          }
         },
         {
           "name": "Fernando Viana",
@@ -6795,7 +8383,101 @@
           "csatCountByComplexity": {
             "4": 1
           },
-          "spamCases": 0
+          "spamCases": 0,
+          "csatPct": 100,
+          "jira": {
+            "total": 12,
+            "open": 5,
+            "done": 7,
+            "byProject": {
+              "DO": 5,
+              "WEB": 1,
+              "TC": 5,
+              "CS": 1
+            },
+            "recent": [
+              {
+                "key": "DO-44215",
+                "summary": "BE - APPLE_MAPS - T1 - NOT_IN_SYNC []",
+                "status": "More info needed",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44215"
+              },
+              {
+                "key": "WEB-5663",
+                "summary": "LP - FE - VISIONWORKS - UPDATE FOOTER LOGO",
+                "status": "Ready for Prod",
+                "project": "WEB",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/WEB-5663"
+              },
+              {
+                "key": "TC-28035",
+                "summary": "LH - Sublocality - Apple Not Submitting Due to Lack of Sublocality",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-28035"
+              },
+              {
+                "key": "DO-44250",
+                "summary": "BE - DOCTOR_COM - T2 - WRONG_SYNC_STATUS [\"DESCRIPTION_LONG\",\"PHOTOS\",\"PHONE\",\"STREET_NO\"]",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44250"
+              },
+              {
+                "key": "TC-28004",
+                "summary": "FE/BE - MOUNTAIN MIKE'S PIZZA - FACEBOOK CONNECTION",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-28004"
+              },
+              {
+                "key": "DO-44200",
+                "summary": "BE - BING - T1 - AUTOMATION [\"PHOTOS\"]",
+                "status": "Waiting",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44200"
+              },
+              {
+                "key": "CS-867",
+                "summary": "BE - Feed - Google review discrepancies across GBP locations ",
+                "status": "OPEN",
+                "project": "CS",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/CS-867"
+              },
+              {
+                "key": "TC-27946",
+                "summary": "BE - US_INFO_COM - T3 - WRONG_SYNC_STATUS [\"OPENINGHOURS\"]",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27946"
+              },
+              {
+                "key": "TC-27945",
+                "summary": "BE - US_CITY - T3 - NOT_IN_SYNC [\"DESCRIPTION_LONG\",\"OPENINGHOURS\"]",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27945"
+              },
+              {
+                "key": "DO-44165",
+                "summary": "BE - NEXT_DOOR - T2 - WRONG_SYNC_STATUS [\"OPENINGHOURS\"]",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44165"
+              }
+            ]
+          }
         },
         {
           "name": "Joel Alob",
@@ -6877,7 +8559,51 @@
           "csatCountByComplexity": {
             "4": 1
           },
-          "spamCases": 2
+          "spamCases": 2,
+          "csatPct": 100,
+          "jira": {
+            "total": 4,
+            "open": 1,
+            "done": 3,
+            "byProject": {
+              "DO": 2,
+              "TC": 2
+            },
+            "recent": [
+              {
+                "key": "DO-44175",
+                "summary": "BE - YELP_API - T1 - OTHER []",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44175"
+              },
+              {
+                "key": "DO-44167",
+                "summary": "BE - MAP_QUEST - T2 - OTHER [\"LATITUDE\",\"LONGITUDE\",\"OPENINGHOURS\"]",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44167"
+              },
+              {
+                "key": "TC-27936",
+                "summary": "FE - Sage Dental - Error while connecting yelp",
+                "status": "Blocked",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27936"
+              },
+              {
+                "key": "TC-27905",
+                "summary": "BE - GOOGLE - T1 - OTHER []",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27905"
+              }
+            ]
+          }
         },
         {
           "name": "Ryan Quinn",
@@ -6944,7 +8670,26 @@
           "csatCountByComplexity": {
             "5": 1
           },
-          "spamCases": 0
+          "spamCases": 0,
+          "csatPct": 0,
+          "jira": {
+            "total": 1,
+            "open": 1,
+            "done": 0,
+            "byProject": {
+              "SOC": 1
+            },
+            "recent": [
+              {
+                "key": "SOC-4815",
+                "summary": "BE - Social - LinkedIn Post Failure",
+                "status": "OPEN",
+                "project": "SOC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/SOC-4815"
+              }
+            ]
+          }
         },
         {
           "name": "Geneca Rapada",
@@ -7006,7 +8751,59 @@
           },
           "csatByComplexity": {},
           "csatCountByComplexity": {},
-          "spamCases": 0
+          "spamCases": 0,
+          "csatPct": null,
+          "jira": {
+            "total": 5,
+            "open": 2,
+            "done": 3,
+            "byProject": {
+              "DO": 4,
+              "TC": 1
+            },
+            "recent": [
+              {
+                "key": "DO-44217",
+                "summary": "BE - WHERE_TO - T3 - WRONG_SYNC_STATUS [\"PHOTOS\"]",
+                "status": "Waiting",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44217"
+              },
+              {
+                "key": "DO-44212",
+                "summary": "BE - NEXT_DOOR - T2 - WRONG_SYNC_STATUS",
+                "status": "Waiting",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44212"
+              },
+              {
+                "key": "DO-44225",
+                "summary": "BE - YELLOW_PAGES - Listing not reflecting recent updates",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44225"
+              },
+              {
+                "key": "DO-44166",
+                "summary": "BE - APPLE_MAPS - T1 - NOT_IN_SYNC []",
+                "status": "Done",
+                "project": "DO",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/DO-44166"
+              },
+              {
+                "key": "TC-27941",
+                "summary": "FE - Adding Manager - Super Admin User can't invite new users to Business",
+                "status": "Done",
+                "project": "TC",
+                "created": "",
+                "url": "https://uberall.atlassian.net/browse/TC-27941"
+              }
+            ]
+          }
         }
       ],
       "complexityBuckets": {
