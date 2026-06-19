@@ -6812,9 +6812,15 @@
       },
       "kpis": {
         "total": 2107,
+        "open": 616,
+        "queueBacklog": 70,
+        "spamCount": 302,
         "avgFirstResp": 3.0,
+        "avgV1": 3.0,
+        "avgComplexity": 3.11,
         "avgResolution": 30.5,
         "avgCsat": 9.4,
+        "avgCsatPct": 94.0,
         "csatTotalReceived": 65
       },
       "agentData": [
@@ -6847,19 +6853,103 @@
               "WEB": 1
             }
           },
-          "complexityDist": [
-            53,
-            66,
-            58,
-            32,
-            43,
-            27,
-            17,
-            4,
-            2,
-            0,
-            0
-          ],
+          "jira": {
+            "total": 29,
+            "open": 12,
+            "done": 17,
+            "byProject": {
+              "DO": 18,
+              "TC": 8,
+              "WEB": 3
+            },
+            "byStatus": {
+              "Done": 15,
+              "In Progress": 9,
+              "Blocked": 2,
+              "Dev Close": 1,
+              "OPEN": 1,
+              "Closed": 1
+            },
+            "recent": [
+              {
+                "key": "DO-44394",
+                "summary": "BE - TUPALO - Update category",
+                "status": "Done",
+                "project": "DO",
+                "created": "2026-06-17",
+                "url": "https://uberall.atlassian.net/browse/DO-44394"
+              },
+              {
+                "key": "TC-28340",
+                "summary": "FE - Approved review reply not clearing from Approval required  list",
+                "status": "Blocked",
+                "project": "TC",
+                "created": "2026-06-17",
+                "url": "https://uberall.atlassian.net/browse/TC-28340"
+              },
+              {
+                "key": "DO-44375",
+                "summary": "BE - YELP_API - Displaying wrong name and category",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-16",
+                "url": "https://uberall.atlassian.net/browse/DO-44375"
+              },
+              {
+                "key": "TC-28319",
+                "summary": "App - Social posting issues",
+                "status": "Done",
+                "project": "TC",
+                "created": "2026-06-16",
+                "url": "https://uberall.atlassian.net/browse/TC-28319"
+              },
+              {
+                "key": "DO-44368",
+                "summary": "BE - APPLE_MAPS - T1 - AUTOMATION []",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-16",
+                "url": "https://uberall.atlassian.net/browse/DO-44368"
+              },
+              {
+                "key": "TC-28285",
+                "summary": "BE - BING - T1 - AUTOMATION []",
+                "status": "Blocked",
+                "project": "TC",
+                "created": "2026-06-15",
+                "url": "https://uberall.atlassian.net/browse/TC-28285"
+              },
+              {
+                "key": "DO-44335",
+                "summary": "BE - BING - T1 - AUTOMATION [\"ATTRIBUTES\"]",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-12",
+                "url": "https://uberall.atlassian.net/browse/DO-44335"
+              },
+              {
+                "key": "DO-44342",
+                "summary": "DO - Yelp - Claim Locations",
+                "status": "Done",
+                "project": "DO",
+                "created": "2026-06-12",
+                "url": "https://uberall.atlassian.net/browse/DO-44342"
+              }
+            ]
+          },
+          "avgV1": 2.48,
+          "avgComplexity": 2.43,
+          "complexityDist": {
+            "0": 53,
+            "1": 66,
+            "2": 58,
+            "3": 32,
+            "4": 43,
+            "5": 27,
+            "6": 17,
+            "7": 4,
+            "8": 2
+          },
           "hbrByComplexity": {
             "2": 48.0,
             "1": 39.2,
@@ -6895,6 +6985,11 @@
             "5": 10.0,
             "1": 10.0,
             "4": 10.0
+          },
+          "csatCountByComplexity": {
+            "5": 1,
+            "1": 1,
+            "4": 1
           }
         },
         {
@@ -6930,19 +7025,112 @@
               "ACMO": 1
             }
           },
-          "complexityDist": [
-            11,
-            58,
-            29,
-            20,
-            40,
-            18,
-            27,
-            7,
-            3,
-            3,
-            0
-          ],
+          "jira": {
+            "total": 59,
+            "open": 26,
+            "done": 33,
+            "byProject": {
+              "TC": 24,
+              "DO": 21,
+              "REP": 4,
+              "AR": 3,
+              "LH": 3,
+              "ACMO": 3,
+              "LIS": 1
+            },
+            "byStatus": {
+              "Done": 30,
+              "OPEN": 10,
+              "In Progress": 7,
+              "Waiting": 5,
+              "Closed": 2,
+              "To Do": 1,
+              "Blocked": 1,
+              "Ready for Prod": 1,
+              "More info needed": 1,
+              "Dev Close": 1
+            },
+            "recent": [
+              {
+                "key": "REP-6425",
+                "summary": "Apple Maps, please remove a duplicate",
+                "status": "OPEN",
+                "project": "REP",
+                "created": "2026-06-18",
+                "url": "https://uberall.atlassian.net/browse/REP-6425"
+              },
+              {
+                "key": "DO-44408",
+                "summary": "GBPro - Google policy violation and Business Profile suspended",
+                "status": "To Do",
+                "project": "DO",
+                "created": "2026-06-18",
+                "url": "https://uberall.atlassian.net/browse/DO-44408"
+              },
+              {
+                "key": "LIS-6664",
+                "summary": "BE - location - no sync check after altering location in the FE",
+                "status": "OPEN",
+                "project": "LIS",
+                "created": "2026-06-18",
+                "url": "https://uberall.atlassian.net/browse/LIS-6664"
+              },
+              {
+                "key": "TC-28337",
+                "summary": "Sandbox - user can not see locations",
+                "status": "Blocked",
+                "project": "TC",
+                "created": "2026-06-17",
+                "url": "https://uberall.atlassian.net/browse/TC-28337"
+              },
+              {
+                "key": "DO-44386",
+                "summary": "BE - BING - T1 - WRONG_SYNC_STATUS [\"ZIP\"]",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-17",
+                "url": "https://uberall.atlassian.net/browse/DO-44386"
+              },
+              {
+                "key": "TC-28330",
+                "summary": "Check Apple Business Connect data pipeline for Rodericks Dental Partners",
+                "status": "Done",
+                "project": "TC",
+                "created": "2026-06-17",
+                "url": "https://uberall.atlassian.net/browse/TC-28330"
+              },
+              {
+                "key": "TC-28309",
+                "summary": "BE - 1&1 Ionos - LOCK on item fails: \"subscription is already canceled\"",
+                "status": "Done",
+                "project": "TC",
+                "created": "2026-06-16",
+                "url": "https://uberall.atlassian.net/browse/TC-28309"
+              },
+              {
+                "key": "DO-44369",
+                "summary": "GPS - claim page",
+                "status": "Done",
+                "project": "DO",
+                "created": "2026-06-16",
+                "url": "https://uberall.atlassian.net/browse/DO-44369"
+              }
+            ]
+          },
+          "avgV1": 2.44,
+          "avgComplexity": 3.16,
+          "complexityDist": {
+            "0": 11,
+            "1": 58,
+            "2": 29,
+            "3": 20,
+            "4": 40,
+            "5": 18,
+            "6": 27,
+            "7": 7,
+            "8": 3,
+            "9": 3
+          },
           "hbrByComplexity": {
             "4": 27.0,
             "2": 28.7,
@@ -6985,6 +7173,13 @@
             "5": 10.0,
             "3": 10.0,
             "0": 10.0
+          },
+          "csatCountByComplexity": {
+            "4": 4,
+            "8": 1,
+            "5": 1,
+            "3": 1,
+            "0": 1
           }
         },
         {
@@ -7013,19 +7208,110 @@
               "DO": 4
             }
           },
-          "complexityDist": [
-            12,
-            47,
-            34,
-            39,
-            28,
-            10,
-            15,
-            5,
-            5,
-            4,
-            0
-          ],
+          "jira": {
+            "total": 34,
+            "open": 19,
+            "done": 15,
+            "byProject": {
+              "DO": 15,
+              "TC": 9,
+              "REP": 3,
+              "LIS": 3,
+              "LH": 2,
+              "AR": 1,
+              "IN": 1
+            },
+            "byStatus": {
+              "Done": 11,
+              "In Progress": 9,
+              "OPEN": 5,
+              "Backlog": 3,
+              "Dev Close": 3,
+              "Waiting": 1,
+              "Review": 1,
+              "Closed": 1
+            },
+            "recent": [
+              {
+                "key": "TC-28372",
+                "summary": "DO - TomTom - Listing deactivated",
+                "status": "Backlog",
+                "project": "TC",
+                "created": "2026-06-18",
+                "url": "https://uberall.atlassian.net/browse/TC-28372"
+              },
+              {
+                "key": "DO-44402",
+                "summary": "DO - Task - Claim Google listings ",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-17",
+                "url": "https://uberall.atlassian.net/browse/DO-44402"
+              },
+              {
+                "key": "DO-44358",
+                "summary": "DO - AM - Full audit on ",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-15",
+                "url": "https://uberall.atlassian.net/browse/DO-44358"
+              },
+              {
+                "key": "DO-44354",
+                "summary": "BE - GOOGLE - T1 - WRONG_SYNC_STATUS [\"MORE_HOURS\",\"OPENINGHOURS\"]",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-15",
+                "url": "https://uberall.atlassian.net/browse/DO-44354"
+              },
+              {
+                "key": "DO-44351",
+                "summary": "DO - Create new Google listing",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-15",
+                "url": "https://uberall.atlassian.net/browse/DO-44351"
+              },
+              {
+                "key": "DO-44333",
+                "summary": "DO - Bing - Wrong address",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-12",
+                "url": "https://uberall.atlassian.net/browse/DO-44333"
+              },
+              {
+                "key": "AR-5415",
+                "summary": "BE - Analytics - Discrepancy on responses rate between AA and Inbox",
+                "status": "OPEN",
+                "project": "AR",
+                "created": "2026-06-12",
+                "url": "https://uberall.atlassian.net/browse/AR-5415"
+              },
+              {
+                "key": "LH-894",
+                "summary": "BE - Pull API - Sublocality gets pulled instead of the city",
+                "status": "OPEN",
+                "project": "LH",
+                "created": "2026-06-12",
+                "url": "https://uberall.atlassian.net/browse/LH-894"
+              }
+            ]
+          },
+          "avgV1": 2.4,
+          "avgComplexity": 3.03,
+          "complexityDist": {
+            "0": 12,
+            "1": 47,
+            "2": 34,
+            "3": 39,
+            "4": 28,
+            "5": 10,
+            "6": 15,
+            "7": 5,
+            "8": 5,
+            "9": 4
+          },
           "hbrByComplexity": {
             "6": 36.2,
             "1": 12.4,
@@ -7066,6 +7352,12 @@
             "9": 5.0,
             "4": 1.0,
             "6": 10.0
+          },
+          "csatCountByComplexity": {
+            "3": 1,
+            "9": 1,
+            "4": 1,
+            "6": 1
           }
         },
         {
@@ -7094,19 +7386,108 @@
               "DO": 4
             }
           },
-          "complexityDist": [
-            14,
-            43,
-            32,
-            28,
-            25,
-            27,
-            11,
-            6,
-            5,
-            2,
-            1
-          ],
+          "jira": {
+            "total": 28,
+            "open": 13,
+            "done": 15,
+            "byProject": {
+              "DO": 16,
+              "TC": 8,
+              "SOC": 2,
+              "AR": 1,
+              "IN": 1
+            },
+            "byStatus": {
+              "Done": 14,
+              "In Progress": 5,
+              "OPEN": 3,
+              "To Do": 2,
+              "Waiting": 2,
+              "More info needed": 1,
+              "Closed": 1
+            },
+            "recent": [
+              {
+                "key": "DO-44405",
+                "summary": "GOOGLE - TYREDATING - CLAIMING",
+                "status": "To Do",
+                "project": "DO",
+                "created": "2026-06-18",
+                "url": "https://uberall.atlassian.net/browse/DO-44405"
+              },
+              {
+                "key": "DO-44374",
+                "summary": "TASK - M\u00e9tropolis Charging - Ghost listings audit",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-16",
+                "url": "https://uberall.atlassian.net/browse/DO-44374"
+              },
+              {
+                "key": "DO-44359",
+                "summary": "GOOGLE - SHELL - APPEAL DISABLED LISTING",
+                "status": "Done",
+                "project": "DO",
+                "created": "2026-06-15",
+                "url": "https://uberall.atlassian.net/browse/DO-44359"
+              },
+              {
+                "key": "DO-44353",
+                "summary": "TASK - Request Google Review Removal",
+                "status": "To Do",
+                "project": "DO",
+                "created": "2026-06-15",
+                "url": "https://uberall.atlassian.net/browse/DO-44353"
+              },
+              {
+                "key": "TC-28261",
+                "summary": "FE - Navigation - Submenu not opening for Whitelabel",
+                "status": "In Progress",
+                "project": "TC",
+                "created": "2026-06-12",
+                "url": "https://uberall.atlassian.net/browse/TC-28261"
+              },
+              {
+                "key": "SOC-4837",
+                "summary": "Social - FE - Calendar component jumps vertically when navigating to future date",
+                "status": "OPEN",
+                "project": "SOC",
+                "created": "2026-06-11",
+                "url": "https://uberall.atlassian.net/browse/SOC-4837"
+              },
+              {
+                "key": "SOC-4836",
+                "summary": "Social - FE - Remove automatic \u201ccopy\u201d text when duplicating posts",
+                "status": "OPEN",
+                "project": "SOC",
+                "created": "2026-06-11",
+                "url": "https://uberall.atlassian.net/browse/SOC-4836"
+              },
+              {
+                "key": "TC-28190",
+                "summary": "TASK - Re-activate SP",
+                "status": "Done",
+                "project": "TC",
+                "created": "2026-06-10",
+                "url": "https://uberall.atlassian.net/browse/TC-28190"
+              }
+            ]
+          },
+          "avgV1": 2.35,
+          "avgComplexity": 3.1,
+          "complexityDist": {
+            "0": 14,
+            "1": 43,
+            "2": 32,
+            "3": 28,
+            "4": 25,
+            "5": 27,
+            "6": 11,
+            "7": 6,
+            "8": 5,
+            "9": 2,
+            "10": 1
+          },
           "hbrByComplexity": {
             "4": 15.7,
             "6": 33.8,
@@ -7149,6 +7530,11 @@
             "7": 10.0,
             "8": 10.0,
             "5": 10.0
+          },
+          "csatCountByComplexity": {
+            "7": 2,
+            "8": 1,
+            "5": 1
           }
         },
         {
@@ -7182,19 +7568,110 @@
               "MOB": 1
             }
           },
-          "complexityDist": [
-            7,
-            43,
-            19,
-            13,
-            26,
-            33,
-            21,
-            14,
-            6,
-            3,
-            2
-          ],
+          "jira": {
+            "total": 39,
+            "open": 21,
+            "done": 18,
+            "byProject": {
+              "DO": 18,
+              "TC": 16,
+              "MOB": 2,
+              "AR": 1,
+              "LIS": 1,
+              "REP": 1
+            },
+            "byStatus": {
+              "Done": 17,
+              "In Progress": 7,
+              "Blocked": 4,
+              "OPEN": 4,
+              "Waiting": 4,
+              "To Do": 1,
+              "Backlog": 1,
+              "Dev Close": 1
+            },
+            "recent": [
+              {
+                "key": "DO-44409",
+                "summary": "BE - BING - T1 - WRONG_SYNC_STATUS [\"OPENINGHOURS\"]",
+                "status": "To Do",
+                "project": "DO",
+                "created": "2026-06-18",
+                "url": "https://uberall.atlassian.net/browse/DO-44409"
+              },
+              {
+                "key": "TC-28314",
+                "summary": "FE - location profile - EV charging station details missing in some locations ",
+                "status": "Blocked",
+                "project": "TC",
+                "created": "2026-06-16",
+                "url": "https://uberall.atlassian.net/browse/TC-28314"
+              },
+              {
+                "key": "TC-28303",
+                "summary": "BE - GOOGLE - T1 - WRONG_SYNC_STATUS [\"OPENINGHOURS\"]",
+                "status": "Done",
+                "project": "TC",
+                "created": "2026-06-16",
+                "url": "https://uberall.atlassian.net/browse/TC-28303"
+              },
+              {
+                "key": "TC-28302",
+                "summary": "FE- Facebook pages connect error - error message \" unable to redirect to a  NON-",
+                "status": "Backlog",
+                "project": "TC",
+                "created": "2026-06-16",
+                "url": "https://uberall.atlassian.net/browse/TC-28302"
+              },
+              {
+                "key": "TC-28282",
+                "summary": "FE - SOCIAL POST - ERROR MESSAGE WHEN TRYING TO CREATE A GOOGLE POST AND SELECT ",
+                "status": "Done",
+                "project": "TC",
+                "created": "2026-06-15",
+                "url": "https://uberall.atlassian.net/browse/TC-28282"
+              },
+              {
+                "key": "DO-44355",
+                "summary": "BE - BING - T1 - WRONG_SYNC_STATUS [\"STREET\",\"STREET_NO\",\"SUBLOCALITY\",\"ZIP\"]",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-15",
+                "url": "https://uberall.atlassian.net/browse/DO-44355"
+              },
+              {
+                "key": "TC-28266",
+                "summary": "whitelabel ( EXIMIE)- IOS APP VERSION - app cannot be found in apple store ",
+                "status": "Done",
+                "project": "TC",
+                "created": "2026-06-15",
+                "url": "https://uberall.atlassian.net/browse/TC-28266"
+              },
+              {
+                "key": "MOB-1578",
+                "summary": "Mob - APP VERSION - open notification gives error message after update ",
+                "status": "OPEN",
+                "project": "MOB",
+                "created": "2026-06-15",
+                "url": "https://uberall.atlassian.net/browse/MOB-1578"
+              }
+            ]
+          },
+          "avgV1": 2.35,
+          "avgComplexity": 3.76,
+          "complexityDist": {
+            "0": 7,
+            "1": 43,
+            "2": 19,
+            "3": 13,
+            "4": 26,
+            "5": 33,
+            "6": 21,
+            "7": 14,
+            "8": 6,
+            "9": 3,
+            "10": 2
+          },
           "hbrByComplexity": {
             "7": 38.4,
             "5": 33.6,
@@ -7236,6 +7713,11 @@
             "8": 5.0,
             "3": 10.0,
             "6": 10.0
+          },
+          "csatCountByComplexity": {
+            "8": 1,
+            "3": 1,
+            "6": 1
           }
         },
         {
@@ -7268,19 +7750,108 @@
               "AC": 1
             }
           },
-          "complexityDist": [
-            13,
-            39,
-            28,
-            21,
-            21,
-            24,
-            12,
-            7,
-            5,
-            0,
-            0
-          ],
+          "jira": {
+            "total": 30,
+            "open": 15,
+            "done": 15,
+            "byProject": {
+              "DO": 13,
+              "TC": 12,
+              "LIS": 1,
+              "AC": 1,
+              "ACMO": 1,
+              "MOB": 1,
+              "REP": 1
+            },
+            "byStatus": {
+              "Done": 11,
+              "In Progress": 5,
+              "Backlog": 4,
+              "Closed": 4,
+              "Waiting": 3,
+              "OPEN": 2,
+              "More Work Needed": 1
+            },
+            "recent": [
+              {
+                "key": "TC-28370",
+                "summary": "BE - GO_YELLOW - T3 - OTHER",
+                "status": "In Progress",
+                "project": "TC",
+                "created": "2026-06-18",
+                "url": "https://uberall.atlassian.net/browse/TC-28370"
+              },
+              {
+                "key": "TC-28371",
+                "summary": "BE - MEINESTADT - T2 - OTHER",
+                "status": "Done",
+                "project": "TC",
+                "created": "2026-06-18",
+                "url": "https://uberall.atlassian.net/browse/TC-28371"
+              },
+              {
+                "key": "TC-28368",
+                "summary": "BE - INFOBEL - T2 - OTHER [\"NAME\",\"WEBSITE\",\"DESCRIPTION_LONG\"]",
+                "status": "Backlog",
+                "project": "TC",
+                "created": "2026-06-18",
+                "url": "https://uberall.atlassian.net/browse/TC-28368"
+              },
+              {
+                "key": "TC-28365",
+                "summary": "BE - GO_LOCAL - T3 - AUTOMATION []",
+                "status": "Backlog",
+                "project": "TC",
+                "created": "2026-06-18",
+                "url": "https://uberall.atlassian.net/browse/TC-28365"
+              },
+              {
+                "key": "TC-28361",
+                "summary": "FE- review management- review missing user notification",
+                "status": "Backlog",
+                "project": "TC",
+                "created": "2026-06-18",
+                "url": "https://uberall.atlassian.net/browse/TC-28361"
+              },
+              {
+                "key": "LIS-6662",
+                "summary": "Listing - Removal of child direcrtory",
+                "status": "Closed",
+                "project": "LIS",
+                "created": "2026-06-17",
+                "url": "https://uberall.atlassian.net/browse/LIS-6662"
+              },
+              {
+                "key": "TC-28335",
+                "summary": "Task: SSO User- add Sentiment Analysis for all SSO user with Advanced Analytics ",
+                "status": "Backlog",
+                "project": "TC",
+                "created": "2026-06-17",
+                "url": "https://uberall.atlassian.net/browse/TC-28335"
+              },
+              {
+                "key": "DO-44385",
+                "summary": "Task: GPS- claim google listings, assist with verification",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-17",
+                "url": "https://uberall.atlassian.net/browse/DO-44385"
+              }
+            ]
+          },
+          "avgV1": 2.42,
+          "avgComplexity": 3.04,
+          "complexityDist": {
+            "0": 13,
+            "1": 39,
+            "2": 28,
+            "3": 21,
+            "4": 21,
+            "5": 24,
+            "6": 12,
+            "7": 7,
+            "8": 5
+          },
           "hbrByComplexity": {
             "3": 3.1,
             "6": 6.2,
@@ -7322,6 +7893,15 @@
             "3": 10.0,
             "7": 10.0,
             "4": 10.0
+          },
+          "csatCountByComplexity": {
+            "1": 3,
+            "0": 1,
+            "5": 3,
+            "2": 1,
+            "3": 1,
+            "7": 1,
+            "4": 1
           }
         },
         {
@@ -7352,19 +7932,110 @@
               "LH": 1
             }
           },
-          "complexityDist": [
-            5,
-            26,
-            31,
-            15,
-            14,
-            19,
-            11,
-            7,
-            6,
-            0,
-            0
-          ],
+          "jira": {
+            "total": 23,
+            "open": 13,
+            "done": 10,
+            "byProject": {
+              "DO": 12,
+              "TC": 6,
+              "IN": 1,
+              "LH": 1,
+              "AR": 1,
+              "REP": 1,
+              "WEB": 1
+            },
+            "byStatus": {
+              "Done": 8,
+              "In Progress": 6,
+              "OPEN": 3,
+              "Blocked": 1,
+              "Dev Close": 1,
+              "To Do": 1,
+              "Waiting": 1,
+              "Backlog": 1,
+              "Closed": 1
+            },
+            "recent": [
+              {
+                "key": "TC-28341",
+                "summary": "SP 1898 Recovery Japan - Japanese Text Validation Issue in Apple Maps Posts",
+                "status": "Blocked",
+                "project": "TC",
+                "created": "2026-06-17",
+                "url": "https://uberall.atlassian.net/browse/TC-28341"
+              },
+              {
+                "key": "DO-44393",
+                "summary": "SP 4571 OCINE - Listings - Apple Maps: Incorrect Website linked",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-17",
+                "url": "https://uberall.atlassian.net/browse/DO-44393"
+              },
+              {
+                "key": "IN-1812",
+                "summary": "Tyredating - Home Page \u2013 \"Visibility Boosters\" Recommendations Do Not Reflect Ac",
+                "status": "Dev Close",
+                "project": "IN",
+                "created": "2026-06-17",
+                "url": "https://uberall.atlassian.net/browse/IN-1812"
+              },
+              {
+                "key": "DO-44387",
+                "summary": "SP 1231 BP - Listings - Google: Incorrect Service Displayed",
+                "status": "To Do",
+                "project": "DO",
+                "created": "2026-06-17",
+                "url": "https://uberall.atlassian.net/browse/DO-44387"
+              },
+              {
+                "key": "DO-44380",
+                "summary": "Listings - SP 3279 Barcel\u00f3 - Google: listing stuck in processing for too long",
+                "status": "Waiting",
+                "project": "DO",
+                "created": "2026-06-16",
+                "url": "https://uberall.atlassian.net/browse/DO-44380"
+              },
+              {
+                "key": "LH-901",
+                "summary": "FE - Location Hub - Address: Located in feature not displayed",
+                "status": "OPEN",
+                "project": "LH",
+                "created": "2026-06-16",
+                "url": "https://uberall.atlassian.net/browse/LH-901"
+              },
+              {
+                "key": "DO-44379",
+                "summary": "Listings - SP 1629 SEPHORA - Google: listing stuck in processing for too long",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-16",
+                "url": "https://uberall.atlassian.net/browse/DO-44379"
+              },
+              {
+                "key": "DO-44293",
+                "summary": "BE - APPLE_MAPS - T1 - WRONG_SYNC_STATUS [\"LATITUDE\",\"LONGITUDE\",\"ZIP\",\"STREET\",",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-09",
+                "url": "https://uberall.atlassian.net/browse/DO-44293"
+              }
+            ]
+          },
+          "avgV1": 2.4,
+          "avgComplexity": 3.39,
+          "complexityDist": {
+            "0": 5,
+            "1": 26,
+            "2": 31,
+            "3": 15,
+            "4": 14,
+            "5": 19,
+            "6": 11,
+            "7": 7,
+            "8": 6
+          },
           "hbrByComplexity": {
             "3": 18.4,
             "4": 25.7,
@@ -7403,6 +8074,13 @@
             "2": 10.0,
             "1": 10.0,
             "8": 10.0
+          },
+          "csatCountByComplexity": {
+            "6": 1,
+            "4": 1,
+            "2": 1,
+            "1": 1,
+            "8": 1
           }
         },
         {
@@ -7433,19 +8111,108 @@
               "LH": 1
             }
           },
-          "complexityDist": [
-            5,
-            34,
-            19,
-            15,
-            13,
-            19,
-            20,
-            5,
-            4,
-            0,
-            0
-          ],
+          "jira": {
+            "total": 22,
+            "open": 15,
+            "done": 7,
+            "byProject": {
+              "DO": 15,
+              "TC": 3,
+              "SOC": 1,
+              "LH": 1,
+              "ITO": 1,
+              "WEB": 1
+            },
+            "byStatus": {
+              "In Progress": 7,
+              "Done": 6,
+              "Waiting": 3,
+              "OPEN": 2,
+              "To Do": 1,
+              "Blocked": 1,
+              "Waiting for support": 1,
+              "Closed": 1
+            },
+            "recent": [
+              {
+                "key": "DO-44395",
+                "summary": "BE - BING - Creation still in progress",
+                "status": "Waiting",
+                "project": "DO",
+                "created": "2026-06-17",
+                "url": "https://uberall.atlassian.net/browse/DO-44395"
+              },
+              {
+                "key": "SOC-4865",
+                "summary": "Social - Psycho Bunny_Create post button is not loading and just spinning",
+                "status": "OPEN",
+                "project": "SOC",
+                "created": "2026-06-17",
+                "url": "https://uberall.atlassian.net/browse/SOC-4865"
+              },
+              {
+                "key": "DO-44403",
+                "summary": "BE - APPLE_MAPS - T1 - OTHER []",
+                "status": "To Do",
+                "project": "DO",
+                "created": "2026-06-17",
+                "url": "https://uberall.atlassian.net/browse/DO-44403"
+              },
+              {
+                "key": "TC-28316",
+                "summary": "BE - GOOGLE - T1 - OTHER []",
+                "status": "Done",
+                "project": "TC",
+                "created": "2026-06-16",
+                "url": "https://uberall.atlassian.net/browse/TC-28316"
+              },
+              {
+                "key": "DO-44377",
+                "summary": "BE - APPLE_MAPS - Wrong Hours",
+                "status": "Waiting",
+                "project": "DO",
+                "created": "2026-06-16",
+                "url": "https://uberall.atlassian.net/browse/DO-44377"
+              },
+              {
+                "key": "DO-44363",
+                "summary": "BE - SHOWMELOCAL - Directory support",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-15",
+                "url": "https://uberall.atlassian.net/browse/DO-44363"
+              },
+              {
+                "key": "DO-44364",
+                "summary": "BE - MY_LOCAL_SERVICES - T3 - OTHER [\"NAME\",\"WEBSITE\",\"OPENINGHOURS\",\"CATEGORIES",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-15",
+                "url": "https://uberall.atlassian.net/browse/DO-44364"
+              },
+              {
+                "key": "DO-44337",
+                "summary": "BE - YELP_API - T1 - OTHER [\"PHOTOS\",\"WEBSITE\"]",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-12",
+                "url": "https://uberall.atlassian.net/browse/DO-44337"
+              }
+            ]
+          },
+          "avgV1": 2.5,
+          "avgComplexity": 3.31,
+          "complexityDist": {
+            "0": 5,
+            "1": 34,
+            "2": 19,
+            "3": 15,
+            "4": 13,
+            "5": 19,
+            "6": 20,
+            "7": 5,
+            "8": 4
+          },
           "hbrByComplexity": {
             "3": 41.1,
             "6": 103.9,
@@ -7482,6 +8249,11 @@
             "6": 10.0,
             "2": 10.0,
             "4": 10.0
+          },
+          "csatCountByComplexity": {
+            "6": 1,
+            "2": 1,
+            "4": 1
           }
         },
         {
@@ -7509,19 +8281,102 @@
               "DO": 1
             }
           },
-          "complexityDist": [
-            31,
-            19,
-            21,
-            11,
-            18,
-            6,
-            8,
-            3,
-            0,
-            1,
-            1
-          ],
+          "jira": {
+            "total": 8,
+            "open": 2,
+            "done": 6,
+            "byProject": {
+              "DO": 5,
+              "ITO": 1,
+              "TC": 1,
+              "SAL": 1
+            },
+            "byStatus": {
+              "Done": 5,
+              "In Progress": 2,
+              "Closed": 1
+            },
+            "recent": [
+              {
+                "key": "DO-44373",
+                "summary": "BE - BING - T1 - NOT_IN_SYNC []",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-16",
+                "url": "https://uberall.atlassian.net/browse/DO-44373"
+              },
+              {
+                "key": "DO-44332",
+                "summary": "DO - Bing opening hours not correct on published listing",
+                "status": "Done",
+                "project": "DO",
+                "created": "2026-06-12",
+                "url": "https://uberall.atlassian.net/browse/DO-44332"
+              },
+              {
+                "key": "DO-44323",
+                "summary": "GPS - Report listing to Google",
+                "status": "Done",
+                "project": "DO",
+                "created": "2026-06-11",
+                "url": "https://uberall.atlassian.net/browse/DO-44323"
+              },
+              {
+                "key": "DO-44350",
+                "summary": "BE - GOOGLE - T1 - Missing category \"Feed Store\"",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-11",
+                "url": "https://uberall.atlassian.net/browse/DO-44350"
+              },
+              {
+                "key": "DO-44309",
+                "summary": "Acciona (Cable_Energia_Spain)__GPS - Please request name update",
+                "status": "Done",
+                "project": "DO",
+                "created": "2026-06-10",
+                "url": "https://uberall.atlassian.net/browse/DO-44309"
+              },
+              {
+                "key": "ITO-2294",
+                "summary": "Access to Geodesy",
+                "status": "Closed",
+                "project": "ITO",
+                "created": "2026-05-29",
+                "url": "https://uberall.atlassian.net/browse/ITO-2294"
+              },
+              {
+                "key": "TC-27973",
+                "summary": "FE - Whitelabel - SSL certificate issue",
+                "status": "Done",
+                "project": "TC",
+                "created": "2026-05-27",
+                "url": "https://uberall.atlassian.net/browse/TC-27973"
+              },
+              {
+                "key": "SAL-3323",
+                "summary": "Omni Channel - reroute cases to OC when owner is set to ooo",
+                "status": "Done",
+                "project": "SAL",
+                "created": "2026-05-26",
+                "url": "https://uberall.atlassian.net/browse/SAL-3323"
+              }
+            ]
+          },
+          "avgV1": 2.32,
+          "avgComplexity": 2.39,
+          "complexityDist": {
+            "0": 31,
+            "1": 19,
+            "2": 21,
+            "3": 11,
+            "4": 18,
+            "5": 6,
+            "6": 8,
+            "7": 3,
+            "9": 1,
+            "10": 1
+          },
           "hbrByComplexity": {
             "4": 23.7,
             "0": 3.4,
@@ -7553,7 +8408,8 @@
             "0": 0.0,
             "10": 9.8
           },
-          "csatByComplexity": {}
+          "csatByComplexity": {},
+          "csatCountByComplexity": {}
         },
         {
           "name": "Patrick Paul Bayor",
@@ -7582,19 +8438,109 @@
               "WEB": 2
             }
           },
-          "complexityDist": [
-            14,
-            22,
-            16,
-            12,
-            17,
-            12,
-            16,
-            4,
-            0,
-            0,
-            0
-          ],
+          "jira": {
+            "total": 21,
+            "open": 13,
+            "done": 8,
+            "byProject": {
+              "DO": 12,
+              "TC": 3,
+              "WEB": 3,
+              "MOB": 1,
+              "LIS": 1,
+              "REP": 1
+            },
+            "byStatus": {
+              "Done": 5,
+              "In Progress": 4,
+              "Waiting": 3,
+              "Blocked": 2,
+              "Dev Close": 2,
+              "To Do": 1,
+              "Review": 1,
+              "QA": 1,
+              "Ready for Prod": 1,
+              "Closed": 1
+            },
+            "recent": [
+              {
+                "key": "DO-44406",
+                "summary": "BE - GOOGLE - Request to add a new category",
+                "status": "To Do",
+                "project": "DO",
+                "created": "2026-06-17",
+                "url": "https://uberall.atlassian.net/browse/DO-44406"
+              },
+              {
+                "key": "TC-28355",
+                "summary": "FE - Sandbox - Location Hub - No locations present",
+                "status": "Blocked",
+                "project": "TC",
+                "created": "2026-06-17",
+                "url": "https://uberall.atlassian.net/browse/TC-28355"
+              },
+              {
+                "key": "DO-44398",
+                "summary": "BE - YELP_API - T1 - WRONG_SYNC_STATUS [\"LATITUDE\",\"LONGITUDE\",\"STREET_NO\",\"STRE",
+                "status": "Waiting",
+                "project": "DO",
+                "created": "2026-06-17",
+                "url": "https://uberall.atlassian.net/browse/DO-44398"
+              },
+              {
+                "key": "DO-44399",
+                "summary": "BE - BING - T1 - WRONG_SYNC_STATUS [\"STREET\",\"STREET_NO\"]",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-17",
+                "url": "https://uberall.atlassian.net/browse/DO-44399"
+              },
+              {
+                "key": "DO-44400",
+                "summary": "BE - APPLE_MAPS - T1 - WRONG_SYNC_STATUS [\"STREET\",\"STREET_NO\"]",
+                "status": "Waiting",
+                "project": "DO",
+                "created": "2026-06-17",
+                "url": "https://uberall.atlassian.net/browse/DO-44400"
+              },
+              {
+                "key": "DO-44401",
+                "summary": "BE - APPLE_MAPS - T1 - WRONG_SYNC_STATUS [\"PHOTOS\"]",
+                "status": "Waiting",
+                "project": "DO",
+                "created": "2026-06-17",
+                "url": "https://uberall.atlassian.net/browse/DO-44401"
+              },
+              {
+                "key": "WEB-5753",
+                "summary": "BE - LP - Visionworks - Request to update text",
+                "status": "Review",
+                "project": "WEB",
+                "created": "2026-06-15",
+                "url": "https://uberall.atlassian.net/browse/WEB-5753"
+              },
+              {
+                "key": "WEB-5754",
+                "summary": "BE - Sandbox/QA - Update the \"Book Appointment\" URL in ECOM QA site",
+                "status": "Dev Close",
+                "project": "WEB",
+                "created": "2026-06-15",
+                "url": "https://uberall.atlassian.net/browse/WEB-5754"
+              }
+            ]
+          },
+          "avgV1": 2.6,
+          "avgComplexity": 3.0,
+          "complexityDist": {
+            "0": 14,
+            "1": 22,
+            "2": 16,
+            "3": 12,
+            "4": 17,
+            "5": 12,
+            "6": 16,
+            "7": 4
+          },
           "hbrByComplexity": {
             "4": 53.3,
             "5": 69.4,
@@ -7627,6 +8573,9 @@
           },
           "csatByComplexity": {
             "6": 10.0
+          },
+          "csatCountByComplexity": {
+            "6": 1
           }
         },
         {
@@ -7654,19 +8603,105 @@
               "DO": 4
             }
           },
-          "complexityDist": [
-            9,
-            18,
-            8,
-            16,
-            19,
-            15,
-            4,
-            7,
-            4,
-            0,
-            0
-          ],
+          "jira": {
+            "total": 17,
+            "open": 11,
+            "done": 6,
+            "byProject": {
+              "DO": 12,
+              "TC": 2,
+              "AR": 1,
+              "WEB": 1,
+              "LIS": 1
+            },
+            "byStatus": {
+              "Done": 6,
+              "In Progress": 4,
+              "Waiting": 3,
+              "Review": 2,
+              "OPEN": 1,
+              "More info needed": 1
+            },
+            "recent": [
+              {
+                "key": "DO-44397",
+                "summary": "BE - APPLE_MAPS - T1 - WRONG_SYNC_STATUS [\"OPENINGHOURS\"]",
+                "status": "Waiting",
+                "project": "DO",
+                "created": "2026-06-17",
+                "url": "https://uberall.atlassian.net/browse/DO-44397"
+              },
+              {
+                "key": "DO-44366",
+                "summary": "BE - HOTFROG - T3 - OTHER []",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-15",
+                "url": "https://uberall.atlassian.net/browse/DO-44366"
+              },
+              {
+                "key": "DO-44339",
+                "summary": "BE - APPLE_MAPS - T1 - WRONG_SYNC_STATUS [\"OPENINGHOURS\",\"CATEGORIES\"]",
+                "status": "Waiting",
+                "project": "DO",
+                "created": "2026-06-12",
+                "url": "https://uberall.atlassian.net/browse/DO-44339"
+              },
+              {
+                "key": "DO-44338",
+                "summary": "BE - YELP_API - T1 - OTHER [\"NAME\",\"OPENINGHOURS\",\"WEBSITE\"]",
+                "status": "Done",
+                "project": "DO",
+                "created": "2026-06-12",
+                "url": "https://uberall.atlassian.net/browse/DO-44338"
+              },
+              {
+                "key": "AR-5416",
+                "summary": "FE - 0 value on Apple Analytics for specific time period - Total Wine & More",
+                "status": "OPEN",
+                "project": "AR",
+                "created": "2026-06-12",
+                "url": "https://uberall.atlassian.net/browse/AR-5416"
+              },
+              {
+                "key": "DO-44327",
+                "summary": "BE - APPLE_MAPS - Duplicate removal",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-11",
+                "url": "https://uberall.atlassian.net/browse/DO-44327"
+              },
+              {
+                "key": "TC-28208",
+                "summary": "ABC - 0 locations listed in Apple Business Connect for 2 business",
+                "status": "Done",
+                "project": "TC",
+                "created": "2026-06-10",
+                "url": "https://uberall.atlassian.net/browse/TC-28208"
+              },
+              {
+                "key": "DO-44307",
+                "summary": "BE - APPLE_MAPS - T1 - WRONG_SYNC_STATUS [\"LATITUDE\",\"LONGITUDE\"]",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-10",
+                "url": "https://uberall.atlassian.net/browse/DO-44307"
+              }
+            ]
+          },
+          "avgV1": 2.51,
+          "avgComplexity": 3.39,
+          "complexityDist": {
+            "0": 9,
+            "1": 18,
+            "2": 8,
+            "3": 16,
+            "4": 19,
+            "5": 15,
+            "6": 4,
+            "7": 7,
+            "8": 4
+          },
           "hbrByComplexity": {
             "1": 38.9,
             "3": 23.8,
@@ -7701,6 +8736,9 @@
           },
           "csatByComplexity": {
             "4": 10.0
+          },
+          "csatCountByComplexity": {
+            "4": 1
           }
         },
         {
@@ -7738,19 +8776,107 @@
               "LH": 1
             }
           },
-          "complexityDist": [
-            1,
-            4,
-            2,
-            6,
-            8,
-            6,
-            12,
-            2,
-            2,
-            1,
-            0
-          ],
+          "jira": {
+            "total": 16,
+            "open": 6,
+            "done": 10,
+            "byProject": {
+              "DO": 7,
+              "TC": 6,
+              "ITO": 1,
+              "WEB": 1,
+              "CS": 1
+            },
+            "byStatus": {
+              "Done": 9,
+              "Waiting": 2,
+              "Waiting for customer": 1,
+              "More info needed": 1,
+              "Ready for Prod": 1,
+              "Closed": 1,
+              "In Progress": 1
+            },
+            "recent": [
+              {
+                "key": "ITO-2305",
+                "summary": "Request for accessories",
+                "status": "Waiting for customer",
+                "project": "ITO",
+                "created": "2026-06-03",
+                "url": "https://uberall.atlassian.net/browse/ITO-2305"
+              },
+              {
+                "key": "DO-44244",
+                "summary": "BE - BING - T1 - WRONG_SYNC_STATUS [\"OPENINGHOURS\"]",
+                "status": "Done",
+                "project": "DO",
+                "created": "2026-06-03",
+                "url": "https://uberall.atlassian.net/browse/DO-44244"
+              },
+              {
+                "key": "DO-44249",
+                "summary": "BE - BING - T1 - WRONG_SYNC_STATUS [\"WEBSITE\"]",
+                "status": "Waiting",
+                "project": "DO",
+                "created": "2026-06-02",
+                "url": "https://uberall.atlassian.net/browse/DO-44249"
+              },
+              {
+                "key": "TC-28068",
+                "summary": "BE - FORTHEA - RELOCATE BUSINESS",
+                "status": "Done",
+                "project": "TC",
+                "created": "2026-06-02",
+                "url": "https://uberall.atlassian.net/browse/TC-28068"
+              },
+              {
+                "key": "DO-44215",
+                "summary": "BE - APPLE_MAPS - T1 - NOT_IN_SYNC []",
+                "status": "More info needed",
+                "project": "DO",
+                "created": "2026-05-30",
+                "url": "https://uberall.atlassian.net/browse/DO-44215"
+              },
+              {
+                "key": "WEB-5663",
+                "summary": "LP - FE - VISIONWORKS - UPDATE FOOTER LOGO",
+                "status": "Ready for Prod",
+                "project": "WEB",
+                "created": "2026-05-30",
+                "url": "https://uberall.atlassian.net/browse/WEB-5663"
+              },
+              {
+                "key": "TC-28035",
+                "summary": "LH - Sublocality - Apple Not Submitting Due to Lack of Sublocality",
+                "status": "Done",
+                "project": "TC",
+                "created": "2026-05-29",
+                "url": "https://uberall.atlassian.net/browse/TC-28035"
+              },
+              {
+                "key": "DO-44250",
+                "summary": "BE - DOCTOR_COM - T2 - WRONG_SYNC_STATUS [\"DESCRIPTION_LONG\",\"PHOTOS\",\"PHONE\",\"S",
+                "status": "Done",
+                "project": "DO",
+                "created": "2026-05-29",
+                "url": "https://uberall.atlassian.net/browse/DO-44250"
+              }
+            ]
+          },
+          "avgV1": 2.33,
+          "avgComplexity": 4.49,
+          "complexityDist": {
+            "0": 1,
+            "1": 4,
+            "2": 2,
+            "3": 6,
+            "4": 8,
+            "5": 6,
+            "6": 12,
+            "7": 2,
+            "8": 2,
+            "9": 1
+          },
           "hbrByComplexity": {
             "1": 14.6,
             "5": 29.2,
@@ -7787,6 +8913,9 @@
           },
           "csatByComplexity": {
             "2": 10.0
+          },
+          "csatCountByComplexity": {
+            "2": 1
           }
         },
         {
@@ -7819,19 +8948,81 @@
               "WEB": 1
             }
           },
-          "complexityDist": [
-            4,
-            7,
-            4,
-            4,
-            10,
-            2,
-            5,
-            0,
-            0,
-            0,
-            0
-          ],
+          "jira": {
+            "total": 6,
+            "open": 2,
+            "done": 4,
+            "byProject": {
+              "DO": 5,
+              "TC": 1
+            },
+            "byStatus": {
+              "Done": 4,
+              "Waiting": 1,
+              "Blocked": 1
+            },
+            "recent": [
+              {
+                "key": "DO-44272",
+                "summary": "BE - APPLE_MAPS - T1 - OTHER []",
+                "status": "Waiting",
+                "project": "DO",
+                "created": "2026-06-07",
+                "url": "https://uberall.atlassian.net/browse/DO-44272"
+              },
+              {
+                "key": "DO-44255",
+                "summary": "BE - YELP_API - T1 - OTHER []",
+                "status": "Done",
+                "project": "DO",
+                "created": "2026-06-04",
+                "url": "https://uberall.atlassian.net/browse/DO-44255"
+              },
+              {
+                "key": "DO-44251",
+                "summary": "BE - APPLE_MAPS - Mark listing permanently closed",
+                "status": "Done",
+                "project": "DO",
+                "created": "2026-06-03",
+                "url": "https://uberall.atlassian.net/browse/DO-44251"
+              },
+              {
+                "key": "DO-44175",
+                "summary": "BE - YELP_API - T1 - OTHER []",
+                "status": "Done",
+                "project": "DO",
+                "created": "2026-05-26",
+                "url": "https://uberall.atlassian.net/browse/DO-44175"
+              },
+              {
+                "key": "DO-44167",
+                "summary": "BE - MAP_QUEST - T2 - OTHER [\"LATITUDE\",\"LONGITUDE\",\"OPENINGHOURS\"]",
+                "status": "Done",
+                "project": "DO",
+                "created": "2026-05-26",
+                "url": "https://uberall.atlassian.net/browse/DO-44167"
+              },
+              {
+                "key": "TC-27936",
+                "summary": "FE - Sage Dental - Error while connecting yelp",
+                "status": "Blocked",
+                "project": "TC",
+                "created": "2026-05-26",
+                "url": "https://uberall.atlassian.net/browse/TC-27936"
+              }
+            ]
+          },
+          "avgV1": 2.33,
+          "avgComplexity": 3.03,
+          "complexityDist": {
+            "0": 4,
+            "1": 7,
+            "2": 4,
+            "3": 4,
+            "4": 10,
+            "5": 2,
+            "6": 5
+          },
           "hbrByComplexity": {
             "0": 0.4,
             "4": 29.1,
@@ -7858,7 +9049,8 @@
             "1": 0.6,
             "5": 0.1
           },
-          "csatByComplexity": {}
+          "csatByComplexity": {},
+          "csatCountByComplexity": {}
         },
         {
           "name": "Ryan Quinn",
@@ -7888,19 +9080,75 @@
               "DO": 3
             }
           },
-          "complexityDist": [
-            0,
-            0,
-            6,
-            9,
-            4,
-            3,
-            3,
-            1,
-            1,
-            1,
-            0
-          ],
+          "jira": {
+            "total": 5,
+            "open": 4,
+            "done": 1,
+            "byProject": {
+              "DO": 3,
+              "TC": 1,
+              "SOC": 1
+            },
+            "byStatus": {
+              "In Progress": 3,
+              "Done": 1,
+              "OPEN": 1
+            },
+            "recent": [
+              {
+                "key": "TC-28310",
+                "summary": "BE - APPLE_MAPS - T1 - AUTOMATION",
+                "status": "Done",
+                "project": "TC",
+                "created": "2026-06-16",
+                "url": "https://uberall.atlassian.net/browse/TC-28310"
+              },
+              {
+                "key": "DO-44372",
+                "summary": "BE - YELLOW_PAGES - Duplicate listing",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-16",
+                "url": "https://uberall.atlassian.net/browse/DO-44372"
+              },
+              {
+                "key": "DO-44371",
+                "summary": "BE - ELOCAL - Listing Stuck",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-15",
+                "url": "https://uberall.atlassian.net/browse/DO-44371"
+              },
+              {
+                "key": "DO-44360",
+                "summary": "BE - BING - Unit number not live on listing",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-15",
+                "url": "https://uberall.atlassian.net/browse/DO-44360"
+              },
+              {
+                "key": "SOC-4815",
+                "summary": "BE - Social - LinkedIn Post Failure",
+                "status": "OPEN",
+                "project": "SOC",
+                "created": "2026-05-26",
+                "url": "https://uberall.atlassian.net/browse/SOC-4815"
+              }
+            ]
+          },
+          "avgV1": 2.36,
+          "avgComplexity": 4.06,
+          "complexityDist": {
+            "2": 6,
+            "3": 9,
+            "4": 4,
+            "5": 3,
+            "6": 3,
+            "7": 1,
+            "8": 1,
+            "9": 1
+          },
           "hbrByComplexity": {
             "7": 3.5,
             "5": 22.0,
@@ -7916,7 +9164,8 @@
             "7": 31.2,
             "9": 0.0
           },
-          "csatByComplexity": {}
+          "csatByComplexity": {},
+          "csatCountByComplexity": {}
         },
         {
           "name": "Geneca Rapada",
@@ -7946,19 +9195,102 @@
               "TC": 2
             }
           },
-          "complexityDist": [
-            0,
-            1,
-            5,
-            4,
-            3,
-            4,
-            3,
-            2,
-            2,
-            0,
-            0
-          ],
+          "jira": {
+            "total": 13,
+            "open": 7,
+            "done": 6,
+            "byProject": {
+              "DO": 7,
+              "TC": 4,
+              "AR": 2
+            },
+            "byStatus": {
+              "Done": 6,
+              "In Progress": 2,
+              "Waiting": 2,
+              "To Do": 1,
+              "OPEN": 1,
+              "Blocked": 1
+            },
+            "recent": [
+              {
+                "key": "DO-44404",
+                "summary": "BE - Locations: Adding a new category",
+                "status": "To Do",
+                "project": "DO",
+                "created": "2026-06-17",
+                "url": "https://uberall.atlassian.net/browse/DO-44404"
+              },
+              {
+                "key": "TC-28290",
+                "summary": "BE - APPLE_MAPS - T1 - Relocation",
+                "status": "Done",
+                "project": "TC",
+                "created": "2026-06-15",
+                "url": "https://uberall.atlassian.net/browse/TC-28290"
+              },
+              {
+                "key": "DO-44362",
+                "summary": "BE -  Incorrect hours on listing",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-15",
+                "url": "https://uberall.atlassian.net/browse/DO-44362"
+              },
+              {
+                "key": "TC-28283",
+                "summary": "BE - APPLE_MAPS - T1 - WRONG_SYNC_STATUS [\"NAME\"]",
+                "status": "Done",
+                "project": "TC",
+                "created": "2026-06-15",
+                "url": "https://uberall.atlassian.net/browse/TC-28283"
+              },
+              {
+                "key": "AR-5404",
+                "summary": "BE - Whitelist Domain for Advanced Analytics \u2013 SP ID 3539",
+                "status": "OPEN",
+                "project": "AR",
+                "created": "2026-06-10",
+                "url": "https://uberall.atlassian.net/browse/AR-5404"
+              },
+              {
+                "key": "DO-44306",
+                "summary": "BE - APPLE_MAPS - T1 - WRONG_SYNC_STATUS [\"LONGITUDE\",\"LATITUDE\"]",
+                "status": "In Progress",
+                "project": "DO",
+                "created": "2026-06-10",
+                "url": "https://uberall.atlassian.net/browse/DO-44306"
+              },
+              {
+                "key": "AR-5387",
+                "summary": "BE - Analytics - Whitelabeled user cannot access Analytics",
+                "status": "Blocked",
+                "project": "AR",
+                "created": "2026-06-09",
+                "url": "https://uberall.atlassian.net/browse/AR-5387"
+              },
+              {
+                "key": "TC-28152",
+                "summary": "BE - APPLE_MAPS - T1 - WRONG_SYNC_STATUS [\"PHONE\"]",
+                "status": "Done",
+                "project": "TC",
+                "created": "2026-06-08",
+                "url": "https://uberall.atlassian.net/browse/TC-28152"
+              }
+            ]
+          },
+          "avgV1": 2.29,
+          "avgComplexity": 4.29,
+          "complexityDist": {
+            "1": 1,
+            "2": 5,
+            "3": 4,
+            "4": 3,
+            "5": 4,
+            "6": 3,
+            "7": 2,
+            "8": 2
+          },
           "hbrByComplexity": {
             "6": 130.5,
             "5": 52.8,
@@ -7987,7 +9319,8 @@
             "2": 2.4,
             "3": 3.3
           },
-          "csatByComplexity": {}
+          "csatByComplexity": {},
+          "csatCountByComplexity": {}
         }
       ],
       "complexityBuckets": [

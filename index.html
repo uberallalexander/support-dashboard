@@ -756,7 +756,8 @@ function renderTopKpis() {
   const periodLabel = pd.meta ? pd.meta.label : (data.periodLabel || '');
 
   document.getElementById('kpi-total').textContent = (pk.total ?? baseKpis.total ?? 0).toLocaleString();
-  document.getElementById('kpi-period').textContent = periodLabel + (excludeSpam ? ' · excl. Spam' : '');
+  const hasSpam = (pk.spamCount ?? baseKpis.spamCount) != null;
+  document.getElementById('kpi-period').textContent = periodLabel + (excludeSpam && hasSpam ? ' · excl. Spam' : '');
 
   // open / queue only available in current-period (June) snapshot
   const openVal = pk.open ?? baseKpis.open;
