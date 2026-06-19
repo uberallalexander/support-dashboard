@@ -1036,8 +1036,11 @@ window.resetAgentFilters = function() {
 };
 
 function filteredCasesForAgent(a) {
-  const dist = a.complexityDist || Array(11).fill(0);
-  return Array.from(activeComplexityScores).reduce((sum, s) => sum + (dist[s] || 0), 0);
+  if (complexityFilterActive()) {
+    const dist = a.complexityDist || Array(11).fill(0);
+    return Array.from(activeComplexityScores).reduce((sum, s) => sum + (dist[s] || 0), 0);
+  }
+  return excludeSpam ? (a.cases - (a.spamCases || 0)) : a.cases;
 }
 
 function filteredMetricForAgent(a, field) {
@@ -1069,7 +1072,7 @@ function renderAgents() {
   // Attach filtered metrics to each agent row
   const allAgents = rawAgents.map(a => {
     if (!isFilteredComplexity) return {
-      ...a, _cases: a.cases, _resolutionHrs: a.resolutionHrs,
+      ...a, _cases: excludeSpam ? (a.cases - (a.spamCases || 0)) : a.cases, _resolutionHrs: a.resolutionHrs,
       _firstResp: a.firstResponseHrs, _ongoingResp: a.ongoingResponseHrs,
       _touchpoints: a.touchpoints, _csat: a.csat,
       _convComplexity: a.conversationComplexity,

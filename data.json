@@ -4230,7 +4230,8 @@
             "4": 1,
             "1": 1,
             "2": 2
-          }
+          },
+          "spamCases": 8
         },
         {
           "name": "J\u00fcrgen S\u00f6men",
@@ -4324,7 +4325,8 @@
             "1": 6,
             "10": 4,
             "5": 1
-          }
+          },
+          "spamCases": 23
         },
         {
           "name": "Vincent Riehl",
@@ -4417,7 +4419,8 @@
             "5": 2,
             "10": 1,
             "1": 1
-          }
+          },
+          "spamCases": 19
         },
         {
           "name": "Rida Malouh",
@@ -4505,7 +4508,8 @@
             "2": 1,
             "10": 2,
             "4": 1
-          }
+          },
+          "spamCases": 2
         },
         {
           "name": "Victoria Sene R\u00edos",
@@ -4590,7 +4594,8 @@
             "4": 2,
             "10": 1,
             "6": 2
-          }
+          },
+          "spamCases": 6
         },
         {
           "name": "Stephan Duerrnagel",
@@ -4687,7 +4692,8 @@
             "8": 1,
             "5": 3,
             "10": 1
-          }
+          },
+          "spamCases": 42
         },
         {
           "name": "Maria Fontiveros Villasana",
@@ -4777,7 +4783,8 @@
             "2": 1,
             "5": 1,
             "8": 1
-          }
+          },
+          "spamCases": 3
         },
         {
           "name": "Jhonric Canillo",
@@ -4860,7 +4867,8 @@
             "6": 1,
             "4": 1,
             "10": 2
-          }
+          },
+          "spamCases": 4
         },
         {
           "name": "Anna-Christin Voigt",
@@ -4949,7 +4957,8 @@
             "10": 2,
             "6": 1,
             "2": 1
-          }
+          },
+          "spamCases": 293
         },
         {
           "name": "Patrick Paul Bayor",
@@ -5031,7 +5040,8 @@
           "csatCountByComplexity": {
             "9": 1,
             "10": 1
-          }
+          },
+          "spamCases": 2
         },
         {
           "name": "John Paul Pineda",
@@ -5118,7 +5128,8 @@
             "4": 1,
             "6": 1,
             "8": 1
-          }
+          },
+          "spamCases": 5
         },
         {
           "name": "Fernando Viana",
@@ -5200,7 +5211,8 @@
           "csatCountByComplexity": {
             "10": 2,
             "4": 1
-          }
+          },
+          "spamCases": 4
         },
         {
           "name": "Joel Alob",
@@ -5283,7 +5295,8 @@
           "csatCountByComplexity": {
             "2": 1,
             "1": 1
-          }
+          },
+          "spamCases": 4
         },
         {
           "name": "Ryan Quinn",
@@ -5365,7 +5378,8 @@
             "5": 1,
             "10": 2,
             "4": 1
-          }
+          },
+          "spamCases": 7
         },
         {
           "name": "Geneca Rapada",
@@ -5405,7 +5419,8 @@
             "10": 15.45
           },
           "csatByComplexity": {},
-          "csatCountByComplexity": {}
+          "csatCountByComplexity": {},
+          "spamCases": 0
         }
       ],
       "complexityBuckets": {
@@ -5814,7 +5829,8 @@
             "6": 2,
             "9": 1,
             "2": 1
-          }
+          },
+          "spamCases": 1
         },
         {
           "name": "J\u00fcrgen S\u00f6men",
@@ -5907,7 +5923,8 @@
             "9": 1,
             "2": 2,
             "4": 1
-          }
+          },
+          "spamCases": 2
         },
         {
           "name": "Vincent Riehl",
@@ -5999,7 +6016,8 @@
             "4": 1,
             "10": 1,
             "2": 1
-          }
+          },
+          "spamCases": 4
         },
         {
           "name": "Rida Malouh",
@@ -6084,7 +6102,8 @@
             "5": 1,
             "6": 2,
             "9": 1
-          }
+          },
+          "spamCases": 4
         },
         {
           "name": "Victoria Sene R\u00edos",
@@ -6171,7 +6190,8 @@
             "5": 2,
             "4": 1,
             "6": 1
-          }
+          },
+          "spamCases": 2
         },
         {
           "name": "Stephan Duerrnagel",
@@ -6268,7 +6288,8 @@
             "6": 2,
             "8": 1,
             "0": 1
-          }
+          },
+          "spamCases": 81
         },
         {
           "name": "Maria Fontiveros Villasana",
@@ -6358,7 +6379,8 @@
             "4": 4,
             "6": 1,
             "5": 2
-          }
+          },
+          "spamCases": 1
         },
         {
           "name": "Jhonric Canillo",
@@ -6446,7 +6468,8 @@
             "6": 2,
             "10": 2,
             "2": 1
-          }
+          },
+          "spamCases": 4
         },
         {
           "name": "Anna-Christin Voigt",
@@ -6517,7 +6540,8 @@
             "6": 0.92
           },
           "csatByComplexity": {},
-          "csatCountByComplexity": {}
+          "csatCountByComplexity": {},
+          "spamCases": 149
         },
         {
           "name": "Patrick Paul Bayor",
@@ -6603,7 +6627,8 @@
           "csatCountByComplexity": {
             "9": 2,
             "10": 1
-          }
+          },
+          "spamCases": 1
         },
         {
           "name": "John Paul Pineda",
@@ -6685,7 +6710,8 @@
           "csatCountByComplexity": {
             "10": 1,
             "5": 1
-          }
+          },
+          "spamCases": 1
         },
         {
           "name": "Fernando Viana",
@@ -6768,7 +6794,8 @@
           },
           "csatCountByComplexity": {
             "4": 1
-          }
+          },
+          "spamCases": 0
         },
         {
           "name": "Joel Alob",
@@ -6849,7 +6876,8 @@
           },
           "csatCountByComplexity": {
             "4": 1
-          }
+          },
+          "spamCases": 2
         },
         {
           "name": "Ryan Quinn",
@@ -6915,7 +6943,8 @@
           },
           "csatCountByComplexity": {
             "5": 1
-          }
+          },
+          "spamCases": 0
         },
         {
           "name": "Geneca Rapada",
@@ -6976,7 +7005,8 @@
             "2": 2.43
           },
           "csatByComplexity": {},
-          "csatCountByComplexity": {}
+          "csatCountByComplexity": {},
+          "spamCases": 0
         }
       ],
       "complexityBuckets": {
@@ -7464,7 +7494,8 @@
             "5": 1,
             "1": 1,
             "4": 1
-          }
+          },
+          "spamCases": 0
         },
         {
           "name": "J\u00fcrgen S\u00f6men",
@@ -7654,7 +7685,8 @@
             "5": 1,
             "3": 1,
             "0": 1
-          }
+          },
+          "spamCases": 0
         },
         {
           "name": "Vincent Riehl",
@@ -7832,7 +7864,8 @@
             "9": 1,
             "4": 1,
             "6": 1
-          }
+          },
+          "spamCases": 0
         },
         {
           "name": "Rida Malouh",
@@ -8009,7 +8042,8 @@
             "7": 2,
             "8": 1,
             "5": 1
-          }
+          },
+          "spamCases": 0
         },
         {
           "name": "Victoria Sene R\u00edos",
@@ -8192,7 +8226,8 @@
             "8": 1,
             "3": 1,
             "6": 1
-          }
+          },
+          "spamCases": 0
         },
         {
           "name": "Stephan Duerrnagel",
@@ -8376,7 +8411,8 @@
             "3": 1,
             "7": 1,
             "4": 1
-          }
+          },
+          "spamCases": 0
         },
         {
           "name": "Maria Fontiveros Villasana",
@@ -8555,7 +8591,8 @@
             "2": 1,
             "1": 1,
             "8": 1
-          }
+          },
+          "spamCases": 0
         },
         {
           "name": "Jhonric Canillo",
@@ -8728,7 +8765,8 @@
             "6": 1,
             "2": 1,
             "4": 1
-          }
+          },
+          "spamCases": 0
         },
         {
           "name": "Anna-Christin Voigt",
@@ -8883,7 +8921,8 @@
             "10": 9.8
           },
           "csatByComplexity": {},
-          "csatCountByComplexity": {}
+          "csatCountByComplexity": {},
+          "spamCases": 0
         },
         {
           "name": "Patrick Paul Bayor",
@@ -9050,7 +9089,8 @@
           },
           "csatCountByComplexity": {
             "6": 1
-          }
+          },
+          "spamCases": 0
         },
         {
           "name": "John Paul Pineda",
@@ -9213,7 +9253,8 @@
           },
           "csatCountByComplexity": {
             "4": 1
-          }
+          },
+          "spamCases": 0
         },
         {
           "name": "Fernando Viana",
@@ -9390,7 +9431,8 @@
           },
           "csatCountByComplexity": {
             "2": 1
-          }
+          },
+          "spamCases": 0
         },
         {
           "name": "Joel Alob",
@@ -9524,7 +9566,8 @@
             "5": 0.1
           },
           "csatByComplexity": {},
-          "csatCountByComplexity": {}
+          "csatCountByComplexity": {},
+          "spamCases": 0
         },
         {
           "name": "Ryan Quinn",
@@ -9639,7 +9682,8 @@
             "9": 0.0
           },
           "csatByComplexity": {},
-          "csatCountByComplexity": {}
+          "csatCountByComplexity": {},
+          "spamCases": 0
         },
         {
           "name": "Geneca Rapada",
@@ -9794,7 +9838,8 @@
             "3": 3.3
           },
           "csatByComplexity": {},
-          "csatCountByComplexity": {}
+          "csatCountByComplexity": {},
+          "spamCases": 0
         }
       ],
       "complexityBuckets": [
