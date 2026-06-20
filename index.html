@@ -304,6 +304,17 @@ const CONFIG = {
         <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:16px">Full Topic Breakdown</h3>
         <div id="topic-table"></div>
       </div>
+      <!-- V1 vs CCS correlation tables -->
+      <div class="card p-5">
+        <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:4px">Complexity by Case Type</h3>
+        <p style="font-size:0.72rem;color:var(--text-muted);margin-bottom:16px">Closed cases · V1 = designed complexity (2–6) · CCS = conversation complexity score (0–10) · Res = avg resolution time</p>
+        <div id="type-stats-table"></div>
+      </div>
+      <div class="card p-5">
+        <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:4px">Complexity by Issue Type</h3>
+        <p style="font-size:0.72rem;color:var(--text-muted);margin-bottom:16px">Closed cases · V1 = designed complexity (2–6) · CCS = conversation complexity score (0–10) · Res = avg resolution time</p>
+        <div id="issue-stats-table"></div>
+      </div>
     </div>
 
     <!-- ── ROUTING ──────────────────────────────────────────────────────── -->
@@ -980,10 +991,12 @@ function renderOverview() {
     : '—';
   const pdKpis = pd.kpis || {};
   const avgV1 = pdKpis.avgV1 ? pdKpis.avgV1.toFixed(2) : (pdKpis.avgFirstResp ? pdKpis.avgFirstResp.toFixed(1) + 'h' : '—');
+  const avgCCS = pdKpis.avgCCS != null ? pdKpis.avgCCS.toFixed(2) : '—';
   const avgHBR = pdKpis.avgHBRexclOnHold ? pdKpis.avgHBRexclOnHold.toFixed(1) : (pdKpis.avgResolution ? pdKpis.avgResolution.toFixed(1) : '—');
   document.getElementById('complexity-kpi-strip').innerHTML = [
     { label: 'Avg Conv. Complexity', value: avgConvComp, sub: 'out of 10 · across all agents', color: '#7c3aed' },
     { label: 'Avg Complexity V1', value: avgV1, sub: 'out of 6 · product × issue type', color: '#2563eb' },
+    { label: 'Avg CCS', value: avgCCS, sub: 'out of 10 · conversation complexity score', color: '#0891b2' },
     { label: 'Avg Resolution (excl. On Hold)', value: avgHBR + 'h', sub: 'active working hours only', color: '#059669' },
   ].map(k => `<div class="card kpi-card p-5">
     <div style="color:var(--text-muted);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">${k.label}</div>
@@ -1466,6 +1479,44 @@ function renderTopics() {
       </div>`;
     }},
   ], typeData);
+
+  // Complexity by case type / issue type tables
+  const pd2 = getPeriodData();
+  const typeStats = pd2.typeStats || [];
+  const issueStats = pd2.issueTypeStats || [];
+
+  const v1Bar = v => {
+    const pct = ((v - 2) / 4 * 100).toFixed(0);
+    const col = v <= 2 ? '#22c55e' : v <= 3 ? '#84cc16' : v <= 4 ? '#f59e0b' : v <= 5 ? '#f97316' : '#ef4444';
+    return `<div style="display:flex;align-items:center;gap:6px">
+      <div style="width:80px;height:5px;background:#1e2537;border-radius:3px">
+        <div style="width:${pct}%;height:5px;background:${col};border-radius:3px"></div>
+      </div>
+      <span style="color:${col};font-weight:600;font-size:0.8rem">${v.toFixed(1)}</span>
+    </div>`;
+  };
+  const ccsBar = v => {
+    const pct = (v / 10 * 100).toFixed(0);
+    const col = v <= 3 ? '#22c55e' : v <= 6 ? '#f59e0b' : '#ef4444';
+    return `<div style="display:flex;align-items:center;gap:6px">
+      <div style="width:80px;height:5px;background:#1e2537;border-radius:3px">
+        <div style="width:${pct}%;height:5px;background:${col};border-radius:3px"></div>
+      </div>
+      <span style="color:${col};font-weight:600;font-size:0.8rem">${v.toFixed(1)}</span>
+    </div>`;
+  };
+  const hrsCell = v => v != null ? `<span style="color:var(--text-muted);font-size:0.8rem">${v.toFixed(1)}h</span>` : '—';
+
+  const statsColumns = [
+    { label: 'Type', key: 'label' },
+    { label: 'Cases (closed)', key: 'n', render: r => r.n.toLocaleString() },
+    { label: 'V1 Complexity', key: '_v1', render: r => v1Bar(r.avgV1) },
+    { label: 'CCS', key: '_ccs', render: r => ccsBar(r.avgCCS) },
+    { label: 'Avg Resolution', key: '_res', render: r => hrsCell(r.avgResolutionHrs) },
+  ];
+
+  makeTable('type-stats-table', statsColumns, typeStats);
+  makeTable('issue-stats-table', statsColumns, issueStats);
 }
 
 function renderRouting() {

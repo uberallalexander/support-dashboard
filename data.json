@@ -4141,9 +4141,12 @@
         "total": 2166,
         "avgFirstResp": 10.99,
         "avgResolution": 38.17,
-        "avgCsat": 9.42,
-        "csatTotalReceived": 81,
-        "spamCount": 252
+        "avgCsat": 9.47,
+        "csatTotalReceived": 72,
+        "spamCount": 252,
+        "avgV1": 3.44,
+        "avgCCS": 1.15,
+        "avgCsatPct": 91.7
       },
       "agentData": [
         {
@@ -6339,71 +6342,74 @@
           }
         }
       ],
-      "complexityBuckets": {
-        "0": {
-          "count": 406,
-          "avgHBR": 2.99,
-          "avgFirstResp": 17.63,
-          "avgCsat": 10.0,
-          "csatCount": 1
+      "complexityBuckets": [
+        {
+          "label": "0",
+          "value": 1090,
+          "avgV1": 3.3,
+          "avgHBR": 34.2
         },
-        "1": {
-          "count": 306,
-          "avgHBR": 7.85,
-          "avgFirstResp": 11.57,
-          "avgCsat": 7.75,
-          "csatCount": 8
+        {
+          "label": "1",
+          "value": 98,
+          "avgV1": 3.42,
+          "avgHBR": 13.7
         },
-        "2": {
-          "count": 250,
-          "avgHBR": 23.57,
-          "avgFirstResp": 12.93,
-          "avgCsat": 9.1,
-          "csatCount": 10
+        {
+          "label": "2",
+          "value": 180,
+          "avgV1": 3.73,
+          "avgHBR": 23.1
         },
-        "4": {
-          "count": 238,
-          "avgHBR": 29.11,
-          "avgFirstResp": 9.73,
-          "avgCsat": 10.0,
-          "csatCount": 14
+        {
+          "label": "3",
+          "value": 63,
+          "avgV1": 3.83,
+          "avgHBR": 27.9
         },
-        "5": {
-          "count": 204,
-          "avgHBR": 40.69,
-          "avgFirstResp": 10.36,
-          "avgCsat": 9.62,
-          "csatCount": 13
+        {
+          "label": "4",
+          "value": 87,
+          "avgV1": 3.75,
+          "avgHBR": 32.9
         },
-        "6": {
-          "count": 184,
-          "avgHBR": 59.77,
-          "avgFirstResp": 8.63,
-          "avgCsat": 10.0,
-          "csatCount": 10
+        {
+          "label": "5",
+          "value": 192,
+          "avgV1": 3.71,
+          "avgHBR": 44.6
         },
-        "8": {
-          "count": 146,
-          "avgHBR": 61.41,
-          "avgFirstResp": 12.24,
-          "avgCsat": 9.0,
-          "csatCount": 5
+        {
+          "label": "6",
+          "value": 0,
+          "avgV1": null,
+          "avgHBR": null
         },
-        "9": {
-          "count": 124,
-          "avgHBR": 87.77,
-          "avgFirstResp": 12.62,
-          "avgCsat": 10.0,
-          "csatCount": 8
+        {
+          "label": "7",
+          "value": 0,
+          "avgV1": null,
+          "avgHBR": null
         },
-        "10": {
-          "count": 308,
-          "avgHBR": 104.12,
-          "avgFirstResp": 9.25,
-          "avgCsat": 9.17,
-          "csatCount": 12
+        {
+          "label": "8",
+          "value": 0,
+          "avgV1": null,
+          "avgHBR": null
+        },
+        {
+          "label": "9",
+          "value": 0,
+          "avgV1": null,
+          "avgHBR": null
+        },
+        {
+          "label": "10",
+          "value": 0,
+          "avgV1": null,
+          "avgHBR": null
         }
-      },
+      ],
       "statusData": [
         {
           "label": "Closed",
@@ -6635,6 +6641,178 @@
           "label": "US-CAN",
           "value": 849
         }
+      ],
+      "typeStats": [
+        {
+          "label": "Location Data Support",
+          "n": 956,
+          "avgV1": 3.39,
+          "avgCCS": 1.35,
+          "avgResolutionHrs": 40.5
+        },
+        {
+          "label": "Platform Support",
+          "n": 469,
+          "avgV1": 4.14,
+          "avgCCS": 1.31,
+          "avgResolutionHrs": 30.7
+        },
+        {
+          "label": "Spam",
+          "n": 234,
+          "avgV1": 2.0,
+          "avgCCS": 0.01,
+          "avgResolutionHrs": 0.8
+        },
+        {
+          "label": "Locator & Local Pages Support",
+          "n": 43,
+          "avgV1": 4.93,
+          "avgCCS": 1.38,
+          "avgResolutionHrs": 44.7
+        },
+        {
+          "label": "Other",
+          "n": 7,
+          "avgV1": 3.0,
+          "avgCCS": 1.05,
+          "avgResolutionHrs": 89.0
+        },
+        {
+          "label": "Termination",
+          "n": 1,
+          "avgV1": 2.0,
+          "avgCCS": 0.0,
+          "avgResolutionHrs": 114.3
+        }
+      ],
+      "issueTypeStats": [
+        {
+          "label": "Listing Update",
+          "n": 320,
+          "avgV1": 3.0,
+          "avgCCS": 1.32,
+          "avgResolutionHrs": 46.7
+        },
+        {
+          "label": "Unknown",
+          "n": 245,
+          "avgV1": 2.06,
+          "avgCCS": 0.06,
+          "avgResolutionHrs": 3.5
+        },
+        {
+          "label": "Location Update",
+          "n": 245,
+          "avgV1": 3.0,
+          "avgCCS": 1.09,
+          "avgResolutionHrs": 29.3
+        },
+        {
+          "label": "Directory Connection",
+          "n": 194,
+          "avgV1": 4.0,
+          "avgCCS": 1.42,
+          "avgResolutionHrs": 48.8
+        },
+        {
+          "label": "How To",
+          "n": 135,
+          "avgV1": 3.04,
+          "avgCCS": 1.29,
+          "avgResolutionHrs": 24.9
+        },
+        {
+          "label": "Verification or Claim Issue",
+          "n": 116,
+          "avgV1": 4.0,
+          "avgCCS": 1.81,
+          "avgResolutionHrs": 40.7
+        },
+        {
+          "label": "Failed Data Push",
+          "n": 98,
+          "avgV1": 5.0,
+          "avgCCS": 1.23,
+          "avgResolutionHrs": 37.7
+        },
+        {
+          "label": "Missing Data",
+          "n": 97,
+          "avgV1": 5.0,
+          "avgCCS": 1.53,
+          "avgResolutionHrs": 45.1
+        },
+        {
+          "label": "User Updates",
+          "n": 76,
+          "avgV1": 4.0,
+          "avgCCS": 1.31,
+          "avgResolutionHrs": 21.2
+        },
+        {
+          "label": "Login Issue",
+          "n": 64,
+          "avgV1": 4.0,
+          "avgCCS": 1.26,
+          "avgResolutionHrs": 23.6
+        },
+        {
+          "label": "Creation Issue",
+          "n": 60,
+          "avgV1": 4.02,
+          "avgCCS": 1.62,
+          "avgResolutionHrs": 35.4
+        },
+        {
+          "label": "Group Update",
+          "n": 23,
+          "avgV1": 3.0,
+          "avgCCS": 0.76,
+          "avgResolutionHrs": 18.9
+        },
+        {
+          "label": "Update Existing Page",
+          "n": 14,
+          "avgV1": 5.0,
+          "avgCCS": 1.1,
+          "avgResolutionHrs": 58.8
+        },
+        {
+          "label": "UI Defect",
+          "n": 10,
+          "avgV1": 5.0,
+          "avgCCS": 1.17,
+          "avgResolutionHrs": 35.5
+        },
+        {
+          "label": "New Page Creation",
+          "n": 4,
+          "avgV1": 6.0,
+          "avgCCS": 1.78,
+          "avgResolutionHrs": 19.1
+        },
+        {
+          "label": "Syncing Issue",
+          "n": 4,
+          "avgV1": 5.0,
+          "avgCCS": 1.67,
+          "avgResolutionHrs": 12.5
+        },
+        {
+          "label": "Update to Design",
+          "n": 3,
+          "avgV1": 5.0,
+          "avgCCS": 1.52,
+          "avgResolutionHrs": 126.3
+        },
+        {
+          "label": "Page Deletion",
+          "n": 2,
+          "avgV1": 4.0,
+          "avgCCS": 0.0,
+          "avgResolutionHrs": 10.1
+        }
       ]
     },
     "2026-06": {
@@ -6650,12 +6828,13 @@
         "queueBacklog": 70,
         "spamCount": 302,
         "avgFirstResp": 3.0,
-        "avgV1": 3.0,
+        "avgV1": 3.31,
         "avgComplexity": 3.11,
         "avgResolution": 30.5,
-        "avgCsat": 9.4,
-        "avgCsatPct": 94.0,
-        "csatTotalReceived": 65
+        "avgCsat": 8.85,
+        "avgCsatPct": 85.0,
+        "csatTotalReceived": 20,
+        "avgCCS": 2.91
       },
       "agentData": [
         {
@@ -9175,69 +9354,69 @@
       "complexityBuckets": [
         {
           "label": "0",
-          "value": 179,
-          "avgV1": 3.0,
-          "avgHBR": 9.6
+          "value": 132,
+          "avgV1": 2.48,
+          "avgHBR": 6.9
         },
         {
           "label": "1",
-          "value": 427,
-          "avgV1": 3.0,
-          "avgHBR": 16.8
+          "value": 64,
+          "avgV1": 2.94,
+          "avgHBR": 9.4
         },
         {
           "label": "2",
-          "value": 312,
-          "avgV1": 3.0,
-          "avgHBR": 24.3
+          "value": 94,
+          "avgV1": 3.7,
+          "avgHBR": 12.6
         },
         {
           "label": "3",
-          "value": 245,
-          "avgV1": 3.0,
-          "avgHBR": 24.7
+          "value": 61,
+          "avgV1": 3.64,
+          "avgHBR": 16.4
         },
         {
           "label": "4",
-          "value": 289,
-          "avgV1": 3.0,
-          "avgHBR": 32.8
+          "value": 39,
+          "avgV1": 3.87,
+          "avgHBR": 30.6
         },
         {
           "label": "5",
-          "value": 225,
-          "avgV1": 3.0,
-          "avgHBR": 44.7
+          "value": 40,
+          "avgV1": 3.73,
+          "avgHBR": 23.3
         },
         {
           "label": "6",
-          "value": 185,
-          "avgV1": 3.0,
-          "avgHBR": 55.4
+          "value": 43,
+          "avgV1": 3.6,
+          "avgHBR": 27.7
         },
         {
           "label": "7",
-          "value": 74,
-          "avgV1": 3.0,
-          "avgHBR": 61.1
+          "value": 25,
+          "avgV1": 3.64,
+          "avgHBR": 30.9
         },
         {
           "label": "8",
-          "value": 45,
-          "avgV1": 3.0,
-          "avgHBR": 59.7
+          "value": 19,
+          "avgV1": 3.68,
+          "avgHBR": 25.8
         },
         {
           "label": "9",
-          "value": 15,
-          "avgV1": 3.0,
-          "avgHBR": 32.1
+          "value": 10,
+          "avgV1": 4.2,
+          "avgHBR": 35.7
         },
         {
           "label": "10",
-          "value": 4,
-          "avgV1": 3.0,
-          "avgHBR": null
+          "value": 7,
+          "avgV1": 3.71,
+          "avgHBR": 42.9
         }
       ],
       "statusData": [
@@ -9490,6 +9669,178 @@
         {
           "label": "Unassigned",
           "value": 112
+        }
+      ],
+      "typeStats": [
+        {
+          "label": "Location Data Support",
+          "n": 260,
+          "avgV1": 3.45,
+          "avgCCS": 3.67,
+          "avgResolutionHrs": 21.2
+        },
+        {
+          "label": "Platform Support",
+          "n": 134,
+          "avgV1": 4.17,
+          "avgCCS": 3.75,
+          "avgResolutionHrs": 19.6
+        },
+        {
+          "label": "Spam",
+          "n": 126,
+          "avgV1": 2.0,
+          "avgCCS": 0.36,
+          "avgResolutionHrs": 2.8
+        },
+        {
+          "label": "Locator & Local Pages Support",
+          "n": 11,
+          "avgV1": 4.91,
+          "avgCCS": 4.42,
+          "avgResolutionHrs": 41.0
+        },
+        {
+          "label": "Other",
+          "n": 2,
+          "avgV1": 3.0,
+          "avgCCS": 1.51,
+          "avgResolutionHrs": 0.1
+        },
+        {
+          "label": "CSAT Follow-up",
+          "n": 1,
+          "avgV1": 2.0,
+          "avgCCS": 0.0,
+          "avgResolutionHrs": 4.5
+        }
+      ],
+      "issueTypeStats": [
+        {
+          "label": "Unknown",
+          "n": 130,
+          "avgV1": 2.02,
+          "avgCCS": 0.37,
+          "avgResolutionHrs": 2.9
+        },
+        {
+          "label": "Listing Update",
+          "n": 93,
+          "avgV1": 3.0,
+          "avgCCS": 3.55,
+          "avgResolutionHrs": 23.6
+        },
+        {
+          "label": "Location Update",
+          "n": 50,
+          "avgV1": 3.0,
+          "avgCCS": 3.71,
+          "avgResolutionHrs": 19.4
+        },
+        {
+          "label": "Directory Connection",
+          "n": 42,
+          "avgV1": 4.0,
+          "avgCCS": 3.67,
+          "avgResolutionHrs": 27.9
+        },
+        {
+          "label": "How To",
+          "n": 37,
+          "avgV1": 3.03,
+          "avgCCS": 3.78,
+          "avgResolutionHrs": 18.4
+        },
+        {
+          "label": "Missing Data",
+          "n": 33,
+          "avgV1": 5.0,
+          "avgCCS": 3.37,
+          "avgResolutionHrs": 14.5
+        },
+        {
+          "label": "Verification or Claim Issue",
+          "n": 28,
+          "avgV1": 4.0,
+          "avgCCS": 3.71,
+          "avgResolutionHrs": 16.0
+        },
+        {
+          "label": "Failed Data Push",
+          "n": 26,
+          "avgV1": 5.0,
+          "avgCCS": 4.06,
+          "avgResolutionHrs": 33.6
+        },
+        {
+          "label": "User Updates",
+          "n": 25,
+          "avgV1": 4.0,
+          "avgCCS": 3.8,
+          "avgResolutionHrs": 15.4
+        },
+        {
+          "label": "Creation Issue",
+          "n": 16,
+          "avgV1": 4.06,
+          "avgCCS": 3.66,
+          "avgResolutionHrs": 16.2
+        },
+        {
+          "label": "Location Removal",
+          "n": 15,
+          "avgV1": 5.0,
+          "avgCCS": 3.7,
+          "avgResolutionHrs": 13.4
+        },
+        {
+          "label": "Group Update",
+          "n": 14,
+          "avgV1": 3.0,
+          "avgCCS": 4.36,
+          "avgResolutionHrs": 17.1
+        },
+        {
+          "label": "Login Issue",
+          "n": 14,
+          "avgV1": 4.0,
+          "avgCCS": 4.15,
+          "avgResolutionHrs": 17.6
+        },
+        {
+          "label": "Update Existing Page",
+          "n": 5,
+          "avgV1": 5.0,
+          "avgCCS": 4.94,
+          "avgResolutionHrs": 53.0
+        },
+        {
+          "label": "UI Defect",
+          "n": 3,
+          "avgV1": 4.33,
+          "avgCCS": 4.71,
+          "avgResolutionHrs": 21.9
+        },
+        {
+          "label": "Syncing Issue",
+          "n": 1,
+          "avgV1": 5.0,
+          "avgCCS": 0.56,
+          "avgResolutionHrs": 42.1
+        },
+        {
+          "label": "New Page Creation",
+          "n": 1,
+          "avgV1": 6.0,
+          "avgCCS": 3.73,
+          "avgResolutionHrs": 57.5
+        },
+        {
+          "label": "Page Deletion",
+          "n": 1,
+          "avgV1": 4.0,
+          "avgCCS": 2.52,
+          "avgResolutionHrs": 3.9
         }
       ]
     }
