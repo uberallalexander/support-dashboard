@@ -452,6 +452,54 @@ function mergePeriods(periods) {
     languageData: mergeLists(periods.map(p=>p.languageData)),
     regionData: mergeLists(periods.map(p=>p.regionData)),
     hourlyData: mergeHourly(periods.map(p=>p.hourlyData)),
+    complexityBuckets: (() => {
+      const allBuckets = periods.map(p => p.complexityBuckets || []);
+      const labels = [...new Set(allBuckets.flat().map(b => b.label))].sort((a,b)=>+a-+b);
+      return labels.map(label => {
+        const rows = allBuckets.map(bs => bs.find(b => b.label === label)).filter(Boolean);
+        const totalN = rows.reduce((s,b) => s+b.value, 0);
+        const wavgField = (f) => {
+          let ws=0, wt=0;
+          rows.forEach(b => { if(b[f]!=null){ws+=b[f]*b.value;wt+=b.value;} });
+          return wt>0 ? ws/wt : null;
+        };
+        const csatRows = rows.filter(b => b.csatTotal > 0);
+        const totalCsatResp = csatRows.reduce((s,b) => s+b.csatTotal, 0);
+        const pos = csatRows.reduce((s,b) => s+Math.round((b.avgHBR||0)/100*b.csatTotal), 0);
+        return {
+          label,
+          value: totalN,
+          avgV1: wavgField('avgV1'),
+          avgResolutionHrs: wavgField('avgResolutionHrs'),
+          avgHBR: totalCsatResp > 0 ? pos/totalCsatResp*100 : (rows[0]?.avgHBR ?? null),
+          csatTotal: totalCsatResp,
+        };
+      });
+    })(),
+    typeStats: (() => {
+      const allStats = periods.flatMap(p => p.typeStats || []);
+      const map = {};
+      allStats.forEach(r => {
+        if (!map[r.label]) { map[r.label] = {...r}; return; }
+        const m = map[r.label], totalN = m.n + r.n;
+        const wavg = (f) => (m[f]!=null||r[f]!=null) ? ((m[f]||0)*m.n+(r[f]||0)*r.n)/totalN : null;
+        m.avgV1 = wavg('avgV1'); m.avgCCS = wavg('avgCCS'); m.avgResolutionHrs = wavg('avgResolutionHrs');
+        m.n = totalN;
+      });
+      return Object.values(map).sort((a,b) => b.n - a.n);
+    })(),
+    issueTypeStats: (() => {
+      const allStats = periods.flatMap(p => p.issueTypeStats || []);
+      const map = {};
+      allStats.forEach(r => {
+        if (!map[r.label]) { map[r.label] = {...r}; return; }
+        const m = map[r.label], totalN = m.n + r.n;
+        const wavg = (f) => (m[f]!=null||r[f]!=null) ? ((m[f]||0)*m.n+(r[f]||0)*r.n)/totalN : null;
+        m.avgV1 = wavg('avgV1'); m.avgCCS = wavg('avgCCS'); m.avgResolutionHrs = wavg('avgResolutionHrs');
+        m.n = totalN;
+      });
+      return Object.values(map).sort((a,b) => b.n - a.n);
+    })(),
   };
 }
 
@@ -1110,8 +1158,8 @@ function renderOverview() {
         </tr></thead>
         <tbody>${buckets.map((b, i) => {
           const color = scoreColor(parseInt(b.label));
-          const hbr = b.avgHBR != null ? `${b.avgHBR}h` : '—';
-          const hbrColor = b.avgHBR > 48 ? '#b91c1c' : b.avgHBR > 24 ? '#b45309' : '#15803d';
+          const hbr = b.avgResolutionHrs != null ? `${b.avgResolutionHrs.toFixed(1)}h` : '—';
+          const hbrColor = b.avgResolutionHrs > 48 ? '#b91c1c' : b.avgResolutionHrs > 24 ? '#b45309' : '#15803d';
           const v1 = b.avgV1 != null ? b.avgV1.toFixed(2) : '—';
           const dim = b.value === 0 ? 'opacity:0.35' : '';
           return `<tr style="${dim}">
