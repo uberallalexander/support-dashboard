@@ -1042,18 +1042,15 @@ function renderOverview() {
   // Complexity + resolution KPI strip
   const pd = getPeriodData();
   const agents = pd.agentData || [];
-  const avgConvComp = agents.length && agents.some(a => a.conversationComplexity)
-    ? (agents.reduce((s,a) => s + (a.conversationComplexity || 0) * a.cases, 0) / agents.reduce((s,a) => s + a.cases, 0)).toFixed(2)
-    : '—';
   const pdKpis = pd.kpis || {};
-  const avgV1 = pdKpis.avgV1 ? pdKpis.avgV1.toFixed(2) : (pdKpis.avgFirstResp ? pdKpis.avgFirstResp.toFixed(1) + 'h' : '—');
+  const avgV1  = pdKpis.avgV1  != null ? pdKpis.avgV1.toFixed(2)  : '—';
   const avgCCS = pdKpis.avgCCS != null ? pdKpis.avgCCS.toFixed(2) : '—';
-  const avgHBR = pdKpis.avgHBRexclOnHold ? pdKpis.avgHBRexclOnHold.toFixed(1) : (pdKpis.avgResolution ? pdKpis.avgResolution.toFixed(1) : '—');
+  const avgHBR = pdKpis.avgHBRexclOnHold != null ? pdKpis.avgHBRexclOnHold.toFixed(1)
+               : pdKpis.avgResolution    != null ? pdKpis.avgResolution.toFixed(1) : '—';
   document.getElementById('complexity-kpi-strip').innerHTML = [
-    { label: 'Avg Conv. Complexity', value: avgConvComp, sub: 'out of 10 · across all agents', color: '#7c3aed' },
-    { label: 'Avg Complexity V1', value: avgV1, sub: 'out of 6 · product × issue type', color: '#2563eb' },
-    { label: 'Avg CCS', value: avgCCS, sub: 'out of 10 · conversation complexity score', color: '#0891b2' },
-    { label: 'Avg Resolution (excl. On Hold)', value: avgHBR + 'h', sub: 'active working hours only', color: '#059669' },
+    { label: 'Avg Complexity V1', value: avgV1,       sub: 'out of 6 · designed complexity (product × issue type)', color: '#2563eb' },
+    { label: 'Avg CCS',           value: avgCCS,      sub: 'out of 10 · actual conversation complexity score',      color: '#0891b2' },
+    { label: 'Avg Resolution',    value: avgHBR + 'h', sub: 'active working hours · closed cases',                  color: '#059669' },
   ].map(k => `<div class="card kpi-card p-5">
     <div style="color:var(--text-muted);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">${k.label}</div>
     <div style="font-size:2rem;font-weight:800;color:${k.color}">${k.value}</div>
