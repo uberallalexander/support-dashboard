@@ -1079,21 +1079,11 @@ function renderOverview() {
       buckets.map(b => b.label), buckets.map(b => b.value),
       { colors });
 
-    // CSAT per CCS chart
+    // CSAT per CCS chart — built from complexityBuckets (uses correct 4-signal CCS)
     document.getElementById('csat-per-ccs-card').style.display = '';
-    const csatCountByCcs = Array(11).fill(0);
-    const csatSumByCcs   = Array(11).fill(0);
-    for (const a of pd.agentData || []) {
-      const cnt = a.csatCountByComplexity || {};
-      const avg = a.csatByComplexity     || {};
-      for (let s = 0; s <= 10; s++) {
-        const c = cnt[String(s)] || cnt[s] || 0;
-        const v = avg[String(s)] ?? avg[s] ?? null;
-        if (c > 0 && v != null) { csatCountByCcs[s] += c; csatSumByCcs[s] += v * c; }
-      }
-    }
-    const csatAvgByCcs = csatCountByCcs.map((c, s) => c > 0 ? +(csatSumByCcs[s] / c).toFixed(1) : null);
-    const ccsLabels = Array.from({length:11}, (_, i) => String(i));
+    const csatCountByCcs = buckets.map(b => b.csatTotal || 0);
+    const csatAvgByCcs   = buckets.map(b => b.avgCsatScore ?? null);
+    const ccsLabels = buckets.map(b => b.label);
     const scoreCol  = i => i <= 3 ? '#22c55e' : i <= 6 ? '#f59e0b' : '#ef4444';
 
     const existingCsatChart = Chart.getChart('chart-csat-per-ccs');
