@@ -436,7 +436,13 @@ function mergePeriods(periods) {
       avgFirstResp: wavgKpi('avgFirstResp'),
       avgResolution: wavgKpi('avgResolution'),
       avgCsat: wavgKpi('avgCsat'),
-      avgCsatPct: wavgKpi('avgCsatPct'),
+      avgCsatPct: (() => {
+        // Weight by csatTotalReceived (responses), not by total cases
+        const totalResp = allKpis.reduce((s,k) => s+(k.csatTotalReceived||0), 0);
+        if (!totalResp) return null;
+        const pos = allKpis.reduce((s,k) => s + Math.round((k.avgCsatPct||0)/100*(k.csatTotalReceived||0)), 0);
+        return pos / totalResp * 100;
+      })(),
       csatTotalReceived: sumKpi('csatTotalReceived'),
     },
     agentData: Object.values(agentMap),
@@ -1343,8 +1349,9 @@ function renderAgents() {
       return `<span style="font-weight:600">${v}</span>`;
     }},
     { label: sth('Complexity V1', 'complexity'), key: '_cx', render: r => {
+      if (r.complexity == null) return '—';
       const c = r.complexity >= 3 ? '#dc2626' : r.complexity >= 2.5 ? '#d97706' : '#7c3aed';
-      return mkBar(r.complexity, 4, c);
+      return `<span style="font-weight:600;color:${c}">${r.complexity.toFixed(2)}</span><span style="color:var(--text-muted);font-size:0.7rem"> /6</span>`;
     }},
     { label: `${sth('Conv. Complexity', 'conversationComplexity')}${convTip}`, key: '_conv', render: r => {
       const val = r._convComplexity ?? r.conversationComplexity;
@@ -1353,13 +1360,7 @@ function renderAgents() {
       const tooltip = r.convAvgMsgs !== undefined
         ? `title="Agent msgs/case: ${r.convAvgMsgs} · Client msgs/case: ${r.convAvgClientMsgs ?? r.convAvgQuestions ?? '—'} · Avg agent msg: ${r.convAvgLength} chars"`
         : '';
-      const pct = (val / 10 * 100).toFixed(0);
-      return `<div style="display:flex;align-items:center;gap:6px" ${tooltip}>
-        <div style="width:52px;height:5px;background:#e5e7ef;border-radius:3px;flex-shrink:0">
-          <div style="width:${pct}%;height:5px;background:${c};border-radius:3px"></div>
-        </div>
-        <span style="font-size:0.75rem">${val.toFixed(2)}</span>
-      </div>`;
+      return `<span style="font-weight:600;color:${c}" ${tooltip}>${val.toFixed(2)}</span><span style="color:var(--text-muted);font-size:0.7rem"> /10</span>`;
     }},
     { label: sth('Jira Tickets', 'jira.total'), key: '_jira', render: r => {
       if (!r.jira) return '<span style="color:var(--text-muted)">—</span>';
@@ -1486,24 +1487,14 @@ function renderTopics() {
   const issueStats = pd2.issueTypeStats || [];
 
   const v1Bar = v => {
-    const pct = ((v - 2) / 4 * 100).toFixed(0);
+    if (v == null) return '—';
     const col = v <= 2 ? '#22c55e' : v <= 3 ? '#84cc16' : v <= 4 ? '#f59e0b' : v <= 5 ? '#f97316' : '#ef4444';
-    return `<div style="display:flex;align-items:center;gap:6px">
-      <div style="width:80px;height:5px;background:#1e2537;border-radius:3px">
-        <div style="width:${pct}%;height:5px;background:${col};border-radius:3px"></div>
-      </div>
-      <span style="color:${col};font-weight:600;font-size:0.8rem">${v.toFixed(1)}</span>
-    </div>`;
+    return `<span style="color:${col};font-weight:600;font-size:0.85rem">${v.toFixed(2)}</span><span style="color:var(--text-muted);font-size:0.7rem"> /6</span>`;
   };
   const ccsBar = v => {
-    const pct = (v / 10 * 100).toFixed(0);
+    if (v == null) return '—';
     const col = v <= 3 ? '#22c55e' : v <= 6 ? '#f59e0b' : '#ef4444';
-    return `<div style="display:flex;align-items:center;gap:6px">
-      <div style="width:80px;height:5px;background:#1e2537;border-radius:3px">
-        <div style="width:${pct}%;height:5px;background:${col};border-radius:3px"></div>
-      </div>
-      <span style="color:${col};font-weight:600;font-size:0.8rem">${v.toFixed(1)}</span>
-    </div>`;
+    return `<span style="color:${col};font-weight:600;font-size:0.85rem">${v.toFixed(2)}</span><span style="color:var(--text-muted);font-size:0.7rem"> /10</span>`;
   };
   const hrsCell = v => v != null ? `<span style="color:var(--text-muted);font-size:0.8rem">${v.toFixed(1)}h</span>` : '—';
 
