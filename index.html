@@ -368,11 +368,12 @@ function mergePeriods(periods) {
         ? ((f1||0)*w1 + (f2||0)*w2) / wt : (f1 ?? f2);
       m.cases = wt;
       m.spamCases = (m.spamCases||0) + (a.spamCases||0);
-      // csatPct: weight by CSAT responses count (csatTotal), not case count
-      const ct1 = m.csatTotal || 0, ct2 = a.csatTotal || 0;
-      const pos1 = Math.round((m.csatPct||0)/100 * ct1), pos2 = Math.round((a.csatPct||0)/100 * ct2);
-      m.csatTotal = ct1 + ct2;
-      m.csatPct = m.csatTotal > 0 ? Math.round((pos1+pos2)/m.csatTotal*100) : null;
+      // CSAT: sum counts directly, recompute pct from good/total
+      m.csatGood    = (m.csatGood    || 0) + (a.csatGood    || 0);
+      m.csatNeutral = (m.csatNeutral || 0) + (a.csatNeutral || 0);
+      m.csatBad     = (m.csatBad     || 0) + (a.csatBad     || 0);
+      m.csatTotal   = (m.csatTotal   || 0) + (a.csatTotal   || 0);
+      m.csatPct = m.csatTotal > 0 ? Math.round(m.csatGood / m.csatTotal * 100) : null;
       m.firstResponseHrs = wavg(m.firstResponseHrs, a.firstResponseHrs);
       m.ongoingResponseHrs = wavg(m.ongoingResponseHrs, a.ongoingResponseHrs);
       m.resolutionHrs = wavg(m.resolutionHrs, a.resolutionHrs);
@@ -1368,17 +1369,22 @@ function renderAgents() {
     { label: sth('Avg Resp.', 'ongoingResponseHrs'), key: '_ar', render: r => hrs(r._ongoingResp) },
     { label: sth('Resolution', 'resolutionHrs'), key: '_res', render: r => hrs(r._resolutionHrs) },
     { label: sth('Touchpoints', 'touchpoints'), key: 'touchpoints', render: r => r._touchpoints != null ? r._touchpoints.toFixed(1) : '—' },
-    { label: sth('CSAT Score', 'csat'), key: '_csatScore', render: r => {
-      const v = r._csat;
-      if (v == null) return '<span style="color:var(--text-muted)">—</span>';
-      const c = v >= 9 ? '#15803d' : v >= 7 ? '#b45309' : '#b91c1c';
-      return `<span style="font-weight:600;color:${c}">${v.toFixed(1)}<span style="color:var(--text-muted);font-weight:400;font-size:0.7rem">/10</span></span>`;
-    }},
     { label: sth('CSAT %', 'csatPct'), key: '_csatPct', render: r => {
       const v = r._csatPct;
       if (v === null || v === undefined) return '<span style="color:var(--text-muted)">—</span>';
       const c = v >= 90 ? '#15803d' : v >= 70 ? '#b45309' : '#b91c1c';
       return `<span style="font-weight:600;color:${c}">${v}%</span>`;
+    }},
+    { label: 'Good / Neutral / Bad', key: '_csatBreakdown', render: r => {
+      const good    = r.csatGood    ?? 0;
+      const neutral = r.csatNeutral ?? 0;
+      const bad     = r.csatBad     ?? 0;
+      if (!r.csatTotal) return '<span style="color:var(--text-muted)">—</span>';
+      return `<span style="color:#15803d;font-weight:600">${good}</span>`
+           + `<span style="color:var(--text-muted)"> / </span>`
+           + `<span style="color:#b45309;font-weight:600">${neutral}</span>`
+           + `<span style="color:var(--text-muted)"> / </span>`
+           + `<span style="color:#b91c1c;font-weight:600">${bad}</span>`;
     }},
     { label: sth('CSAT Received', 'csatTotal'), key: '_csatTotal', render: r => {
       const v = r._csatTotal;
