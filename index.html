@@ -435,6 +435,8 @@ function mergePeriods(periods) {
       queueBacklog: sumKpi('queueBacklog'),
       avgFirstResp: wavgKpi('avgFirstResp'),
       avgResolution: wavgKpi('avgResolution'),
+      avgV1: wavgKpi('avgV1'),
+      avgCCS: wavgKpi('avgCCS'),
       avgCsat: wavgKpi('avgCsat'),
       avgCsatPct: (() => {
         // Weight by csatTotalReceived (responses), not by total cases
