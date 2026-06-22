@@ -824,7 +824,7 @@ function toggleAgentExpand(row, agentName, idx) {
     };
     const rows = cases.map(c => `<tr>
       <td style="${tdS}">${resultBadge(c.csatResult)}</td>
-      <td style="${tdS};color:var(--text-muted)">${c.caseNumber}</td>
+      <td style="${tdS}"><a href="https://uberall.lightning.force.com/lightning/r/Case/${c.id}/view" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600">${c.caseNumber}</a></td>
       <td style="${tdS}">${c.type||'—'}</td>
       <td style="${tdS}">${c.issueType||'—'}</td>
       <td style="${tdS}">${c.v1 != null ? c.v1 : '—'}</td>
