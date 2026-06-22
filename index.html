@@ -171,19 +171,14 @@ const CONFIG = {
           <div id="kpi-period" style="color:var(--text-muted);font-size:0.75rem;margin-top:4px">—</div>
         </div>
         <div class="card kpi-card p-5">
-          <div style="color:var(--text-muted);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Open Cases</div>
-          <div id="kpi-open" style="font-size:2rem;font-weight:800;color:#1d4ed8">—</div>
-          <div style="color:var(--text-muted);font-size:0.75rem;margin-top:4px">currently active</div>
+          <div style="color:var(--text-muted);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Closed Cases</div>
+          <div id="kpi-closed" style="font-size:2rem;font-weight:800;color:#1d4ed8">—</div>
+          <div style="color:var(--text-muted);font-size:0.75rem;margin-top:4px">Closed + Completed</div>
         </div>
         <div class="card kpi-card p-5">
           <div style="color:var(--text-muted);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Avg CSAT</div>
           <div id="kpi-csat" style="font-size:2rem;font-weight:800;color:#15803d">—</div>
           <div id="kpi-csat-sub" style="color:var(--text-muted);font-size:0.75rem;margin-top:4px">—</div>
-        </div>
-        <div class="card kpi-card p-5">
-          <div style="color:var(--text-muted);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Queue Backlog</div>
-          <div id="kpi-queue" style="font-size:2rem;font-weight:800;color:#b45309">—</div>
-          <div style="color:var(--text-muted);font-size:0.75rem;margin-top:4px">unassigned cases</div>
         </div>
       </div>
       <!-- Complexity + Resolution KPI row — directly under main KPIs -->
@@ -432,8 +427,8 @@ function mergePeriods(periods) {
     kpis: {
       total: totalCases,
       open: sumKpi('open'),
+      closed: sumKpi('closed'),
       spamCount: sumKpi('spamCount'),
-      queueBacklog: sumKpi('queueBacklog'),
       avgFirstResp: wavgKpi('avgFirstResp'),
       avgResolution: wavgKpi('avgResolution'),
       avgV1: wavgKpi('avgV1'),
@@ -962,11 +957,8 @@ function renderTopKpis() {
   const hasSpam = (pk.spamCount ?? baseKpis.spamCount) != null;
   document.getElementById('kpi-period').textContent = periodLabel + (excludeSpam && hasSpam ? ' · excl. Spam' : '');
 
-  // open / queue only available in current-period (June) snapshot
-  const openVal = pk.open ?? baseKpis.open;
-  document.getElementById('kpi-open').textContent = openVal != null ? openVal.toLocaleString() : '—';
-  const queueVal = pk.queueBacklog ?? baseKpis.queueBacklog;
-  document.getElementById('kpi-queue').textContent = queueVal != null ? queueVal.toLocaleString() : '—';
+  const closedVal = pk.closed ?? baseKpis.closed;
+  document.getElementById('kpi-closed').textContent = closedVal != null ? closedVal.toLocaleString() : '—';
 
   const avgCsat = pk.avgCsat ?? baseKpis.avgCsat;
   const csatScale = baseKpis.csatScale || 10;
