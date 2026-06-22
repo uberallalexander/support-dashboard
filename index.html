@@ -450,6 +450,28 @@ function mergePeriods(periods) {
     languageData: mergeLists(periods.map(p=>p.languageData)),
     regionData: mergeLists(periods.map(p=>p.regionData)),
     hourlyData: mergeHourly(periods.map(p=>p.hourlyData)),
+    issueTypeData: mergeLists(periods.map(p=>p.issueTypeData)),
+    topicByRegion: (() => {
+      const out = {};
+      ['EMEA','US-CAN'].forEach(reg => {
+        const map = {};
+        periods.forEach(p => ((p.topicByRegion||{})[reg]||[]).forEach(r => { map[r.label] = (map[r.label]||0)+r.value; }));
+        const tot = Object.values(map).reduce((s,v)=>s+v,0) || 1;
+        out[reg] = Object.entries(map).map(([label,value])=>({label,value,pct:+(value/tot*100).toFixed(1)})).sort((a,b)=>b.value-a.value);
+      });
+      return out;
+    })(),
+    topicByHour: (() => {
+      const byIt = {}, totals = {};
+      periods.forEach(p => Object.entries(p.topicByHour||{}).forEach(([it,arr]) => {
+        if (!byIt[it]) byIt[it] = Array(24).fill(0);
+        arr.forEach((v,h) => { byIt[it][h] += v; });
+        totals[it] = (totals[it]||0) + arr.reduce((s,v)=>s+v,0);
+      }));
+      const top = Object.entries(totals).sort((a,b)=>b[1]-a[1]).slice(0,7).map(e=>e[0]);
+      const out = {}; top.forEach(it => { out[it] = byIt[it]; });
+      return out;
+    })(),
     complexityBuckets: (() => {
       const allBuckets = periods.map(p => p.complexityBuckets || []);
       const labels = [...new Set(allBuckets.flat().map(b => b.label))].sort((a,b)=>+a-+b);
@@ -930,6 +952,7 @@ function filteredData() {
     ...data,
     statusData: pd.statusData || data.statusData,
     typeData: pd.typeData || data.typeData,
+    issueTypeData: pd.issueTypeData || data.issueTypeData,
     priorityData: pd.priorityData || data.priorityData,
     languageData: pd.languageData || data.languageData,
     regionData: pd.regionData || data.regionData,
@@ -1428,7 +1451,7 @@ function renderTopics() {
     { horizontal: true });
 
   // EMEA vs US-CAN grouped bar chart
-  const regionData = data.topicByRegion;
+  const regionData = getPeriodData().topicByRegion || data.topicByRegion;
   if (regionData) {
     const allLabels = [...new Set([
       ...regionData['EMEA'].map(r => r.label),
@@ -1472,7 +1495,7 @@ function renderTopics() {
   }
 
   // Topic by hour stacked area / line chart
-  const topicHour = data.topicByHour;
+  const topicHour = getPeriodData().topicByHour || data.topicByHour;
   if (topicHour) {
     const hours = Array.from({ length: 24 }, (_, i) => `${String(i).padStart(2,'0')}:00`);
     const topicColors = ['#6366f1','#22c55e','#f59e0b','#ef4444','#06b6d4','#a855f7','#f97316'];
