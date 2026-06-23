@@ -180,6 +180,11 @@ const CONFIG = {
           <div id="kpi-csat" style="font-size:2rem;font-weight:800;color:#15803d">—</div>
           <div id="kpi-csat-sub" style="color:var(--text-muted);font-size:0.75rem;margin-top:4px">—</div>
         </div>
+        <div class="card kpi-card p-5">
+          <div style="color:var(--text-muted);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Stalled Cases</div>
+          <div id="kpi-stalled" style="font-size:2rem;font-weight:800;color:#b45309">—</div>
+          <div id="kpi-stalled-sub" style="color:var(--text-muted);font-size:0.75rem;margin-top:4px">agent sent 3+ more msgs than client</div>
+        </div>
       </div>
       <!-- Complexity + Resolution KPI row — directly under main KPIs -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="complexity-kpi-strip"></div>
@@ -226,6 +231,12 @@ const CONFIG = {
         <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:4px">Case Intake by Hour of Day</h3>
         <p style="font-size:0.72rem;color:var(--text-muted);margin-bottom:14px">UTC — add +2h for Berlin, +1h for London</p>
         <div style="height:200px;position:relative"><canvas id="chart-hourly"></canvas></div>
+      </div>
+      <!-- Stalled cases -->
+      <div class="card p-5">
+        <h3 style="font-weight:600;font-size:0.875rem;color:var(--text-main);margin-bottom:4px">Stalled Cases — Examples</h3>
+        <p style="font-size:0.72rem;color:var(--text-muted);margin-bottom:14px">Closed/Completed cases where the agent sent 3+ more messages than the client — usually waiting on or chasing the customer. Sorted by resolution time.</p>
+        <div id="stalled-table" style="overflow-x:auto"></div>
       </div>
     </div>
 
@@ -428,6 +439,7 @@ function mergePeriods(periods) {
       total: totalCases,
       open: sumKpi('open'),
       closed: sumKpi('closed'),
+      stalledCount: sumKpi('stalledCount'),
       spamCount: sumKpi('spamCount'),
       avgFirstResp: wavgKpi('avgFirstResp'),
       avgResolution: wavgKpi('avgResolution'),
@@ -472,6 +484,8 @@ function mergePeriods(periods) {
       const out = {}; top.forEach(it => { out[it] = byIt[it]; });
       return out;
     })(),
+    stalledCases: periods.flatMap(p => p.stalledCases || [])
+      .sort((a,b) => (b.resolutionHrs||0) - (a.resolutionHrs||0)).slice(0,25),
     complexityBuckets: (() => {
       const allBuckets = periods.map(p => p.complexityBuckets || []);
       const labels = [...new Set(allBuckets.flat().map(b => b.label))].sort((a,b)=>+a-+b);
@@ -991,6 +1005,13 @@ function renderTopKpis() {
     : (avgCsat ? (avgCsat / csatScale * 100).toFixed(1) + '%' : '—');
   document.getElementById('kpi-csat').textContent = csatPct;
   document.getElementById('kpi-csat-sub').textContent = `${pk.csatTotalReceived ?? baseKpis.csatTotalReceived ?? 0} received`;
+
+  const stalled = pk.stalledCount ?? baseKpis.stalledCount;
+  document.getElementById('kpi-stalled').textContent = stalled != null ? stalled.toLocaleString() : '—';
+  if (stalled != null && closedVal) {
+    document.getElementById('kpi-stalled-sub').textContent =
+      `${(stalled/closedVal*100).toFixed(1)}% of closed · agent 3+ msgs ahead`;
+  }
 }
 
 function renderAll() {
@@ -1180,6 +1201,46 @@ function renderOverview() {
           </tr>`;
         }).join('')}</tbody>
       </table>`;
+  }
+
+  // Stalled cases table
+  const stalledCases = pd.stalledCases || [];
+  const sthS = `color:var(--text-muted);font-size:0.68rem;text-transform:uppercase;letter-spacing:0.06em;font-weight:600;padding:6px 10px;text-align:left`;
+  const stdS = `padding:6px 10px;font-size:0.8rem;border-top:1px solid var(--border)`;
+  const stalledEl = document.getElementById('stalled-table');
+  if (stalledEl) {
+    if (!stalledCases.length) {
+      stalledEl.innerHTML = `<p style="color:var(--text-muted);font-size:0.8rem">No stalled cases in this period.</p>`;
+    } else {
+      stalledEl.innerHTML = `
+        <table style="width:100%;border-collapse:collapse">
+          <thead><tr>
+            <th style="${sthS}">Case #</th>
+            <th style="${sthS}">Agent</th>
+            <th style="${sthS};text-align:right">Resolution</th>
+            <th style="${sthS};text-align:center">Agent msgs</th>
+            <th style="${sthS};text-align:center">Client msgs</th>
+            <th style="${sthS};text-align:center">Gap</th>
+            <th style="${sthS};text-align:center">CCS</th>
+            <th style="${sthS}">Product</th>
+            <th style="${sthS}">Issue Type</th>
+          </tr></thead>
+          <tbody>${stalledCases.map(c => {
+            const resColor = c.resolutionHrs > 168 ? '#b91c1c' : c.resolutionHrs > 72 ? '#b45309' : '#15803d';
+            return `<tr>
+              <td style="${stdS}"><a href="https://uberall.lightning.force.com/lightning/r/Case/${c.id}/view" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600">${c.caseNumber}</a></td>
+              <td style="${stdS}">${c.agent || '—'}</td>
+              <td style="${stdS};text-align:right;font-weight:600;color:${resColor}">${c.resolutionHrs.toFixed(0)}h</td>
+              <td style="${stdS};text-align:center">${c.agentMsgs}</td>
+              <td style="${stdS};text-align:center">${c.clientMsgs}</td>
+              <td style="${stdS};text-align:center;font-weight:700;color:#b45309">+${c.gap}</td>
+              <td style="${stdS};text-align:center">${c.ccs != null ? c.ccs.toFixed(1) : '—'}</td>
+              <td style="${stdS}">${c.type || '—'}</td>
+              <td style="${stdS}">${c.issueType || '—'}</td>
+            </tr>`;
+          }).join('')}</tbody>
+        </table>`;
+    }
   }
 }
 
