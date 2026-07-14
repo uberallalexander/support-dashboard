@@ -537,22 +537,60 @@ function mergePeriods(periods) {
   };
 }
 
+let periodDropdownOpen = false;
+
 function renderPeriodPicker() {
   if (!data || !data.periods) return;
   const container = document.getElementById('period-picker-pills');
   if (!container) return;
-  container.innerHTML = Object.entries(data.periods).map(([key, period]) => {
-    const isActive = activePeriods.has(key);
-    const label = period.meta ? period.meta.label : key;
-    const partial = period.meta && period.meta.partial ? ' <span style="font-size:0.65rem;opacity:0.7">(partial)</span>' : '';
-    return `<button onclick="window.switchPeriod('${key}')" style="
-      padding:4px 12px;border-radius:9999px;font-size:0.75rem;font-weight:600;border:none;cursor:pointer;
-      background:${isActive ? 'var(--accent)' : 'var(--bg-card)'};
-      color:${isActive ? '#fff' : 'var(--text-muted)'};
-      border:1px solid ${isActive ? 'var(--accent)' : 'var(--border)'};
-      transition:all 0.15s">${label}${partial}</button>`;
-  }).join('');
+  const entries = Object.entries(data.periods).sort((a, b) => b[0].localeCompare(a[0]));
+  const active = entries.filter(([k]) => activePeriods.has(k));
+  const labelOf = ([key, p]) => (p.meta ? p.meta.label : key) + (p.meta && p.meta.partial ? ' (partial)' : '');
+  const btnLabel = active.length === 1 ? labelOf(active[0]) : `${active.length} periods selected`;
+
+  container.innerHTML = `
+    <div style="position:relative">
+      <button onclick="togglePeriodDropdown(event)" style="
+        display:flex;align-items:center;gap:8px;padding:5px 12px;border-radius:8px;font-size:0.78rem;font-weight:600;
+        cursor:pointer;background:var(--bg-card);color:var(--text-main);border:1px solid ${periodDropdownOpen ? 'var(--accent)' : 'var(--border)'};
+        transition:all 0.15s;min-width:180px;justify-content:space-between">
+        <span>${btnLabel}</span>
+        <span style="font-size:0.6rem;color:var(--text-muted);transform:${periodDropdownOpen ? 'rotate(180deg)' : 'none'};transition:transform 0.15s">&#9660;</span>
+      </button>
+      <div id="period-dropdown-panel" style="display:${periodDropdownOpen ? 'block' : 'none'};position:absolute;top:calc(100% + 4px);left:0;z-index:200;
+        background:var(--bg-card);border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,0.12);
+        padding:6px;min-width:220px">
+        ${entries.map(([key, p]) => {
+          const checked = activePeriods.has(key);
+          const label = p.meta ? p.meta.label : key;
+          const partial = p.meta && p.meta.partial ? ' <span style="font-size:0.65rem;color:var(--text-muted)">(partial)</span>' : '';
+          return `<label style="display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:7px;cursor:pointer;font-size:0.78rem;
+            color:var(--text-main);font-weight:${checked ? 600 : 400};background:${checked ? 'var(--accent-light, rgba(124,58,237,0.08))' : 'transparent'}"
+            onmouseenter="this.style.background='rgba(124,58,237,0.12)'" onmouseleave="this.style.background='${checked ? 'var(--accent-light, rgba(124,58,237,0.08))' : 'transparent'}'">
+            <input type="checkbox" ${checked ? 'checked' : ''} onchange="window.switchPeriod('${key}')"
+              style="accent-color:var(--accent);width:14px;height:14px;cursor:pointer">
+            <span>${label}${partial}</span>
+          </label>`;
+        }).join('')}
+        <div style="border-top:1px solid var(--border);margin-top:4px;padding:6px 10px 2px;font-size:0.65rem;color:var(--text-muted)">
+          Multiple periods are aggregated
+        </div>
+      </div>
+    </div>`;
 }
+
+window.togglePeriodDropdown = function(e) {
+  e.stopPropagation();
+  periodDropdownOpen = !periodDropdownOpen;
+  renderPeriodPicker();
+};
+
+document.addEventListener('click', (e) => {
+  if (periodDropdownOpen && !e.target.closest('#period-picker-pills')) {
+    periodDropdownOpen = false;
+    renderPeriodPicker();
+  }
+});
 
 window.switchPeriod = function(key) {
   if (activePeriods.has(key) && activePeriods.size > 1) {
